@@ -5,6 +5,7 @@ import "../Style/Home.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
+import Footer from "../Footer/Footer";
 
 
 const Home = () => {
@@ -14,6 +15,7 @@ const Home = () => {
       <Slider >
         <ReactSlick />
       </Slider>
+      <Footer/>
     </>
   );
 };

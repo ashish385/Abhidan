@@ -1,19 +1,19 @@
 
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400&display=swap');
+ @import url('https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap'); 
 
 * {
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Yeseva One', cursive;
 }
 
 .section {
     width: 100%;
     min-height: 100vh;
-    background-color: #ddd;
-    // background: green;
+    background-color: #83BD75;
+    border-radius: 0px 0px 200px 200px;
 
     .container {
             width: 80%;
@@ -29,7 +29,11 @@
 
                 .colum1 {
                 box-sizing: border-box;
+                
                 // border: 2px solid blue;
+
+
+                       
     
     
             }
@@ -48,6 +52,8 @@
                 .image-section img {
                     width: 100%;
                     height: auto;
+                    box-shadow: 10px 10px ;
+                    border-radius: 10px;
                 }
     
             }
@@ -88,6 +94,7 @@
                     height: auto;
                     display: block;
                     margin: auto;
+                    
                 }
             }
         }
