@@ -3,8 +3,7 @@ import sliderImage1 from "../../assets/SliderImages/slider4.jpg";
 import TypewriterEffect from "./TypewriterEffect";
 import Logo from "../../assets/logo.png";
 import app from "../../assets/app.jpg";
-import '../Style/Home.css'
-import "../Style/home.scss";
+// import './home.css'
 import Slider from "react-slick";
 
 const ReactSlick = () => {

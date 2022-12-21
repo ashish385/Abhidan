@@ -1,6 +1,6 @@
 import React from "react";
 import Slider from "react-slick";
-import "../Style/about.css";
+import './about.css'
 import Logo from "../../assets/AboutImages/about_2.png";
 import image2 from "../../assets/AboutImages/about.jpg";
 import Navbar from "../Navbar/Navbar";

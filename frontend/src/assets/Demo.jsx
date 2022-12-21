@@ -1,8 +1,5 @@
 import React from 'react'
 import Navbar from '../components/Navbar/Navbar'
-// import logo from '../assets/AboutImages/about-us-2.jpg'
-import '../components/Style/about.css'
-// import "swiper/css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper";
 import "swiper/css";

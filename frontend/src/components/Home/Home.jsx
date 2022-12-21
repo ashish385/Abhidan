@@ -1,7 +1,7 @@
 import React from "react";
 import ReactSlick from "./ReactSlick";
 import Navbar from "../Navbar/Navbar";
-import "../Style/Home.css";
+import "./Home.css"
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
