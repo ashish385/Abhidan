@@ -12,7 +12,7 @@ import About from "../About/About";
 const Home = () => {
   return (
     <>
-      {/* <Navbar /> */}
+      <Navbar />
       <Slider>
         <ReactSlick />
       </Slider>
