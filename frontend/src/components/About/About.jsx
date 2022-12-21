@@ -5,6 +5,7 @@ import aboutImage1 from "../../assets/AboutImages/about-us.jpg";
 import '../Style/about.scss'
 import { Link } from "react-router-dom";
 import AboutSlick from "./AboutSlick";
+import Footer from "../Footer/Footer";
 // import Swiper from "./SwiperAbout";
 
 
@@ -42,7 +43,7 @@ const About = () => {
               <div className="info-box ">
                 <div className="image-section  ">
                   <img src={aboutImage1} alt="" />
-                  <img src={aboutImage2} />
+                  {/* <img src={aboutImage2} /> */}
                 </div>
               </div>
             </div>
@@ -51,6 +52,7 @@ const About = () => {
       </div>
       <AboutSlick />
 
+      {/* <Footer /> */}
       
 
 

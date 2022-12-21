@@ -3,8 +3,8 @@ import "../Style/footer.css";
 
 const Footer = () => {
   return (
-    <div>
-      <footer className="container-fluid">
+    <>
+      <footer className="footer">
         <div className="row">
           <div className="col">
             <h4>ABHIDAN</h4>
@@ -46,7 +46,7 @@ const Footer = () => {
           </div>
         </div>
       </footer>
-    </div>
+    </>
   );
 };
 

@@ -3,10 +3,9 @@ import sliderImage1 from "../../assets/SliderImages/slider4.jpg";
 import TypewriterEffect from "./TypewriterEffect";
 import Logo from "../../assets/logo.png";
 import app from "../../assets/app.jpg";
-// import '../Style/Home.css'
+import '../Style/Home.css'
 import "../Style/home.scss";
 import Slider from "react-slick";
-import About from "../About/About";
 
 const ReactSlick = () => {
   const settings = {
@@ -35,7 +34,7 @@ const ReactSlick = () => {
           <img className="w-100" height='500vh' src={sliderImage1} />
         </div>
       </Slider>
-      <About />
+     
     </>
   );
 };
