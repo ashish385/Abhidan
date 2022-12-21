@@ -1,10 +1,15 @@
-import React, { useState } from 'react'
-import '../Style/userRegister.css'
-
-
+import React, { useState } from "react";
+// import "../Style/userRegister.css";
+import {
+  MDBBtn,
+  MDBContainer,
+  MDBCard,
+  MDBCardBody,
+  MDBInput,
+  MDBCheckbox,
+} from "mdb-react-ui-kit";
 
 const UserRegistation = () => {
-
   let initialValue = {
     name: "",
     email: "",
@@ -16,70 +21,83 @@ const UserRegistation = () => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormdata({...formdata,[name]:value})
-  }
+    setFormdata({ ...formdata, [name]: value });
+  };
   // console.log(formdata);
 
   const handleSubmit = () => {
-    console.log('hello Vinood');
+    console.log("hello Vinood");
     window.localStorage.setItem("currentUser2", JSON.stringify(formdata));
-    
-  }
-
+  };
 
   return (
     <>
-      <div className="card userCard">
-        <form  onSubmit={handleSubmit} >
-          <div className="form-group">
-            <label htmlFor="name">Name : </label>
-            <input
-              className="form-control"
-              onChange={handleChange}
+      <MDBContainer
+        fluid
+        className="d-flex align-items-center justify-content-center bg-image"
+        style={{
+          backgroundImage:
+            "url(https://mdbcdn.b-cdn.net/img/Photos/new-templates/search-box/img4.webp)",
+        }}
+      >
+        <div className="mask gradient-custom-3"></div>
+        <MDBCard className="m-5" style={{ maxWidth: "600px" }}>
+          <MDBCardBody className="px-5">
+            <h2 className="text-uppercase text-center mb-5">
+              Create an account
+            </h2>
+            <label>Name</label>
+            <MDBInput
+              wrapperClass="mb-4"
+              label=""
+              size="md"
+              id="form1"
               type="text"
-              name="name"
-              value={formdata?.name}
+              placeholder="Enter Name"
+            />
+            <label>Name</label>
+            <MDBInput
+              wrapperClass="mb-4"
+              label=""
+              size="md"
+              id="form1"
+              type="text"
+              placeholder="Enter Name"
+            />
+            <label>Name</label>
+            <MDBInput
+              wrapperClass="mb-4"
+              label=""
+              size="md"
+              id="form1"
+              type="text"
+              placeholder="Enter Name"
+            />
+            <label>Name</label>
+            <MDBInput
+              wrapperClass="mb-4"
+              label=""
+              size="md"
+              id="form1"
+              type="text"
+              placeholder="Enter Name"
             />
             
-            <label htmlFor="email">Email : </label>
-            <input
-              className="form-control"
-              onChange={handleChange}
-              type="email"
-              name="email"
-              value={formdata?.email}
-            />
-            
-            <label htmlFor="password">Password : </label>
-            <input
-              className="form-control"
-              onChange={handleChange}
-              type="password"
-              name="password"
-              value={formdata?.password}
-            />
-            
-            <label htmlFor="phoneNo.">Phone No. : </label>
-            <input
-              className="form-control"
-              onChange={handleChange}
-              type="tel"
-              name="phoneNumber"
-              value={formdata?.phoneNumber}
-            />
-            
-            <button
-              onClick={handleSubmit}
-              className="btn btn-primary"
-              type="submit"
-            >
-              Submit
-            </button>
-          </div>
-        </form>
-      </div>
+            <div className="d-flex flex-row justify-content-center mb-4">
+              <MDBCheckbox
+                name="flexCheck"
+                id="flexCheckDefault"
+                label="I agree all statements in Terms of service"
+              />
+            </div>
+            <MDBBtn className="mb-4 w-100 gradient-custom-4" size="md">
+              Register
+            </MDBBtn>
+          </MDBCardBody>
+        </MDBCard>
+      </MDBContainer>
     </>
   );
-}
+};
 
-export default UserRegistation
+export default UserRegistation;
