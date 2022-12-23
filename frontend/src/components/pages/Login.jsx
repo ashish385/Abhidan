@@ -43,7 +43,7 @@ const Login = () => {
             <MDBCol md="6">
               <MDBCardImage
                 src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/img1.webp"
-                alt="login form"
+                alt="login Form"
                 className="rounded-start w-100"
               />
             </MDBCol>
