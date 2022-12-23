@@ -8,7 +8,7 @@ const Navbar = () => {
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
         <div className="container-fluid">
           <Link className="navbar-brand" to={"#"}>
-            <img src="/" alt="" />
+            {/* <img src="/" alt="" /> */}
             Abhidan
           </Link>
           <button
