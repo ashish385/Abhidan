@@ -2,8 +2,7 @@
 
 import React, { useState } from 'react';
 import './HowitWorks.css';
-// import Carousel from 'react-bootstrap/Carousel';
-// import 'react-multi-carousel/lib/styles.css';
+
 import slider1 from '../images/slider1.svg';
 import slider2 from '../images/slider2.svg';
 import slider3 from '../images/slider3.svg';
@@ -46,26 +45,7 @@ const HowitWorks = () => {
 				<div className='section-title_heading'>
 					<div className='section-headingWrapper'>How it Works</div>
 				</div>
-				{/* <div className='how-it-works'>
-				<div className='conatiner'>
-					<div className='section-title_heading'>
-						<div className='section-headingWrapper'>
-							<h2>How it Works?</h2>
-						</div>
-					</div>
-				</div>
-				<div className='how-it-works_tabsWrapper'>
-					<h3 className='how-it-works_tab0'>For Donors</h3>
-					<h3 className='how-it-works_tab1'>For NGO's</h3>
-				</div>
-				<div className='how-it-works_tabContent'>
-					<div className='react-multi-carousel-list'>
-						<ul
-							className='react-multi-carousel-track'
-							style={{transition: 'transform 400ms ease-in-out 0s' }}></ul>
-					</div>
-				</div>
-			</div> */}
+				
 				<div className='buttons'>
 					<button onClick={donorHandler}>
 						<h2>For Donors</h2>
@@ -89,7 +69,7 @@ const HowitWorks = () => {
 						</div>
 						<i
 							style={{ color: 'red' }}
-							class='fa-sharp fa-solid fa-circle-arrow-right'></i>
+							className='fa-sharp fa-solid fa-circle-arrow-right'></i>
 						<div className='card'>
 							<img
 								src={slider2}
@@ -102,7 +82,7 @@ const HowitWorks = () => {
 						</div>
 						<i
 							style={{ color: 'red' }}
-							class='fa-sharp fa-solid fa-circle-arrow-right '></i>
+							className='fa-sharp fa-solid fa-circle-arrow-right '></i>
 						<div className='card'>
 							<img
 								src={slider3}
@@ -116,7 +96,7 @@ const HowitWorks = () => {
 						</div>
 						<i
 							style={{ color: 'red' }}
-							class='fa-sharp fa-solid fa-circle-arrow-right'></i>
+							className='fa-sharp fa-solid fa-circle-arrow-right'></i>
 						<div className='card'>
 							<img
 								src={slider4}
@@ -143,7 +123,7 @@ const HowitWorks = () => {
 						</div>
 						<i
 							style={{ color: 'red' }}
-							class='fa-sharp fa-solid fa-circle-arrow-right'></i>
+							className='fa-sharp fa-solid fa-circle-arrow-right'></i>
 						<div className='card'>
 							<img
 								src={slider6}
@@ -156,7 +136,7 @@ const HowitWorks = () => {
 						</div>
 						<i
 							style={{ color: 'red' }}
-							class='fa-sharp fa-solid fa-circle-arrow-right'></i>
+							className='fa-sharp fa-solid fa-circle-arrow-right'></i>
 						<div className='card'>
 							<img
 								src={slider6}
@@ -170,7 +150,7 @@ const HowitWorks = () => {
 						</div>
 						<i
 							style={{ color: 'red' }}
-							class='fa-sharp fa-solid fa-circle-arrow-right'></i>
+							className='fa-sharp fa-solid fa-circle-arrow-right'></i>
 						<div className='card'>
 							<img
 								src={slider8}
