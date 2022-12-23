@@ -1,13 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import {
-  MDBBtn,
   MDBContainer,
   MDBRow,
   MDBCol,
   MDBCard,
   MDBCardBody,
   MDBInput,
-  MDBCheckbox,
   MDBIcon,
   MDBCardImage,
 } from "mdb-react-ui-kit";
@@ -16,6 +14,22 @@ import { Link } from "react-router-dom";
 
 const Login = () => {
 
+  let initialValue = {
+    email: '',
+    password:''
+  }
+
+  const [formdata, setFormdat] = useState(initialValue);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormdat({...formdata,[name]:value})
+  }
+  console.log(formdata);
+
+  const handleSubmit = (e) => {
+    console.log("hello vinood");
+  }
 
 
 
@@ -35,7 +49,10 @@ const Login = () => {
             </MDBCol>
 
             <MDBCol md="6">
-              <MDBCardBody className="d-flex flex-column">
+              <MDBCardBody
+                className="d-flex flex-column"
+                onSubmit={handleSubmit}
+              >
                 <div className="d-flex flex-row mt-2">
                   <MDBIcon
                     fas
@@ -54,22 +71,33 @@ const Login = () => {
                 <label htmlFor="name">Email:</label>
                 <MDBInput
                   wrapperClass="mb-4"
-                  // label="Email address"
+                  name="email"
                   id="formControlLg"
                   type="email"
                   size="md"
+                  placeholder="Enter Email"
+                  onChange={handleChange}
+                  value={formdata?.email}
                 />
 
                 <label htmlFor="name">password:</label>
                 <MDBInput
                   wrapperClass="mb-4"
-                  // label="Password"
+                  name="password"
                   id="formControlLg"
                   type="password"
                   size="md"
+                  placeholder="Enter Password"
+                  onChange={handleChange}
+                  value={formdata?.password}
                 />
 
-                <button className="btn btn-dark mb-4 px-5">Login</button>
+                <button
+                  className="btn btn-dark mb-4 px-5"
+                  onClick={handleSubmit}
+                >
+                  Login
+                </button>
                 <Link className="small text-muted" to={"#"}>
                   Forgot password?
                 </Link>

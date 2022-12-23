@@ -1,3 +1,4 @@
+/* about.jsx start */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400&display=swap");
 * {
   margin: 0px;
@@ -12,31 +13,34 @@
   background-color: #ddd;
 }
 
-.section .container {
+.section .aboutContainer {
   width: 80%;
   display: block;
   margin: auto;
   padding-top: 100px;
 }
 
-.section .container .row1 {
+.section .aboutContainer .row1 {
   box-sizing: border-box;
 }
 
-.section .container .row1 .colum1 {
+.section .aboutContainer .row1 .colum1 {
   box-sizing: border-box;
 }
 
-.section .container .row1 .colum2 {
+.section .aboutContainer .row1 .colum2 {
   box-sizing: border-box;
 }
 
-.section .container .row1 .colum2 .image-section img {
+.section .aboutContainer .row1 .colum2 .image-section img {
   width: 100%;
   height: auto;
 }
 
-/* about-Slick-CSS start */
+/* about.jsx css end */
+
+
+/* aboutSlick.jsx start  */
 
 
 .section-2{
@@ -92,7 +96,7 @@
   top: 0;
   height: 100%;
   width: 100%;
-  background-color: #4070F4;
+  background-color: #b0bee6;
   border-radius: 25px 25px 0 25px;
 }
 
@@ -104,7 +108,7 @@
   bottom: -40px;
   height: 40px;
   width: 40px;
-  background-color: #4070F4;
+  background-color: #a7b6de;
 }
 
 .overlay::after{
@@ -128,29 +132,31 @@
   border: 4px solid #4070F4;
 }
 
+/* aboutSlick.jsx end */
+
 
 
 
 
 
 @media screen and (max-width: 990px) {
-  .container {
+  .aboutContainer {
     width: 80%;
     display: block;
     margin: auto;
     padding-top: 50px;
   }
 
-  .container .row1 .colum2 {
+  .aboutContainer .row1 .colum2 {
     margin-top: 10px;
   }
 
-  .container .row1 .colum2 .image-section {
+  .aboutContainer .row1 .colum2 .image-section {
     float: none;
     width: 100%;
   }
 
-  .container .row1 .colum2 .image-section img {
+  .aboutContainer .row1 .colum2 .image-section img {
     width: 100%;
     height: auto;
     display: block;

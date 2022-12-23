@@ -7,12 +7,14 @@ import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import Footer from "../Footer/Footer";
 import About from "../About/About";
+import HomeSlider from "./HomeSlider";
 
 
 const Home = () => {
   return (
     <>
       <Navbar />
+      {/* <HomeSlider /> */}
       <Slider>
         <ReactSlick />
       </Slider>

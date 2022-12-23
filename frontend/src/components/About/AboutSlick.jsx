@@ -1,14 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import Slider from "react-slick";
 import './about.css'
 import Logo from "../../assets/AboutImages/about_2.png";
 import image2 from "../../assets/AboutImages/about.jpg";
 import Navbar from "../Navbar/Navbar";
 
+const images = [Logo, image2, Logo, image2, Logo, image2];
+
 const AboutSlick = () => {
+  const [slideIndex, setSlideIndex] = useState(0)
   const settings = {
-      lazyLoad: true,
-      spaceBetween:50,
+    lazyLoad: true,
+    spaceBetween: 50,
     initialSlide: 3,
     dots: false,
     infinite: true,
@@ -18,6 +21,25 @@ const AboutSlick = () => {
     autoplay: true,
     cssEase: "linear",
     autoplaySpeed: 1000,
+    beforeChange: (current, next) => setSlideIndex(next),
+    responsive: [
+      {
+        breakpoint: 550,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: true
+        }
+      },{
+     breakpoint: 768,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          infinite: true,
+          dots: true
+        }
+      },]
   };
   return (
     <>
@@ -31,7 +53,6 @@ const AboutSlick = () => {
             <div class="card main-card">
               <div class="image-content">
                 <span class="overlay"></span>
-
                 <div class="card-image">
                   <img src={Logo} alt="" class="card-img" />
                 </div>
@@ -47,6 +68,8 @@ const AboutSlick = () => {
               </div>
             </div>
           </div>
+
+          
 
           <div className="slideSection">
             <div className="card main-card">

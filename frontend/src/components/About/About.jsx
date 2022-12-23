@@ -19,7 +19,7 @@ const About = () => {
     <>
       <div className="section">
         {/* <Navbar /> */}
-        <div className="container">
+        <div className="aboutContainer">
           <div className="row row1 align-item-center ">
             <div className="col-lg-6 colum1">
               <div className="heading heading-primary">

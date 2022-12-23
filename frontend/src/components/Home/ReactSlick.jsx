@@ -29,6 +29,8 @@ const ReactSlick = () => {
           <img className="w-100" height='500vh' src={app} />
         </div>
 
+        
+
         <div>
           <img className="w-100" height='500vh' src={sliderImage1} />
         </div>
