@@ -77,59 +77,57 @@ const HowitWorks = () => {
 
 				{donors ? (
 					<div className='donor'>
-						
-							<div className='card'>
-								<img
-									src={slider1}
-									alt='slider1'
-								/>
-								<h1 className='card-header'>CHOOSE A CAUSE</h1>
-								<h3 className='card-header-details'>
-									Browse different campaigns and select a cause.
-								</h3>
-							</div>
-							<i
-								style={{ color: 'red' }}
-								class='fa-sharp fa-solid fa-circle-arrow-right'></i>
-							<div className='card'>
-								<img
-									src={slider2}
-									alt='slider2'
-								/>
-								<h1 className='card-header'>SELECT PRODUCTS</h1>
-								<h3 className='card-header-details'>
-									Select products and quantity you wish to donate.
-								</h3>
-							</div>
-							<i
-								style={{ color: 'red' }}
-								class='fa-sharp fa-solid fa-circle-arrow-right '></i>
-							<div className='card'>
-								<img
-									src={slider3}
-									alt='slider3'
-								/>
-								<h1 className='card-header'>ORDER PROCESSING</h1>
+						<div className='card'>
+							<img
+								src={slider1}
+								alt='slider1'
+							/>
+							<h1 className='card-header'>CHOOSE A CAUSE</h1>
+							<h3 className='card-header-details'>
+								Browse different campaigns and select a cause.
+							</h3>
+						</div>
+						<i
+							style={{ color: 'red' }}
+							class='fa-sharp fa-solid fa-circle-arrow-right'></i>
+						<div className='card'>
+							<img
+								src={slider2}
+								alt='slider2'
+							/>
+							<h1 className='card-header'>SELECT PRODUCTS</h1>
+							<h3 className='card-header-details'>
+								Select products and quantity you wish to donate.
+							</h3>
+						</div>
+						<i
+							style={{ color: 'red' }}
+							class='fa-sharp fa-solid fa-circle-arrow-right '></i>
+						<div className='card'>
+							<img
+								src={slider3}
+								alt='slider3'
+							/>
+							<h1 className='card-header'>ORDER PROCESSING</h1>
 
-								<h3 className='card-header-details'>
-									Checkout and pay for your contributions.
-								</h3>
-							</div>
-							<i
-								style={{ color: 'red' }}
-								class='fa-sharp fa-solid fa-circle-arrow-right'></i>
-							<div className='card'>
-								<img
-									src={slider4}
-									alt='slider4'
-								/>
-								<h1 className='card-header'>DELIVERY REPORT</h1>
-								<h3 className='card-header-details'>
-									Donatekart delivers the products and the organisation updates
-									about product utilization.
-								</h3>
-							</div>
-						
+							<h3 className='card-header-details'>
+								Checkout and pay for your contributions.
+							</h3>
+						</div>
+						<i
+							style={{ color: 'red' }}
+							class='fa-sharp fa-solid fa-circle-arrow-right'></i>
+						<div className='card'>
+							<img
+								src={slider4}
+								alt='slider4'
+							/>
+							<h1 className='card-header'>DELIVERY REPORT</h1>
+							<h3 className='card-header-details'>
+								Donatekart delivers the products and the organisation updates
+								about product utilization.
+							</h3>
+						</div>
 					</div>
 				) : (
 					<div className='ngo'>

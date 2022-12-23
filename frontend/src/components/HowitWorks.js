@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import './HowitWorks.css';
-import Carousel from 'react-bootstrap/Carousel';
+
 import 'react-multi-carousel/lib/styles.css';
 import slider1 from '../images/slider1.svg';
 import slider2 from '../images/slider2.svg';
