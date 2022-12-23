@@ -1,10 +1,19 @@
 import React from "react";
+<<<<<<< HEAD
 import "./footer.css";
 
 const Footer = () => {
   return (
     <>
       <footer className="footer">
+=======
+import "../Style/footer.css";
+
+const Footer = () => {
+  return (
+    <div>
+      <footer className="Footer">
+>>>>>>> 41e551daa65721c757159d84963d95d2d6ab6906
         <div className="row">
           <div className="col">
             <h4>ABHIDAN</h4>
@@ -46,7 +55,11 @@ const Footer = () => {
           </div>
         </div>
       </footer>
+<<<<<<< HEAD
     </>
+=======
+    </div>
+>>>>>>> 41e551daa65721c757159d84963d95d2d6ab6906
   );
 };
 
