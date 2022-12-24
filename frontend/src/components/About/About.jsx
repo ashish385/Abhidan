@@ -1,8 +1,8 @@
 import React from "react";
-import Navbar from "../Navbar/Navbar";
 import aboutImage2 from "../../assets/AboutImages/about_layout-reverse.png";
 import aboutImage1 from "../../assets/AboutImages/about-us.jpg";
-import "../Style/about.scss";
+import "../About/about.scss";
+import HowitWorks from "../HowitWorks/HowitWork"
 import { Link } from "react-router-dom";
 const About = () => {
   return (
@@ -66,6 +66,7 @@ const About = () => {
           </div>
         </div>
       </div>
+      {/* <HowitWorks/> */}
     </>
   );
 };

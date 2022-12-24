@@ -8,7 +8,7 @@ const Navbar = () => {
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
             <div className="container-fluid">
             <Link className="navbar-brand" to={"#"}>
-            <img src="/" alt="" />
+            {/* <img src="/" alt="" /> */}
             Abhidan
             </Link>
             <button
@@ -30,14 +30,14 @@ const Navbar = () => {
                 <Link className="nav-link" to={'/about'}>
                 About
                 </Link>
-                <Link className="nav-link" to={"#"}>
+                <Link className="nav-link" to={"/ngo"}>
                 NGO's
               </Link>
               <Link className="nav-link" to={"#"}>
                 Blog
               </Link>
-              <Link className="nav-link" to={"#"}>
-                News & Update
+              <Link className="nav-link" to={"/sign"}>
+                Login
                 </Link>
                 
             </div>

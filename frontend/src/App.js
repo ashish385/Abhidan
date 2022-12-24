@@ -1,13 +1,13 @@
 
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
-import Demo from './assets/Demo';
 import About from './components/About/About';
-import Footer from './components/Footer/Footer';
 import Home from './components/Home/Home';
 import Navbar from './components/Navbar/Navbar';
+import Ngopage from './components/Ngo/Ngopage';
+import Sign from './components/Pages/UserRegistration';
 
-
+  
 
 function App() {
   return (
@@ -18,7 +18,8 @@ function App() {
           <Route exact  element={ <Navbar /> } />
           <Route path='/' element={<Home />} />
           <Route path='/about' element={<About />} />
-          <Route path='/demo' element={<Demo/>} />
+          <Route path='/ngo' element={<Ngopage />} />
+          <Route path='/sign' element={<Sign/>} />
         </Routes>
       </BrowserRouter>
      {/* <Footer/> */}
