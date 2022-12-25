@@ -2,7 +2,6 @@ import React from "react";
 import aboutImage1 from "../../assets/AboutImages/about-us.jpg";
 import { Link } from "react-router-dom";
 import AboutSlick from "./AboutSlick";
-import './about.css'
 
 
 
