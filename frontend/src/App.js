@@ -6,7 +6,7 @@ import Gallery from './components/Gallery/Gallery';
 // import Footer from './components/Footer/Footer';
 import Home from './components/Home/Home';
 import Navbar from './components/Navbar/Navbar';
-import Ngopage from './components/NGO/Ngopage';
+import Ngopage from './components/Ngo/Ngopage';
 
 import Login from './components/pages/Login';
 import UserRegistation from './components/pages/UserRegistation';
