@@ -1,0 +1,147 @@
+/* 
+.how-it-works {
+	background-color: #e9efc0;
+	min-height: 99vh;
+  
+    display: flex;
+	justify-content: center;
+	align-items: center;
+	color: black;
+	font-size: 18px;
+	font-weight: 700;
+}
+.container {
+	gap: 15px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.section-title_heading {
+	border-left: 4px solid #4e944f;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding-left: 6px;
+	color: black;
+	font-size: 18px;
+	font-weight: 700;
+}
+
+.how-it-works_tabsWrapper {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 24px;
+	box-sizing: border-box;
+}
+.how-it-works_tab0 {
+	color: #4e944f;
+	border-bottom: 3px solid rgb(2, 83, 2);
+}
+.how-it-works_tab1 {
+	text-transform: none;
+	letter-spacing: 0.5px;
+	font-size: 16px;
+	font-weight: 700;
+	padding: 4px 1px;
+	margin: 0 16px;
+	cursor: pointer;
+	box-sizing: border-box;
+}
+
+
+.donor {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-weight: bolder;
+	gap: 10px;
+}
+.ngo{
+    
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-weight: bolder;
+	gap: 10px;
+}
+
+
+
+.buttons {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 40px;
+	font-style: initial;
+	font-family: 'Times New Roman', Times, serif;
+}
+
+.buttons button {
+	border: none;
+	background-color: #e9efc0;
+	color: #4e944f;
+}
+.buttons button:hover {
+	border-bottom: 3px solid rgb(2, 83, 2);
+}
+
+.card {
+	background-color: rgb(140, 140, 3);
+	width: 200px;
+	height: 310px;
+	padding: 10px;
+	border-radius: 15px;
+}
+
+img {
+	height: 170px;
+	width: 170px;
+}
+.section-headingWrapper {
+	margin-right: 850px;
+}
+
+.card h1 {
+	margin: 0px;
+}
+.card-header {
+	font-size: 20px;
+}
+.card-header-details {
+	font-size: 10px;
+}
+.card:hover {
+	transform: scale(1.03);
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+@media screen and (max-width: 480px){
+   .how-it-works{
+    height: 1500px;
+  width: max-content;
+    	justify-content: center;
+	align-items: center;
+   }
+   .container{
+    gap: 15px;
+	
+	justify-content: center;
+	align-items: center;
+
+    width: auto;
+
+   
+   }
+   .donor{
+    display: flex;
+	justify-content: center;
+	align-items: center;
+    flex-direction: column;
+   }
+   .ngo{
+    display: flex;
+    flex-direction: column;
+   }
+} */

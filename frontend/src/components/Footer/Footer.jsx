@@ -4,7 +4,7 @@ import "../Footer/footer.css";
 
 const Footer = () => {
   return (
-    <div>
+    <>
       <footer className="footer">
         <div className="row">
           <div className="col">
@@ -53,7 +53,7 @@ const Footer = () => {
         <hr/>
         <p className="copyright">Abhidan @ 2022-All Right Reserved</p>
       </footer>
-    </div>
+    </>
   );
 };
 

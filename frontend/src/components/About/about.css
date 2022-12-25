@@ -1,0 +1,167 @@
+/* about.jsx start */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400&display=swap");
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+.section {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #ddd;
+}
+
+.section .aboutContainer {
+  width: 80%;
+  display: block;
+  margin: auto;
+  padding-top: 100px;
+}
+
+.section .aboutContainer .row1 {
+  box-sizing: border-box;
+}
+
+.section .aboutContainer .row1 .colum1 {
+  box-sizing: border-box;
+}
+
+.section .aboutContainer .row1 .colum2 {
+  box-sizing: border-box;
+}
+
+.section .aboutContainer .row1 .colum2 .image-section img {
+  width: 100%;
+  height: auto;
+}
+
+/* about.jsx css end */
+
+
+/* aboutSlick.jsx start  */
+
+
+.section-2{
+  /* width: 50%; */
+  align-items: center;
+  text-align: center;
+  
+}
+
+.headingPart{
+  margin-top: 50px;
+  margin-bottom: 50px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+   
+}
+.slideHeading{
+  
+   font-size: larger;
+  font-weight: 1200;
+  font-style: italic;
+}
+
+
+
+.slideSection{
+  /* padding-left: 400px; */
+  /* padding-right: 400px; */
+}
+
+.main-card{
+  border-radius: 25px;
+  background-color: #FFF;
+}
+
+.image-content,
+.card-content{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 14px;
+}
+
+.image-content{
+  position: relative;
+  row-gap: 5px;
+  padding: 25px 0;
+}
+
+.overlay{
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #b0bee6;
+  border-radius: 25px 25px 0 25px;
+}
+
+.overlay::before,
+.overlay::after{
+  content: '';
+  position: absolute;
+  right: 0;
+  bottom: -40px;
+  height: 40px;
+  width: 40px;
+  background-color: #a7b6de;
+}
+
+.overlay::after{
+  border-radius: 0 25px 0 0;
+  background-color: #FFF;
+}
+
+.card-image{
+  position: relative;
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  background: #FFF;
+  padding: 3px;
+}
+.card-image .card-img{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid #4070F4;
+}
+
+/* aboutSlick.jsx end */
+
+
+
+
+
+
+@media screen and (max-width: 990px) {
+  .aboutContainer {
+    width: 80%;
+    display: block;
+    margin: auto;
+    padding-top: 50px;
+  }
+
+  .aboutContainer .row1 .colum2 {
+    margin-top: 10px;
+  }
+
+  .aboutContainer .row1 .colum2 .image-section {
+    float: none;
+    width: 100%;
+  }
+
+  .aboutContainer .row1 .colum2 .image-section img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: auto;
+  }
+ 
+ 
+}

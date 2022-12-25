@@ -1,7 +1,7 @@
 import React from "react";
 import ReactSlick from "../Slide/ReactSlick";
 import Navbar from "../Navbar/Navbar";
-import "../Home/Home.css";
+import "./Home.css"
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
@@ -14,12 +14,13 @@ const Home = () => {
   return (
     <>
       <Navbar />
-      <Slider >
+      {/* <HomeSlider /> */}
+      <Slider>
         <ReactSlick />
       </Slider>
       <About />
-      
-     <Footer/>
+      {/* <HowitWorks /> */}
+      <Footer />
     </>
   );
 };
