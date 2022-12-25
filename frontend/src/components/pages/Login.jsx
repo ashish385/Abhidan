@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import './login.css';
 import {
   MDBContainer,
   MDBRow,
@@ -11,6 +12,7 @@ import {
 } from "mdb-react-ui-kit";
 import Navbar from "../Navbar/Navbar";
 import { Link } from "react-router-dom";
+import Gallery from "../Gallery/Gallery";
 
 const Login = () => {
 
@@ -19,16 +21,17 @@ const Login = () => {
     password:''
   }
 
-  const [formdata, setFormdat] = useState(initialValue);
+  const [formdata, setFormdata] = useState(initialValue);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormdat({...formdata,[name]:value})
+    setFormdata({...formdata,[name]:value})
   }
   console.log(formdata);
 
   const handleSubmit = (e) => {
     console.log("hello vinood");
+    window.localStorage.setItem("currentUser2", JSON.stringify(formdata));
   }
 
 
@@ -38,13 +41,13 @@ const Login = () => {
     <>
       <Navbar />
       <MDBContainer className="my-2">
-        <MDBCard style={{ height: "70" }}>
+        <MDBCard>
           <MDBRow className="g-0">
             <MDBCol md="6">
               <MDBCardImage
                 src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/img1.webp"
                 alt="login Form"
-                className="rounded-start w-100"
+                className=" w-100 loginLeftImage"
               />
             </MDBCol>
 
@@ -68,9 +71,11 @@ const Login = () => {
                 >
                   Sign into your account
                 </h5>
-                <label htmlFor="name">Email:</label>
+                <label htmlFor="name" className="loginLabel">
+                  Email:
+                </label>
                 <MDBInput
-                  wrapperClass="mb-4"
+                  wrapperClass="mb-4 mt-1"
                   name="email"
                   id="formControlLg"
                   type="email"
@@ -80,9 +85,11 @@ const Login = () => {
                   value={formdata?.email}
                 />
 
-                <label htmlFor="name">password:</label>
+                <label htmlFor="name" className="loginLabel">
+                  Password:
+                </label>
                 <MDBInput
-                  wrapperClass="mb-4"
+                  wrapperClass="mb-4 mt-1"
                   name="password"
                   id="formControlLg"
                   type="password"
@@ -121,6 +128,7 @@ const Login = () => {
           </MDBRow>
         </MDBCard>
       </MDBContainer>
+      <Gallery />
     </>
   );
 };

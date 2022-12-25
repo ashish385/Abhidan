@@ -11,6 +11,7 @@ import {
   MDBCardImage,
 } from "mdb-react-ui-kit";
 import { Link } from "react-router-dom";
+import Navbar from "../Navbar/Navbar";
 
 const UserRegistation = () => {
   let initialValue = {
@@ -35,6 +36,7 @@ const UserRegistation = () => {
 
   return (
     <>
+      <Navbar />
       <MDBContainer className="my-2">
         <MDBCard style={{ height: "70" }}>
           <MDBRow className="g-0">
@@ -42,12 +44,16 @@ const UserRegistation = () => {
               <MDBCardImage
                 src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/img1.webp"
                 alt="login form"
-                className="rounded-start w-100"
+                className="signupImage w-100"
+                height={"550px"}
               />
             </MDBCol>
 
             <MDBCol md="6">
-              <MDBCardBody className="d-flex flex-column" onSubmit={handleSubmit} >
+              <MDBCardBody
+                className="d-flex flex-column"
+                onSubmit={handleSubmit}
+              >
                 <div className="d-flex flex-row mt-2">
                   <MDBIcon
                     fas
@@ -61,14 +67,14 @@ const UserRegistation = () => {
                   className="fw-normal my-4 pb-3"
                   style={{ letterSpacing: "1px" }}
                 >
-                  Sign into your account
+                  Sign upto your account
                 </h5>
 
-                <label className="label" htmlFor="name">
+                <label className="loginLabel" htmlFor="name">
                   Name:
                 </label>
                 <MDBInput
-                  wrapperClass="mb-4"
+                  wrapperClass="mb-3"
                   id="formControlLg"
                   type="text"
                   name="name"
@@ -78,9 +84,11 @@ const UserRegistation = () => {
                   value={formdata?.name}
                 />
 
-                <label htmlFor="email">Email:</label>
+                <label htmlFor="email" className="loginLabel">
+                  Email:
+                </label>
                 <MDBInput
-                  wrapperClass="mb-4"
+                  wrapperClass="mb-3"
                   id="formControlLg"
                   type="email"
                   name="email"
@@ -90,9 +98,25 @@ const UserRegistation = () => {
                   value={formdata?.email}
                 />
 
-                <label htmlFor="password">Password:</label>
+                <label htmlFor="phoneNumber" className="loginLabel">
+                  Phone Number:
+                </label>
                 <MDBInput
-                  wrapperClass="mb-4"
+                  wrapperClass="mb-3"
+                  id="formControlLg"
+                  type="text"
+                  name="phoneNumber"
+                  placeholder="Enter Phone Number"
+                  size="md"
+                  onChange={handleChange}
+                  value={formdata?.phoneNumber}
+                />
+
+                <label htmlFor="password" className="loginLabel">
+                  Password:
+                </label>
+                <MDBInput
+                  wrapperClass="mb-3"
                   id="formControlLg"
                   type="password"
                   name="password"
@@ -102,7 +126,12 @@ const UserRegistation = () => {
                   value={formdata?.password}
                 />
 
-                <button className="btn btn-dark mb-4 px-5" onClick={handleSubmit}>Signup</button>
+                <button
+                  className="btn btn-dark mb-3 px-5"
+                  onClick={handleSubmit}
+                >
+                  Signup
+                </button>
 
                 <p>
                   Alerady have an account?{" "}

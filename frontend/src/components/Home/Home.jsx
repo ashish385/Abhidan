@@ -14,12 +14,12 @@ const Home = () => {
   return (
     <>
       <Navbar />
-      {/* <HomeSlider /> */}
+      
       <Slider>
         <ReactSlick />
       </Slider>
       <About />
-      {/* <HowitWorks /> */}
+      
       <Footer />
     </>
   );

@@ -36,7 +36,7 @@ const About = () => {
               <p>
                ABHIDAN  is providing an interface between the user who is eager to donate any stuff like food, book, clothes etc.
               </p>
-              <Link className="btn btn-info" to={'/'}>More About</Link>
+              <Link className="btn btn-info" to={'/about'}>More About</Link>
             </div>
             <div className="col-lg-6 col-xl-5 offset-xl-1  colum2">
               <div className="info-box ">
