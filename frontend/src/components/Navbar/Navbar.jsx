@@ -33,8 +33,11 @@ const Navbar = () => {
               <Link className="nav-link" to={"/about"}>
                 About
               </Link>
-              <Link className="nav-link" to={"#"}>
+              <Link className="nav-link" to={"/ngoprofile"}>
                 NGO's
+              </Link>
+              <Link className="nav-link" to={"/gallery"}>
+               Gallery
               </Link>
               <Link className="nav-link" to={"#"}>
                 Blog

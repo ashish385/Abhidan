@@ -1,0 +1,30 @@
+.container .imageContainer{
+    columns: 4 250px;
+    gap: 10px;
+    border-radius: 5px;
+    
+}
+.title{
+    text-align: center;
+}
+.container h1{
+    font-size: 50px;
+    margin-top: 10px;
+    color: rgb(3, 34, 61);
+    text-transform: uppercase;
+    font-family: 'Times New Roman', Times, serif;
+    
+}
+
+.container .imageContainer img{
+    margin-bottom: 10px;
+    border-radius: 5px;
+    width: 100%;
+    border-radius: 5px;
+    box-shadow: 0 5px 5px rgba(97, 134, 168, 0.703);
+}
+
+.container .imageContainer img:hover{
+    transform: scale(1.4);
+    box-shadow: 0 6px 7px rgba(160, 182, 223, 0.778);
+}
