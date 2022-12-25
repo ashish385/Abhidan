@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Slider from "react-slick";
 import Logo from "../../assets/AboutImages/about_2.png";
 import image2 from "../../assets/AboutImages/about.jpg";
+import './About.css'
 
 
 const images = [Logo, image2, Logo, image2, Logo, image2];
