@@ -1,3 +1,4 @@
+import AboutSlick from '../components/About/AboutSlick'
 export const aboutData = [
     {
         "id": 1,
@@ -24,3 +25,5 @@ export const aboutData = [
         "desc": "Description 4"
     }
 ];
+
+<AboutSlick AboutMe={ aboutData} />

@@ -1,8 +1,12 @@
-.container .imageContainer{
+.container-fluid .imageContainer{
     columns: 4 250px;
     gap: 10px;
     border-radius: 5px;
     
+}
+.container-fluid .GalleryHeading{
+    box-sizing: border-box;
+    background-color: red;
 }
 .title{
     text-align: center;
@@ -16,7 +20,7 @@
     
 }
 
-.container .imageContainer img{
+.container-fluid .imageContainer img{
     margin-bottom: 10px;
     border-radius: 5px;
     width: 100%;
@@ -24,7 +28,7 @@
     box-shadow: 0 5px 5px rgba(97, 134, 168, 0.703);
 }
 
-.container .imageContainer img:hover{
+.container-fluid .imageContainer img:hover{
     transform: scale(1.4);
     box-shadow: 0 6px 7px rgba(160, 182, 223, 0.778);
 }

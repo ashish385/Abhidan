@@ -21,15 +21,16 @@ const Gallery = () => {
   return (
     <>
       <Navbar />
-      <div className="container">
-        <h1 className="title">Image Gallery</h1>
+      <div className="container-fluid">
+        <div className="GalleryHeading">
+          <h1 className="title">Image Gallery</h1>
+        </div>
         <div className="imageContainer">
-          
-            <img
-              src="https://static.toiimg.com/photo/85301692/85301692.jpg?v=3"
-              alt=""
-            />
-        
+          <img
+            src="https://static.toiimg.com/photo/85301692/85301692.jpg?v=3"
+            alt=""
+          />
+
           <img
             src="https://www.bhaktiphotos.com/wp-content/uploads/2018/04/Mahadev-Bhagwan-Photo-for-Devotee.jpg"
             alt=""
