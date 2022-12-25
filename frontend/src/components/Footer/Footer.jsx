@@ -1,5 +1,6 @@
 import React from "react";
-import "./footer.css";
+import "../Footer/footer.css";
+
 
 const Footer = () => {
   return (
@@ -19,16 +20,17 @@ const Footer = () => {
           </div>
 
           <div className="col">
-            <h4>Supportus</h4>
-            <p>Donate now</p>
-            <p>Donate now</p>
-            <p>Donate now</p>
+            <h4>Address</h4>
+            <p>IT Chauraha </p>
+            <p>Lucknow</p>
+            <p>226087</p>
           </div>
           <div className="col">
             <h4>QuickLinks</h4>
-            <p>HOme</p>
-            <p>HOme</p>
-            <p>HOme</p>
+            <p>Home</p>
+            <p>Aboutus</p>
+            <p>Blog</p>
+            <p>Contactus</p>
           </div>
           <div className="col">
             <h4>News Letter</h4>
@@ -43,8 +45,13 @@ const Footer = () => {
                 Subscribe
               </button>
             </form>
+            <div className="social-icon">
+         
+            </div>
           </div>
         </div>
+        <hr/>
+        <p className="copyright">Abhidan @ 2022-All Right Reserved</p>
       </footer>
     </>
   );

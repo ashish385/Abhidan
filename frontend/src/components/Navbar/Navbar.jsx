@@ -4,11 +4,11 @@ import { Link } from 'react-router-dom'
 
 const Navbar = () => {
   return (
-    <>
-      <nav className="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
-        <div className="container-fluid">
-          <Link className="navbar-brand" to={"#"}>
-            {/* <img src="/" alt="" /> */}
+      <>
+        <nav className="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+            <div className="container-fluid">
+            <Link className="navbar-brand" to={"#"}>
+            <img src="/" alt="" />
             Abhidan
           </Link>
           <button
@@ -42,12 +42,11 @@ const Navbar = () => {
               <Link className="nav-link" to={"#"}>
                 Blog
               </Link>
-              <Link className="nav-link" to={"#"}>
-                News & Update
-              </Link>
-              <Link className="nav-link" to={"/login"}>
-                Log In
-              </Link>
+              <Link className="nav-link" to={"/sign"}>
+                Login
+                </Link>
+                
+            </div>
             </div>
           </div>
         </div>

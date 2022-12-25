@@ -1,10 +1,11 @@
 import React from "react";
 import sliderImage1 from "../../assets/SliderImages/slider4.jpg";
-import TypewriterEffect from "./TypewriterEffect";
 import Logo from "../../assets/logo.png";
 import app from "../../assets/app.jpg";
-// import './home.css'
+
+
 import Slider from "react-slick";
+
 
 const ReactSlick = () => {
   const settings = {

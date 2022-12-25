@@ -1,7 +1,6 @@
 
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
-import Demo from './assets/Demo';
 import About from './components/About/About';
 import Gallery from './components/Gallery/Gallery';
 // import Footer from './components/Footer/Footer';
@@ -11,7 +10,7 @@ import NgoProfile from './components/NGO/NgoProfile';
 import Login from './components/pages/Login';
 import UserRegistation from './components/pages/UserRegistation';
 
-
+  
 
 function App() {
   return (
