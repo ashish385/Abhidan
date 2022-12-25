@@ -1,7 +1,6 @@
 import React from "react";
 import aboutImage2 from "../../assets/AboutImages/about_layout-reverse.png";
 import aboutImage1 from "../../assets/AboutImages/about-us.jpg";
-import "../Style/about.scss";
 import { Link } from "react-router-dom";
 import AboutSlick from "./AboutSlick";
 import Footer from "../Footer/Footer";

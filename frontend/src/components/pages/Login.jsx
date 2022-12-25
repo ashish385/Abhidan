@@ -12,7 +12,6 @@ import {
 } from "mdb-react-ui-kit";
 import Navbar from "../Navbar/Navbar";
 import { Link } from "react-router-dom";
-import Gallery from "../Gallery/Gallery";
 
 const Login = () => {
 
@@ -39,7 +38,7 @@ const Login = () => {
 
   return (
     <>
-      <Navbar />
+      
       <MDBContainer className="my-2">
         <MDBCard>
           <MDBRow className="g-0">
@@ -128,7 +127,7 @@ const Login = () => {
           </MDBRow>
         </MDBCard>
       </MDBContainer>
-      <Gallery />
+ 
     </>
   );
 };

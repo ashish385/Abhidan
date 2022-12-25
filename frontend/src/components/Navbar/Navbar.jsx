@@ -4,10 +4,10 @@ import { Link } from 'react-router-dom'
 
 const Navbar = () => {
   return (
-      <>
-        <nav className="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
-            <div className="container-fluid">
-            <Link className="navbar-brand" to={"#"}>
+    <>
+      <nav className="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div className="container-fluid">
+          <Link className="navbar-brand" to={"#"}>
             <img src="/" alt="" />
             Abhidan
           </Link>
@@ -37,16 +37,14 @@ const Navbar = () => {
                 NGO's
               </Link>
               <Link className="nav-link" to={"/gallery"}>
-               Gallery
+                Gallery
               </Link>
               <Link className="nav-link" to={"#"}>
                 Blog
               </Link>
-              <Link className="nav-link" to={"/sign"}>
+              <Link className="nav-link" to={"/login"}>
                 Login
-                </Link>
-                
-            </div>
+              </Link>
             </div>
           </div>
         </div>

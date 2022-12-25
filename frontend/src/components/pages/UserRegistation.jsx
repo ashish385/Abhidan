@@ -36,7 +36,7 @@ const UserRegistation = () => {
 
   return (
     <>
-      <Navbar />
+      
       <MDBContainer className="my-2">
         <MDBCard style={{ height: "70" }}>
           <MDBRow className="g-0">

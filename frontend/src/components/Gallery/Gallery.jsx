@@ -1,6 +1,5 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
-import Navbar from '../Navbar/Navbar';
 import './Gallery.css'
 // import img from "https://static.toiimg.com/photo/85301692/85301692.jpg?v=3";
 // import img1 from "https://thumbs.dreamstime.com/b/environment-earth-day-hands-trees-growing-seedlings-bokeh-green-background-female-hand-holding-tree-nature-field-gra-130247647.jpg";
@@ -20,7 +19,7 @@ import './Gallery.css'
 const Gallery = () => {
   return (
     <>
-      <Navbar />
+  
       <div className="container-fluid">
         <div className="GalleryHeading">
           <h1 className="title">Image Gallery</h1>

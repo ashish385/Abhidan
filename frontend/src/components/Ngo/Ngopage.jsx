@@ -1,8 +1,9 @@
 import React from "react";
 import Footer from "../Footer/Footer";
 import Navbar from "../Navbar/Navbar";
-import ReactSlick from "../Slide/ReactSlick";
+
 import { Link } from "react-router-dom";
+import ReactSlick from "../Home/ReactSlick";
 
 const Ngopage = () => {
   const ngoback = {
@@ -37,7 +38,7 @@ const Ngopage = () => {
   console.log(data)
   return (
     <>
-      <Navbar />
+     
       <ReactSlick />
       {/* <div className="container" style={{background:`url('https://kodesolution.com/html/2017/fundpro-html/demo/images/pattern/p26.png')`,border:'1px solid black'}}>
         <div className="row" style={{border:'1px solid black'}}>
