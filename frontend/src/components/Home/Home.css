@@ -1,0 +1,29 @@
+.slideImage{
+    margin: 0;
+    padding: 0;
+    display: block;
+    box-shadow: 0 6px 7px rgba(160, 182, 223, 0.778);
+   
+    
+}
+
+.slideImage  .slideContent{
+    box-sizing: border-box;
+    display: block;
+    border: 2px solid red;
+    background: blue;
+    align-items: center;
+    justify-content: center;
+    text-align: center;width: 50%;
+    margin-left: 12%;
+    margin-top: -400px;
+    
+
+}
+.slideImage .slideContent h1{
+    /* color: white; */
+}
+
+.slideImage .slideContent h4{
+    /* color: white; */
+}

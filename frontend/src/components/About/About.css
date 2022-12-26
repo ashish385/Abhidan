@@ -1,4 +1,6 @@
 .section {
+  margin: 0;
+  padding: 0;
   width: 100%;
   min-height: 100vh;
   background-color: white;
@@ -11,15 +13,15 @@
   padding-top: 100px;
 }
 
-.row1 {
+.section .aboutContainer .row1 {
   box-sizing: border-box;
 }
 
-.colum1 {
+.section .aboutContainer .row1 .colum1 {
   box-sizing: border-box;
 }
 
-.colum2 {
+.section .aboutContainer .row1 .colum2 {
   box-sizing: border-box;
 }
 
@@ -34,7 +36,7 @@
 
 
 .section-2 {
-
+  overflow-y: hidden;
   align-items: center;
   text-align: center;
   background-color: bisque;

@@ -15,8 +15,8 @@ const Home = () => {
 
       <Slider>
         <ReactSlick />
-      </Slider>
-      <About />
+      </Slider> 
+       <About />
 
       <Footer />
     </>

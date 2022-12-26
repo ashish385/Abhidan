@@ -3,6 +3,7 @@ import Slider from "react-slick";
 import Logo from "../../assets/AboutImages/about_2.png";
 import image2 from "../../assets/AboutImages/about.jpg";
 import './About.css'
+import AboutSlickData from '../../DummyData/aboutDummy.json'
 
 
 const images = [Logo, image2, Logo, image2, Logo, image2];
@@ -21,7 +22,7 @@ const AboutSlick = ( ) => {
     autoplay: true,
     cssEase: "linear",
     autoplaySpeed: 1000,
-    pauseOnHover: false,
+    pauseOnHover: true,
     beforeChange: (current, next) => setSlideIndex(next),
     responsive: [
       {
@@ -46,41 +47,39 @@ const AboutSlick = ( ) => {
   };
   return (
     <>
-     
       <div className="section-2">
         <div className="headinpPart">
           <h1 className="slideHeading ">Hello Dosto</h1>
         </div>
-        {}
+
         <div className="SlideBackground">
           <Slider {...settings} className="sliderAbout">
-            
-
-            {images.map((img, index) => {
+            {AboutSlickData.map((data, index) => {
               return (
                 <div className="slideSection" key={index}>
                   <div className="card main-card">
                     <div className="image-content">
                       <span className="overlay"></span>
                       <div className="card-image">
-                        <img key={index} src={img} alt="" className="card-img" />
+                        <img
+                          key={index}
+                          src={data.img}
+                          alt=""
+                          className="card-img"
+                        />
                       </div>
                     </div>
 
                     <div className="card-content">
-                      <h2 className="name">John Doe</h2>
+                      <h2 className="name"> {data.name}</h2>
                       <p className="description">
-                        The lorem text the section that contains header with
-                        having open functionality. Lorem dolor sit amet
-                        consectetur adipisicing elit.
+                        {data.desc}
                       </p>
                     </div>
                   </div>
                 </div>
               );
             })}
-
-          
           </Slider>
         </div>
       </div>
