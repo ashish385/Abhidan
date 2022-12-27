@@ -1,18 +1,10 @@
-import React from "react";
+import React from 'react'
+import './About.css'
 import aboutImage1 from "../../assets/AboutImages/about-us.jpg";
 import { Link } from "react-router-dom";
-import AboutSlick from "./AboutSlick";
-import './About.css'
-import Footer from "../Footer/Footer";
+import AboutSlick from './AboutSlick';
 
-
-
-
-
-const About = () => {
-
-
-
+const AboutHome = () => {
   return (
     <>
       <div className="section">
@@ -32,20 +24,12 @@ const About = () => {
                 </h2>
               </div>
               <p>
-                <strong>Step Forward Serve Huminity Reach Out & Help</strong>
+                <strong>DONATE to NGO of your wish in signle click!</strong>
               </p>
               <p>
                 ABHIDAN is providing an interface between the user who is eager
                 to donate any stuff like food, book, clothes etc.
               </p>
-              <div>
-                <ul>
-                  <li>Have enough food for life</li>
-                  <li>Poor children can return to school.</li>
-                  <li>Most homeless shelters or service organization.</li>
-                  <li>Support poor people to have better jobs.</li>
-                </ul>
-              </div>
               <Link className="btn btn-info" to={"/about"}>
                 More About
               </Link>
@@ -66,14 +50,10 @@ const About = () => {
             </div>
           </div>
         </div>
-      </div>
-
-      <div data-aos="fade-right" data-aos-offset="300" data-aos-duration="2000">
-        <AboutSlick />
-      </div>
-      <Footer />
+          </div>
+          <AboutSlick />
     </>
   );
-};
+}
 
-export default About;
+export default AboutHome

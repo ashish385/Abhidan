@@ -31,8 +31,8 @@ const ReactSlick = () => {
               <div key={index} className="slideImage">
                 <img className="w-100" height="500vh" src={data.img} />
                 <div className="slideContent">
-                  <h1>{data.heading} </h1>
-                  <h4>{data.desc}</h4>
+                  <h5>{data.heading} </h5>
+                  <h2>{data.desc}</h2>
                   <button className="btn btn-primary mt-2">Donate</button>
                 </div>
               </div>
