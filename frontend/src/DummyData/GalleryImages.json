@@ -1,7 +1,7 @@
 [
     {
         "id":1,
-        "img" : "https://static.toiimg.com/photo/85301692/85301692.jpg?v=3"
+        "img" : "https://mygodimages.com/public/uploads/preview/mahadev-on-mountain-images-full-hd-11604599112v3thsxwwsr.jpg"
     },
     {
         "id":2,
@@ -45,6 +45,14 @@
     },
     {
         "id":12,
+        "img" : "https://images.unsplash.com/photo-1574622542118-df5e8727669b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDl8fHxlbnwwfHx8fA%3D%3D&w=1000&q=80"
+    },
+    {
+        "id":13,
+        "img" : "https://thumbs.dreamstime.com/b/environment-earth-day-hands-trees-growing-seedlings-bokeh-green-background-female-hand-holding-tree-nature-field-gra-130247647.jpg"
+    },
+    {
+        "id":14,
         "img" : "https://images.unsplash.com/photo-1574622542118-df5e8727669b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDl8fHxlbnwwfHx8fA%3D%3D&w=1000&q=80"
     }
 ]
