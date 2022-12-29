@@ -8,11 +8,33 @@ import AboutSlickData from '../../DummyData/aboutDummy.json'
 
 const images = [Logo, image2, Logo, image2, Logo, image2];
 
+
+function SampleNextArrow(props) {
+  const { className, style, onClick } = props;
+  return (
+    <div
+      className={className}
+      style={{ ...style, display: "none", background: "red" }}
+      onClick={onClick}
+    />
+  );
+}
+
+function SamplePrevArrow(props) {
+  const { className, style, onClick } = props;
+  return (
+    <div
+      className={className}
+      style={{ ...style, display: "none", background: "green" }}
+      onClick={onClick}
+    />
+  );
+}
+
 const AboutSlick = ( ) => {
-  const [slideIndex, setSlideIndex] = useState(0);
+  
   const settings = {
     className: "center",
-    centerPadding: "60px",
     initialSlide: 3,
     dots: false,
     infinite: true,
@@ -20,10 +42,12 @@ const AboutSlick = ( ) => {
     slidesToShow: 3,
     slidesToScroll: 1,
     autoplay: true,
-    cssEase: "linear",
+    // cssEase: "linear",
     autoplaySpeed: 1000,
     pauseOnHover: true,
-    beforeChange: (current, next) => setSlideIndex(next),
+    nextArrow: <SampleNextArrow />,
+      prevArrow: <SamplePrevArrow />,
+
     responsive: [
       {
         breakpoint: 550,
@@ -35,10 +59,10 @@ const AboutSlick = ( ) => {
         },
       },
       {
-        breakpoint: 768,
+        breakpoint: 1200,
         settings: {
           slidesToShow: 2,
-          slidesToScroll: 2,
+          slidesToScroll: 1,
           infinite: true,
           dots: true,
         },

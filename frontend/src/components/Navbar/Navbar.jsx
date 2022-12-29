@@ -1,8 +1,11 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React from "react";
+import { Link } from "react-router-dom";
 
+function Navbar() {
+  console.log("Navbar");
+  let userData = JSON.parse(localStorage.getItem("user"));
+  console.log(userData);
 
-const Navbar = () => {
   return (
     <>
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
@@ -42,15 +45,19 @@ const Navbar = () => {
               <Link className="nav-link" to={"/blog"}>
                 Blog
               </Link>
-              <Link className="nav-link" to={"/login"}>
-                Login
-              </Link>
+              {userData ? (
+                <Link className="nav-link">LogOut</Link>
+              ) : (
+                <Link className="nav-link" to={"/login"}>
+                  logIn
+                </Link>
+              )}
             </div>
           </div>
         </div>
       </nav>
     </>
   );
-}
+};
 
-export default Navbar
+export default Navbar;

@@ -8,22 +8,25 @@
 }
 
 .slideImage  .slideContent{
-    box-sizing: border-box;
-    display: block;
-    border: 2px solid red;
-    background: blue;
-    align-items: center;
-    justify-content: center;
-    text-align: center;width: 50%;
+    /* box-sizing: border-box;
+    display: block; */
+    /* align-items: center; */
+    /* justify-content: center; */
+    text-align: center;
+    width: 50%;
     margin-left: 12%;
     margin-top: -400px;
     
 
 }
-.slideImage .slideContent h1{
-    /* color: white; */
+.slideImage .slideContent h5{
+    margin-left: 0;
+    padding-left: 0;
+    color: rgb(208, 41, 211);
 }
 
-.slideImage .slideContent h4{
-    /* color: white; */
+.slideImage .slideContent h2{
+    margin-left: 0;
+    padding-left: 0;
+    color: darkgoldenrod;
 }

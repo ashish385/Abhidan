@@ -55,6 +55,15 @@
 "location":"Lucknow",
 "contact": "0000000000",
 "email":"xyz@gmail.com"
+},
+{
+"id": 7,
+"NGO": "ABC",
+"description":"Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deleniti, fuga at! Quis doloremque obcaecati unde pariatur hic temporibus vitae eligendi accusantium ab tenetur animi soluta itaque, adipisci architecto eveniet harum ullam. Necessitatibus fuga ex dignissimos blanditiis sed illum asperiores, voluptatum atque nihil, sint dolore vitae ratione nostrum quibusdam ea explicabo.",
+
+"location":"Lucknow",
+"contact": "0000000000",
+"email":"xyz@gmail.com"
 }
 
 ]

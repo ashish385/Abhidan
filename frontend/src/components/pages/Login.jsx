@@ -11,7 +11,7 @@ import {
   MDBCardImage,
 } from "mdb-react-ui-kit";
 import Navbar from "../Navbar/Navbar";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Login = () => {
 
@@ -21,6 +21,7 @@ const Login = () => {
   }
 
   const [formdata, setFormdata] = useState(initialValue);
+  
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -28,10 +29,17 @@ const Login = () => {
   }
   console.log(formdata);
 
+  const navigate = useNavigate();
+
   const handleSubmit = (e) => {
     console.log("hello vinood");
-    window.localStorage.setItem("currentUser2", JSON.stringify(formdata));
+    window.localStorage.setItem("user", JSON.stringify(formdata));
+
+    navigate('/')
+    console.log("after navigate");
+    
   }
+
 
 
 
