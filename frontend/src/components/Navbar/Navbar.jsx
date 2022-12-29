@@ -39,7 +39,7 @@ const Navbar = () => {
               <Link className="nav-link" to={"/gallery"}>
                 Gallery
               </Link>
-              <Link className="nav-link" to={"#"}>
+              <Link className="nav-link" to={"/blog"}>
                 Blog
               </Link>
               <Link className="nav-link" to={"/login"}>
