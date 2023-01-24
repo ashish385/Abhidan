@@ -1,12 +1,14 @@
 import React from "react";
 import sliderImage1 from "../../assets/SliderImages/slider4.jpg";
-import TypewriterEffect from "./TypewriterEffect";
 import Logo from "../../assets/logo.png";
 import app from "../../assets/app.jpg";
-// import '../Style/Home.css'
-import "../Style/home.scss";
+import './Home.css'
+import homeSlide from '../../DummyData/homeSlideData.json'
+
+
+
 import Slider from "react-slick";
-import About from "../About/About";
+
 
 const ReactSlick = () => {
   const settings = {
@@ -16,26 +18,35 @@ const ReactSlick = () => {
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    // cssEase: "linear",
     autoplaySpeed:1000
   };
 
   return (
     <>
-      <Slider {...settings} >
+      <Slider {...settings}>
+        
+        {
+          homeSlide.map((data, index) => {
+            return (
+              <div key={index} className="slideImage">
+                <img className="w-100" height="500vh" src={data.img} />
+                <div className="slideContent">
+                  <h5>{data.heading} </h5>
+                  <h2>{data.desc}</h2>
+                  <button className="btn btn-primary mt-2">Donate</button>
+                </div>
+              </div>
+            );
+          })
+        }
         <div>
-          <img className="w-100" height='500vh' src={Logo} />
-          <h1 style={{marginTop: "-10rem", color: "white"}}>hello</h1>
-        </div>
-        <div>
-          <img className="w-100" height='500vh' src={app} />
+          <img className="w-100" height="500vh" src={app} />
         </div>
 
         <div>
-          <img className="w-100" height='500vh' src={sliderImage1} />
+          <img className="w-100" height="500vh" src={sliderImage1} />
         </div>
       </Slider>
-      <About />
     </>
   );
 };

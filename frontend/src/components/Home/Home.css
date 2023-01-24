@@ -1,0 +1,32 @@
+.slideImage{
+    margin: 0;
+    padding: 0;
+    display: block;
+    box-shadow: 0 6px 7px rgba(160, 182, 223, 0.778);
+   
+    
+}
+
+.slideImage  .slideContent{
+    /* box-sizing: border-box;
+    display: block; */
+    /* align-items: center; */
+    /* justify-content: center; */
+    text-align: center;
+    width: 50%;
+    margin-left: 12%;
+    margin-top: -400px;
+    
+
+}
+.slideImage .slideContent h5{
+    margin-left: 0;
+    padding-left: 0;
+    color: rgb(208, 41, 211);
+}
+
+.slideImage .slideContent h2{
+    margin-left: 0;
+    padding-left: 0;
+    color: darkgoldenrod;
+}
