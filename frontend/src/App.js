@@ -7,6 +7,7 @@ import Footer from './components/Footer/Footer';
 import Home from './components/Home/Home';
 import Navbar from './components/Navbar/Navbar';
 import How_it_works from './components/How_it_works/HowitWorks';
+import Ngos from './components/NGO\'s/Ngos';
 
 
 
@@ -28,6 +29,10 @@ function App() {
 						element={<About />}
 					/>
 					<Route
+						path='/Ngos'
+						element={<Ngos />}
+					/>
+					<Route
 						path='/demo'
 						element={<Demo />}
 					/>
@@ -35,7 +40,10 @@ function App() {
 						path='/How_it_Works'
 						element={<How_it_works />}
 					/>
-					
+					<Route
+						path='/Footer'
+						element={<Footer />}
+					/>
 				</Routes>
 			</BrowserRouter>
 			{/* <Footer/> */}

@@ -3,8 +3,8 @@
 .how-it-works {
 	background-color: #e9efc0;
 	min-height: 99vh;
-  
-    display: flex;
+
+	display: flex;
 	justify-content: center;
 	align-items: center;
 	color: black;
@@ -52,7 +52,6 @@
 	box-sizing: border-box;
 }
 
-
 .donor {
 	display: flex;
 	justify-content: center;
@@ -60,16 +59,13 @@
 	font-weight: bolder;
 	gap: 10px;
 }
-.ngo{
-    
+.ngo {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	font-weight: bolder;
 	gap: 10px;
 }
-
-
 
 .buttons {
 	display: flex;
@@ -96,6 +92,7 @@
 	height: 310px;
 	padding: 10px;
 	border-radius: 15px;
+	animation: drop-in 1000ms;
 }
 
 img {
@@ -119,31 +116,39 @@ img {
 	transform: scale(1.03);
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
-@media screen and (max-width: 480px){
-   .how-it-works{
-    height: 1500px;
-  width: max-content;
-    	justify-content: center;
-	align-items: center;
-   }
-   .container{
-    gap: 15px;
-	
-	justify-content: center;
-	align-items: center;
+@media screen and (max-width: 480px) {
+	.how-it-works {
+		height: 1500px;
+		width: max-content;
+		justify-content: center;
+		align-items: center;
+	}
+	.container {
+		gap: 15px;
 
-    width: auto;
+		justify-content: center;
+		align-items: center;
 
-   
-   }
-   .donor{
-    display: flex;
-	justify-content: center;
-	align-items: center;
-    flex-direction: column;
-   }
-   .ngo{
-    display: flex;
-    flex-direction: column;
-   }
+		width: auto;
+	}
+	.donor {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+	}
+	.ngo {
+		display: flex;
+		flex-direction: column;
+	}
+}
+@keyframes drop-in {
+	from {
+		transform: rotate(-30deg) translateY(-100%);
+		opacity: 0;
+	}
+	to {
+		transform: rotate(0deg) translateY(0%);
+		opacity: 1;
+	}
 }

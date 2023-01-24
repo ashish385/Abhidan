@@ -40,7 +40,7 @@ const Navbar = () => {
 							</Link>
 							<Link
 								className='nav-link'
-								to={'#'}>
+								to={'/Ngos'}>
 								NGO's
 							</Link>
 							<Link

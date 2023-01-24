@@ -6,29 +6,29 @@ import './HowitWorks.css';
 import slider1 from '../images/slider1.svg';
 import slider2 from '../images/slider2.svg';
 import slider3 from '../images/slider3.svg';
-import slider4 from '../images/slider4.svg';
+import slider4 from '../images/slider4.svg';	
 import slider5 from '../images/slider5.svg';
 import slider6 from '../images/slider6.svg';
 import slider8 from '../images/slider8.svg';
-const responsive = {
-	superLargeDesktop: {
-		// the naming can be any, depends on you.
-		breakpoint: { max: 4000, min: 3000 },
-		items: 5,
-	},
-	desktop: {
-		breakpoint: { max: 3000, min: 1024 },
-		items: 3,
-	},
-	tablet: {
-		breakpoint: { max: 1024, min: 464 },
-		items: 2,
-	},
-	mobile: {
-		breakpoint: { max: 464, min: 0 },
-		items: 1,
-	},
-};
+// const responsive = {
+// 	superLargeDesktop: {
+// 		// the naming can be any, depends on you.
+// 		breakpoint: { max: 4000, min: 3000 },
+// 		items: 5,
+// 	},
+// 	desktop: {
+// 		breakpoint: { max: 3000, min: 1024 },
+// 		items: 3,
+// 	},
+// 	tablet: {
+// 		breakpoint: { max: 1024, min: 464 },
+// 		items: 2,
+// 	},
+// 	mobile: {
+// 		breakpoint: { max: 464, min: 0 },
+// 		items: 1,
+// 	},
+// };
 const HowitWorks = () => {
 	const [donors, setDonors] = useState(true);
 
