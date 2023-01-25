@@ -3,7 +3,7 @@
     padding: 0;
     display: block;
     box-shadow: 0 6px 7px rgba(160, 182, 223, 0.778);
-   
+   height: 90vh;;
     
 }
 
@@ -12,16 +12,20 @@
     display: block; */
     /* align-items: center; */
     /* justify-content: center; */
-    text-align: center;
+    /* text-align: center; */
     width: 50%;
     margin-left: 12%;
-    margin-top: -400px;
+    margin-top: -600px;
+    
     
 
 }
-.slideImage .slideContent h5{
+.slideContent h1{
     margin-left: 0;
     padding-left: 0;
+    border:2px solid black;
+    border-radius: 5px 5px;
+  background-color: brown;
     color: rgb(208, 41, 211);
 }
 

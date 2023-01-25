@@ -2,6 +2,11 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 function Navbar() {
+
+  const logOut =()=>{
+    window.localStorage.clear();
+    window.location.reload();
+  }
   console.log("Navbar");
   let userData = JSON.parse(localStorage.getItem("user"));
   console.log(userData);
@@ -46,7 +51,7 @@ function Navbar() {
                 Blog
               </Link>
               {userData ? (
-                <Link className="nav-link">LogOut</Link>
+                <Link className="nav-link" onClick={logOut}>LogOut</Link>
               ) : (
                 <Link className="nav-link" to={"/login"}>
                   logIn
