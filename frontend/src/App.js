@@ -4,11 +4,10 @@ import './App.css';
 import About from './components/About/About';
 import Blog from './components/Blog/Blog';
 import Gallery from './components/Gallery/Gallery';
-// import Footer from './components/Footer/Footer';
 import Home from './components/Home/Home';
+import HowitWorks from './components/How_it_Works/HowitWorks';
+
 import Navbar from './components/Navbar/Navbar';
-import How_it_works from './components/How_it_works/HowitWorks';
-import Ngos from './components/NGO\'s/Ngos';
 import Ngopage from './components/Ngo/Ngopage';
 
 import Login from './components/pages/Login';
@@ -32,6 +31,7 @@ function App() {
           <Route path='/ngoprofile' element={<Ngopage />} />
           <Route path='/gallery' element={<Gallery/> } />
           <Route path='/blog' element={<Blog/> } />
+          <Route path='/howitworks' element={<HowitWorks/> } />
         </Routes>
       </BrowserRouter>
      
