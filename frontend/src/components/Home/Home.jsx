@@ -8,7 +8,8 @@ import Slider from "react-slick";
 import Footer from "../Footer/Footer";
 // import About from "../About/About";
 import AboutHome from "../About/AboutHome";
-
+import HowitWorks from "../How_it_Works/HowitWorks"
+import AboutSlick from '../About/AboutSlick';
 const Home = () => {
   return (
     <>
@@ -17,8 +18,10 @@ const Home = () => {
       <Slider>
         <ReactSlick />
       </Slider> 
-       <AboutHome />
-
+      <AboutHome />
+       <HowitWorks/>
+       
+<AboutSlick/>
       <Footer />
     </>
   );

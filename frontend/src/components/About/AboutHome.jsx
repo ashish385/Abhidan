@@ -2,7 +2,7 @@ import React from 'react'
 import './About.css'
 import aboutImage1 from "../../assets/AboutImages/about-us.jpg";
 import { Link } from "react-router-dom";
-import AboutSlick from './AboutSlick';
+
 
 const AboutHome = () => {
   return (
@@ -51,7 +51,7 @@ const AboutHome = () => {
           </div>
         </div>
           </div>
-          <AboutSlick />
+          
     </>
   );
 }

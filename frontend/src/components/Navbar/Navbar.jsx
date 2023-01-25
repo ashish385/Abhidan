@@ -64,11 +64,7 @@ function Navbar() {
 								to={'/blog'}>
 								Blog
 							</Link>
-							<Link
-								className='nav-link'
-								to={'/howitworks'}>
-								How it works
-							</Link>
+							
 							{userData ? (
 								<Link className='nav-link'>LogOut</Link>
 							) : (
