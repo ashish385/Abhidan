@@ -15,9 +15,10 @@ const Home = () => {
     <>
       
 
-      <Slider>
+      {/* <Slider>
         <ReactSlick />
-      </Slider> 
+      </Slider>  */}
+      <ReactSlick />
       <AboutHome />
        <HowitWorks/>
        
