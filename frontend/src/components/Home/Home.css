@@ -1,8 +1,10 @@
 .slideImage{
     margin: 0;
     padding: 0;
-    display: block;
+    /* display: block; */
     box-shadow: 0 6px 7px rgba(160, 182, 223, 0.778);
+    height: 90vh;
+    
    
     
 }
@@ -12,10 +14,10 @@
     display: block; */
     /* align-items: center; */
     /* justify-content: center; */
-    text-align: center;
+    /* text-align: center; */
     width: 50%;
     margin-left: 12%;
-    margin-top: -400px;
+    margin-top: -500px;
     
 
 }

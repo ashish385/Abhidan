@@ -2,6 +2,13 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 function Navbar() {
+
+  const handleSubmit = (e) => {
+    window.localStorage.clear();
+    window.location.reload();
+    
+  }
+
   console.log("Navbar");
   let userData = JSON.parse(localStorage.getItem("user"));
   console.log(userData);
@@ -23,7 +30,6 @@ function Navbar() {
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
-            <span className="navbar-toggler-icon" />
           </button>
           <div
             className="collapse navbar-collapse justify-content-center"
@@ -46,12 +52,17 @@ function Navbar() {
                 Blog
               </Link>
               {userData ? (
-                <Link className="nav-link">LogOut</Link>
+                <Link className="nav-link" onClick={handleSubmit}>
+                  LogOut
+                </Link>
               ) : (
                 <Link className="nav-link" to={"/login"}>
                   logIn
                 </Link>
               )}
+              <div className="nn" style={{marginLeft:"100px"}}>
+                <Link>hello</Link>
+              </div>
             </div>
           </div>
         </div>

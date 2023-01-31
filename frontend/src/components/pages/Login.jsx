@@ -35,7 +35,9 @@ const Login = () => {
     console.log("hello vinood");
     window.localStorage.setItem("user", JSON.stringify(formdata));
 
-    navigate('/')
+    window.location.assign("/");
+
+    // navigate('/')
     console.log("after navigate");
     
   }

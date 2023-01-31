@@ -29,7 +29,7 @@ const ReactSlick = () => {
           homeSlide.map((data, index) => {
             return (
               <div key={index} className="slideImage">
-                <img className="w-100" height="500vh" src={data.img} />
+                <img className="w-100"  src={data.img} />
                 <div className="slideContent">
                   <h5>{data.heading} </h5>
                   <h2>{data.desc}</h2>
@@ -39,13 +39,13 @@ const ReactSlick = () => {
             );
           })
         }
-        <div>
+        {/* <div>
           <img className="w-100" height="500vh" src={app} />
         </div>
 
         <div>
           <img className="w-100" height="500vh" src={sliderImage1} />
-        </div>
+        </div> */}
       </Slider>
     </>
   );
