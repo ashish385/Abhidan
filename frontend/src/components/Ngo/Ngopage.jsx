@@ -7,9 +7,11 @@ import NgoData from '../../DummyData/NGODummyData.json'
 const Ngopage = () => {
   const ngoback = {
     background: `url('https://kodesolution.com/html/2017/fundpro-html/demo/images/pattern/p26.png')`,
-    // border: "1px solid black",
+     border: "1px solid black",
     borderRadius: "5px",
-     boxShadow: "0 6px 7px rgba(160, 182, 223, 0.778)"
+     boxShadow: "0 6px 7px rgba(160, 182, 223, 0.778)",
+     
+     
   };
   const ngoName = {
     fontFamily: "monospace",
@@ -22,6 +24,7 @@ const Ngopage = () => {
     margin: "10px 0px",
   };
   const ngoimg = {
+    width:"100%",
     borderRadius: "20px 20px",
    boxSizing:"border-box",
    
@@ -34,7 +37,7 @@ const Ngopage = () => {
       <ReactSlick />
       
 
-      {
+        {
         NgoData.map((data, index) => {
           return (
             <div
@@ -44,14 +47,14 @@ const Ngopage = () => {
               key={index}
             >
               <div className="container mt-5" style={ngoback}>
-                <div className="row mb-50">
-                  <div className="col-md-4 mt-2"  >
+                <div className="row  ">
+                  <div className="col-md-4" style={{ marginTop: "15px " }}  >
                     <img
                       src={
                         "https://kodesolution.com/html/2017/fundpro-html/demo/images/gallery/gallery-lg1.jpg"
                       }
                       style={ngoimg}
-                      width="100%"
+                      
                     />
                   </div>
                   <div className="col-md-8">
@@ -76,11 +79,11 @@ const Ngopage = () => {
             </div>
           );
         })
-      }
+      }  
 
-      <div data-aos="fade-right" data-aos-offset="300" data-aos-duration="3000">
+      {/* <div data-aos="fade-right" data-aos-offset="300" data-aos-duration="3000">
         <div className="container mt-5" style={ngoback}>
-          <div className="row mb-50">
+          <div className="row ">
             <div className="col-md-4" style={{ marginTop: "15px " }}>
               <img
                 src={
@@ -114,21 +117,7 @@ const Ngopage = () => {
             </div>
           </div>
         </div>
-      </div>
-
-
-
-
-
-      
-
-
-
-
-
-
-
-
+      </div> */}
 
 
       <Footer />
