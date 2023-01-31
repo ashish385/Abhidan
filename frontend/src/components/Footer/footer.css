@@ -1,4 +1,4 @@
-.footer {
+/* .footer {
   width: 100%;
 
   bottom: 0;
@@ -54,7 +54,7 @@ footer hr{
 
 .footer{
     width:100%;
-    /* position: absolute; */
+   
     bottom:0;
     background:linear-gradient(to right, #00093c,#2d0b00 );
     color: #fff;
@@ -98,4 +98,4 @@ form input{
     color:#ccc;
     border:0;
     outline: none;
-}
+} */

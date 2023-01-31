@@ -1,3 +1,5 @@
+/* home slider css */
+
 .carousel-inner::before {
   content: "";
   position: absolute;
@@ -43,5 +45,202 @@
     width: 100%;
     line-height: 1.6;
     font-size: 12px;
+  }
+}
+
+/* circle----------- css */
+/* .circleContainer {
+  background-image: url(../../assets/circleback.png);
+  background-color: #efefef;
+  
+} */
+.sectiontitle {
+  text-transform: capitalize;
+  font-size: 15px;
+  font-weight: 600;
+  background-color: #eb9309;
+  border-radius: 10px 10px;
+  padding: 5px;
+}
+
+.sectionTitle_big {
+  text-transform: uppercase;
+  line-height: 1.19;
+  font-size: 45px;
+  color: #000;
+  margin-top: 20px;
+}
+
+.circle-1 {
+  position: relative;
+  display: block;
+  margin: 2em 0;
+  padding: 1em;
+  text-align: center;
+  border: 1px solid #efefef;
+  animation: bounce 3s;
+  animation-direction: alternate;
+  animation-timing-function: cubic-bezier(0.5, 0.05, 1, 0.5);
+  animation-iteration-count: infinite;
+}
+.circle-1::after {
+  content: "";
+  display: block;
+  padding-bottom: 100%;
+  width: 100%;
+  height: 0;
+  border-radius: 50%;
+  background: #ffffff;
+}
+.circle-2 {
+  position: relative;
+  display: block;
+  margin: 2em 0;
+  padding: 1em;
+  text-align: center;
+  border: 1px solid #efefef;
+  animation: bounce 4s;
+  animation-direction: alternate;
+  animation-timing-function: cubic-bezier(0.5, 0.05, 1, 0.5);
+  animation-iteration-count: infinite;
+}
+
+.circle-2::after {
+  content: "";
+  display: block;
+  padding-bottom: 100%;
+  width: 100%;
+  height: 0;
+  border-radius: 50%;
+  background: #ffffff;
+}
+.circle-3 {
+  position: relative;
+  display: block;
+  margin: 2em 0;
+  padding: 1em;
+  text-align: center;
+  border: 1px solid #efefef;
+  animation: bounce 5s;
+  animation-direction: alternate;
+  animation-timing-function: cubic-bezier(0.5, 0.05, 1, 0.5);
+  animation-iteration-count: infinite;
+}
+.circle-3::after {
+  content: "";
+  display: block;
+  padding-bottom: 100%;
+  width: 100%;
+  height: 0;
+  border-radius: 50%;
+  background: #ffffff;
+}
+.circle-4 {
+  position: relative;
+  display: block;
+
+  padding: 1em;
+  text-align: center;
+  border: 1px solid #efefef;
+}
+.circle-4::after {
+  content: "";
+  display: block;
+  padding-bottom: 100%;
+  width: 100%;
+  height: 0;
+  border-radius: 50%;
+  background: #ffffff;
+}
+.circle-5 {
+  position: relative;
+  display: block;
+
+  padding: 1em;
+  text-align: center;
+  border: 1px solid #efefef;
+}
+.circle-5::after {
+  content: "";
+  display: block;
+  padding-bottom: 100%;
+  width: 100%;
+  height: 0;
+  border-radius: 50%;
+  background: #ffffff;
+}
+
+.circle-inner {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.circle-wrapper {
+  display: table;
+  width: 100%;
+  height: 100%;
+}
+
+.circle-content {
+  display: table-cell;
+  padding: 1rem;
+  vertical-align: middle;
+  font-size: 25px;
+}
+
+@keyframes bounce {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(0, 200px, 0);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .circle-content {
+    font-size: 20px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .circle-content {
+    font-size: 22px;
+  }
+}
+/* sponsor heading line and slider css---- */
+.spon_heading{
+  display: flex;
+  flex-direction: row;
+}
+.spon_heading:before,.spon_heading:after{
+  content: "";
+  flex: 1 1;
+  border-bottom: 1px solid black;
+  margin: auto;
+}
+ .spon_slider{
+  height: 100px;
+  margin: auto;
+  overflow: hidden;
+  position: relative;
+  width: auto;
+  
+}
+.spon_slider .spon-track{
+  animation:scroll 40s linear infinite;
+  display: flex;
+  width:calc(250 * 14);
+} 
+
+ @keyframes scroll{
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-250px * 7));
   }
 }
