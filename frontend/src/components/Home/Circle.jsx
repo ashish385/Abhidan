@@ -195,25 +195,25 @@ const Circle = () => {
           <div className="spon_slider">
             <div className="spon-track">
               <div className="spon_img">
-                <img src={sponimg1}style={{ height:"100px",width:"200px"}} alt="sponImage" />
+                <img src={sponimg1} alt="sponImage" />
               </div>
               <div className="spon_img">
-                <img src={sponimg1} style={{ height:"100px",width:"250px"}}alt="sponImage" />
+                <img src={sponimg1}alt="sponImage" />
               </div>
               <div className="spon_img">
-                <img src={sponimg1}style={{ height:"100px",width:"250px"}} alt="sponImage" />
+                <img src={sponimg1} alt="sponImage" />
               </div>
               <div className="spon_img">
-                <img src={sponimg1}style={{ height:"100px",width:"250px"}} alt="sponImage" />
+                <img src={sponimg1} alt="sponImage" />
               </div>
               <div className="spon_img">
-                <img src={sponimg1}style={{ height:"100px",width:"250px"}} alt="sponImage" />
+                <img src={sponimg1}alt="sponImage" />
               </div>
               <div className="spon_img">
-                <img src={sponimg1}style={{ height:"100px",width:"250px"}} alt="sponImage" />
+                <img src={sponimg1} alt="sponImage" />
               </div>
               <div className="spon_img">
-                <img src={sponimg1}style={{ height:"100px",width:"250px"}} alt="sponImage" />
+                <img src={sponimg1}alt="sponImage" />
               </div>
              
             </div>
