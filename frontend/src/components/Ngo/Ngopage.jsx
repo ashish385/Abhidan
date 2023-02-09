@@ -8,11 +8,14 @@ const Ngopage = () => {
   const ngoback = {
     background: `url('https://kodesolution.com/html/2017/fundpro-html/demo/images/pattern/p26.png')`,
      border: "1px solid black",
-    borderRadius: "5px",
+    borderRadius: "1rem",
      boxShadow: "0 6px 7px rgba(160, 182, 223, 0.778)",
      
      
   };
+  const ngoBackground = {
+		background: '#bbe3f0',
+	};
   const ngoName = {
     fontFamily: "monospace",
     fontSize: "30px",
@@ -26,62 +29,67 @@ const Ngopage = () => {
   const ngoimg = {
     width:"100%",
     borderRadius: "20px 20px",
-   boxSizing:"border-box",
+    boxSizing: "border-box",
+ 
    
   };
 
  
   return (
-    <>
-     
-      <ReactSlick />
-      
+		<>
+			<div style={{ backgroundColor: '#ede7d1' }}>
+				<ReactSlick />
 
-        {
-        NgoData.map((data, index) => {
-          return (
-            <div
-              data-aos="fade-right"
-              data-aos-offset="300"
-              data-aos-duration="2000"
-              key={index}
-            >
-              <div className="container mt-5" style={ngoback}>
-                <div className="row  ">
-                  <div className="col-md-4" style={{ marginTop: "15px " }}  >
-                    <img
-                      src={
-                        "https://kodesolution.com/html/2017/fundpro-html/demo/images/gallery/gallery-lg1.jpg"
-                      }
-                      style={ngoimg}
-                      
-                    />
-                  </div>
-                  <div className="col-md-8">
-                    <h3 className="ngo-name mt-4" style={ngoName}>
-                      {data.NGO}
-                    </h3>
-                    <ul className="ngo-det" style={{ color: "#666666" }}>
-                      <li>{data.location}</li>
-                      <li>{data.contact }</li>
-                    </ul>
-                    <p style={ngoP}>
-                      {data.description}
-                    </p>
-                    <a href="#">
-                      <button type="submit" className="btn btn-danger mb-4">
-                        Donate
-                      </button>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          );
-        })
-      }  
+				{NgoData.map((data, index) => {
+					return (
+						<div
+							data-aos='fade-right'
+							data-aos-offset='300'
+							data-aos-duration='2000'
+							key={index}>
+							<div
+								className='container mt-5'
+								style={ngoback}>
+								<div className='row  '>
+									<div
+										className='col-md-4'
+										style={{ marginTop: '15px ', marginBottom: '15px' }}>
+										<img
+											src={
+												'https://kodesolution.com/html/2017/fundpro-html/demo/images/gallery/gallery-lg1.jpg'
+											}
+											style={ngoimg}
+										/>
+									</div>
+									<div className='col-md-8'>
+										<h3
+											className='ngo-name mt-4'
+											style={ngoName}>
+											{data.NGO}
+										</h3>
+										<ul
+											className='ngo-det'
+											style={{ color: '#666666' }}>
+											<li>{data.location}</li>
+											<li>{data.contact}</li>
+										</ul>
+										<p style={ngoP}>{data.description}</p>
+										<a href='#'>
+											<button
+												type='submit'
+												className='btn btn-danger mb-4'>
+												Donate
+											</button>
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					);
+				})}
+			</div>
 
-      {/* <div data-aos="fade-right" data-aos-offset="300" data-aos-duration="3000">
+			{/* <div data-aos="fade-right" data-aos-offset="300" data-aos-duration="3000">
         <div className="container mt-5" style={ngoback}>
           <div className="row ">
             <div className="col-md-4" style={{ marginTop: "15px " }}>
@@ -119,10 +127,9 @@ const Ngopage = () => {
         </div>
       </div> */}
 
-
-      <Footer />
-    </>
-  );
+			<Footer />
+		</>
+	);
 };
 
 export default Ngopage;
