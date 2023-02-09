@@ -3,7 +3,7 @@ import aboutImage1 from "../../assets/AboutImages/about-us.jpg";
 import { Link } from "react-router-dom";
 import AboutSlick from "./AboutSlick";
 import './About.css'
-import Footer from "../Footer/Footer";
+
 
 
 
@@ -80,7 +80,7 @@ const About = () => {
       <div data-aos="fade-right" data-aos-offset="300" data-aos-duration="2000">
         <AboutSlick />
       </div>
-      <Footer />
+   
     </>
   );
 };

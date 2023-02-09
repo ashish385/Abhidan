@@ -8,8 +8,8 @@ import Home from './components/Home/Home';
 import HowitWorks from './components/How_it_Works/HowitWorks';
 
 import Navbar from './components/Navbar/Navbar';
-import Ngopage from "./components/NGO/Ngopage"
-
+import Ngopage from "./components/Ngo/Ngopage.jsx";
+import Footer from './components/Footer/Footer';
 import Login from './components/pages/Login';
 import UserRegistation from './components/pages/UserRegistation';
 
@@ -33,6 +33,7 @@ function App() {
           <Route path='/blog' element={<Blog/> } />
           <Route path='/howitworks' element={<HowitWorks/> } />
         </Routes>
+        <Footer/>
       </BrowserRouter>
      
       </div>

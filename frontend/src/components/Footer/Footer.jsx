@@ -138,7 +138,7 @@ const Footer = () => {
 							</div>
 							<div className='col-md-9 col-sm-12'>
 								<section class=''>
-									<form action=''>
+									<form className='form-button'>
 										<div class='row d-flex justify-content-center'>
 											<div class='col-auto'>
 												<p class='pt-2'>
@@ -147,7 +147,7 @@ const Footer = () => {
 											</div>
 
 											<div class='col-md-4 col-12'>
-												<div class='form-outline form-white mb-4'>
+												<div class=' mb-4'>
 													<input
 														type='email'
 														id='form5Example21'
@@ -162,7 +162,8 @@ const Footer = () => {
 												<button
 													onClick={validateEmailHandler}
 													type='submit'
-													class='btn btn-outline-light mb-4'>
+													
+													class='btn btn-outline-light mb-4 '>
 													Subscribe
 												</button>
 											</div>

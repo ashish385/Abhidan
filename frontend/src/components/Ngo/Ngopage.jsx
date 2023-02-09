@@ -1,5 +1,5 @@
 import React from "react";
-import Footer from "../Footer/Footer";
+
 
 import ReactSlick from "../Home/ReactSlick";
 import NgoData from '../../DummyData/NGODummyData.json'
@@ -127,7 +127,7 @@ const Ngopage = () => {
         </div>
       </div> */}
 
-			<Footer />
+			
 		</>
 	);
 };
