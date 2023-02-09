@@ -11,6 +11,7 @@
   font-size: 1rem;
   font-weight: 700;
   width: 100%;
+  overflow-x: hidden;
 }
 
 .subcontainer {
@@ -97,7 +98,7 @@
   margin-bottom: 0.7rem;
   max-width: 20rem;
   min-width: 1rem;
-
+color: #79cbeb;
   display: flex;
   flex-direction: column;
   justify-content: center;
