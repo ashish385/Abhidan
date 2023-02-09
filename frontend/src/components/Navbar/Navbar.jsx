@@ -66,7 +66,7 @@ function Navbar() {
 							</Link>
 							
 							{userData ? (
-								<Link className='nav-link'>LogOut</Link>
+								<Link className='nav-link' onClick={logOut} >LogOut</Link>
 							) : (
 								<Link
 									className='nav-link'
