@@ -233,7 +233,7 @@
 .spon_slider .spon-track{
   animation:scroll 40s linear infinite;
   display: flex;
-  width:calc(250 * 14);
+ 
 } 
 
  @keyframes scroll{
