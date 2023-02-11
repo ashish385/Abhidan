@@ -4,6 +4,7 @@ import Logo from "../../assets/AboutImages/about_2.png";
 import image2 from "../../assets/AboutImages/about.jpg";
 import './About.css'
 import AboutSlickData from '../../DummyData/aboutDummy.json'
+import Footer from "../Footer/Footer";
 
 
 const images = [Logo, image2, Logo, image2, Logo, image2];
@@ -71,9 +72,11 @@ const AboutSlick = ( ) => {
   };
   return (
     <>
-      <div className="section-2">
+      <div className="section-2" >
         <div className="headinpPart">
-          <h1 className="slideHeading ">Hello Dosto</h1>
+          <h1 className="slideHeading " data-aos="fade-top"
+              data-aos-offset="300"
+              data-aos-duration="2000">testimonials </h1>
         </div>
 
         <div className="SlideBackground">
@@ -95,10 +98,8 @@ const AboutSlick = ( ) => {
                     </div>
 
                     <div className="card-content">
-                      <h2 className="name"> {data.name}</h2>
-                      <p className="description">
-                        {data.desc}
-                      </p>
+                      <h5 className="name"> {data.name}</h5>
+                      <p className="description">{data.desc}</p>
                     </div>
                   </div>
                 </div>
@@ -107,6 +108,7 @@ const AboutSlick = ( ) => {
           </Slider>
         </div>
       </div>
+      <Footer />
     </>
   );
 };

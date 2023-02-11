@@ -31,7 +31,8 @@ const UserRegistation = () => {
 
   const handleSubmit = () => {
     console.log("hello Vinood");
-    window.localStorage.setItem("currentUser2", JSON.stringify(formdata));
+    window.localStorage.setItem("currentUser", JSON.stringify(formdata));
+    window.location.assign("/login");
   };
 
   return (

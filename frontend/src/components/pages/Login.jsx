@@ -33,7 +33,7 @@ const Login = () => {
 
   const handleSubmit = (e) => {
     console.log("hello vinood");
-    window.localStorage.grtItem("user", JSON.stringify(formdata));
+    window.localStorage.getItem("currentUser", JSON.stringify(formdata));
 
    window.location.assign('/');
     

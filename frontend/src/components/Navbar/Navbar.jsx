@@ -8,7 +8,7 @@ function Navbar() {
     window.location.reload();
   }
   console.log("Navbar");
-  let userData = JSON.parse(localStorage.getItem("user"));
+  let userData = JSON.parse(localStorage.getItem("currentUser"));
   console.log(userData);
 
   return (
@@ -23,7 +23,8 @@ function Navbar() {
 							alt=''
 						/>
 						Abhidan
-					</Link>
+				  </Link>
+				  
 					<button
 						className='navbar-toggler'
 						type='button'
@@ -33,7 +34,8 @@ function Navbar() {
 						aria-expanded='false'
 						aria-label='Toggle navigation'>
 						<span className='navbar-toggler-icon' />
-					</button>
+				  </button>
+				  
 					<div
 						className='collapse navbar-collapse justify-content-center'
 						id='navbarNavAltMarkup'>
@@ -65,8 +67,10 @@ function Navbar() {
 								Blog
 							</Link>
 							
-							{userData ? (
-								<Link className='nav-link' onClick={logOut} >LogOut</Link>
+						  {userData ? (
+							  
+								  <Link className='nav-link' onClick={logOut}  >LogOut</Link>
+								 
 							) : (
 								<Link
 									className='nav-link'
@@ -74,8 +78,10 @@ function Navbar() {
 									logIn
 								</Link>
 							)}
-						</div>
-					</div>
+					  </div>
+					  
+				  </div>
+				  
 				</div>
 			</nav>
 		</>
