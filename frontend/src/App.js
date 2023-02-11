@@ -34,7 +34,7 @@ function App() {
           <Route path='/blog' element={<Blog/> } />
           <Route path='/howitworks' element={<HowitWorks/> } />
         </Routes>
-        <Footer/>
+        {/* <Footer/> */}
       </BrowserRouter>
      
       </div>

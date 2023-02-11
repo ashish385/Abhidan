@@ -19,7 +19,7 @@ const Home = () => {
       <Circle />
       <HowitWorks />
       <AboutSlick />
-      {/* <Footer /> */}
+      <Footer />
     </>
   );
 };
