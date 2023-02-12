@@ -3,7 +3,8 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import '../Footer/footer.css';
-import logo from "/Abhidan-master/frontend/src/assets/logo-abhidan.png"
+// import logo from "../../assets/workitimages/logo-abhidan.png";
+// import logo from "/Abhidan-master/frontend/src/assets/logo-abhidan.png";
 
 
 import {
@@ -128,7 +129,7 @@ const Footer = () => {
 									<Link to={'#'}>
 										<img
 											className='footer-img-logo'
-											src={logo}
+											// src={logo}
 											alt='dd'
 											style={{ width: '12rem' }}
 										/>
@@ -163,7 +164,7 @@ const Footer = () => {
 													onClick={validateEmailHandler}
 													type='submit'
 													
-													class='btn btn-outline-light mb-4 '>
+													class='btn btn-danger mb-4 '>
 													Subscribe
 												</button>
 											</div>
