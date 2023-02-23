@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 import './Gallery.css';
 import Images from '../../DummyData/GalleryImages.json'
+import Footer from '../Footer/Footer';
 
 
 const Gallery = () => {
@@ -21,6 +22,7 @@ const Gallery = () => {
           })}
         </div>
       </div>
+      <Footer />
     </>
   );
 }

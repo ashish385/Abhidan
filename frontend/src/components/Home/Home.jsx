@@ -18,7 +18,6 @@ const Home = () => {
       <AboutHome />
       <Circle />
       <HowitWorks />
-
       <AboutSlick />
       <Footer />
     </>
