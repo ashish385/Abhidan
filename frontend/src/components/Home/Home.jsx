@@ -20,7 +20,7 @@ const Home = () => {
       <HowitWorks />
 
       <AboutSlick />
-      {/* <Footer /> */}
+      <Footer />
     </>
   );
 };
