@@ -8,7 +8,7 @@ import Home from './components/Home/Home';
 import HowitWorks from './components/How_it_Works/HowitWorks';
 
 import Navbar from './components/Navbar/Navbar';
-import Ngopage from "./components/NGO/Ngopage"
+import Ngopage from "./components/Ngo/Ngopage"
 
 import Login from './components/pages/Login';
 import UserRegistation from './components/pages/UserRegistation';
@@ -28,7 +28,7 @@ function App() {
           {/* <Route path='/demo' element={<Demo/>} /> */}
           <Route path='/signup' element={<UserRegistation />} />
           <Route path='/login' element={<Login />} />
-          <Route path='/ngoprofile' element={<Ngopage />} />
+          <Route path='/ngo' element={<Ngopage />} />
           <Route path='/gallery' element={<Gallery/> } />
           <Route path='/blog' element={<Blog/> } />
           <Route path='/howitworks' element={<HowitWorks/> } />
