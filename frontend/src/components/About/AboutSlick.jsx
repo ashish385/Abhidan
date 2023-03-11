@@ -108,7 +108,7 @@ const AboutSlick = ( ) => {
           </Slider>
         </div>
       </div>
-      <Footer />
+      
     </>
   );
 };

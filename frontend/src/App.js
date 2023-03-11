@@ -28,7 +28,7 @@ function App() {
           {/* <Route path='/demo' element={<Demo/>} /> */}
           <Route path='/signup' element={<UserRegistation />} />
           <Route path='/login' element={<Login />} />
-          <Route path='/ngoprofile' element={<Ngopage />} />
+          <Route path='/ngo' element={<Ngopage />} />
           <Route path='/gallery' element={<Gallery/> } />
           <Route path='/blog' element={<Blog/> } />
           <Route path='/howitworks' element={<HowitWorks/> } />
