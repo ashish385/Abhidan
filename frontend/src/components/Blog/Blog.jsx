@@ -1,7 +1,6 @@
 import React from "react";
 import blogimg from "../../assets/1.jpg";
 import { FaHeart, FaComment } from "react-icons/fa";
-import Footer from "../Footer/Footer";
 const Blog = () => {
 
 
@@ -137,7 +136,7 @@ const Blog = () => {
           </div>
         </div>
       </div>
-      <Footer />
+
     </>
   );
 
