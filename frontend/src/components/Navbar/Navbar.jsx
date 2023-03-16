@@ -5,7 +5,7 @@ import "./Navbar.css";
 const NavItems = [
   { id: 1, title: "HOME", link: "/" },
   { id: 2, title: "ABOUT", link: "/about" },
-  { id: 3, title: "NGO", link: "/ngo" },
+  { id: 3, title: "NGO", link: "/ngoprofile" },
   { id: 4, title: "BLOG", link: "/blog" },
   { id: 5, title: "GALLERY", link: "/gallery" },
 ];
