@@ -1,9 +1,16 @@
 {
+  "dependencies": {
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "mongoose": "^7.0.2",
+    "nodemon": "^2.0.21"
+  },
   "name": "abhidan",
   "version": "1.0.0",
-  "description": "",
-  "main": "Server.js",
+  "description": "create abhidan backend",
+  "main": "index.js",
   "scripts": {
+<<<<<<< HEAD
     "start": "nodemon Server.js"
   },
   "author": "Ayush Dubey",
@@ -14,4 +21,10 @@
     "express": "^4.18.2",
     "nodemon": "^2.0.21"
   }
+=======
+    "start": "nodemon index.js"
+  },
+  "author": "Ashish",
+  "license": "ISC"
+>>>>>>> dd85964fd657d7ffbc3849ca934b4bdde236fec1
 }
