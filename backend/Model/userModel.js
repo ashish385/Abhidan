@@ -24,8 +24,8 @@ const userSchema = new mongoose.Schema({
     required:true,
   },
   user_type: {
-    type: Number,
-    default:1
+    type: String,
+    requied:true,
   },
   is_active: {
     type: Number,

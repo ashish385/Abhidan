@@ -1,30 +1,20 @@
 {
   "dependencies": {
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
     "ejs": "^3.1.9",
     "express": "^4.18.2",
     "mongoose": "^7.0.2",
-    "nodemon": "^2.0.21"
+    "multer": "^1.4.5-lts.1",
+    "nodemon": "^2.0.22"
   },
   "name": "abhidan",
   "version": "1.0.0",
   "description": "create abhidan backend",
   "main": "index.js",
   "scripts": {
-<<<<<<< HEAD
-    "start": "nodemon Server.js"
-  },
-  "author": "Ayush Dubey",
-  "license": "ISC",
-  "dependencies": {
-    "cors": "^2.8.5",
-    "ejs": "^3.1.8",
-    "express": "^4.18.2",
-    "nodemon": "^2.0.21"
-  }
-=======
     "start": "nodemon index.js"
   },
-  "author": "Ashish",
+  "author": "Ayush Dubey",
   "license": "ISC"
->>>>>>> dd85964fd657d7ffbc3849ca934b4bdde236fec1
 }

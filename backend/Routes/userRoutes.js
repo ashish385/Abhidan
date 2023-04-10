@@ -1,8 +1,8 @@
 const express = require('express');
 const userRoute = express();
 
-const userContrller = require('../Controller/userController')
-userRoute.get('/', userContrller.login)
+const userController = require('../Controller/userController')
+userRoute.get('/', userController.login)
 
 
 
