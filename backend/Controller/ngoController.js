@@ -1,4 +1,4 @@
-const ngoModel = require("../Model/ngoMdel");
+const ngoModel = require("../Model/ngoModel");
 
 //  find all Ngos Data
 const NgoAllData = async (req, res) => {

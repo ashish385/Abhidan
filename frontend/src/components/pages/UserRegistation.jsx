@@ -12,14 +12,20 @@ import {
 } from "mdb-react-ui-kit";
 import { Link } from "react-router-dom";
 import Navbar from "../Navbar/Navbar";
-
-
+import back_url from "../../config";
+import axios from "axios"
 const UserRegistation = () => {
+
+  //for connecting to backend
+  ;
+
   let initialValue = {
-    name: "",
+    username: "",
     email: "",
     password: "",
+    salt_password:"",
     phoneNumber: "",
+    user_type:2,
   };
 
   const [formdata, setFormdata] = useState(initialValue);
@@ -32,9 +38,18 @@ const UserRegistation = () => {
 
   const handleSubmit = () => {
     console.log("hello Vinood");
-    window.localStorage.setItem("currentUser", JSON.stringify(formdata));
-    window.location.assign("/login");
+
+ 
+    axios.post("http://localhost:1300/api/register-user",formdata).then((res)=>{
+      console.log(res.data)
+    }
+      ).catch((error) => {
+        console.log(error);
+      });
+
+   
   };
+  
 
   return (
     <>
@@ -79,11 +94,11 @@ const UserRegistation = () => {
                   wrapperClass="mb-3"
                   id="formControlLg"
                   type="text"
-                  name="name"
+                  name="username"
                   placeholder="Enter Name"
                   size="md"
                   onChange={handleChange}
-                  value={formdata?.name}
+                  value={formdata?.username}
                 />
 
                 <label htmlFor="email" className="loginLabel">
@@ -127,10 +142,23 @@ const UserRegistation = () => {
                   onChange={handleChange}
                   value={formdata?.password}
                 />
+                <label htmlFor="password" className="loginLabel">
+                  Salt_Password:
+                </label>
+                <MDBInput
+                  wrapperClass="mb-3"
+                  id="formControlLg"
+                  type="password"
+                  name="salt_password"
+                  placeholder="Enter Password"
+                  size="md"
+                  onChange={handleChange}
+                  value={formdata?.salt_password}
+                />
 
                 <button
                   className="btn btn-dark mb-3 px-5"
-                  onClick={handleSubmit}
+                  type="submit"
                 >
                   Signup
                 </button>
