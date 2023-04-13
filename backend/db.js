@@ -5,6 +5,8 @@
 
 const mongoose = require('mongoose');
 
+
+// const db_url = "mongodb+srv://Abhidan:Abhidan@cluster0.xfqelmx.mongodb.net/Abhidan";
 // const db_url = "mongodb+srv://abhidan:abhidan123@cluster0.xfqelmx.mongodb.net/abhidan";
 // const db_url = "mongodb+srv://Abhidan:Abhidan@cluster0.xfqelmx.mongodb.net/Abhidan";
 const db_url =  "mongodb+srv://ayush121:993642@cluster0.apysa.mongodb.net/AbhidanDatabase?retryWrites=true&w=majority";
