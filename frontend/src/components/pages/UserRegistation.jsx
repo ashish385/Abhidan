@@ -14,6 +14,9 @@ import { Link } from "react-router-dom";
 import Navbar from "../Navbar/Navbar";
 import back_url from "../../config";
 import axios from "axios"
+
+
+
 const UserRegistation = () => {
 
   //for connecting to backend
