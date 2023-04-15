@@ -41,7 +41,7 @@ const ReactSlick = () => {
             <div className="carousel-caption  ">
               <h5>Give them a helping hand</h5>
               <p>Join your hands with us to provide one time delicious meal </p>
-              <button type="button" class="btn btn-warning mt-3 ">
+              <button type="button" className="btn btn-warning mt-3 ">
                 Donate
               </button>
             </div>
@@ -75,7 +75,7 @@ const ReactSlick = () => {
               <p>
                 Some representative placeholder content for the third slide.
               </p>
-              <button type="button" class="btn btn-warning mt-3">
+              <button type="button" className="btn btn-warning mt-3">
                 Donate
               </button>{" "}
             </div>
@@ -106,8 +106,6 @@ const ReactSlick = () => {
           <span className="visually-hidden">Next</span>
         </button>
       </div>
-
-    
     </>
   );
 };

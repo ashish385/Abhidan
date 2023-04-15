@@ -13,20 +13,18 @@ import {
 import Navbar from "../Navbar/Navbar";
 import { Link, useNavigate } from "react-router-dom";
 
-const Login = () => {
-
+const Login = ({ setLoggedIn }) => {
   let initialValue = {
-    email: '',
-    password:''
-  }
+    email: "",
+    password: "",
+  };
 
   const [formdata, setFormdata] = useState(initialValue);
-  
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormdata({...formdata,[name]:value})
-  }
+    setFormdata({ ...formdata, [name]: value });
+  };
   console.log(formdata);
 
   const navigate = useNavigate();
@@ -35,17 +33,12 @@ const Login = () => {
     console.log("hello vinood");
     window.localStorage.getItem("currentUser", JSON.stringify(formdata));
 
-   window.location.assign('/');
-    
-  }
-
-
-
-
+    window.location.assign("/");
+    setLoggedIn(true);
+  };
 
   return (
     <>
-      
       <MDBContainer className="my-2">
         <MDBCard>
           <MDBRow className="g-0">
@@ -134,7 +127,6 @@ const Login = () => {
           </MDBRow>
         </MDBCard>
       </MDBContainer>
- 
     </>
   );
 };
