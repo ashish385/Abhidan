@@ -13,9 +13,8 @@ import Ngopage from "./components/Ngo/Ngopage"
 
 import Login from './components/pages/Login';
 import UserRegistation from './components/pages/UserRegistation';
-import { useState } from 'react';
+import Modal from './components/Ngo/Modal';
 
-  
 
 function App() {
   const [loggedIn, setLoggedIn] = useState(false);
@@ -28,7 +27,7 @@ function App() {
           
           <Route exact path='/' element={<Home />} />
           <Route path='/about' element={<About />} />
-          {/* <Route path='/demo' element={<Demo/>} /> */}
+           {/* <Route path='/demo' element={<Demo/>} />   */}
           <Route path='/signup' element={<UserRegistation />} />
           <Route path='/login' element={<Login setLoggedIn={setLoggedIn} />} />
           <Route path='/ngo' element={<Ngopage />} />
@@ -38,6 +37,7 @@ function App() {
         </Routes>
         <Footer />
       </BrowserRouter>
+    
      
       </div>
       
