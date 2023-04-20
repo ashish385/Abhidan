@@ -126,7 +126,7 @@ const Footer = () => {
                   <Link to={"#"}>
                     <img
                       className="footer-img-logo"
-                    //   src={logoIcon}
+                      //   src={logoIcon}
                       alt="dd"
                       style={{ width: "12rem" }}
                     />
@@ -135,17 +135,17 @@ const Footer = () => {
                 <span>Donate to help</span>
               </div>
               <div className="col-md-9 col-sm-12">
-                <section class="">
+                <section className="">
                   <form className="form-button">
-                    <div class="row d-flex justify-content-center">
-                      <div class="col-auto">
-                        <p class="pt-2">
+                    <div className="row d-flex justify-content-center">
+                      <div className="col-auto">
+                        <p className="pt-2">
                           <strong>Subscribe For Newsletter </strong>
                         </p>
                       </div>
 
-                      <div class="col-md-4 col-12">
-                        <div class=" mb-4">
+                      <div className="col-md-4 col-12">
+                        <div className=" mb-4">
                           <input
                             type="email"
                             id="form5Example21"
@@ -160,7 +160,7 @@ const Footer = () => {
                         <button
                           onClick={validateEmailHandler}
                           type="submit"
-                          class="btn btn-danger mb-4 "
+                          className="btn btn-danger mb-4 "
                         >
                           Subscribe
                         </button>

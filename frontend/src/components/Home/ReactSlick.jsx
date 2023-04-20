@@ -80,7 +80,7 @@ const ReactSlick = () => {
               <p>
                 Some representative placeholder content for the third slide.
               </p>
-              <button type="button" class="btn btn-warning mt-3">
+              <button type="button" className="btn btn-warning mt-3">
                 Donate
               </button>{}
             </div>
@@ -111,8 +111,6 @@ const ReactSlick = () => {
           <span className="visually-hidden">Next</span>
         </button>
       </div>
-
-    
     </>
   );
 };

@@ -17,6 +17,7 @@ import Modal from './components/Ngo/Modal';
 
 
 function App() {
+  const [loggedIn, setLoggedIn] = useState(false);
   return (
     <div >
      
@@ -28,7 +29,7 @@ function App() {
           <Route path='/about' element={<About />} />
            {/* <Route path='/demo' element={<Demo/>} />   */}
           <Route path='/signup' element={<UserRegistation />} />
-          <Route path='/login' element={<Login />} />
+          <Route path='/login' element={<Login setLoggedIn={setLoggedIn} />} />
           <Route path='/ngo' element={<Ngopage />} />
           <Route path='/gallery' element={<Gallery/> } />
           <Route path='/blog' element={<Blog/> } />
