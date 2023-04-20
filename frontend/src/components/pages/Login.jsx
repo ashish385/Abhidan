@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import './login.css';
+import axios from "axios"
 import {
   MDBContainer,
   MDBRow,
@@ -15,6 +16,9 @@ import { Link, useNavigate } from "react-router-dom";
 
 const Login = () => {
 
+const navigate = useNavigate();
+
+
   let initialValue = {
     email: '',
     password:''
@@ -29,13 +33,25 @@ const Login = () => {
   }
   console.log(formdata);
 
-  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
-    console.log("hello vinood");
-    window.localStorage.getItem("currentUser", JSON.stringify(formdata));
+    e.preventDefault();
+  //   console.log("hello vinood");
+  //   window.localStorage.getItem("currentUser", JSON.stringify(formdata));
 
-   window.location.assign('/');
+  //  window.location.assign('/');
+
+
+  //connnect the login frontend to backend apiroute donor-login//
+  axios.post("http://localhost:1300/api/donor-login",formdata)
+  .then((res)=>{
+    console.log(res.data);
+
+    
+  })
+  .catch((error)=>{
+    console.log(error);
+  })
     
   }
 

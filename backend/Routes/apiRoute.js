@@ -11,6 +11,7 @@ const apiRoute = express();
 
 const apiController = require("../Controller/apiController");
 
-apiRoute.post("/register-user", apiController.RegisterUser)
+apiRoute.post("/register-user", apiController.RegisterUser);
+apiRoute.post("/donor-login",apiController.user_donar_login)
 
 module.exports = apiRoute;

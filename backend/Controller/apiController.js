@@ -3,6 +3,33 @@ const Router = express();
 
 const userModel = require("../Model/userModel")
 
+
+//user login
+
+const user_donar_login= async(req,res)=>{
+    try{
+        const email=req.body.email.toLowerCase();
+        const type =req.body.user_type;
+        const password =req.body.password;
+        const donarData =await userModel.find({email:email});
+
+        if(donarData){
+            const passwordMatch = await userModel.find({password:password});
+            console.log(passwordMatch);
+            if(passwordMatch !=''){
+                res.status(200).send({message:"login successfully"});
+            }else{
+                res.send('Invalid email & password');
+            }
+        }
+    }
+    catch(error){
+        res.send(400).json('data not found');
+    };
+
+}
+
+
 const RegisterUser = async (req, res) => {
   const {username,phonenumber,email,password,salt_password,user_type} = req.body
    try {
@@ -27,5 +54,5 @@ const RegisterUser = async (req, res) => {
     }
 }
 
-module.exports = {RegisterUser}
+module.exports = {RegisterUser,user_donar_login}
 
