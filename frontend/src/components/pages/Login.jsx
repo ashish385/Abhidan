@@ -20,24 +20,38 @@ const navigate = useNavigate();
 
 
   let initialValue = {
-    email: "",
-    password: "",
-  };
+    email: '',
+    password:''
+  }
 
   const [formdata, setFormdata] = useState(initialValue);
+  
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormdata({ ...formdata, [name]: value });
-  };
+    setFormdata({...formdata,[name]:value})
+  }
   console.log(formdata);
 
 
   const handleSubmit = (e) => {
-    console.log("hello vinood");
-    window.localStorage.getItem("currentUser", JSON.stringify(formdata));
+    e.preventDefault();
+  //   console.log("hello vinood");
+  //   window.localStorage.getItem("currentUser", JSON.stringify(formdata));
 
-   window.location.assign('/');
+  //  window.location.assign('/');
+
+
+  //connnect the login frontend to backend apiroute donor-login//
+  axios.post("http://localhost:1300/api/donor-login",formdata)
+  .then((res)=>{
+    console.log(res.data);
+
+    
+  })
+  .catch((error)=>{
+    console.log(error);
+  })
     
   }
 
@@ -47,6 +61,7 @@ const navigate = useNavigate();
 
   return (
     <>
+      
       <MDBContainer className="my-2">
         <MDBCard>
           <MDBRow className="g-0">
@@ -135,6 +150,7 @@ const navigate = useNavigate();
           </MDBRow>
         </MDBCard>
       </MDBContainer>
+ 
     </>
   );
 };
