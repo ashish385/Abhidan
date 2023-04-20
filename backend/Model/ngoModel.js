@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 const ngoSchema = new mongoose.Schema({
-  Organisation_name: {
+  name: {
     type: String,
     required: true,
   },
@@ -38,6 +38,10 @@ const ngoSchema = new mongoose.Schema({
     type: String,
     require: true,
   },
+  state:{
+    type:String,
+    require:true,
+  }
 });
 
 const ngoModel = mongoose.model("ngoModel",ngoSchema);

@@ -88,11 +88,11 @@ const ngoModel =require("../Model/ngoModel")
 
 // this is ngo registration ngocontroller for handle the data whiach comes from user ngo
 const RegisterNgo = async(req,res)=>{
-    const{Organisation_name,image,register_id,contact,address,established_date,description,password,email}=req.body
+    const{name,image,register_id,contact,address,established_date,description,password,email,state}=req.body
 
     try{
         const ngo = new ngoModel({
-            Organisation_name,image,register_id,contact,address,established_date,description,password,email
+            Organisation_name,image,register_id,contact,address,established_date,description,password,email,state
         })
         await ngo.save();
         res.status(201).json({message:"Ngo registerd successfully!"});
