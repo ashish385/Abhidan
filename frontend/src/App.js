@@ -14,6 +14,7 @@ import Ngopage from "./components/Ngo/Ngopage"
 import Login from './components/pages/Login';
 import UserRegistation from './components/pages/UserRegistation';
 import Modal from './components/Ngo/Modal';
+import { useState } from 'react';
 
 
 function App() {

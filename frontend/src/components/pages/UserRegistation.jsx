@@ -124,7 +124,7 @@ const UserRegistation = () => {
                 <MDBInput
                   wrapperClass="mb-3"
                   id="formControlLg"
-                  type="text"
+                  type="number"
                   name="phoneNumber"
                   placeholder="Enter Phone Number"
                   size="md"
@@ -162,6 +162,7 @@ const UserRegistation = () => {
                 <button
                   className="btn btn-dark mb-3 px-5"
                   type="submit"
+                  onSubmit={handleSubmit}
                 >
                   Signup
                 </button>
