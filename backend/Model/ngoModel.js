@@ -1,43 +1,48 @@
+const mongoose = require("mongoose");
 
-const mongoose = require("../db");
-// const mongoose = require('mongoose');
-
-const NgoData = new mongoose.Schema({
-  ngoname: {
+const ngoSchema = new mongoose.Schema({
+  name: {
     type: String,
     required: true,
   },
-  photo: {
+  image: {
     type: String,
-    required: true,
+    require: true,
   },
   register_id: {
     type: String,
-    required: true,
+    require: true,
+    unique: true,
   },
-    user_type: {
-    type: Number,
-    default:2
-  },
-  status: {
-    type: Number,
-    default:1
-    },
   contact: {
     type: String,
-    required: true,
+    require: true,
   },
   address: {
     type: String,
-    required: true,
+    require: true,
   },
   established_date: {
-    type: String,
-    required: true,
-    created: { type: Date, default: new Date() },
+    type: Date,
+    require: true,
   },
+  description: {
+    type: String,
+    require: true,
+  },
+  password: {
+    type: String,
+    require: true,
+  },
+  email: {
+    type: String,
+    require: true,
+  },
+  state:{
+    type:String,
+    require:true,
+  }
 });
 
-const ngo = new mongoose.model("ngo", NgoData);
-
-module.exports = ngo;
+const ngoModel = mongoose.model("ngoModel",ngoSchema);
+module.exports=ngoModel

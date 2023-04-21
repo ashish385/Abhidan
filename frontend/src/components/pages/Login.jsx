@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import './login.css';
+import axios from "axios"
 import {
   MDBContainer,
   MDBRow,
@@ -11,34 +12,56 @@ import {
   MDBCardImage,
 } from "mdb-react-ui-kit";
 import Navbar from "../Navbar/Navbar";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
-const Login = ({ setLoggedIn }) => {
+const Login = () => {
+
+
+
+
   let initialValue = {
-    email: "",
-    password: "",
-  };
+    email: '',
+    password:''
+  }
 
   const [formdata, setFormdata] = useState(initialValue);
+  
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormdata({ ...formdata, [name]: value });
-  };
+    setFormdata({...formdata,[name]:value})
+  }
   console.log(formdata);
 
-  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
-    console.log("hello vinood");
-    window.localStorage.getItem("currentUser", JSON.stringify(formdata));
+    e.preventDefault();
+  //   console.log("hello vinood");
+  //   window.localStorage.getItem("currentUser", JSON.stringify(formdata));
 
-    window.location.assign("/");
-    setLoggedIn(true);
-  };
+  //  window.location.assign('/');
+
+
+  //connnect the login frontend to backend apiroute donor-login//
+  axios.post("http://localhost:1300/api/donor-login",formdata)
+  .then((res)=>{
+    console.log(res.data);
+
+    
+  })
+  .catch((error)=>{
+    console.log(error);
+  })
+    
+  }
+
+
+
+
 
   return (
     <>
+      
       <MDBContainer className="my-2">
         <MDBCard>
           <MDBRow className="g-0">
@@ -127,6 +150,7 @@ const Login = ({ setLoggedIn }) => {
           </MDBRow>
         </MDBCard>
       </MDBContainer>
+ 
     </>
   );
 };

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import './login.css'
+import "./login.css";
 import {
   MDBContainer,
   MDBRow,
@@ -10,28 +10,28 @@ import {
   MDBIcon,
   MDBCardImage,
 } from "mdb-react-ui-kit";
-import { Link } from "react-router-dom";
-import Navbar from "../Navbar/Navbar";
-import back_url from "../../config";
-import axios from "axios"
+import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
+
 
 
 
 const UserRegistation = () => {
 
-  //for connecting to backend
-  ;
+//we use navigate  to login page after register// 
+  const navigate = useNavigate();
 
   let initialValue = {
     username: "",
     email: "",
     password: "",
-    salt_password:"",
-    phoneNumber: "",
-    user_type:2,
+    salt_password: "",
+    phonenumber: "",
+    user_type: 2,
   };
 
   const [formdata, setFormdata] = useState(initialValue);
+
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -39,24 +39,29 @@ const UserRegistation = () => {
   };
   console.log(formdata);
 
-  const handleSubmit = () => {
-    console.log("hello Vinood");
+  const handleSubmit = (e) => {
 
- 
-    axios.post("http://localhost:1300/api/register-user",formdata).then((res)=>{
-      console.log(res.data)
-    }
-      ).catch((error) => {
-        console.log(error);
-      });
+    e.preventDefault();
+    // console.log("hello Vinood");
+
 
    
+   
+
+
+    axios
+      .post("http://localhost:1300/api/register-user", formdata)
+      .then((res) => {
+        console.log(res.data);
+        navigate("/login");
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
-  
 
   return (
     <>
-      
       <MDBContainer className="my-2">
         <MDBCard style={{ height: "70" }}>
           <MDBRow className="g-0">
@@ -103,6 +108,7 @@ const UserRegistation = () => {
                   onChange={handleChange}
                   value={formdata?.username}
                 />
+              
 
                 <label htmlFor="email" className="loginLabel">
                   Email:
@@ -117,21 +123,26 @@ const UserRegistation = () => {
                   onChange={handleChange}
                   value={formdata?.email}
                 />
-
-                <label htmlFor="phoneNumber" className="loginLabel">
+ 
+                <label htmlFor="phonenumber" className="loginLabel">
                   Phone Number:
                 </label>
                 <MDBInput
                   wrapperClass="mb-3"
                   id="formControlLg"
+<<<<<<< HEAD
                   type="number"
                   name="phoneNumber"
+=======
+                  type="text"
+                  name="phonenumber"
+>>>>>>> 536a0fe2ddd4ca22f3a7e48750e00519306a5616
                   placeholder="Enter Phone Number"
                   size="md"
                   onChange={handleChange}
-                  value={formdata?.phoneNumber}
+                  value={formdata?.phonenumber}
                 />
-
+ 
                 <label htmlFor="password" className="loginLabel">
                   Password:
                 </label>
@@ -145,8 +156,9 @@ const UserRegistation = () => {
                   onChange={handleChange}
                   value={formdata?.password}
                 />
+                 
                 <label htmlFor="password" className="loginLabel">
-                  Salt_Password:
+                  Confirm_Password:
                 </label>
                 <MDBInput
                   wrapperClass="mb-3"
@@ -162,7 +174,7 @@ const UserRegistation = () => {
                 <button
                   className="btn btn-dark mb-3 px-5"
                   type="submit"
-                  onSubmit={handleSubmit}
+                  onClick={handleSubmit}
                 >
                   Signup
                 </button>

@@ -10,7 +10,10 @@ const apiRoute = express();
 // apiRoute.use(cors());
 
 const apiController = require("../Controller/apiController");
+const ngoController = require("../Controller/ngoController")
 
-apiRoute.post("/register-user", apiController.RegisterUser)
+apiRoute.post("/register-user", apiController.RegisterUser);
+apiRoute.post("/donor-login",apiController.user_donar_login)
+apiRoute.post("/ngo", ngoController.RegisterNgo);
 
 module.exports = apiRoute;
