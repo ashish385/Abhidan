@@ -63,7 +63,7 @@ const NgoRegistation = (props) => {
           <div className="flex flex-col md:flex-row gap-x-4">
             <label htmlFor="ngo_name" className="w-full">
               <p className="text-[0.875rem] text-[#292929] mb-1 leading-[1.375rem]">
-                Ngo Name:<sup className="text-pink-200">*</sup>
+                Organization_Name:<sup className="text-pink-200">*</sup>
               </p>
               <input
                 required
