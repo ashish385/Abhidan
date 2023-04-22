@@ -136,17 +136,19 @@ const Blog = () => {
         </div>
       </div> */}
       <main>
-      <section class="site-title">
-            <div class="site-background" data-aos="fade-up" data-aos-delay="100">
-                <h3>Empowering Change</h3>
-                <h1> Stories and Insights from our NGO Community</h1>
-                <button class="btn">Explore</button>
-            </div>
+        <section class="site-title">
+          <div class="site-background" data-aos="fade-up" data-aos-delay="100">
+            <h3>Empowering Change</h3>
+            <h1> Stories and Insights from our NGO Community</h1>
+            <button class="btn">Explore</button>
+          </div>
         </section>
+
+        <div className="flex flex-col">
 
         {Blogdata.map((data, index) => {
           return (
-            <div className="blog" >
+            <div className="blog">
               <section class="container">
                 <div class="site-content">
                   <div class="posts" key={index}>
@@ -172,121 +174,43 @@ const Blog = () => {
                         </div>
                       </div>
                       <div class="post-title">
-                        <a href="#">
-                          {data.title}
-                        </a>
-                        <p>
-                         {data.description}
-                        </p>
+                        <a href="#">{data.title}</a>
+                        <p>{data.description}</p>
                         <button class="btn post-btn">
                           Read More &nbsp; <i class="fas fa-arrow-right"></i>
                         </button>
                       </div>
                     </div>
-
-                    
                   </div>
-                  
-
-                  <aside class="sidebar">
-                    <div class="category">
-                      <h2 style={{ color: "black" }}>Category</h2>
-                      <ul class="category-list">
-                        <li
-                          class="list-items"
-                          data-aos="fade-left"
-                          data-aos-delay="100"
-                        >
-                          <a href="#">Software</a>
-                          <span>(05)</span>
-                        </li>
-                        <li
-                          class="list-items"
-                          data-aos="fade-left"
-                          data-aos-delay="200"
-                        >
-                          <a href="#">Techonlogy</a>
-                          <span>(02)</span>
-                        </li>
-                        <li
-                          class="list-items"
-                          data-aos="fade-left"
-                          data-aos-delay="300"
-                        >
-                          <a href="#">Lifestyle</a>
-                          <span>(07)</span>
-                        </li>
-                        <li
-                          class="list-items"
-                          data-aos="fade-left"
-                          data-aos-delay="400"
-                        >
-                          <a href="#">Shopping</a>
-                          <span>(01)</span>
-                        </li>
-                        <li
-                          class="list-items"
-                          data-aos="fade-left"
-                          data-aos-delay="500"
-                        >
-                          <a href="#">Food</a>
-                          <span>(08)</span>
-                        </li>
-                      </ul>
-                    </div>
-                    <div class="popular-post">
-                      <h2 style={{ color: "black" }}>Popular Post</h2>
-                      <div
-                        class="post-content"
-                        data-aos="flip-up"
-                        data-aos-delay="200"
-                      >
-                        <div class="post-image">
-                          <div>
-                            <img src={blogimg} class="img" alt="blog1" />
-                          </div>
-                          <div class="post-info flex-row">
-                            <span>
-                              <i class="fas fa-calendar-alt text-gray"></i>
-                              &nbsp;&nbsp;January 14, 2019
-                            </span>
-                            <span>2 Commets</span>
-                          </div>
-                        </div>
-                        <div class="post-title">
-                          <a href="#">
-                            New data recording system to better analyse road
-                            accidents
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                   
-                  </aside>
                 </div>
-               
               </section>
             </div>
           );
+          
         })}
 
-<div class="pagination flex-row">
-                      <a href="#">
-                        <i class="fas fa-chevron-left"></i>
-                      </a>
-                      <a href="#" class="pages">
-                        1
-                      </a>
-                      <a href="#" class="pages">
-                        2
-                      </a>
-                      <a href="#" class="pages">
-                        3
-                      </a>
-                      <a href="#">
-                        <i class="fas fa-chevron-right"></i>
-                      </a>
-                    </div>
+        
+        </div>
+
+        
+
+        <div class="pagination flex-row">
+          <a href="#">
+            <i class="fas fa-chevron-left"></i>
+          </a>
+          <a href="#" class="pages">
+            1
+          </a>
+          <a href="#" class="pages">
+            2
+          </a>
+          <a href="#" class="pages">
+            3
+          </a>
+          <a href="#">
+            <i class="fas fa-chevron-right"></i>
+          </a>
+        </div>
       </main>
     </>
   );

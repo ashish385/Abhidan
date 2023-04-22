@@ -1,11 +1,12 @@
 import React from 'react'
-import UserRegistation from '../pages/UserRegistation'
+import Login from '../../pages/Login'
+
 
 function Modal() {
   return (
     <div className='modal-container'>
         <div className='modal-body'>
-            <UserRegistation/>
+            <Login />
         </div>
 
     </div>

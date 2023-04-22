@@ -2,7 +2,6 @@ import React,{useState} from "react";
 
 import ReactSlick from "../Home/ReactSlick";
 import NgoData from "../../DummyData/NGODummyData.json";
-import UserRegistation from "../pages/UserRegistation"
 import Modal from "./Modal";
 
 
@@ -45,52 +44,53 @@ const btnClick=()=>{
       <div style={{ backgroundColor: "#ede7d1" }}>
         <ReactSlick />
 
-        {NgoData.map((data, index) => {
-          return (
-            <div
-              data-aos="fade-right"
-              data-aos-offset="300"
-              data-aos-duration="2000"
-              key={index}
-            >
-              <div className="container mt-5" style={ngoback}>
-                <div className="row  ">
-                  <div
-                    className="col-md-4"
-                    style={{ marginTop: "15px ", marginBottom: "15px" }}
-                  >
-                    <img
-                      src={
-                        "https://kodesolution.com/html/2017/fundpro-html/demo/images/gallery/gallery-lg1.jpg"
-                      }
-                      style={ngoimg}
-                    />
-                  </div>
-                  <div className="col-md-8">
-                    <h3 className="ngo-name mt-4" style={ngoName}>
-                      {data.NGO}
-                    </h3>
-                    <ul className="ngo-det" style={{ color: "#666666" }}>
-                      <li>{data.location}</li>
-                      <li>{data.contact}</li>
-                    </ul>
-                    <p style={ngoP}>{data.description}</p>
-                    
+        <div className="flex flex-col">
+          {NgoData.map((data, index) => {
+            return (
+              <div
+                data-aos="fade-right"
+                data-aos-offset="300"
+                data-aos-duration="2000"
+                key={index}
+              >
+                <div className="container mt-5" style={ngoback}>
+                  <div className="row  ">
+                    <div
+                      className="col-md-4"
+                      style={{ marginTop: "15px ", marginBottom: "15px" }}
+                    >
+                      <img
+                        src={
+                          "https://kodesolution.com/html/2017/fundpro-html/demo/images/gallery/gallery-lg1.jpg"
+                        }
+                        style={ngoimg}
+                      />
+                    </div>
+                    <div className="col-md-8">
+                      <h3 className="ngo-name mt-4" style={ngoName}>
+                        {data.NGO}
+                      </h3>
+                      <ul className="ngo-det" style={{ color: "#666666" }}>
+                        <li>{data.location}</li>
+                        <li>{data.contact}</li>
+                      </ul>
+                      <p style={ngoP}>{data.description}</p>
+
                       <button
                         type="submit"
                         className="btn btn-danger mb-4"
-                       onClick={btnClick}
+                        onClick={btnClick}
                       >
-                        Donate 
+                        Donate
                       </button>
- {showModal ? <Modal/>:null}
-                   
+                      {showModal ? <Modal /> : null}
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          );
-        })}
+            );
+          })}
+        </div>
       </div>
 
       {/* <div data-aos="fade-right" data-aos-offset="300" data-aos-duration="3000">
