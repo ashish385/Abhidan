@@ -144,7 +144,7 @@ const Blog = () => {
           </div>
         </section>
 
-        <div className="flex">
+        <div className="flex flex-col">
 
         {Blogdata.map((data, index) => {
           return (
@@ -191,6 +191,8 @@ const Blog = () => {
 
         
         </div>
+
+        
 
         <div class="pagination flex-row">
           <a href="#">

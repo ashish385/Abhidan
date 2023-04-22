@@ -1,6 +1,6 @@
-/* @tailwind base;
+@tailwind base;
 @tailwind components;
-@tailwind utilities; */
+@tailwind utilities;
 
 body {
   margin: 0;
@@ -10,7 +10,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #FEFCF3;
+  background-color: #F0F8FF;
+  box-sizing: border-box;
 }
 
 code {
