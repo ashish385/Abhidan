@@ -92,7 +92,7 @@ const RegisterNgo = async(req,res)=>{
 
     try{
         const ngo = new ngoModel({
-            Organisation_name,image,register_id,contact,address,established_date,description,password,email,state
+            name,image,register_id,contact,address,established_date,description,password,email,state
         })
         await ngo.save();
         res.status(201).json({message:"Ngo registerd successfully!"});
