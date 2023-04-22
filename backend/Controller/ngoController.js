@@ -86,7 +86,7 @@ const ngoModel =require("../Model/ngoModel")
 
 
 
-// this is ngo registration ngocontroller for handle the data whiach comes from user ngo
+// this is ngo registration ngocontroller for handle the data which comes from user ngo
 const RegisterNgo = async(req,res)=>{
     const{name,image,register_id,contact,address,established_date,description,password,confirm_password,email,state}=req.body
 
@@ -104,7 +104,29 @@ const RegisterNgo = async(req,res)=>{
 }
 
 
-module.exports = {RegisterNgo};
+//this is ngo login ngo controller api 
+
+const ngoLogin= async(req,res)=>{
+    const {register_id,password}= req.body;
+
+   try{
+    
+    const ngodata = await ngoModel.findOne({register_id})
+    if(!ngodata){
+       res.status(400).json({error:"Oops! Register_Id is invalid"})
+    }
+    if(ngodata.password !== password){
+        res.status(400).json({error:"Oops! Password is invalid"})
+    }
+res.status(201).json({message:"Rock! Ngo is login succsessfully"})
+   }
+   catch(error){
+    res.status(500).json({error:"Server Error"})
+   }
+   
+}
+
+module.exports = {RegisterNgo,ngoLogin};
 
 
 
