@@ -84,26 +84,6 @@ const ngoModel =require("../Model/ngoModel")
 //     DeleteNgo
 // }
 
-// this is ngo login controller for check that user is exist or not
-const ngo_login = async (req, res) => {
-    try {
-        const register_id = req.body.register_id;
-        const password = req.body.password;
-        const isNgo = await ngoModel.find({ register_id: register_id });
-
-        if (isNgo) {
-            const isPassword = await ngoModel.find({ password: password });
-            console.log(isPassword);
-            if (isPassword) {
-                res.status(201).send({message:"ngo exist!"})
-            } else {
-                res.status(401).send({message:"Invalid Data!"})
-            }
-        }
-    } catch (error) {
-        res.status(400).json("data not found!");
-    }
-}
 
 
 
@@ -126,12 +106,29 @@ const RegisterNgo = async(req,res)=>{
 }
 
 
+//this is ngo login ngo controller api 
 
+const ngoLogin= async(req,res)=>{
+    const {register_id,password}= req.body;
 
-module.exports = {
-    RegisterNgo,
-    ngo_login
-};
+   try{
+    
+    const ngodata = await ngoModel.findOne({register_id})
+    if(!ngodata){
+       res.status(400).json({error:"Oops! Register_Id is invalid"})
+    }
+    if(ngodata.password !== password){
+        res.status(400).json({error:"Oops! Password is invalid"})
+    }
+    res.status(201).json({message:"Rock! Ngo is login succsessfully"})
+   }
+   catch(error){
+    res.status(500).json({error:"Server Error"})
+   }
+   
+}
+
+module.exports = {RegisterNgo,ngoLogin};
 
 
 

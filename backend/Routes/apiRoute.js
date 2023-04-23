@@ -14,7 +14,7 @@ const ngoController = require("../Controller/ngoController")
 
 apiRoute.post("/register-user", apiController.RegisterUser);
 apiRoute.post("/donor-login",apiController.user_donar_login)
-apiRoute.post("/register-ngo", ngoController.RegisterNgo);
-apiRoute.post("/ngo-login", ngoController.ngo_login);
+apiRoute.post("/ngo", ngoController.RegisterNgo);
+apiRoute.post("/ngo-login",ngoController.ngoLogin);
 
 module.exports = apiRoute;
