@@ -52,121 +52,128 @@ const SignupForm = () => {
 
   return (
     <div>
-      <form onSubmit={handleSubmit} className="flex flex-col gap-y-3 mt-2">
-        {/* firstName and lastName */}
-        <div className="flex flex-col space-y-3 md:flex-row gap-x-4">
-          <label htmlFor="username" className="w-full">
-            <p className="text-[0.875rem] text-[#292929] mb-1 leading-[1.375rem]">
-              User Name:<sup className="text-pink-200">*</sup>
+      <div className="mb-5 pb-5">
+        <form onSubmit={handleSubmit} className="flex flex-col gap-y-3 mt-2 ">
+          {/* firstName and lastName */}
+          <div className="flex flex-col space-y-3 md:flex-row gap-x-4">
+            <label htmlFor="username" className="w-full">
+              <p className="text-[0.875rem] text-[#292929] mb-1 leading-[1.375rem]">
+                User Name:<sup className="text-pink-200">*</sup>
+              </p>
+              <input
+                required
+                type="text"
+                name="username"
+                id="username"
+                placeholder="Enter First name"
+                value={formData?.username}
+                onChange={handleChange}
+                className="bg-richblack-800 rounded-[0.5rem] flex shrink text-richblack-5 w-full p-[12px]"
+              />
+            </label>
+            <label htmlFor="phonenumber" className="w-full">
+              <p className="text-[0.875rem] text-[#292929] mb-1 leading-[1.375rem]">
+                Phone Number:<sup className="text-pink-200">*</sup>
+              </p>
+              <input
+                required
+                type="number"
+                name="phonenumber"
+                id="phonenumber"
+                placeholder="Enter Last name"
+                value={formData?.phonenumber}
+                onChange={handleChange}
+                className="bg-richblack-800 rounded-[0.5rem] text-richblack-5 w-full p-[12px]"
+              />
+            </label>
+          </div>
+          {/* email */}
+          <label htmlFor="email" className="w-full">
+            <p className="text-[0.875rem] text-[#292929]  leading-[1.375rem]">
+              Email Address:<sup className="text-pink-200">*</sup>
             </p>
             <input
-              required
-              type="text"
-              name="username"
-              id="username"
-              placeholder="Enter First name"
-              value={formData?.username}
-              onChange={handleChange}
-              className="bg-richblack-800 rounded-[0.5rem] flex shrink text-richblack-5 w-full p-[12px]"
-            />
-          </label>
-          <label htmlFor="phonenumber" className="w-full">
-            <p className="text-[0.875rem] text-[#292929] mb-1 leading-[1.375rem]">
-              Phone Number:<sup className="text-pink-200">*</sup>
-            </p>
-            <input
-              required
-              type="number"
-              name="phonenumber"
-              id="phonenumber"
-              placeholder="Enter Last name"
-              value={formData?.phonenumber}
+              type="email"
+              name="email"
+              id="email"
+              placeholder="Enter Email Addresss"
+              value={formData?.email}
               onChange={handleChange}
               className="bg-richblack-800 rounded-[0.5rem] text-richblack-5 w-full p-[12px]"
             />
           </label>
+          {/* Create Password and Confirm Password */}
+          <div className="flex flex-col md:flex-row gap-x-4">
+            <label htmlFor="password" className="w-full relative">
+              <p className="text-[0.875rem] text-[#292929] mb-1 leading-[1.375rem]">
+                Create Password:<sup className="text-pink-200">*</sup>
+              </p>
+              <input
+                type={showPassword ? "text" : "password"}
+                name="password"
+                id="password"
+                placeholder="Enter Password"
+                value={formData?.password}
+                onChange={handleChange}
+                className="bg-richblack-800 rounded-[0.5rem] text-richblack-5 w-full p-[12px]"
+              />
+              <span
+                onClick={() => setShowPassword((prev) => !prev)}
+                className="absolute right-2 top-[38px] cursor-pointer  "
+              >
+                {showPassword ? (
+                  <AiOutlineEyeInvisible fontSize={24} fill="#AFB2BF" />
+                ) : (
+                  <AiOutlineEye fontSize={24} fill="#AFB2BF" />
+                )}
+              </span>
+            </label>
+            <label htmlFor="salt_password" className="w-full relative">
+              <p className="text-[0.875rem] text-[#292929] mb-1 leading-[1.375rem]">
+                Confirm Password:<sup className="text-pink-200">*</sup>
+              </p>
+              <input
+                type={showConfirmPassword ? "text" : "password"}
+                name="salt_password"
+                id="salt_password"
+                placeholder="Confirm Password"
+                value={formData?.salt_password}
+                onChange={handleChange}
+                className="bg-richblack-800 rounded-[0.5rem] text-richblack-5 w-full p-[12px]"
+              />
+              <span
+                onClick={() => setShowConfirmPassword((prev) => !prev)}
+                className="absolute right-2 top-[38px] cursor-pointer  "
+              >
+                {showConfirmPassword ? (
+                  <AiOutlineEyeInvisible fontSize={24} fill="#AFB2BF" />
+                ) : (
+                  <AiOutlineEye fontSize={24} fill="#AFB2BF" />
+                )}
+              </span>
+            </label>
+          </div>
+          <button
+            type="submit"
+            className=" bg-yellow-50 rounded-[8px] font-medium text-richblack-900 mt-2 py-3"
+          >
+            Sign Up
+          </button>
+        </form>
+        <div className="flex w-full items-center mt-4  pl-4 gap-x-2">
+          <div className="h-[1px] w-[45%] bg-richblack-700"></div>
+          <p className="text-richblack-700 font-medium leading-[1.375rem">OR</p>
+          <div className="h-[1px] w-[45%] bg-richblack-700"></div>
         </div>
-        {/* email */}
-        <label htmlFor="email" className="w-full">
-          <p className="text-[0.875rem] text-[#292929]  leading-[1.375rem]">
-            Email Address:<sup className="text-pink-200">*</sup>
-          </p>
-          <input
-            type="email"
-            name="email"
-            id="email"
-            placeholder="Enter Email Addresss"
-            value={formData?.email}
-            onChange={handleChange}
-            className="bg-richblack-800 rounded-[0.5rem] text-richblack-5 w-full p-[12px]"
-          />
-        </label>
-        {/* Create Password and Confirm Password */}
-        <div className="flex flex-col md:flex-row gap-x-4">
-          <label htmlFor="password" className="w-full relative">
-            <p className="text-[0.875rem] text-[#292929] mb-1 leading-[1.375rem]">
-              Create Password:<sup className="text-pink-200">*</sup>
-            </p>
-            <input
-              type={showPassword ? "text" : "password"}
-              name="password"
-              id="password"
-              placeholder="Enter Password"
-              value={formData?.password}
-              onChange={handleChange}
-              className="bg-richblack-800 rounded-[0.5rem] text-richblack-5 w-full p-[12px]"
-            />
-            <span
-              onClick={() => setShowPassword((prev) => !prev)}
-              className="absolute right-2 top-[38px] cursor-pointer  "
-            >
-              {showPassword ? (
-                <AiOutlineEyeInvisible fontSize={24} fill="#AFB2BF" />
-              ) : (
-                <AiOutlineEye fontSize={24} fill="#AFB2BF" />
-              )}
-            </span>
-          </label>
-          <label htmlFor="salt_password" className="w-full relative">
-            <p className="text-[0.875rem] text-[#292929] mb-1 leading-[1.375rem]">
-              Confirm Password:<sup className="text-pink-200">*</sup>
-            </p>
-            <input
-              type={showConfirmPassword ? "text" : "password"}
-              name="salt_password"
-              id="salt_password"
-              placeholder="Confirm Password"
-              value={formData?.salt_password}
-              onChange={handleChange}
-              className="bg-richblack-800 rounded-[0.5rem] text-richblack-5 w-full p-[12px]"
-            />
-            <span
-              onClick={() => setShowConfirmPassword((prev) => !prev)}
-              className="absolute right-2 top-[38px] cursor-pointer  "
-            >
-              {showConfirmPassword ? (
-                <AiOutlineEyeInvisible fontSize={24} fill="#AFB2BF" />
-              ) : (
-                <AiOutlineEye fontSize={24} fill="#AFB2BF" />
-              )}
-            </span>
-          </label>
+        <div className="text-gray-500 mt-1 text-center">
+          Already have account?{" "}
+          <Link
+            to="/login"
+            className="text-blue-500 hover:text-blue-700 hover:underline"
+          >
+            log in here...
+          </Link>
         </div>
-        <button
-          type="submit"
-          className=" bg-yellow-50 rounded-[8px] font-medium text-richblack-900 mt-2 py-3"
-        >
-          Sign Up
-        </button>
-      </form>
-      <div className="text-gray-500 mt-3">
-        Already have account?{" "}
-        <Link
-          to="/login"
-          className="text-blue-300 hover:text-blue-400 hover:underline"
-        >
-          log in
-        </Link>
       </div>
     </div>
   );

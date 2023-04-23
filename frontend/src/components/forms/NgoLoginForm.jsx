@@ -1,64 +1,58 @@
 import axios from 'axios';
-import React,{useState} from 'react'
+import React, { useState } from 'react'
 import { toast } from 'react-hot-toast';
-import {AiOutlineEyeInvisible,AiOutlineEye} from "react-icons/ai"
-import { Link, useNavigate } from 'react-router-dom'
-// import app_config from '../Config';
+import { AiOutlineEye, AiOutlineEyeInvisible } from 'react-icons/ai';
+import { Link, useNavigate } from 'react-router-dom';
 
-const LoginForm = ({ setIsLoggedIn }) => {
-  // const url = app_config.api_url;
-  const navigate = useNavigate();
-  let initialValue = {
-    email: "",
-    password: "",
-  };
-  const [formData, setFormData] = useState(initialValue);
+const NgoLoginForm = ({setIsLoggedIn}) => {
 
-  const [showPassword, setShowPassword] = useState(false);
+    const navigate = useNavigate();
+    let initialValue = {
+      register_id: "",
+      password: "",
+    };
+    const [formData, setFormData] = useState(initialValue);
 
-  function handleChange(e) {
-    const { name, value } = e.target;
-    setFormData({...formData, [name]:value});
-  }
+    const [showPassword, setShowPassword] = useState(false);
 
-  async function handlerSubmit(event) {
-    event.preventDefault();
+    function handleChange(e) {
+      const { name, value } = e.target;
+      setFormData({ ...formData, [name]: value });
+    }
 
-   axios
-     .post("http://localhost:1300/api/donor-login", formData)
-     .then((res) => {
-       console.log(res.data);
-       localStorage.setItem('token', res.data);
-       setIsLoggedIn(true);
-       setTimeout(() => {
-         
-         toast.success("Logged In Successfully!");
-         navigate("/")
-        
-       }, 1000);
-     })
-     .catch((error) => {
-       console.log(error);
-       toast.error("Invalid Data!")
-     });
+    async function handlerSubmit(event) {
+      event.preventDefault();
 
-    
-  }
+      axios
+        .post("http://localhost:1300/api/ngo-login", formData)
+        .then((res) => {
+          console.log(res.data);
+          localStorage.setItem("token", res.data);
+          // setIsLoggedIn(true);
+          setTimeout(() => {
+            toast.success("Logged In Successfully!");
+            navigate("/");
+          }, 1000);
+        })
+        .catch((error) => {
+          console.log(error);
+          toast.error("Invalid Data!");
+        });
+    }
   return (
-    <div>
+    <>
       <form onSubmit={handlerSubmit} className="flex flex-col gap-y-3 mt-2">
-        <label htmlFor="email" className="w-full">
+        <label htmlFor="register_id" className="w-full">
           <p className="text-[0.875rem] text-[#292929] mb-1 leading-[1.375rem]">
-            Email Address:<sup className="text-pink-200">*</sup>
+            Register ID:<sup className="text-pink-200">*</sup>
           </p>
-
           <input
             required
-            type="email"
-            name="email"
-            id="email"
-            placeholder="Enter email address"
-            value={formData?.email}
+            type="text"
+            name="register_id"
+            id="register_id"
+            placeholder="Enter register id:"
+            value={formData.register_id}
             onChange={handleChange}
             className="bg-richblack-800 rounded-[0.5rem] text-richblack-5 w-full p-[12px]"
           />
@@ -116,8 +110,8 @@ const LoginForm = ({ setIsLoggedIn }) => {
           Create Account..
         </Link>
       </div>
-    </div>
+    </>
   );
-};
+}
 
-export default LoginForm
+export default NgoLoginForm

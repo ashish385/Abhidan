@@ -10,7 +10,7 @@ const ngoModel =require("../Model/ngoModel")
 //         console.log(data);
 //     } catch (error) {
 //         res.status(422).json(error);
-//     } 
+//     }
 // }
 
 // Find individual ngo data
@@ -35,7 +35,7 @@ const ngoModel =require("../Model/ngoModel")
 //        console.log(req.params);
 //     const { ngoname, photo, register_no, contact, address, established_date } = req.params;
 //      const addNgo = new ngoModel({
-//         ngoname, photo, register_no, contact, address, established_date 
+//         ngoname, photo, register_no, contact, address, established_date
 //      })
     
 //        await addNgo.save();
@@ -58,7 +58,7 @@ const ngoModel =require("../Model/ngoModel")
 //         res.status(201).json(updateNgo);
 //         console.log(updateNgo);
 //     } catch (error) {
-//         res.status(422).json(error); 
+//         res.status(422).json(error);
 //     }
 // }
 
@@ -72,7 +72,7 @@ const ngoModel =require("../Model/ngoModel")
 //         res.status(201).json(deleteNgo);
 //         console.log(deleteNgo);
 //     } catch (error) {
-//         res.status(422).json(error); 
+//         res.status(422).json(error);
 //     }
 // }
 
@@ -84,27 +84,54 @@ const ngoModel =require("../Model/ngoModel")
 //     DeleteNgo
 // }
 
+// this is ngo login controller for check that user is exist or not
+const ngo_login = async (req, res) => {
+    try {
+        const register_id = req.body.register_id;
+        const password = req.body.password;
+        const isNgo = await ngoModel.find({ register_id: register_id });
+
+        if (isNgo) {
+            const isPassword = await ngoModel.find({ password: password });
+            console.log(isPassword);
+            if (isPassword) {
+                res.status(201).send({message:"ngo exist!"})
+            } else {
+                res.status(401).send({message:"Invalid Data!"})
+            }
+        }
+    } catch (error) {
+        res.status(400).json("data not found!");
+    }
+}
 
 
-// this is ngo registration ngocontroller for handle the data whiach comes from user ngo
+
+// this is ngo registration ngocontroller for handle the data which comes from user ngo
 const RegisterNgo = async(req,res)=>{
-    const{name,image,register_id,contact,address,established_date,description,password,confirm_password,email,state}=req.body
+    const{ngo_name,image,register_id,contact,address,established_date,description,password,confirm_password,email,state,current_status,user_type}=req.body
 
     try{
         const ngo = new ngoModel({
-            name,image,register_id,contact,address,established_date,description,password,confirm_password,email,state
+            ngo_name,image,register_id,contact,address,established_date,description,password,confirm_password,email,state,current_status,user_type
         })
         await ngo.save();
         res.status(201).json({message:"Ngo registerd successfully!"});
     }
     catch(error){
         console.log(error)
-        res.status(500).json({message:"Server error"})
+        res.status(500).json({message:"Server error!"})
     }
+
 }
 
 
-module.exports = {RegisterNgo};
+
+
+module.exports = {
+    RegisterNgo,
+    ngo_login
+};
 
 
 
