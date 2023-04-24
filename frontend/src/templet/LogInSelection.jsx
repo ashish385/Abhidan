@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import LoginForm from '../components/forms/LoginForm';
 import NgoLoginForm from '../components/forms/NgoLoginForm';
 
-const LogInSelection = () => {
+const LogInSelection = ({ setIsLoggedIn }) => {
   const [loginType, setLoginType] = useState("donor");
   return (
     <>
@@ -30,13 +30,13 @@ const LogInSelection = () => {
       </div>
       <div>
         {loginType === "donar" ? (
-          <LoginForm loginType={loginType} />
+          <LoginForm setIsLoggedIn={setIsLoggedIn} loginType={loginType} />
         ) : (
-          <NgoLoginForm loginType={loginType} />
+          <NgoLoginForm setIsLoggedIn={setIsLoggedIn} loginType={loginType} />
         )}
       </div>
     </>
   );
-}
+};
 
 export default LogInSelection

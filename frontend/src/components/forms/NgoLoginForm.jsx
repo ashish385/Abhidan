@@ -102,7 +102,7 @@ const NgoLoginForm = ({setIsLoggedIn}) => {
         <div className="h-[1px] w-[45%] bg-richblack-700"></div>
       </div>
       <div className="text-gray-500 mt-3 text-center">
-        New User?{" "}
+        New Ngo?{" "}
         <Link
           to="/signup"
           className="text-blue-300 hover:text-blue-400 hover:underline"

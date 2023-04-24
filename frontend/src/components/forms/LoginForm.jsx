@@ -3,6 +3,7 @@ import React,{useState} from 'react'
 import { toast } from 'react-hot-toast';
 import {AiOutlineEyeInvisible,AiOutlineEye} from "react-icons/ai"
 import { Link, useNavigate } from 'react-router-dom'
+import FormValidation from './FormValidation';
 // import app_config from '../Config';
 
 const LoginForm = ({ setIsLoggedIn }) => {
@@ -13,6 +14,7 @@ const LoginForm = ({ setIsLoggedIn }) => {
     password: "",
   };
   const [formData, setFormData] = useState(initialValue);
+  const [errors, setErrors] = useState("");
 
   const [showPassword, setShowPassword] = useState(false);
 
@@ -24,25 +26,35 @@ const LoginForm = ({ setIsLoggedIn }) => {
   async function handlerSubmit(event) {
     event.preventDefault();
 
-   axios
-     .post("http://localhost:1300/api/donor-login", formData)
-     .then((res) => {
-       console.log(res.data);
-       localStorage.setItem('token', res.data);
-       setIsLoggedIn(true);
-       setTimeout(() => {
-         
-         toast.success("Logged In Successfully!");
-         navigate("/")
-        
-       }, 1000);
-     })
-     .catch((error) => {
-       console.log(error);
-       toast.error("Invalid Data!")
-     });
+
+    setErrors(FormValidation(formData));
+    console.log("errors",errors);
 
     
+    
+      axios
+        .post("http://localhost:1300/api/donor-login", formData)
+        .then((res) => {
+          console.log(res.data);
+          localStorage.setItem("token", res.data);
+
+          // setIsLoggedIn(true);
+          setTimeout(() => {
+            toast.success("Logged In Successfully!");
+            // navigate("/");
+          }, 1000);
+
+          // setFormData("");
+        })
+        .catch((error) => {
+          console.log(error);
+          toast.error("Invalid Data!");
+        });
+    
+      
+      
+    
+
   }
   return (
     <div>
@@ -58,10 +70,11 @@ const LoginForm = ({ setIsLoggedIn }) => {
             name="email"
             id="email"
             placeholder="Enter email address"
-            value={formData?.email}
+            value={formData?.email || " "}
             onChange={handleChange}
             className="bg-richblack-800 rounded-[0.5rem] text-richblack-5 w-full p-[12px]"
           />
+          {errors && <p className="text-red-500 ml-5 text-sm ">{errors.email}</p>}
         </label>
         <label htmlFor="password" className="w-full relative  ">
           <p className="text-[0.875rem] text-[#292929] mb-1 leading-[1.375rem]">
@@ -70,14 +83,17 @@ const LoginForm = ({ setIsLoggedIn }) => {
 
           <input
             required
+            minLength={8}
+            maxLength={15}
             type={showPassword ? "text" : "password"}
             name="password"
             id="password"
             placeholder="Enter password "
-            value={formData?.password}
+            value={formData?.password || ''}
             onChange={handleChange}
             className="bg-richblack-800  rounded-[0.5rem] text-richblack-5 w-full p-[12px] "
           />
+          {errors && <p className="text-red-500 ml-5 text-sm">{errors.password}</p>}
           <span
             onClick={() => setShowPassword((prev) => !prev)}
             className="absolute right-4 top-[38px] cursor-pointer "

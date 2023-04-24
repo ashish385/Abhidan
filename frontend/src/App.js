@@ -10,6 +10,7 @@ import Ngopage from "./components/Ngo/Ngopage"
 import Login from "./pages/Login";
 import Signup from "./pages/Signup"
 import Nav from './components/Navbar/Nav';
+import Footer from './components/Footer/Footer';
 
 
 function App() {
@@ -31,7 +32,7 @@ function App() {
           <Route path='/blog' element={<Blog/> } />
           <Route path='/howitworks' element={<HowitWorks/> } />
         </Routes>
-        {/* <Footer /> */}
+        <Footer />
       </BrowserRouter>
     
      

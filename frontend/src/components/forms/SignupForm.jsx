@@ -3,10 +3,12 @@ import { toast } from 'react-hot-toast'
 import { AiOutlineEye, AiOutlineEyeInvisible } from 'react-icons/ai'
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import FormValidation from './FormValidation';
 
 
 const SignupForm = () => {
-  
+
+ 
 
   const navigate = useNavigate();
   let initialValue = {
@@ -14,13 +16,15 @@ const SignupForm = () => {
     email: "",
     password: "",
     salt_password:"",
-    phoneNumber: "",
+    phonenumber: "",
     user_type:2,
   };
   const [formData, setFormData] = useState({initialValue});
 
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+
+  const [errors, setErrors] = useState("");
  
 
   function handleChange(e) {
@@ -30,24 +34,31 @@ const SignupForm = () => {
   }
   console.log(formData);
 
-  async function handleSubmit() {
 
-     axios
-       .post("http://localhost:1300/api/register-user", formData)
-       .then((res) => {
-         console.log(res.data);
-         window.localStorage.setItem("newData",res.data);
-           
+
+  async function handleSubmit(event) {
+    event.preventDefault();
+
+    // setErrors(FormValidation(formData));
+    console.log("errosre",errors);
+
+       axios
+         .post("http://localhost:1300/api/register-user", formData)
+         .then((res) => {
+           console.log(res.data);
+           window.localStorage.setItem("newData", res.data);
+
            setTimeout(() => {
              toast.success("Sign Up successfully");
              navigate("/login");
            }, 1000);
-         
-         
-       })
-       .catch((error) => {
-         console.log(error);
-       });
+           setFormData(" ");
+         })
+         .catch((error) => {
+           console.log(error);
+         });
+      
+    
    };
 
   return (
@@ -55,13 +66,13 @@ const SignupForm = () => {
       <div className="mb-5 pb-5">
         <form onSubmit={handleSubmit} className="flex flex-col gap-y-3 mt-2 ">
           {/* firstName and lastName */}
-          <div className="flex flex-col space-y-3 md:flex-row gap-x-4">
+          <div className="flex flex-col  md:flex-row gap-x-4">
             <label htmlFor="username" className="w-full">
               <p className="text-[0.875rem] text-[#292929] mb-1 leading-[1.375rem]">
                 User Name:<sup className="text-pink-200">*</sup>
               </p>
               <input
-                required
+                // required
                 type="text"
                 name="username"
                 id="username"
@@ -70,13 +81,18 @@ const SignupForm = () => {
                 onChange={handleChange}
                 className="bg-richblack-800 rounded-[0.5rem] flex shrink text-richblack-5 w-full p-[12px]"
               />
+              {errors && (
+                <p className="text-red-500 ml-5 text-sm ">{errors.username}</p>
+              )}
             </label>
             <label htmlFor="phonenumber" className="w-full">
               <p className="text-[0.875rem] text-[#292929] mb-1 leading-[1.375rem]">
                 Phone Number:<sup className="text-pink-200">*</sup>
               </p>
               <input
-                required
+                // required
+                minLength={10}
+                maxLength={10}
                 type="number"
                 name="phonenumber"
                 id="phonenumber"
@@ -85,14 +101,20 @@ const SignupForm = () => {
                 onChange={handleChange}
                 className="bg-richblack-800 rounded-[0.5rem] text-richblack-5 w-full p-[12px]"
               />
+              {errors && (
+                <p className="text-red-500 ml-5 text-sm ">
+                  {errors.phonenumber}
+                </p>
+              )}
             </label>
           </div>
           {/* email */}
           <label htmlFor="email" className="w-full">
-            <p className="text-[0.875rem] text-[#292929]  leading-[1.375rem]">
+            <p className="text-[0.875rem] text-[#292929] w-full  leading-[1.375rem]">
               Email Address:<sup className="text-pink-200">*</sup>
             </p>
             <input
+              // required
               type="email"
               name="email"
               id="email"
@@ -101,6 +123,9 @@ const SignupForm = () => {
               onChange={handleChange}
               className="bg-richblack-800 rounded-[0.5rem] text-richblack-5 w-full p-[12px]"
             />
+            {errors && (
+              <p className="text-red-500 ml-5 text-sm ">{errors.email}</p>
+            )}
           </label>
           {/* Create Password and Confirm Password */}
           <div className="flex flex-col md:flex-row gap-x-4">
@@ -109,6 +134,7 @@ const SignupForm = () => {
                 Create Password:<sup className="text-pink-200">*</sup>
               </p>
               <input
+                // required
                 type={showPassword ? "text" : "password"}
                 name="password"
                 id="password"
@@ -117,6 +143,9 @@ const SignupForm = () => {
                 onChange={handleChange}
                 className="bg-richblack-800 rounded-[0.5rem] text-richblack-5 w-full p-[12px]"
               />
+              {errors && (
+                <p className="text-red-500 ml-5 text-sm ">{errors.password}</p>
+              )}
               <span
                 onClick={() => setShowPassword((prev) => !prev)}
                 className="absolute right-2 top-[38px] cursor-pointer  "
@@ -133,6 +162,7 @@ const SignupForm = () => {
                 Confirm Password:<sup className="text-pink-200">*</sup>
               </p>
               <input
+                // required
                 type={showConfirmPassword ? "text" : "password"}
                 name="salt_password"
                 id="salt_password"
@@ -141,6 +171,9 @@ const SignupForm = () => {
                 onChange={handleChange}
                 className="bg-richblack-800 rounded-[0.5rem] text-richblack-5 w-full p-[12px]"
               />
+              {errors && (
+                <p className="text-red-500 ml-5 text-sm ">{errors.salt_password}</p>
+              )}
               <span
                 onClick={() => setShowConfirmPassword((prev) => !prev)}
                 className="absolute right-2 top-[38px] cursor-pointer  "

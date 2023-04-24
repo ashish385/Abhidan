@@ -13,7 +13,7 @@ const Templets = ({ title, desc1, desc2, image, formType, setIsLoggedIn }) => {
 
   return (
     <>
-      <div className="flex flex-col-reverse bg-white mt-3 rounded-lg  h-fit lg:flex-row-reverse w-11/12 max-w-[1160px] gap-y-5 box-border md:justify-between pb-5   mx-auto  md:gap-y-5">
+      <div className="flex flex-col-reverse bg-white mt-3 rounded-lg  h-fit lg:flex-row-reverse w-11/12 max-w-[1160px] gap-y-5 box-border md:justify-between pb-5 mb-5   mx-auto  md:gap-y-5">
         <div className="w-full max-h-screen md:w-[80%] lg:min-w-[550px] mx-auto md:px-[5rem] px-4 bg-[#fffaf0] rounded-md pt-4 box-border">
           <h1 className="text-[#104e8b] font-semibold text-[1.875rem] leading-[2.375rem]">
             {title}
