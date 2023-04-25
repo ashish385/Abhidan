@@ -12,7 +12,7 @@ const NgoRegistation = (props) => {
     const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
     const [formData, setFormData] = useState({
-      ngo_name: "",
+      name: "",
       image: "",
       register_id: "",
       email: "",
@@ -22,6 +22,7 @@ const NgoRegistation = (props) => {
       user_type: "ngo",
       contact: "",
       address: "",
+      
     });
     
     

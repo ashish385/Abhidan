@@ -24,7 +24,7 @@ function App() {
           
           <Route exact path='/' element={<Home />} />
           <Route path='/about' element={<About />} />
-          <Route path='/login' element={<Login />} />
+          <Route path='/login' element={<Login  setIsLoggedIn={setIsLoggedIn}/>} />
           <Route path='/signup' element={<Signup />} />
           <Route path='/ngo' element={<Ngopage />} />
           <Route path='/gallery' element={<Gallery/> } />

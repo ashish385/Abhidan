@@ -19,7 +19,7 @@ const user_donar_login= async(req,res)=>{
             if(passwordMatch !=''){
                 res.status(200).send({message:"login successfully"});
             }else{
-                res.send('Invalid email & password');
+                res.status(400).send('Invalid email & password');
             }
         }
     }
