@@ -1,10 +1,12 @@
 import React from 'react'
+import {Link} from "react-router-dom"
+
 
 const Footer = () => {
   return (
     <>
       <footer>
-        <div className="p-10 bg-gray-800 text-gray-200">
+        <div className="p-10 bg-gray-800 text-gray-200 rounded-md shadow-2xl border-t-2">
           <div className="max-w-7xl mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2 ">
               <div className="mb-5">
@@ -19,7 +21,9 @@ const Footer = () => {
               </div>
 
               <div className="mb-5">
-                <h3>Useful Links</h3>
+                <h3 className="pb-3 leading-5 tracking-[0.1rem]">
+                  Useful Links
+                </h3>
                 <ul className="text-gray-500 pl-2">
                   <li className="pb-2 hover:text-yellow-600">Home</li>
                   <li className="pb-2 hover:text-yellow-600">About us</li>
@@ -33,7 +37,9 @@ const Footer = () => {
                 </ul>
               </div>
               <div className="mb-5">
-                <h3 className="pb-3">Our Services</h3>
+                <h3 className="pb-3 leading-5 tracking-[0.1rem]">
+                  Our Services
+                </h3>
                 <ul className="text-gray-500 pl-2">
                   <li className="pb-2 hover:text-yellow-600">Food Donation</li>
                   <li className="pb-2 hover:text-yellow-600">
@@ -50,23 +56,31 @@ const Footer = () => {
                   </li>
                 </ul>
               </div>
-              <div className="mb-5">
-                <h4 className="pb-3 font-semibold leading-10 ">Join Us</h4>
+              <div className="mb-5  space-y-3">
+                <h4 className="pb-3 font-semibold leading-5 tracking-[0.1rem]  ">
+                  Join Us
+                </h4>
                 <p className="text-gray-500 pb-2">
                   Join 25,000+ others and never miss donation and more..
                 </p>
                 <form>
-                  <label className="flex flex-row flex-wrap rounded-lg bg-white focus:border-yellow-500">
+                  <label className="flex flex-row  rounded-lg bg-gray-800 focus:border-yellow-500">
                     <input
-                      type='email'
-                      placeholder='info@example.com'
-                      className='pl-2 w-2/3 text-gray-500 border-2 focus:border-none focus:border-yellow-500 rounded-tl-lg rounded-bl-lg'
+                      type="email"
+                      placeholder="info@example.com"
+                      className="appearance-none outline-none pl-2  text-gray-500  bg-gray-200 focus:border-2 focus:border-yellow-500 rounded-tl-lg rounded-bl-lg"
                     />
-                    <button type='submit' className="p-2 w-1/3 bg-yellow-500 text-white hover:bg-yellow-600 rounded-lg">
+                    <button
+                      type="submit"
+                      className="p-2 w-1/3 bg-yellow-500 text-white hover:bg-yellow-600 rounded-tr-lg rounded-br-lg"
+                    >
                       Suscribe
                     </button>
                   </label>
                 </form>
+                <div>
+                  {/* <Link><img src={Facebook} alt="" /></Link> */}
+                </div>
               </div>
             </div>
           </div>

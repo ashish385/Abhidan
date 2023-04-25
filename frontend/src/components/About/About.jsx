@@ -64,6 +64,7 @@ const About = () => {
       <div data-aos="fade-right" data-aos-offset="300" data-aos-duration="2000">
         <AboutSlick />
       </div>
+      <Footer />
     </>
   );
 };

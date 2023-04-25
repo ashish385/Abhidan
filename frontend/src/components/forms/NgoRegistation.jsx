@@ -31,11 +31,9 @@ const NgoRegistation = (props) => {
     
 
   function handleChange(event) {
-      console.log(formData);
-      setFormData((preData) => ({
-        ...preData,
-        [event.target.name]: event.target.value,
-      }));
+    console.log(formData);
+    const {name,value} = event.target
+      setFormData({...formData,[name]:value});
 
       
   }

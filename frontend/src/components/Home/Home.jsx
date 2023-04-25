@@ -11,6 +11,7 @@ import AboutHome from "../About/AboutHome";
 import HowitWorks from "../How_it_Works/HowitWorks";
 import AboutSlick from "../About/AboutSlick";
 import Circle from "./Circle";
+import Footer from "../Footer/Footer";
 const Home = () => {
   return (
     <>
@@ -19,6 +20,7 @@ const Home = () => {
       <Circle />
       <HowitWorks />
       <AboutSlick />
+      <Footer />
      
     </>
   );

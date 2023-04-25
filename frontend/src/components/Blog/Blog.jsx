@@ -3,6 +3,7 @@ import blogimg from "../../assets/1.jpg";
 import { FaHeart, FaComment } from "react-icons/fa";
 import "./Blog.css";
 import Blogdata from "../../DummyData/Blog.json";
+import Footer from "../Footer/Footer";
 
 const Blog = () => {
   return (
@@ -212,6 +213,7 @@ const Blog = () => {
           </a>
         </div>
       </main>
+      <Footer />
     </>
   );
 };

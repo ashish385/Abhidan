@@ -3,7 +3,7 @@ import LoginForm from '../components/forms/LoginForm';
 import NgoLoginForm from '../components/forms/NgoLoginForm';
 
 const LogInSelection = ({ setIsLoggedIn }) => {
-  const [loginType, setLoginType] = useState("donor");
+  const [loginType, setLoginType] = useState("donar");
   return (
     <>
       <div className="flex flex-col md:flex-row bg-richblack-800 p-1 gap-x-1 my-6 justify-around rounded-md md:rounded-full md:mx-auto w-full md:max-w-max">

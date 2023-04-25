@@ -3,6 +3,7 @@ import React,{useState} from "react";
 import ReactSlick from "../Home/ReactSlick";
 import NgoData from "../../DummyData/NGODummyData.json";
 import Modal from "./Modal";
+import Footer from "../Footer/Footer";
 
 
 
@@ -92,6 +93,7 @@ const btnClick=()=>{
           })}
         </div>
       </div>
+      <Footer />
 
       {/* <div data-aos="fade-right" data-aos-offset="300" data-aos-duration="3000">
         <div className="container mt-5" style={ngoback}>
