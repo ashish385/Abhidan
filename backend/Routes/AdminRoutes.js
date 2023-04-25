@@ -1,8 +1,9 @@
-const express = require("express")
+const express = require("express");
+
 var cors = require('cors')
 
 const abhidanRoutes = express();
-const bodyParser = require('bodyParser')
+const bodyParser = require('body-parser')
 abhidanRoutes.use(cors())
 abhidanRoutes.use(bodyParser.json())
 
@@ -17,7 +18,7 @@ abhidanRoutes.set("views", "./View");
 const AdminController = require("../Controller/AdminController")
 
 abhidanRoutes.get("/",AdminController.login)
+abhidanRoutes.post("/login",AdminController.verifiyLogin)
+abhidanRoutes.get("/dashboard",AdminController.dashboard)
 
-module.exports={
-    abhidanRoutes,
-}
+module.exports =abhidanRoutes;

@@ -10,6 +10,7 @@ import Ngopage from "./components/Ngo/Ngopage"
 import Login from "./pages/Login";
 import Signup from "./pages/Signup"
 import Nav from './components/Navbar/Nav';
+import Footer from './components/Footer/Footer';
 
 
 function App() {
@@ -25,13 +26,14 @@ function App() {
           <Route exact path='/' element={<Home />} />
           <Route path='/about' element={<About />} />
           <Route path='/login' element={<Login  setIsLoggedIn={setIsLoggedIn}/>} />
+          <Route path='/login' element={<Login setIsLoggedIn={setIsLoggedIn} />} />
           <Route path='/signup' element={<Signup />} />
           <Route path='/ngo' element={<Ngopage />} />
           <Route path='/gallery' element={<Gallery/> } />
           <Route path='/blog' element={<Blog/> } />
           <Route path='/howitworks' element={<HowitWorks/> } />
         </Routes>
-        {/* <Footer /> */}
+        <Footer />
       </BrowserRouter>
     
      

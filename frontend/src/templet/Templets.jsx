@@ -4,6 +4,7 @@ import LoginForm from "../components/forms/LoginForm"
 import {FcGoogle} from "react-icons/fc";
 import RegSelection from "./RegSelection"
 import { Link } from "react-router-dom";
+import LogInSelection from "./LogInSelection";
 
 
 
@@ -12,7 +13,7 @@ const Templets = ({ title, desc1, desc2, image, formType, setIsLoggedIn }) => {
 
   return (
     <>
-      <div className="flex flex-col-reverse bg-white mt-3 rounded-lg  h-fit lg:flex-row-reverse w-11/12 max-w-[1160px] gap-y-5 box-border md:justify-between pb-5  mx-auto  md:gap-y-5">
+      <div className="flex flex-col-reverse bg-white mt-3 rounded-lg  h-fit lg:flex-row-reverse w-11/12 max-w-[1160px] gap-y-5 box-border md:justify-between pb-5 mb-5   mx-auto  md:gap-y-5">
         <div className="w-full max-h-screen md:w-[80%] lg:min-w-[550px] mx-auto md:px-[5rem] px-4 bg-[#fffaf0] rounded-md pt-4 box-border">
           <h1 className="text-[#104e8b] font-semibold text-[1.875rem] leading-[2.375rem]">
             {title}
@@ -26,21 +27,9 @@ const Templets = ({ title, desc1, desc2, image, formType, setIsLoggedIn }) => {
             // <SignupForm setIsLoggedIn={setIsLoggedIn} />
             <RegSelection />
           ) : (
-            <LoginForm setIsLoggedIn={setIsLoggedIn} />
+            <LogInSelection  setIsLoggedIn={setIsLoggedIn} />
           )}
-
-          <div className="flex w-full items-center my-4 gap-x-2">
-            <div className="h-[1px] w-[40%] bg-richblack-700"></div>
-            <p className="text-richblack-700 font-medium leading-[1.375rem">
-              OR
-            </p>
-            <div className="h-[1px] w-[40%] bg-richblack-700"></div>
-          </div>
-
-          <button className="flex flex-row w-full gap-x-2 justify-center items-center rounded-[8px] font-medium hover:bg-yellow-500 text-gray-500 hover:text-gray-700 border border-richblack-700 px-[12px] py-[8px] mt-6">
-            <FcGoogle />
-            <p className="">Signup with Goggle</p>
-          </button>
+          
         </div>
         <div className="md:w-[80%] lg:min-w-[550px] mx-auto lg:h-full max-h-screen ">
           <div className=" hidden md:block  md:w-[100%] rounded-md  ">

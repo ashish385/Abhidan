@@ -1,19 +1,16 @@
 import React, { useState } from 'react'
-import NgoRegistation from '../components/forms/NgoRegistation';
-import SignupForm from '../components/forms/SignupForm';
+import LoginForm from '../components/forms/LoginForm';
+import NgoLoginForm from '../components/forms/NgoLoginForm';
 
-const RegSelection = () => {
-    const [accountType, setAccountType] = useState("donar");
-    
-
-
+const LogInSelection = ({ setIsLoggedIn }) => {
+  const [loginType, setLoginType] = useState("donor");
   return (
     <>
       <div className="flex flex-col md:flex-row bg-richblack-800 p-1 gap-x-1 my-6 justify-around rounded-md md:rounded-full md:mx-auto w-full md:max-w-max">
         <button
-          onClick={() => setAccountType("donar")}
+          onClick={() => setLoginType("donar")}
           className={`${
-            accountType === "donar"
+            loginType === "donar"
               ? "bg-richblack-900 text-richblack-5"
               : "bg-transparent text-richblack-200"
           } rounded-full  px-5 py-2 transition-all duration-200`}
@@ -21,9 +18,9 @@ const RegSelection = () => {
           As a Donar
         </button>
         <button
-          onClick={() => setAccountType("ngo")}
+          onClick={() => setLoginType("ngo")}
           className={`${
-            accountType === "ngo"
+            loginType === "ngo"
               ? "bg-richblack-900 text-richblack-5"
               : "bg-transparent text-richblack-200"
           } rounded-full px-5 py-2 transition-all duration-200`}
@@ -32,16 +29,14 @@ const RegSelection = () => {
         </button>
       </div>
       <div>
-        {accountType === "donar" ? (
-          <SignupForm
-             accountType={accountType}
-          />
+        {loginType === "donar" ? (
+          <LoginForm setIsLoggedIn={setIsLoggedIn} loginType={loginType} />
         ) : (
-          <NgoRegistation accountType={accountType} />
+          <NgoLoginForm setIsLoggedIn={setIsLoggedIn} loginType={loginType} />
         )}
       </div>
     </>
   );
-}
+};
 
-export default RegSelection
+export default LogInSelection

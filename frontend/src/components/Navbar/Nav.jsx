@@ -60,11 +60,11 @@ const UserDropDown = ({ isLoggedIn, setIsLoggedIn }) => {
             src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=256&q=80"
             alt="Your avatar"
           />
-          <span class="ml-3 text-xl font-semibold text-gray-700 ">
+          <span className="ml-3 text-xl font-semibold text-gray-700 ">
             Jane Doe
           </span>
         </div>
-        <div class="mt-4 ">
+        <div className="mt-4 ">
           <Link to={"/myprofile"}>
             <span className="block text-gray-500 text-lg hover:text-gray-700">
               My Profile

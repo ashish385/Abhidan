@@ -19,12 +19,12 @@ const user_donar_login= async(req,res)=>{
             if(passwordMatch !=''){
                 res.status(200).send({message:"login successfully"});
             }else{
-                res.status(400).send('Invalid email & password');
+                res.status(202).send('Invalid email or password');
             }
         }
     }
     catch(error){
-        res.send(400).json('data not found');
+        res.send(400).send({message:'data not found'});
     };
 
 }

@@ -23,6 +23,10 @@ const NgoRegistation = (props) => {
       contact: "",
       address: "",
       
+      established_date: "",
+      description:"",
+      state: "",
+    
     });
     
     
