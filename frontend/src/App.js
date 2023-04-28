@@ -1,7 +1,7 @@
 import React,{useState} from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
-import About from './components/About/About';
+import About from "./pages/About"
 import Blog from './components/Blog/Blog';
 import Gallery from './components/Gallery/Gallery';
 import Home from './components/Home/Home';

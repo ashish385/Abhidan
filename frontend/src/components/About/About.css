@@ -71,7 +71,7 @@
   font-weight: 1200;
   font-style: italic;
   display: block;
-  margin: 0.5em;
+  /* margin: 0.5em; */
   font-size: 50px;
   color: rgb(3, 34, 61);
   text-transform: uppercase;
@@ -80,7 +80,7 @@
   width: 50%;
   /* box-shadow: 0 6px 7px rgba(160, 182, 223, 0.778); */
   border-radius: 5px;
-  margin-left: 25%;
+  /* margin-left: 25%; */
   
 }
 

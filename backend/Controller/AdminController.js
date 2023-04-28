@@ -9,6 +9,14 @@ const login = async (req, res) => {
   }
 };
 
+const Home = async (req, res) => {
+  try {
+    res.render("Pages/Home")
+  } catch (error) {
+    console.log(error.message);
+  }
+}
+
 const verifiyLogin = async (req, res) => {
   const adminemail = "admin@gmail.com";
   const adminpassword = "123456";
@@ -47,6 +55,7 @@ const dashboard = async (req, res) => {
 
 
 module.exports = {
+  Home,
   login,
   verifiyLogin,
   dashboard

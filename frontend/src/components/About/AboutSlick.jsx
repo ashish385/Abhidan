@@ -73,10 +73,9 @@ const AboutSlick = ( ) => {
   return (
     <>
       <div className="section-2" >
-        <div className="headinpPart">
-          <h1 className="slideHeading " data-aos="fade-top"
-              data-aos-offset="300"
-              data-aos-duration="2000">testimonials </h1>
+        <div className="flex flex-col justify-center items-center">
+          <h1 className="slideHeading">testimonials </h1>
+          <div className="w-[300px] h-1 rounded-lg  bg-red-500"></div>
         </div>
 
         <div className="SlideBackground">

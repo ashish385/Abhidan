@@ -6,9 +6,9 @@ const Footer = () => {
   return (
     <>
       <footer>
-        <div className="p-10 bg-gray-800 text-gray-200 rounded-md shadow-2xl border-t-2">
+        <div className="p-10 bg-gray-800 text-gray-200 rounded-md shadow-2xl border-t-2 border-gray-950">
           <div className="max-w-7xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2 ">
+            <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-2 ">
               <div className="mb-5">
                 <h1 className="text-2xl pb-4">Abhidan</h1>
                 <p className="text-gray-500">BBDU Faizabad road, Lucknow </p>

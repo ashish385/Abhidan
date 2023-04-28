@@ -2,12 +2,14 @@
 module.exports = {
   content: [
     "./src/**/*.{js,jsx,ts,tsx}",
+    'node_modules/flowbite-react/**/*.{js,jsx,ts,tsx}'
   ],
   theme: {
     
       extend: {
       fontFamily: {
-        inter: ["Inter", "sans-serif"],
+          inter: ["Inter", "sans-serif"],
+         rubik:["Rubik","sans-serif"],
       },
       colors: {
         richblack: {
@@ -31,5 +33,7 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    require('flowbite/plugin')
+  ],
 }
