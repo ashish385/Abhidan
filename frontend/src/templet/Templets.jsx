@@ -9,7 +9,7 @@ import LogInSelection from "./LogInSelection";
 
 
 
-const Templets = ({ title, desc1, desc2, image, formType, setIsLoggedIn }) => {
+const Templets = ({ title, desc1, desc2, image, formType, setIsLoggedIn, setIsNgoLoggedIn }) => {
 
   return (
     <>
@@ -27,9 +27,11 @@ const Templets = ({ title, desc1, desc2, image, formType, setIsLoggedIn }) => {
             // <SignupForm setIsLoggedIn={setIsLoggedIn} />
             <RegSelection />
           ) : (
-            <LogInSelection  setIsLoggedIn={setIsLoggedIn} />
+            <LogInSelection
+              setIsLoggedIn={setIsLoggedIn}
+              setIsNgoLoggedIn={setIsNgoLoggedIn}
+            />
           )}
-          
         </div>
         <div className="md:w-[80%] lg:min-w-[550px] mx-auto lg:h-full max-h-screen ">
           <div className=" hidden md:block  md:w-[100%] rounded-md  ">

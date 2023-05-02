@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import LoginForm from '../components/forms/LoginForm';
 import NgoLoginForm from '../components/forms/NgoLoginForm';
 
-const LogInSelection = ({ setIsLoggedIn }) => {
+const LogInSelection = ({ setIsLoggedIn, setIsNgoLoggedIn }) => {
   const [loginType, setLoginType] = useState("donar");
   return (
     <>
@@ -32,7 +32,10 @@ const LogInSelection = ({ setIsLoggedIn }) => {
         {loginType === "donar" ? (
           <LoginForm setIsLoggedIn={setIsLoggedIn} loginType={loginType} />
         ) : (
-          <NgoLoginForm setIsLoggedIn={setIsLoggedIn} loginType={loginType} />
+          <NgoLoginForm
+            setIsNgoLoggedIn={setIsNgoLoggedIn}
+            loginType={loginType}
+          />
         )}
       </div>
     </>

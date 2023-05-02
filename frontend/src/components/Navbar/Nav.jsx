@@ -35,17 +35,19 @@ const UserDropDown = ({ isLoggedIn, setIsLoggedIn }) => {
               : "hidden"
           }`}
         >
-          <Link to={"/myprofile"}>
+          <Link to={"/donor/myProfile"}>
             <span className="block px-4 py-2 text-gray-800 hover:bg-indigo-500 hover:text-white">
               my Profile
             </span>
           </Link>
 
-          <Link to={"/login"}
+          <Link
+            to={"/login"}
             onClick={() => {
               setIsLoggedIn(false);
               toast.success("Log out successfully");
-            }}>
+            }}
+          >
             <span className="block px-4 py-2 text-gray-800 hover:bg-indigo-500 hover:text-white">
               Log Out
             </span>
@@ -65,16 +67,18 @@ const UserDropDown = ({ isLoggedIn, setIsLoggedIn }) => {
           </span>
         </div>
         <div className="mt-4 ">
-          <Link to={"/myprofile"}>
+          <Link to={"/donor/myProfile"}>
             <span className="block text-gray-500 text-lg hover:text-gray-700">
               My Profile
             </span>
           </Link>
-          <Link to={"/login"}
+          <Link
+            to={"/login"}
             onClick={() => {
               setIsLoggedIn(false);
               toast.success("Log out successfully");
-            }}>
+            }}
+          >
             <span className="block text-gray-500 text-lg hover:text-gray-700">
               Log Out
             </span>

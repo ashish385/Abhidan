@@ -3,7 +3,8 @@ import Templets from "../templet/Templets"
 // import image from "../assets/login.png"
 
 const Login = (props) => {
-  let setIsLoggedIn = props.setIsLoggedIn
+  let setIsLoggedIn = props.setIsLoggedIn;
+  let setIsNgoLoggedIn = props.setIsNgoLoggedIn;
   return (
     <div>
       <Templets
@@ -13,9 +14,10 @@ const Login = (props) => {
         // image={image}
         formType="login"
         setIsLoggedIn={setIsLoggedIn}
+        setIsNgoLoggedIn={setIsNgoLoggedIn}
       />
     </div>
-  )
+  );
 }
 
 export default Login

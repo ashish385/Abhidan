@@ -3,7 +3,7 @@ import { toast } from 'react-hot-toast'
 import { AiOutlineEye, AiOutlineEyeInvisible } from 'react-icons/ai'
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import FormValidation from './FormValidation';
+
 
 
 const SignupForm = () => {
@@ -17,14 +17,13 @@ const SignupForm = () => {
     password: "",
     salt_password:"",
     phonenumber: "",
-    user_type:2,
+    user_type:"donor",
   };
-  const [formData, setFormData] = useState({initialValue});
+  const [formData, setFormData] = useState(initialValue);
 
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
-  const [errors, setErrors] = useState("");
  
 
   function handleChange(e) {
@@ -32,21 +31,22 @@ const SignupForm = () => {
    const { name, value } = e.target;
    setFormData({ ...formData, [name]: value });
   }
-  console.log(formData);
+  console.log("form data",formData);
 
 
 
   async function handleSubmit(event) {
     event.preventDefault();
+    console.log("formdata", formData);
 
-    // setErrors(FormValidation(formData));
-    console.log("errosre",errors);
+ 
 
        axios
          .post("http://localhost:1300/api/register-user", formData)
          .then((res) => {
            console.log(res.data);
-           window.localStorage.setItem("newData", res.data);
+
+          //  window.localStorage.setItem("token", res.data);
 
            setTimeout(() => {
              toast.success("Sign Up successfully");
@@ -55,7 +55,14 @@ const SignupForm = () => {
            setFormData(" ");
          })
          .catch((error) => {
-           console.log(error);
+           console.log(error.response.status);
+           if (error.response.status === 422) {
+             toast.error("User is already present");
+           } console.log(error);
+           if (error.response.status === 500) {
+             toast.error("Something Wrong!");
+             console.log(error);
+           } 
          });
       
     
@@ -72,7 +79,7 @@ const SignupForm = () => {
                 User Name:<sup className="text-pink-200">*</sup>
               </p>
               <input
-                // required
+                required
                 type="text"
                 name="username"
                 id="username"
@@ -81,17 +88,15 @@ const SignupForm = () => {
                 onChange={handleChange}
                 className="bg-richblack-800 rounded-[0.5rem] flex shrink text-richblack-5 w-full p-[12px]"
               />
-              {errors && (
-                <p className="text-red-500 ml-5 text-sm ">{errors.username}</p>
-              )}
+              
             </label>
             <label htmlFor="phonenumber" className="w-full">
               <p className="text-[0.875rem] text-[#292929] mb-1 leading-[1.375rem]">
                 Phone Number:<sup className="text-pink-200">*</sup>
               </p>
               <input
-                // required
-                minLength={10}
+                required
+                minLength={3}
                 maxLength={10}
                 type="number"
                 name="phonenumber"
@@ -101,11 +106,7 @@ const SignupForm = () => {
                 onChange={handleChange}
                 className="bg-richblack-800 rounded-[0.5rem] text-richblack-5 w-full p-[12px]"
               />
-              {errors && (
-                <p className="text-red-500 ml-5 text-sm ">
-                  {errors.phonenumber}
-                </p>
-              )}
+              
             </label>
           </div>
           {/* email */}
@@ -114,7 +115,7 @@ const SignupForm = () => {
               Email Address:<sup className="text-pink-200">*</sup>
             </p>
             <input
-              // required
+              required
               type="email"
               name="email"
               id="email"
@@ -123,9 +124,7 @@ const SignupForm = () => {
               onChange={handleChange}
               className="bg-richblack-800 rounded-[0.5rem] text-richblack-5 w-full p-[12px]"
             />
-            {errors && (
-              <p className="text-red-500 ml-5 text-sm ">{errors.email}</p>
-            )}
+            
           </label>
           {/* Create Password and Confirm Password */}
           <div className="flex flex-col md:flex-row gap-x-4">
@@ -134,7 +133,7 @@ const SignupForm = () => {
                 Create Password:<sup className="text-pink-200">*</sup>
               </p>
               <input
-                // required
+                required
                 type={showPassword ? "text" : "password"}
                 name="password"
                 id="password"
@@ -143,9 +142,7 @@ const SignupForm = () => {
                 onChange={handleChange}
                 className="bg-richblack-800 rounded-[0.5rem] text-richblack-5 w-full p-[12px]"
               />
-              {errors && (
-                <p className="text-red-500 ml-5 text-sm ">{errors.password}</p>
-              )}
+              
               <span
                 onClick={() => setShowPassword((prev) => !prev)}
                 className="absolute right-2 top-[38px] cursor-pointer  "
@@ -162,7 +159,7 @@ const SignupForm = () => {
                 Confirm Password:<sup className="text-pink-200">*</sup>
               </p>
               <input
-                // required
+                required
                 type={showConfirmPassword ? "text" : "password"}
                 name="salt_password"
                 id="salt_password"
@@ -171,9 +168,7 @@ const SignupForm = () => {
                 onChange={handleChange}
                 className="bg-richblack-800 rounded-[0.5rem] text-richblack-5 w-full p-[12px]"
               />
-              {errors && (
-                <p className="text-red-500 ml-5 text-sm ">{errors.salt_password}</p>
-              )}
+              
               <span
                 onClick={() => setShowConfirmPassword((prev) => !prev)}
                 className="absolute right-2 top-[38px] cursor-pointer  "
