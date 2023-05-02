@@ -10,11 +10,13 @@ import Ngopage from "./components/Ngo/Ngopage"
 import Login from "./pages/Login";
 import Signup from "./pages/Signup"
 import Nav from './components/Navbar/Nav';
+import DonorProfile from './components/profiles/DonorProfile';
 
 
 
 function App() {
-  const [isLoggedIn,setIsLoggedIn] = useState(false)
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isNgoLoggedIn, setIsNgoLoggedIn] = useState(false);
   return (
     <div >
      
@@ -25,8 +27,10 @@ function App() {
           
           <Route exact path='/' element={<Home />} />
           <Route path='/about' element={<About />} />
-          <Route path='/login' element={<Login  setIsLoggedIn={setIsLoggedIn}/>} />
-          <Route path='/login' element={<Login setIsLoggedIn={setIsLoggedIn} />} />
+          <Route path='/login' element={<Login setIsLoggedIn={setIsLoggedIn} setIsNgoLoggedIn={setIsNgoLoggedIn} />} />
+          {
+            isLoggedIn && <Route path='/donor/myProfile' element={<DonorProfile />} />
+          }
           <Route path='/signup' element={<Signup />} />
           <Route path='/ngo' element={<Ngopage />} />
           <Route path='/gallery' element={<Gallery/> } />

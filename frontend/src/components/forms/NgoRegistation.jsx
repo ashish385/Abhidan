@@ -1,7 +1,8 @@
+import axios from 'axios';
 import React, { useState } from 'react'
 import { toast } from "react-hot-toast";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
-import { useNavigate } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
 
 const NgoRegistation = (props) => {
     let setIsLoggedIn = props.setIsLoggedIn;
@@ -12,21 +13,19 @@ const NgoRegistation = (props) => {
     const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
     const [formData, setFormData] = useState({
-      name: "",
+      ngo_name: "",
       image: "",
       register_id: "",
       email: "",
       password: "",
-      confirm_password:"",
+      confirm_password: "",
       current_status: "ngo",
       user_type: "ngo",
       contact: "",
       address: "",
-      
       established_date: "",
-      description:"",
+      description: "",
       state: "",
-    
     });
     
     
@@ -43,23 +42,35 @@ const NgoRegistation = (props) => {
     async function handleSubmit(event) {
       event.preventDefault();
       
+      if (formData.password !== formData.confirm_password) {
+          toast.error("Password does not match!");
+          return;
+      }
 
-        if (formData.password !== formData.confirm_password) {
-            toast.error("Password does not match!");
-            return;
-        }
+      axios
+        .post("http://localhost:1300/api/register-ngo", formData)
+        .then((res) => {
+          console.log(res.data);
+          setTimeout(() => {
+            toast.success("Sign Up successfully");
+            Navigate("/login");
+          }, 1000);
+          // setFormData(" ");
+        })
+        .catch((error) => {
+          console.log(error);
+          if (error.response.status === 400) {
+            toast.error("Please fill all field");
+          }
+          if (error.response.status === 422) {
+            toast.error("Ngo is already present");
+          }
+          console.log(error);
+        });
+      
 
-        const userData = {
-          ...formData,
-        };
-
-        const finalData = {
-          ...userData,
-          accountType,
-        };
-
-      console.log(finalData);
-        setFormData(finalData);
+      console.log(formData);
+      
 
     }
 
@@ -198,7 +209,7 @@ const NgoRegistation = (props) => {
             </label>
           </div>
 
-          <div className="flex flex-col gap-y-2">
+          <div className="flex flex-col  gap-y-2">
             <label
               class=" text-[0.875rem] text-[#292929] mb-1 leading-[1.375rem]"
               for="file_input"
@@ -209,8 +220,60 @@ const NgoRegistation = (props) => {
               class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
               id="file_input"
               type="file"
+              name="image"
+              value={formData.image}
+              onChange={handleChange}
             />
           </div>
+          {/* state and establish date */}
+          <div className="flex flex-col md:flex-row gap-x-4">
+            <label htmlFor="state" className="w-full">
+              <p className="text-[0.875rem] text-[#292929] mb-1 leading-[1.375rem]">
+                State:<sup className="text-pink-200">*</sup>
+              </p>
+              <input
+                required
+                type="text"
+                name="state"
+                id="state"
+                placeholder="Enter Ngo name"
+                value={formData.state}
+                onChange={handleChange}
+                className="bg-richblack-800 rounded-[0.5rem] text-richblack-5 w-full p-[12px]"
+              />
+            </label>
+            <label htmlFor="established_date" className="w-full">
+              <p className="text-[0.875rem] text-[#292929] mb-1 leading-[1.375rem]">
+                Established Date:<sup className="text-pink-200">*</sup>
+              </p>
+              <input
+                required
+                type="text"
+                name="established_date"
+                id="established_date"
+                placeholder="Enter register id:"
+                value={formData.established_date}
+                onChange={handleChange}
+                className="bg-richblack-800 rounded-[0.5rem] text-richblack-5 w-full p-[12px]"
+              />
+            </label>
+          </div>
+
+          {/* About Ngo */}
+          <label htmlFor="description" className="w-full">
+            <p className="text-[0.875rem] text-[#292929] mb-1 leading-[1.375rem]">
+              About NGO:<sup className="text-pink-200">*</sup>
+            </p>
+            <input
+              type="description"
+              name="description"
+              id="description"
+              placeholder="Enter description Addresss"
+              value={formData.description}
+              onChange={handleChange}
+              className="bg-richblack-800 rounded-[0.5rem] text-richblack-5 w-full p-[12px]"
+            />
+          </label>
 
           <button
             type="submit"

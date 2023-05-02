@@ -3,42 +3,46 @@ import React, { useState } from 'react'
 import { toast } from 'react-hot-toast';
 import { AiOutlineEye, AiOutlineEyeInvisible } from 'react-icons/ai';
 import { Link, useNavigate } from 'react-router-dom';
+import ForgotPassword from './ForgotPassword';
 
-const NgoLoginForm = ({setIsLoggedIn}) => {
+const NgoLoginForm = ({ setIsNgoLoggedIn }) => {
+  const navigate = useNavigate();
+  let initialValue = {
+    register_id: "",
+    password: "",
+  };
+  const [formData, setFormData] = useState(initialValue);
 
-    const navigate = useNavigate();
-    let initialValue = {
-      register_id: "",
-      password: "",
-    };
-    const [formData, setFormData] = useState(initialValue);
+  const [showPassword, setShowPassword] = useState(false);
+  const [forgotModel, setForgotModel] = useState(false);
 
-    const [showPassword, setShowPassword] = useState(false);
+  function handleChange(e) {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  }
 
-    function handleChange(e) {
-      const { name, value } = e.target;
-      setFormData({ ...formData, [name]: value });
-    }
+  async function handlerSubmit(event) {
+    event.preventDefault();
 
-    async function handlerSubmit(event) {
-      event.preventDefault();
-
-      axios
-        .post("http://localhost:1300/api/ngo-login", formData)
-        .then((res) => {
-          console.log(res.data);
-          localStorage.setItem("token", res.data);
-          // setIsLoggedIn(true);
-          setTimeout(() => {
-            toast.success("Logged In Successfully!");
-            navigate("/");
-          }, 1000);
-        })
-        .catch((error) => {
-          console.log(error);
-          toast.error("Invalid Data!");
-        });
-    }
+    axios
+      .post("http://localhost:1300/api/ngo-login", formData)
+      .then((res) => {
+        console.log(res.data);
+        localStorage.setItem("token", res.data);
+        // setIsNgoLoggedIn(true);
+        setTimeout(() => {
+          toast.success("Logged In Successfully!");
+          navigate("/");
+        }, 1000);
+      })
+      .catch((error) => {
+        if (error.response.status === 422) {
+          toast.error("Invalid email or password");
+          navigate("/login");
+        }
+        toast.error("Invalid Data!");
+      });
+  }
   return (
     <>
       <form onSubmit={handlerSubmit} className="flex flex-col gap-y-3 mt-2">
@@ -82,11 +86,15 @@ const NgoLoginForm = ({setIsLoggedIn}) => {
               <AiOutlineEye fontSize={24} fill="#AFB2BF" />
             )}
           </span>
-          <Link>
-            <p className=" mt-1 text-blue-100 text-md float-right hover:underline">
+          <button className='float-right'>
+            <p
+              onClick={() => setForgotModel(true)}
+              className=" mt-1 text-blue-100 text-md float-right hover:underline"
+            >
               Forgot Password?
             </p>
-          </Link>
+          </button>
+          {forgotModel && <ForgotPassword setForgotModel={setForgotModel} />}
         </label>
         <button
           onClick={handlerSubmit}
@@ -112,6 +120,6 @@ const NgoLoginForm = ({setIsLoggedIn}) => {
       </div>
     </>
   );
-}
+};
 
 export default NgoLoginForm

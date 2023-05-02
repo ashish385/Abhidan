@@ -137,11 +137,11 @@ const Blog = () => {
         </div>
       </div> */}
       <main>
-        <section class="site-title">
-          <div class="site-background" data-aos="fade-up" data-aos-delay="100">
+        <section className="site-title">
+          <div className="site-background" data-aos="fade-up" data-aos-delay="100">
             <h3>Empowering Change</h3>
             <h1> Stories and Insights from our NGO Community</h1>
-            <button class="btn">Explore</button>
+            <button className="btn">Explore</button>
           </div>
         </section>
 
@@ -149,36 +149,36 @@ const Blog = () => {
 
         {Blogdata.map((data, index) => {
           return (
-            <div className="blog">
-              <section class="container">
-                <div class="site-content">
-                  <div class="posts" key={index}>
+            <div key={index} className="blog">
+              <section className="container">
+                <div className="site-content">
+                  <div className="posts" key={index}>
                     <div
-                      class="post-content"
+                      className="post-content"
                       data-aos="zoom-in"
                       data-aos-delay="200"
                     >
-                      <div class="post-image">
+                      <div className="post-image">
                         <div>
-                          <img src={blogimg} class="img" alt="blog1" />
+                          <img src={blogimg} className="img" alt="blog1" />
                         </div>
-                        <div class="post-info flex-row">
+                        <div className="post-info flex-row">
                           <span>
-                            <i class="fas fa-user text-gray"></i>
+                            <i className="fas fa-user text-gray"></i>
                             &nbsp;&nbsp;Admin
                           </span>
                           <span>
-                            <i class="fas fa-calendar-alt text-gray"></i>
+                            <i className="fas fa-calendar-alt text-gray"></i>
                             &nbsp;&nbsp;January 14, 2019
                           </span>
                           <span>2 Commets</span>
                         </div>
                       </div>
-                      <div class="post-title">
+                      <div className="post-title">
                         <a href="#">{data.title}</a>
                         <p>{data.description}</p>
-                        <button class="btn post-btn">
-                          Read More &nbsp; <i class="fas fa-arrow-right"></i>
+                        <button className="btn post-btn">
+                          Read More &nbsp; <i className="fas fa-arrow-right"></i>
                         </button>
                       </div>
                     </div>
@@ -195,21 +195,21 @@ const Blog = () => {
 
         
 
-        <div class="pagination flex-row">
+        <div className="pagination flex-row">
           <a href="#">
-            <i class="fas fa-chevron-left"></i>
+            <i className="fas fa-chevron-left"></i>
           </a>
-          <a href="#" class="pages">
+          <a href="#" className="pages">
             1
           </a>
-          <a href="#" class="pages">
+          <a href="#" className="pages">
             2
           </a>
-          <a href="#" class="pages">
+          <a href="#" className="pages">
             3
           </a>
           <a href="#">
-            <i class="fas fa-chevron-right"></i>
+            <i className="fas fa-chevron-right"></i>
           </a>
         </div>
       </main>

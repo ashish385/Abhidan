@@ -2,7 +2,7 @@ import React,{useState} from "react";
 
 import ReactSlick from "../Home/ReactSlick";
 import NgoData from "../../DummyData/NGODummyData.json";
-import Modal from "./Modal";
+import Modal from "../forms/DonateForm";
 import Footer from "../Footer/Footer";
 
 
@@ -11,10 +11,9 @@ import Footer from "../Footer/Footer";
 const Ngopage = () => {
   
   const [showModal, setShowModal] = useState(false);
-  const [modal, setModal] = useState(false)
-const btnClick=()=>{
-  setShowModal(!showModal);
-}
+
+ 
+
 
   const ngoback = {
     background: `url('https://kodesolution.com/html/2017/fundpro-html/demo/images/pattern/p26.png')`,
@@ -82,12 +81,12 @@ const btnClick=()=>{
                         type="submit"
                         className="btn btn-danger mb-4"
                         // onClick={btnClick}
-                        onClick={() => setModal(true)}
+                        onClick={() => setShowModal(true)}
                       >
                         Donate
                       </button>
-                      {/* {showModal ? <Modal /> : null} */}
-                      {modal && <Modal setModal={setModal} />}
+                     
+                      {showModal && <Modal setShowModal={setShowModal} />}
                     </div>
                   </div>
                 </div>
