@@ -22,13 +22,13 @@ const ngoSchema = new mongoose.Schema({
     type: String,
     require: true,
   },
-  confirm_password:{
-    type:String,
-    require:true,
+  confirm_password: {
+    type: String,
+    require: true,
   },
-  current_status:{
-    type:String,
-    require:true,
+  current_status: {
+    type: String,
+    require: true,
   },
   user_type: {
     type: String,
@@ -50,12 +50,15 @@ const ngoSchema = new mongoose.Schema({
     type: String,
     require: true,
   },
-  state:{
-    type:String,
-    require:true,
+  state: {
+    type: String,
+    require: true,
   },
-
+  is_active: {
+    type: Number,
+    default: 1,
+  },
 });
 
-const ngoModel = mongoose.model("ngoModel",ngoSchema);
-module.exports=ngoModel
+const ngoModel = mongoose.model("ngoModel", ngoSchema);
+module.exports = ngoModel;
