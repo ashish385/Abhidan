@@ -16,8 +16,8 @@ abhidanRoutes.set("view engine", "ejs");
 abhidanRoutes.set("views", "./View");
 
 const AdminController = require("../Controller/AdminController")
-abhidanRoutes.get("/", AdminController.Home);
-abhidanRoutes.get("/login",AdminController.login)
+// abhidanRoutes.get("/", AdminController.Home);
+abhidanRoutes.get("/",AdminController.login)
 abhidanRoutes.post("/login",AdminController.verifiyLogin)
 abhidanRoutes.get("/dashboard",AdminController.dashboard)
 
