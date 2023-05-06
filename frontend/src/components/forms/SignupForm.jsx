@@ -58,7 +58,11 @@ const SignupForm = () => {
            console.log(error.response.status);
            if (error.response.status === 422) {
              toast.error("User is already present");
-           } console.log(error);
+           };
+
+           if (error.response.status === 400) {
+             toast.error("Please fill all fields!")
+           }
            if (error.response.status === 500) {
              toast.error("Something Wrong!");
              console.log(error);
@@ -79,7 +83,7 @@ const SignupForm = () => {
                 User Name:<sup className="text-pink-200">*</sup>
               </p>
               <input
-                required
+                
                 type="text"
                 name="username"
                 id="username"
@@ -95,7 +99,7 @@ const SignupForm = () => {
                 Phone Number:<sup className="text-pink-200">*</sup>
               </p>
               <input
-                required
+                
                 minLength={3}
                 maxLength={10}
                 type="number"
@@ -115,7 +119,7 @@ const SignupForm = () => {
               Email Address:<sup className="text-pink-200">*</sup>
             </p>
             <input
-              required
+              
               type="email"
               name="email"
               id="email"
@@ -133,7 +137,7 @@ const SignupForm = () => {
                 Create Password:<sup className="text-pink-200">*</sup>
               </p>
               <input
-                required
+                
                 type={showPassword ? "text" : "password"}
                 name="password"
                 id="password"
@@ -159,7 +163,7 @@ const SignupForm = () => {
                 Confirm Password:<sup className="text-pink-200">*</sup>
               </p>
               <input
-                required
+                
                 type={showConfirmPassword ? "text" : "password"}
                 name="salt_password"
                 id="salt_password"

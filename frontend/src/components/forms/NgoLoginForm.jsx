@@ -4,6 +4,8 @@ import { toast } from 'react-hot-toast';
 import { AiOutlineEye, AiOutlineEyeInvisible } from 'react-icons/ai';
 import { Link, useNavigate } from 'react-router-dom';
 import ForgotPassword from './ForgotPassword';
+import FormValidation from './FormValidation';
+
 
 const NgoLoginForm = ({ setIsNgoLoggedIn }) => {
   const navigate = useNavigate();
@@ -15,6 +17,7 @@ const NgoLoginForm = ({ setIsNgoLoggedIn }) => {
 
   const [showPassword, setShowPassword] = useState(false);
   const [forgotModel, setForgotModel] = useState(false);
+   const [errors, setErrors] = useState(false);
 
   function handleChange(e) {
     const { name, value } = e.target;
@@ -24,6 +27,8 @@ const NgoLoginForm = ({ setIsNgoLoggedIn }) => {
   async function handlerSubmit(event) {
     event.preventDefault();
 
+    setErrors(FormValidation(formData));
+
     axios
       .post("http://localhost:1300/api/ngo-login", formData)
       .then((res) => {
@@ -31,16 +36,25 @@ const NgoLoginForm = ({ setIsNgoLoggedIn }) => {
         localStorage.setItem("token", res.data);
         // setIsNgoLoggedIn(true);
         setTimeout(() => {
-          toast.success("Logged In Successfully!");
+          toast.success("NGO Logged In Successfully!");
           navigate("/");
         }, 1000);
       })
       .catch((error) => {
-        if (error.response.status === 422) {
-          toast.error("Invalid email or password");
+        if (error.response.status === 400) {
+          toast.error("Please fill all field!");
+          // navigate("/login");
+        }
+
+        if (error.response.status === 404) {
+          toast.error("NGO not found");
           navigate("/login");
         }
-        toast.error("Invalid Data!");
+
+        if (error.response.status === 401) {
+          toast.error("Invalid email or password!");
+          navigate("/login");
+        }
       });
   }
   return (
@@ -60,6 +74,9 @@ const NgoLoginForm = ({ setIsNgoLoggedIn }) => {
             onChange={handleChange}
             className="bg-richblack-800 rounded-[0.5rem] text-richblack-5 w-full p-[12px]"
           />
+          {errors && (
+            <p className="text-red-500 ml-5 text-sm ">{errors.register_id}</p>
+          )}
         </label>
         <label htmlFor="password" className="w-full relative  ">
           <p className="text-[0.875rem] text-[#292929] mb-1 leading-[1.375rem]">
@@ -68,6 +85,8 @@ const NgoLoginForm = ({ setIsNgoLoggedIn }) => {
 
           <input
             required
+            minLength={8}
+            maxLength={12}
             type={showPassword ? "text" : "password"}
             name="password"
             id="password"
@@ -86,16 +105,10 @@ const NgoLoginForm = ({ setIsNgoLoggedIn }) => {
               <AiOutlineEye fontSize={24} fill="#AFB2BF" />
             )}
           </span>
-          <button className='float-right'>
-            <p
-              onClick={() => setForgotModel(true)}
-              className=" mt-1 text-blue-100 text-md float-right hover:underline"
-            >
-              Forgot Password?
-            </p>
-          </button>
+
           {forgotModel && <ForgotPassword setForgotModel={setForgotModel} />}
         </label>
+
         <button
           onClick={handlerSubmit}
           className=" bg-yellow-50 hover:bg-yellow-500 rounded-[8px] font-medium text-richblack-900 py-3"
@@ -104,16 +117,24 @@ const NgoLoginForm = ({ setIsNgoLoggedIn }) => {
           Sign In
         </button>
       </form>
+      <button className="float-right">
+        <p
+          onClick={() => setForgotModel(true)}
+          className=" mt-1 text-blue-100 text-md float-right hover:underline"
+        >
+          Forgot Password?
+        </p>
+      </button>
       <div className="flex w-full items-center mt-4  pl-4 gap-x-2">
-        <div className="h-[1px] w-[45%] bg-richblack-700"></div>
+        <div className="h-[1px] w-[47%] bg-richblack-700"></div>
         <p className="text-richblack-700 font-medium leading-[1.375rem">OR</p>
-        <div className="h-[1px] w-[45%] bg-richblack-700"></div>
+        <div className="h-[1px] w-[47%] bg-richblack-700"></div>
       </div>
       <div className="text-gray-500 mt-3 text-center">
         New Ngo?{" "}
         <Link
           to="/signup"
-          className="text-blue-300 hover:text-blue-400 hover:underline"
+          className=" text-blue-100 text-md  hover:underline"
         >
           Create Account..
         </Link>

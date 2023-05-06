@@ -8,6 +8,14 @@ const ngoModel =require("../Model/ngoModel")
 const ngo_login = async (req, res) => {
     try {
         const { register_id, password } = req.body;
+        if (!register_id || !password) 
+        {
+             console.log("data not matched");
+            return res.status(400).json({
+                status: 400,
+                message:"Data not matched"
+            })
+           }
         const isNgo = await ngoModel.findOne({ register_id: register_id });
 
         if (isNgo) {
@@ -15,18 +23,26 @@ const ngo_login = async (req, res) => {
             console.log(isPassword);
             if (isPassword) {
                 res.status(201).json({
-                    status:201,
-                    message: "ngo exist!"
+                    status: 201,
+                    message: "Login Successfully!"
                 })
             } else {
-                res.status(401).json({
-                    status:401,
-                    message: "Invalid Data!"
-                })
+                 res.status(401).json({
+                    status: 401,
+                    message: 'Invalid email or password'
+                });
             }
+        } else {
+            res.status(404).json({
+                status: 404,
+                message: "user not found"
+            })
         }
     } catch (error) {
-        res.status(400).json("data not found!");
+        res.send(500).json({
+            status: 500,
+            message: 'Server Error'
+        });
     }
 }
 
@@ -37,7 +53,8 @@ const RegisterNgo = async(req,res)=>{
     console.log(req.body);
 
     try {
-        if (!ngo_name  || !register_id || !email || !password || !confirm_password || !contact || !address || !image || !established_date || !description   || !state  || !user_type) {
+        if (!ngo_name || !register_id || !email || !password || !confirm_password || !contact || !address || !image || !established_date || !description || !state || !user_type) {
+            console.log("empty data");
             return res.status(400).json({
                 status: 400,
                 message:"Please fill all field!"
@@ -69,29 +86,11 @@ const RegisterNgo = async(req,res)=>{
 }
 
 
-//this is ngo login ngo controller api 
 
-const ngoLogin= async(req,res)=>{
-    const {register_id,password}= req.body;
 
-   try{
-    
-    const ngodata = await ngoModel.findOne({register_id})
-    if(!ngodata){
-       res.status(400).json({error:"Oops! Register_Id is invalid"})
-    }
-    if(ngodata.password !== password){
-        res.status(400).json({error:"Oops! Password is invalid"})
-    }
-res.status(201).json({message:"Rock! Ngo is login succsessfully"})
-   }
-   catch(error){
-    res.status(500).json({error:"Server Error"})
-   }
-   
-}
 
-module.exports = {RegisterNgo,ngoLogin,ngo_login};
+
+module.exports = {RegisterNgo,ngo_login};
 
 
 

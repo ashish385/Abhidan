@@ -15,7 +15,7 @@ import DonorProfile from './components/profiles/DonorProfile';
 
 
 function App() {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(true);
   const [isNgoLoggedIn, setIsNgoLoggedIn] = useState(false);
   return (
     <div >

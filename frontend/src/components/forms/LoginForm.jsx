@@ -1,13 +1,13 @@
-import axios from 'axios';
-import React,{useState} from 'react'
-import { toast } from 'react-hot-toast';
-import {AiOutlineEyeInvisible,AiOutlineEye} from "react-icons/ai"
-import { Link, useNavigate } from 'react-router-dom'
-import FormValidation from './FormValidation';
-import ForgotPassword from './ForgotPassword';
+import axios from "axios";
+import React, { useState } from "react";
+import { toast } from "react-hot-toast";
+import { AiOutlineEyeInvisible, AiOutlineEye } from "react-icons/ai";
+import { Link, useNavigate } from "react-router-dom";
+import FormValidation from "./FormValidation";
+import ForgotPassword from "./ForgotPassword";
 // import app_config from '../Config';
 
-const LoginForm = ({ setIsLoggedIn}) => {
+const LoginForm = ({ setIsLoggedIn }) => {
   // const url = app_config.api_url;
   const navigate = useNavigate();
   let initialValue = {
@@ -15,7 +15,7 @@ const LoginForm = ({ setIsLoggedIn}) => {
     password: "",
   };
   const [formData, setFormData] = useState(initialValue);
-  // const [errors, setErrors] = useState("");
+  const [errors, setErrors] = useState("");
 
   const [showPassword, setShowPassword] = useState(false);
   const [forgotModel, setForgotModel] = useState(false);
@@ -28,14 +28,17 @@ const LoginForm = ({ setIsLoggedIn}) => {
   async function handlerSubmit(event) {
     event.preventDefault();
 
-    // setErrors(FormValidation(formData));
-    // console.log("errors", errors);
+    setErrors(FormValidation(formData));
+    console.log("errors", errors);
 
     axios
       .post("http://localhost:1300/api/donor-login", formData)
-      .then((res) => {
-        console.log(res.data);
-        localStorage.setItem("token", JSON.stringify(res.data.data));
+      .then((data) => {
+        console.log("userRegister", data);
+        window.localStorage.setItem("token", JSON.stringify(data.data.data));
+
+        // console.log(res.data);
+        // localStorage.setItem("token", JSON.stringify(res.data.data));
 
         setIsLoggedIn(true);
 
@@ -48,16 +51,21 @@ const LoginForm = ({ setIsLoggedIn}) => {
       })
 
       .catch((error) => {
-        if (error.response.status === 402) {
-          toast.error("User not found");
-          navigate("/login");
+        if (error.response.status === 400) {
+          return toast.error("Please fill all field!");
+          // navigate("/login");
         }
-        
-        if (error.response.status === 422) {
-          toast.error("Invalid email or password");
-          navigate("/login");
+
+        if (error.response.status === 404) {
+          return toast.error("User not found");
         }
-        
+
+        if (error.response.status === 401) {
+          return toast.error("Invalid email or password!");
+        }
+
+        toast.error(error);
+        console.log(error);
       });
   }
   return (
@@ -78,9 +86,9 @@ const LoginForm = ({ setIsLoggedIn}) => {
             onChange={handleChange}
             className="bg-richblack-800 rounded-[0.5rem] text-richblack-5 w-full p-[12px]"
           />
-          {/* {errors && (
+          {errors && (
             <p className="text-red-500 ml-5 text-sm ">{errors.email}</p>
-          )} */}
+          )}
         </label>
         <label htmlFor="" className="w-full relative  ">
           <p className="text-[0.875rem] text-[#292929] mb-1 leading-[1.375rem]">
@@ -99,9 +107,9 @@ const LoginForm = ({ setIsLoggedIn}) => {
             onChange={handleChange}
             className="bg-richblack-800  rounded-[0.5rem] text-richblack-5 w-full p-[12px] "
           />
-          {/* {errors && (
+          {errors && (
             <p className="text-red-500 ml-5 text-sm">{errors.password}</p>
-          )} */}
+          )}
           <span
             onClick={() => setShowPassword((prev) => !prev)}
             className="absolute right-4 top-[38px] cursor-pointer "
@@ -112,11 +120,6 @@ const LoginForm = ({ setIsLoggedIn}) => {
               <AiOutlineEye fontSize={24} fill="#AFB2BF" />
             )}
           </span>
-          <button onClick={() => setForgotModel(true)} className="float-right">
-            <p className=" mt-1 text-blue-100 text-md float-right hover:underline">
-              Forgot Password?
-            </p>
-          </button>
         </label>
         {forgotModel && <ForgotPassword setForgotModel={setForgotModel} />}
         <button
@@ -127,6 +130,11 @@ const LoginForm = ({ setIsLoggedIn}) => {
           Sign In
         </button>
       </form>
+      <button onClick={() => setForgotModel(true)} className="float-right">
+        <p className=" mt-1 text-blue-100 text-md float-right hover:underline">
+          Forgot Password?
+        </p>
+      </button>
       <div className="flex w-full items-center mt-4  pl-4 gap-x-2">
         <div className="h-[1px] w-[45%] bg-richblack-700"></div>
         <p className="text-richblack-700 font-medium leading-[1.375rem">OR</p>
@@ -145,4 +153,4 @@ const LoginForm = ({ setIsLoggedIn}) => {
   );
 };
 
-export default LoginForm
+export default LoginForm;

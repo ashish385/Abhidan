@@ -10,7 +10,8 @@ const NgoRegistation = (props) => {
     
 
     const [showPassword, setShowPassword] = useState(false);
-    const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+ 
 
     const [formData, setFormData] = useState({
       ngo_name: "",
@@ -28,6 +29,7 @@ const NgoRegistation = (props) => {
       state: "",
     });
     
+ 
     
 
   function handleChange(event) {
@@ -41,6 +43,8 @@ const NgoRegistation = (props) => {
 
     async function handleSubmit(event) {
       event.preventDefault();
+
+ 
       
       if (formData.password !== formData.confirm_password) {
           toast.error("Password does not match!");
@@ -52,20 +56,23 @@ const NgoRegistation = (props) => {
         .then((res) => {
           console.log(res.data);
           setTimeout(() => {
-            toast.success("Sign Up successfully");
+            toast.success("NGO registation successfully!");
             Navigate("/login");
           }, 1000);
-          // setFormData(" ");
+          setFormData(" ");
         })
         .catch((error) => {
-          console.log(error);
+
+
           if (error.response.status === 400) {
             toast.error("Please fill all field");
           }
           if (error.response.status === 422) {
             toast.error("Ngo is already present");
           }
-          console.log(error);
+          if (error.response.status === 500) {
+            toast.error("Something Wrong!");
+          } 
         });
       
 
@@ -84,7 +91,6 @@ const NgoRegistation = (props) => {
                 Organization_Name:<sup className="text-pink-200">*</sup>
               </p>
               <input
-                required
                 type="text"
                 name="ngo_name"
                 id="ngo_name"
@@ -99,7 +105,6 @@ const NgoRegistation = (props) => {
                 Register ID:<sup className="text-pink-200">*</sup>
               </p>
               <input
-                required
                 type="text"
                 name="register_id"
                 id="register_id"
@@ -131,6 +136,9 @@ const NgoRegistation = (props) => {
                 Create Password:<sup className="text-pink-200">*</sup>
               </p>
               <input
+                minLength={8}
+                maxLength={12}
+                pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,16}$"
                 type={showPassword ? "text" : "password"}
                 name="password"
                 id="password"
@@ -182,7 +190,6 @@ const NgoRegistation = (props) => {
                 Ngo Contact:<sup className="text-pink-200">*</sup>
               </p>
               <input
-                required
                 type="text"
                 name="contact"
                 id="contact"
@@ -197,7 +204,6 @@ const NgoRegistation = (props) => {
                 Address:<sup className="text-pink-200">*</sup>
               </p>
               <input
-                required
                 type="text"
                 name="address"
                 id="address"
@@ -232,7 +238,6 @@ const NgoRegistation = (props) => {
                 State:<sup className="text-pink-200">*</sup>
               </p>
               <input
-                required
                 type="text"
                 name="state"
                 id="state"
@@ -247,7 +252,6 @@ const NgoRegistation = (props) => {
                 Established Date:<sup className="text-pink-200">*</sup>
               </p>
               <input
-                required
                 type="text"
                 name="established_date"
                 id="established_date"

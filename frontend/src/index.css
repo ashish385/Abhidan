@@ -2,6 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+*,
+::before,
+::after {
+  border-width: 0;
+  border-style: 1px solid black ;
+box-sizing: border-box;
+}
+
 body {
   margin: 0;
   padding: 0;

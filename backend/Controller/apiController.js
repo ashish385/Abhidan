@@ -1,42 +1,90 @@
 const express = require("express");
 const Router = express();
+const bcrypt = require("bcryptjs");
+const jwt = require('jsonwebtoken')
 
 const userModel = require("../Model/userModel")
+
+const JWT_SECRET =
+    "hvdvay6ert72839289()aiyg8t87qt72393293883uhefiuh78ttq3ifi78272jbkj?[]]pou89ywe";
+  
+
+// To find particular user data
+const userData = async (req, res) => {
+    const {token}  = req.body;
+    console.log("comingdata",token);
+    try {
+        const user = jwt.verify(token, JWT_SECRET, (err, res) => {
+            // console.log(user);
+            if (err) {
+                return "token expired";
+            }
+            return res;
+        });
+        console.log(user);
+
+        if (user === "token expired") {
+            return res.send({ status: "error", data: "token expired" });
+        }
+        
+        const usermail = await user.email;
+        userModel.findOne({ email: usermail })
+            .then((data) => {
+            res.send({status:"ok",data:data})
+        })
+
+    } catch (error) {
+        console.log(error);
+    }
+}
 
 
 //user login
 
 const user_donar_login= async(req,res)=>{
-    try{
-        const email=req.body.email.toLowerCase();
-        const type =req.body.user_type;
-        const password =req.body.password;
-        const donarData =await userModel.find({email:email});
+    try {
+        const email = req.body.email.toLowerCase();
+        const type = req.body.user_type;
+        const password = req.body.password;
+        if (!email || !password) {
+            console.log("data not matched");
+            return res.status(400).json({
+                status: 400,
+                error: "field are empty"
+            })
+        }
+        
+        const donarData = await userModel.findOne({ email: email });
+        
 
-        if(donarData){
-            const passwordMatch = await userModel.find({password:password});
-            console.log(passwordMatch);
-            if(passwordMatch != ""){
-                res.status(201).json({
+        if (!donarData) {
+            return res.status(404).json({
+                status: 404,
+                error: "user not found"
+            })
+        }
+
+        if (await bcrypt.compare(password, donarData.password)) {
+            const token = jwt.sign({ email: donarData.email }, JWT_SECRET);
+            if (res.status(201)) {
+                return res.status(201).json({
                     status: 201,
                     message: "login successfully",
-                    data: donarData
-                });
-            }else{
-                res.status(422).json({
-                    status: 422,
+                    data: token
+                })
+            } else {
+                return res.status(401).json({
+                    status: 401,
                     message: 'Invalid email or password'
                 });
             }
-        } else {
-            res.status(402).json({
-                status: 402,
-                message:"user not found"
-            })
         }
     }
     catch(error){
-        res.send(400).send({message:'data not found'});
+        res.send(500).json({
+            status: 500,
+            message: 'Server Error'
+        });
     };
 
 }
@@ -45,6 +93,7 @@ const user_donar_login= async(req,res)=>{
 const RegisterUser = async (req, res) => {
     const { username, phonenumber, email, password, salt_password, user_type } = req.body
     console.log(res.body);
+    const bcryptedPassword = await bcrypt.hash(password, 10);
    try {
         if (!username || !email || !phonenumber || !password || !salt_password || !user_type) {
       console.log("not all fields...");
@@ -64,7 +113,12 @@ const RegisterUser = async (req, res) => {
             console.log("presuser hai",preuser);
         }else{
             const adduser = new userModel({
-                username,phonenumber,email,password,salt_password,user_type
+                username,
+                phonenumber,
+                email,
+                password:bcryptedPassword,
+                salt_password,
+                user_type
             });
 
             await adduser.save();
@@ -80,5 +134,5 @@ const RegisterUser = async (req, res) => {
     }
 }
 
-module.exports = {RegisterUser,user_donar_login}
+module.exports = {RegisterUser,user_donar_login, userData}
 
