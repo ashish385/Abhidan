@@ -1,60 +1,38 @@
-/* home slider css */
+/* image slider css at home page  */
+.slider-item {
+  position: relative;
+}
 
-.carousel-inner::before {
-  content: "";
+.sliderContent {
   position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
   width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  background-color: rgba(0, 0, 0, 0.7);
+  padding: 0 20px;
   z-index: 1;
 }
-.carousel-item {
-  height: 100vh;
-  min-height: 300px;
+
+.sliderContent h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
 }
 
-.carousel-caption {
-  bottom: 220px;
-  z-index: 2;
-}
-.carousel-caption h5 {
-  font-size: 45px;
-  text-transform: uppercase;
-  margin-top: 25px;
-}
-.carousel-caption p {
-  width: 60%;
-  margin: auto;
-  font-size: 18px;
-  line-height: 1.9;
-}
-/*====responsive css===*/
-@media only screen and (max-width: 767px) {
-  .carousel-caption {
-    bottom: 125px;
-  }
-  .carousel-caption h5 {
-    font-size: 17px;
-  }
-  .carousel-caption button {
-    padding: 10px 15px;
-  }
-  .carousel-caption p {
-    width: 100%;
-    line-height: 1.6;
-    font-size: 12px;
+@media (max-width: 768px) {
+  .sliderContent h3 {
+    font-size: 18px;
   }
 }
-
+/* end  */
 /* circle----------- css */
 /* .circleContainer {
   background-image: url(../../assets/circleback.png);
   background-color: #efefef;
   
 } */
-.sectiontitle {
+/* .sectiontitle {
   text-transform: capitalize;
   font-size: 15px;
   font-weight: 600;
@@ -188,7 +166,6 @@
   display: table-cell;
   padding: 1rem;
   vertical-align: middle;
-  font-size: 25px;
 }
 
 @keyframes bounce {
@@ -201,42 +178,78 @@
 }
 
 @media screen and (max-width: 768px) {
-  .circle-content {
-    font-size: 20px;
+  .col-lg-4 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
+  .circle-1 {
+    width: 50%;
+  }
+  .circle-2 {
+    width: 50%;
+  }
+  .circle-3 {
+    width: 50%;
+  }
+  .circle-4 {
+    width: 50%;
+  }
+  .circle-5 {
+    width: 50%;
+  }
+} */
+.circle-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.Circle{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  
+}
+.Circle .inner-circle{
+  height: 300px;
+  width: 300px;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border:1px solid black;
 }
 
-@media screen and (min-width: 768px) {
-  .circle-content {
-    font-size: 22px;
-  }
-}
+
+
 /* sponsor heading line and slider css---- */
-.spon_heading{
+.spon_heading {
   display: flex;
   flex-direction: row;
 }
-.spon_heading:before,.spon_heading:after{
+.spon_heading:before,
+.spon_heading:after {
   content: "";
   flex: 1 1;
   border-bottom: 1px solid black;
   margin: auto;
 }
- .spon_slider{
+.spon_slider {
   height: 100px;
   margin: auto;
   overflow: hidden;
   position: relative;
   width: auto;
-  
 }
-.spon_slider .spon-track{
-  animation:scroll 40s linear infinite;
+.spon_slider .spon-track {
+  animation: scroll 40s linear infinite;
   display: flex;
- 
-} 
+}
 
- @keyframes scroll{
+@keyframes scroll {
   0% {
     transform: translateX(0);
   }
