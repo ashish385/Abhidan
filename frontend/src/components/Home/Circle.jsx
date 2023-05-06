@@ -21,7 +21,7 @@ const Circle = () => {
   return (
     <>
       {/* circle code */}
-      <div className="circleContainer" style={{ backgroundColor: "#efefef" }}>
+      {/* <div className="circleContainer" style={{ backgroundColor: "#efefef" }}>
         <div className="container">
           <div className="row">
             <div className="col-lg-7 col-md-8 mx-auto">
@@ -175,11 +175,72 @@ const Circle = () => {
             </div>
           </div>
         </div>
+      </div> */}
+
+
+
+
+
+
+      <div className="circle-container">
+        <div className="row">
+          <div className="col-lg-4">
+            <div className="Circle">
+              <div className="inner-circle">
+
+<h3>
+                        <span className="circle-num">1000,</span>
+                        <span
+                          className="circle-txt"
+                          style={{ color: "#eb9309" }}
+                        >
+                          KG
+                        </span>
+                      </h3>
+                    <p style={{padding:"25px"}}>we help local nonprofit access the funding tools jbdkjds jdvdj jvbdjk</p>
+              </div>
+            </div>
+          </div>
+          <div className="col-lg-4">
+            <div className="Circle">
+              <div className="inner-circle">
+<h3>
+                        <span className="circle-num">1000,</span>
+                        <span
+                          className="circle-txt"
+                          style={{ color: "#eb9309" }}
+                        >
+                          KG
+                        </span>
+                      </h3>
+                      <p style={{padding:"25px"}}>we help local nonprofit access the funding tools jbdkjds jdvdj jvbdjk</p>
+           
+              </div>
+            </div>
+          </div>
+          <div className="col-lg-4">
+            <div className="Circle">
+              <div className="inner-circle">
+<h3>
+                        <span className="circle-num">1000,</span>
+                        <span
+                          className="circle-txt"
+                          style={{ color: "#eb9309" }}
+                        >
+                          KG
+                        </span>
+                      </h3>
+                      <p style={{padding:"25px"}}>we help local nonprofit access the funding tools jbdkjds jdvdj jvbdjk</p>
+           
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
 
       {/* sponsers code */}
       
-      <section className="sponsors" style={{ backgroundColor: "white" }}>
+      {/* <section className="sponsors" style={{ backgroundColor: "white" }}>
         <div className="container">
           <div className="row">
             <div className="col-12">
@@ -219,7 +280,7 @@ const Circle = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
     </>
   );
 };
