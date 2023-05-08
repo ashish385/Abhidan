@@ -1,21 +1,8 @@
 import React from "react";
 import "../Home/Home.css";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import map from "../../assets/circleback.png";
-import sponimg1 from "../../assets/sponsors2.png";
+
 const Circle = () => {
-  const settings = {
-    dots: true,
-    infinite: true,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    autoplay: true,
-    speed: 2000,
-    autoplaySpeed: 2000,
-    cssEase: "linear",
-  };
+ 
 
   return (
     <>
