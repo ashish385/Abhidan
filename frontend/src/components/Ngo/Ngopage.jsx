@@ -8,6 +8,7 @@ import Footer from "../Footer/Footer";
 
 
 
+
 const Ngopage = () => {
   
   const [showModal, setShowModal] = useState(false);
@@ -42,16 +43,17 @@ const Ngopage = () => {
 
   return (
     <>
-      <div style={{ backgroundColor: "#ede7d1" }} >
+      <div style={{ backgroundColor: "#F0F8FF" }}>
         <ReactSlick />
+
 
         <div className="flex flex-col relative ">
           {NgoData.map((data) => {
             return (
               <div
-                data-aos="fade-right"
-                data-aos-offset="300"
-                data-aos-duration="2000"
+                // data-aos="fade-right"
+                // data-aos-offset="300"
+                // data-aos-duration="2000"
                 key={data.id}
               >
                 <div className="container mt-5" style={ngoback}>
@@ -85,7 +87,7 @@ const Ngopage = () => {
                       >
                         Donate
                       </button>
-                     
+
                       {showModal && <Modal setShowModal={setShowModal} />}
                     </div>
                   </div>

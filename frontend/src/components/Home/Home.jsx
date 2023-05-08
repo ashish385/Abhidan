@@ -14,7 +14,7 @@ import Footer from "../Footer/Footer";
 const Home = () => {
   return (
     <>
-      <div className=" overflow-x-hidden">
+      <div className=" overflow-x-hidden bg-[#F0F8FF]">
         <ReactSlick />
         <AboutHome />
         <Circle />

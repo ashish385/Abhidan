@@ -1,6 +1,7 @@
 /* image slider css at home page  */
 .slider-item {
   position: relative;
+  background-color: "#DDFFBC";
   
 }
 
@@ -207,7 +208,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color:white ;
+  background-color: "#DDFFBC" ;
 }
 .rowCircle h2{
   text-align: center;
@@ -255,7 +256,7 @@
   align-items: center;
   flex-direction: column;
   border: 1px solid #efefef;
-  background-color:white;
+  background-color:"#91C788";
   
   
 }

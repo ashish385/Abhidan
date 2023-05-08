@@ -72,7 +72,7 @@ const AboutSlick = ( ) => {
   };
   return (
     <>
-      <div className="bg-[#f8f9fa] flex flex-col mt-5 space-y-4 py-3  justify-center md:grid-cols-2 gap-x-4">
+      <div className="bg-[#f8f9fa] flex flex-col  space-y-4 py-3  justify-center md:grid-cols-2 gap-x-4">
         <div className="flex flex-col justify-center items-center">
           <h1 className="text-2xl font-semibold font-inter text-black tracking-[0.15rem] ">
             Testimonials
