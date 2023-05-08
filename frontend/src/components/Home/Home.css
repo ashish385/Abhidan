@@ -1,7 +1,9 @@
 /* image slider css at home page  */
 .slider-item {
   position: relative;
+  
 }
+
 
 .sliderContent {
   position: absolute;
@@ -200,11 +202,42 @@
     width: 50%;
   }
 } */
-.circle-container{
+
+.container{
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color:white ;
 }
+.rowCircle h2{
+  text-align: center;
+
+  text-transform: capitalize;
+  font-size: 30px;
+  font-weight: 700;
+  color: black;
+  
+}
+.rowCircle .col-lg-4 .Circle{
+  animation:  3s;
+  animation-direction: alternate;
+  animation-timing-function: cubic-bezier(0.5, 0.05, 1, 0.5);
+  animation-iteration-count: infinite;
+}
+
+@keyframes bounce {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(0, 50px, 0);
+  }
+}
+
+
+
+
+ 
 .Circle{
   display: flex;
   justify-content: center;
@@ -212,18 +245,64 @@
   
   
 }
+
 .Circle .inner-circle{
   height: 300px;
   width: 300px;
   border-radius: 50%;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  border:1px solid black;
+  flex-direction: column;
+  border: 1px solid #efefef;
+  background-color:white;
+  
+  
 }
 
+.Circle .inner-circle p{
+  padding:  18px;
+  font-size: 16px;
+}
+.rowCircle .nextrow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top:-114px
+}
 
+@media only screen and (max-width:768px){
+  .rowCircle h2{
+    font-size: 25px;
+    margin-top:2rem
+  }
+  .Circle .inner-circle{
+    width:200px;
+    height: 200px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin:2px;
+  }
+  .Circle .inner-circle p{
+  
+    font-size: 13px;
+  }
+}
+@media only screen and (max-width:1000px){
+  .col-lg-4 .Circle{
+    animation: none;
+  }
+  .Circle .inner-circle{
+    margin: 2px;
+  }
+  .rowCircle .nextrow{
+    margin-top: 0px;
+    display: flex;
+    flex-direction: column;
+  }
+}
+/* end--- */
 
 /* sponsor heading line and slider css---- */
 .spon_heading {
