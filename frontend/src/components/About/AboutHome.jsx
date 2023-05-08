@@ -1,5 +1,4 @@
 import React from 'react'
-import './About.css'
 import aboutImage1 from './images/aboutHome.jpg'
 import { Link } from "react-router-dom";
 
@@ -29,12 +28,13 @@ const AboutHome = () => {
             >
               <button>Read More</button>
             </Link>
-          </div>
+          </div></div>
           <div>
             <img src={aboutImage1} alt="Our Purpose" className="rounded-lg " />
           </div>
-        </div>
-      </section>
+        </section>
+     
+        
     </>
   );
 }
