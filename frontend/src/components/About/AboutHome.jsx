@@ -1,5 +1,4 @@
 import React from 'react'
-import './About.css'
 import aboutImage1 from './images/aboutHome.jpg'
 import { Link } from "react-router-dom";
 
