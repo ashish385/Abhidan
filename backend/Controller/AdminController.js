@@ -3,6 +3,9 @@ const ejs = require("ejs");
 
 const ngoModel = require("../Model/ngoModel");
 
+
+
+// render login page
 const login = async (req, res) => {
   try {
     res.render("Pages/Login");
@@ -54,11 +57,22 @@ const dashboard = async (req, res) => {
   }
 };
 
-const ngo = async (req, res) => {
+const Ngo = async (req, res) => {
   try {
     const ngoData = await ngoModel.find({ is_active: 1 });
     if (ngoData) {
       res.render("Pages/Ngo", { data: ngoData });
+    }
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+const NgoAll = async (req, res) => {
+  try {
+    const ngoData = await ngoModel.find({ is_active: 1 });
+    if (ngoData) {
+      res.render("Pages/NgoAll", { data: ngoData });
     }
   } catch (error) {
     console.log(error);
@@ -70,5 +84,6 @@ module.exports = {
   login,
   verifiyLogin,
   dashboard,
-  ngo,
+  Ngo,
+  NgoAll
 };

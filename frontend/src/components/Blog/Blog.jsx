@@ -1,220 +1,164 @@
-import React from "react";
-import blogimg from "../../assets/1.jpg";
-import { FaHeart, FaComment } from "react-icons/fa";
-import "./Blog.css";
-import Blogdata from "../../DummyData/Blog.json";
-import Footer from "../Footer/Footer";
+import React, { useState } from 'react'
+import logo from "./Helpus.jpg";
+import logotemp from "./help.jpg";
+import { FcLike } from "react-icons/fc"
+import {BiCommentDetail} from "react-icons/bi"
+import { IoMdShareAlt } from "react-icons/io";
+import { MdCreateNewFolder } from "react-icons/md";
+
 
 const Blog = () => {
+  const [openPost, setOpenPost] = useState(false);
+
   return (
-    <>
-      {/* <div className="container mt-5">
-        <h2 style={{textAlign:"center"}}> Blog Page </h2>
-        <div className="row mt-5">
-          <div className="col">
-            <div className="blogimg">
-              <img src={blogimg} />
-            </div>
-            <div className="blog-media">
-              <h4 className="mt-2">
-                <a
-                  href="#"
-                  style={{ textDecoration: "None", color: "#333333" }}
-                >
-                  Post name here
-                </a>
-              </h4>
-              <span style={{ marginRight: "10px" }}>
-                <FaHeart /> 100 Likes
-              </span>
-              <span>
-                <FaComment />
-                1000 comment
-              </span>
-            </div>
-            <p className="mt-2" style={{margin:"10px 0px"}}>
-              Lorem ipsum dolor sit amet, consectetur adipisi cing elit.
-              Molestias eius illum libero dolor nobis deleniti, sint assumenda.
-              Pariatur iste veritatis excepturi, ipsa optio nobis.
-            </p>
-            <a href="#" className="read-more btn btn-secondary">
-              Read more
-            </a>
+    <div className="w-full ">
+      <div className="hidden md:flex">
+        <img src={logo} alt="" className="w-full  h-[350px] md:h-[500px]" />
+      </div>
+      <div className="relative">
+        <div className="bg-[#f8f9fa] ">
+          <div className='flex '>
+            <button>Recent post</button>
+            <button>Category Post</button>
           </div>
-          <div className="col">
-            
-            <div className="blogimg">
-              <img src={blogimg} />
-            </div>
-            <div className="blog-media">
-              <h4 className="mt-2">
-                <a
-                  href="#"
-                  style={{ textDecoration: "None", color: "#333333" }}
-                >
-                  Post name here
-                </a>
-              </h4>
-              <span style={{ marginRight: "10px" }}>
-                <FaHeart /> 100 Likes
-              </span>
-              <span>
-                <FaComment />
-                1000 comment
-              </span>
-            </div>
-            <p className="mt-2">
-              Lorem ipsum dolor sit amet, consectetur adipisi cing elit.
-              Molestias eius illum libero dolor nobis deleniti, sint assumenda.
-              Pariatur iste veritatis excepturi, ipsa optio nobis.
-            </p>
-            <a href="#" className="read-more btn btn-secondary">
-              Read more
-            </a>
-          </div>
-          <div className="col">
-        
-            <div className="blogimg">
-              <img src={blogimg} />
-            </div>
-            <div className="blog-media">
-              <h4 className="mt-2">
-                <a
-                  href="#"
-                  style={{ textDecoration: "None", color: "#333333" }}
-                >
-                  Post name here
-                </a>
-              </h4>
-              <span style={{ marginRight: "10px" }}>
-                <FaHeart /> 100 Likes
-              </span>
-              <span>
-                <FaComment />
-                1000 comment
-              </span>
-            </div>
-            <p className="mt-2">
-              Lorem ipsum dolor sit amet, consectetur adipisi cing elit.
-              Molestias eius illum libero dolor nobis deleniti, sint assumenda.
-              Pariatur iste veritatis excepturi, ipsa optio nobis.
-            </p>
-            <a href="#" className="read-more btn btn-secondary">
-              Read more
-            </a>
-          </div>
-          <div className="col mt-2">
-        
-            <div className="blogimg">
-              <img src={blogimg} />
-            </div>
-            <div className="blog-media">
-              <h4 className="mt-2">
-                <a
-                  href="#"
-                  style={{ textDecoration: "None", color: "#333333" }}
-                >
-                  Post name here
-                </a>
-              </h4>
-              <span style={{ marginRight: "10px" }}>
-                <FaHeart /> 100 Likes
-              </span>
-              <span>
-                <FaComment />
-                1000 comment
-              </span>
-            </div>
-            <p className="mt-2">
-              Lorem ipsum dolor sit amet, consectetur adipisi cing elit.
-              Molestias eius illum libero dolor nobis deleniti, sint assumenda.
-              Pariatur iste veritatis excepturi, ipsa optio nobis.
-            </p>
-            <a href="#" className="read-more btn btn-secondary">
-              Read more
-            </a>
-          </div>
-        </div>
-      </div> */}
-      <main>
-        <section className="site-title">
-          <div className="site-background" data-aos="fade-up" data-aos-delay="100">
-            <h3>Empowering Change</h3>
-            <h1> Stories and Insights from our NGO Community</h1>
-            <button className="btn">Explore</button>
-          </div>
-        </section>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 px-6 py-4 gap-x-5">
+            {/* col-1 */}
+            <div className="border mb-2 rounded-md shadow-xl">
+              <img src={logotemp} alt="" className="rounded-md " />
 
-        <div className="flex flex-col">
-
-        {Blogdata.map((data, index) => {
-          return (
-            <div key={index} className="blog">
-              <section className="container">
-                <div className="site-content">
-                  <div className="posts" key={index}>
-                    <div
-                      className="post-content"
-                      data-aos="zoom-in"
-                      data-aos-delay="200"
-                    >
-                      <div className="post-image">
-                        <div>
-                          <img src={blogimg} className="img" alt="blog1" />
-                        </div>
-                        <div className="post-info flex-row">
-                          <span>
-                            <i className="fas fa-user text-gray"></i>
-                            &nbsp;&nbsp;Admin
-                          </span>
-                          <span>
-                            <i className="fas fa-calendar-alt text-gray"></i>
-                            &nbsp;&nbsp;January 14, 2019
-                          </span>
-                          <span>2 Commets</span>
-                        </div>
-                      </div>
-                      <div className="post-title">
-                        <a href="#">{data.title}</a>
-                        <p>{data.description}</p>
-                        <button className="btn post-btn">
-                          Read More &nbsp; <i className="fas fa-arrow-right"></i>
-                        </button>
-                      </div>
-                    </div>
+              <div className="px-3 py-2">
+                <div className="flex justify-between items-center">
+                  <h1 className="text-2xl font-bold ">Ashish Soni</h1>
+                  <div className="flex gap-x-4 text-sm">
+                    <p>08:22pm</p>
+                    <p>07-05-2023</p>
                   </div>
                 </div>
-              </section>
+                <p className="mt-2 text-md">
+                  Why should boys have all the fun? it's the women who are
+                  making india an alcohol-loving country
+                </p>
+                <button>Read more...</button>
+              </div>
+
+              <div className="flex justify-between items-center px-6 py-2 rounded-md border-t-2 mt-1">
+                <span className=" ">
+                  <FcLike size={32} />
+                </span>
+                <p>
+                  <BiCommentDetail size={32} />
+                </p>
+                <p>
+                  <IoMdShareAlt size={32} />
+                </p>
+              </div>
             </div>
-          );
-          
-        })}
 
-        
+            {/* col-2 */}
+            <div className="border mb-2 rounded-md shadow-xl">
+              <img src={logotemp} alt="" className="rounded-md " />
+
+              <div className="px-3 py-2">
+                <div className="flex justify-between items-center">
+                  <h1 className="text-2xl font-bold ">Ashish Soni</h1>
+                  <div className="flex gap-x-4 text-sm">
+                    <p>08:22pm</p>
+                    <p>07-05-2023</p>
+                  </div>
+                </div>
+                <p className="mt-2 text-md">
+                  Why should boys have all the fun? it's the women who are
+                  making india an alcohol-loving country
+                </p>
+                <button>Read more...</button>
+              </div>
+
+              <div className="flex justify-between items-center px-6 py-2 rounded-md border-t-2 mt-1">
+                <span className=" ">
+                  <FcLike size={32} />
+                </span>
+                <p>
+                  <BiCommentDetail size={32} />
+                </p>
+                <p>
+                  <IoMdShareAlt size={32} />
+                </p>
+              </div>
+            </div>
+
+            {/* col-3 */}
+            <div className="border mb-2 rounded-md shadow-xl">
+              <img src={logotemp} alt="" className="rounded-md " />
+
+              <div className="px-3 py-2">
+                <div className="flex justify-between items-center">
+                  <h1 className="text-2xl font-bold ">Ashish Soni</h1>
+                  <div className="flex gap-x-4 text-sm">
+                    <p>08:22pm</p>
+                    <p>07-05-2023</p>
+                  </div>
+                </div>
+                <p className="mt-2 text-md">
+                  Why should boys have all the fun? it's the women who are
+                  making india an alcohol-loving country
+                </p>
+                <button>Read more...</button>
+              </div>
+
+              <div className="flex justify-between items-center px-6 py-2 rounded-md border-t-2 mt-1">
+                <span className=" ">
+                  <FcLike size={32} />
+                </span>
+                <p>
+                  <BiCommentDetail size={32} />
+                </p>
+                <p>
+                  <IoMdShareAlt size={32} />
+                </p>
+              </div>
+            </div>
+
+            {/* col-4 */}
+            <div className="border mb-2 rounded-md shadow-xl">
+              <img src={logotemp} alt="" className="rounded-md " />
+
+              <div className="px-3 py-2">
+                <div className="flex justify-between items-center">
+                  <h1 className="text-2xl font-bold ">Ashish Soni</h1>
+                  <div className="flex gap-x-4 text-sm">
+                    <p>08:22pm</p>
+                    <p>07-05-2023</p>
+                  </div>
+                </div>
+                <p className="mt-2 text-md">
+                  Why should boys have all the fun? it's the women who are
+                  making india an alcohol-loving country
+                </p>
+                <button>Read more...</button>
+              </div>
+
+              <div className="flex justify-between items-center px-6 py-2 rounded-md border-t-2 mt-1">
+                <span className=" ">
+                  <FcLike size={32} />
+                </span>
+                <p>
+                  <BiCommentDetail size={32} />
+                </p>
+                <p>
+                  <IoMdShareAlt size={32} />
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
 
-        
-
-        <div className="pagination flex-row">
-          <a href="#">
-            <i className="fas fa-chevron-left"></i>
-          </a>
-          <a href="#" className="pages">
-            1
-          </a>
-          <a href="#" className="pages">
-            2
-          </a>
-          <a href="#" className="pages">
-            3
-          </a>
-          <a href="#">
-            <i className="fas fa-chevron-right"></i>
-          </a>
-        </div>
-      </main>
-      <Footer />
-    </>
+        {/* create Post */}
+        {/* <button className=' fixed  bottom-8 left-[4rem]  z-50  px-3 py-3 bg-blue-100 text-black rounded-full '>
+          <MdCreateNewFolder size={35} />
+        </button> */}
+      </div>
+    </div>
   );
-};
-export default Blog;
+}
+
+export default Blog

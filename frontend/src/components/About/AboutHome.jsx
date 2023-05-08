@@ -1,57 +1,40 @@
 import React from 'react'
 import './About.css'
-import aboutImage1 from "../../assets/AboutImages/about-us.jpg";
+import aboutImage1 from './images/aboutHome.jpg'
 import { Link } from "react-router-dom";
 
 
 const AboutHome = () => {
   return (
     <>
-      <div className="section">
-        {/* <Navbar /> */}
-        <div className="aboutContainer">
-          <div className="row row1 align-item-center ">
-            <div
-              className="col-lg-6 colum1"
-              data-aos="fade-right"
-              data-aos-offset="300"
-              data-aos-duration="2000"
+      <section className="w-full">
+        <div className="bg-[#DDFFBC] grid grid-cols-1 mt-5 space-y-4 py-3  justify-center md:grid-cols-2 gap-x-4">
+          <div className="text-center pt-5 flex flex-col items-center ">
+            <h2 className="text-2xl font-semibold font-inter text-black ">
+              About Us
+            </h2>
+            <div className="w-[80px] h-1 rounded-md bg-yellow-400 mt-1 mb-3 "></div>
+            <h3 className="  self-start ml-5 text-lg font-bold ">
+              Pleged to support
+            </h3>
+            <p className="w-full  text-lg subpixel-antialiased px-4  text-start ">
+              We believe that everyone deserves access to basic human needs like
+              food, water, shelter, and healthcare. Our purpose is to connect
+              generous donors with reputable charities and non-profit
+              organizations that are working to make the world a better place.
+            </p>
+            <Link
+              to={"/about"}
+              className="self-start ml-5 mt-4 px-3 py-2 rounded-md  border-2 text-black border-yellow-400 hover:bg-yellow-400 "
             >
-              <div className="heading heading-primary">
-                <span className="heading__pre-title">|| About us</span>
-                <h2 className="heading__title">
-                  <span>Pleged to support</span> <span></span>
-                </h2>
-              </div>
-              <p>
-                <strong>DONATE to NGO of your wish in signle click!</strong>
-              </p>
-              <p>
-                ABHIDAN is providing an interface between the user who is eager
-                to donate any stuff like food, book, clothes etc.
-              </p>
-              <Link className="btn btn-info" to={"/about"}>
-                More About
-              </Link>
-            </div>
-
-            <div
-              className="col-lg-6 col-xl-5 offset-xl-1  colum2"
-              data-aos="fade-left"
-              data-aos-offset="300"
-              data-aos-duration="2000"
-            >
-              <div className="info-box ">
-                <div className="image-section  ">
-                  <img src={aboutImage1} alt="" />
-                  {/* <img src={aboutImage2} /> */}
-                </div>
-              </div>
-            </div>
+              <button>Read More...</button>
+            </Link>
+          </div>
+          <div>
+            <img src={aboutImage1} alt="Our Purpose" className="rounded-lg " />
           </div>
         </div>
-          </div>
-          
+      </section>
     </>
   );
 }

@@ -15,13 +15,14 @@ import Footer from "../Footer/Footer";
 const Home = () => {
   return (
     <>
-      <ReactSlick />
-      <AboutHome />
-      <Circle />
-      <HowitWorks />
-      {/* <AboutSlick /> */}
-      <Footer />
-     
+      <div className=" overflow-x-hidden">
+        <ReactSlick />
+        <AboutHome />
+        <Circle />
+        <HowitWorks />
+        <AboutSlick />
+        <Footer />
+      </div>
     </>
   );
 };
