@@ -4,7 +4,7 @@ import logotemp from "./help.jpg";
 import { FcLike } from "react-icons/fc"
 import {BiCommentDetail} from "react-icons/bi"
 import { IoMdShareAlt } from "react-icons/io";
-import { MdCreateNewFolder } from "react-icons/md";
+import Filter from '../Ngo/Filter';
 
 
 const Blog = () => {
@@ -15,12 +15,9 @@ const Blog = () => {
       <div className="hidden md:flex">
         <img src={logo} alt="" className="w-full  h-[350px] md:h-[500px]" />
       </div>
-      <div className="relative">
+      <div className="">
         <div className="bg-[#f8f9fa] ">
-          <div className='flex '>
-            <button>Recent post</button>
-            <button>Category Post</button>
-          </div>
+          <Filter />
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 px-6 py-4 gap-x-5">
             {/* col-1 */}
             <div className="border mb-2 rounded-md shadow-xl">

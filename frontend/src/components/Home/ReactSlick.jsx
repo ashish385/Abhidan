@@ -9,7 +9,7 @@ const ReactSlick = () => {
 
   
   const settings = {
-    dots: true,
+    dots: false,
     infinite: true,
     speed: 500,
     slidesToShow: 1,
@@ -35,33 +35,48 @@ const ReactSlick = () => {
   };
 
   return (
-    <Slider {...settings}>
-    
-      <div className="slider-item">
-        <img src={pic1} alt="Image 1"  style={{height:"600px",width:"100%"}}/>
-        <div className="sliderContent ">
-        <h3 >Text 1</h3>
-        <p>bsdjkfhs dfheoiwe skchoihfe nvsdho </p>
-        <button className="btn btn-success mt-2">Donate</button>
-        </div>
+    <>
+      <div className="bg-[#F0F8FF]">
+        <Slider {...settings} className="bg-[#F0F8FF]">
+          <div className="slider-item">
+            <img
+              src={pic1}
+              alt="Image 1"
+              style={{ height: "600px", width: "100%" }}
+            />
+            <div className="sliderContent ">
+              <h3>Text 1</h3>
+              <p>bsdjkfhs dfheoiwe skchoihfe nvsdho </p>
+              <button className="btn btn-success mt-2">Donate</button>
+            </div>
+          </div>
+          <div className="slider-item">
+            <img
+              src={pic1}
+              alt="Image 2"
+              style={{ height: "600px", width: "100%" }}
+            />
+            <div className="sliderContent">
+              <h3>Text 1</h3>
+              <p>bsdjkfhs dfheoiwe skchoihfe nvsdho </p>
+              <button className="btn btn-success mt-2">Donate</button>
+            </div>
+          </div>
+          <div className="slider-item">
+            <img
+              src={pic1}
+              alt="Image 3"
+              style={{ height: "600px", width: "100%" }}
+            />
+            <div className="sliderContent">
+              <h3>Text 1</h3>
+              <p>bsdjkfhs dfheoiwe skchoihfe nvsdho </p>
+              <button className="btn btn-success mt-2">Donate</button>
+            </div>
+          </div>
+        </Slider>
       </div>
-      <div className="slider-item">
-        <img src={pic1} alt="Image 2" style={{height:"600px",width:"100%"}}/>
-        <div className="sliderContent">
-        <h3>Text 1</h3>
-        <p>bsdjkfhs dfheoiwe skchoihfe nvsdho </p>
-        <button className="btn btn-success mt-2">Donate</button>
-        </div>
-      </div>
-      <div className="slider-item">
-        <img src={pic1} alt="Image 3"style={{height:"600px",width:"100%"}} />
-        <div className="sliderContent">
-        <h3 >Text 1</h3>
-        <p>bsdjkfhs dfheoiwe skchoihfe nvsdho </p>
-        <button className="btn btn-success mt-2" >Donate</button>
-        </div>
-      </div>
-    </Slider>
+    </>
   );
 };
 
