@@ -7,48 +7,35 @@ import { Link } from "react-router-dom";
 const AboutHome = () => {
   return (
     <>
-      <div className="section">
+      <div className="  overflow-x-hidden px-3 mb-4 ">
         {/* <Navbar /> */}
         <div className="aboutContainer">
-          <div className="row row1 align-item-center ">
-            <div
-              className="col-lg-6 colum1"
-              data-aos="fade-right"
-              data-aos-offset="300"
-              data-aos-duration="2000"
-            >
-              <div className="heading heading-primary">
-                <span className="heading__pre-title">|| About us</span>
-                <h2 className="heading__title">
-                  <span>Pleged to support</span> <span></span>
-                </h2>
-              </div>
-              <p>
-                <strong>DONATE to NGO of your wish in signle click!</strong>
-              </p>
-              <p>
+        <section className="w-full">
+          <div className="bg-[#f8f9fa] grid grid-cols-1 mt-5 space-y-4 py-3  justify-center md:grid-cols-2 gap-x-4">
+            <div className="text-center pt-5 flex flex-col items-center ">
+              <h2 className="text-2xl font-semibold font-inter text-black ">
+                About us
+              </h2>
+              
+              <div className="w-[100px] h-1 rounded-md bg-yellow-400 mt-1 mb-3 "></div>
+              <span>Pleged to support</span> <span></span>
+              <p className="w-full  text-xl subpixel-antialiased px-4 py-2 text-start sm:mt-5">
+            
                 ABHIDAN is providing an interface between the user who is eager
                 to donate any stuff like food, book, clothes etc.
+             
               </p>
-              <Link className="btn btn-info" to={"/about"}>
-                More About
-              </Link>
             </div>
-
-            <div
-              className="col-lg-6 col-xl-5 offset-xl-1  colum2"
-              data-aos="fade-left"
-              data-aos-offset="300"
-              data-aos-duration="2000"
-            >
-              <div className="info-box ">
-                <div className="image-section  ">
-                  <img src={aboutImage1} alt="" />
-                  {/* <img src={aboutImage2} /> */}
-                </div>
-              </div>
+            <div>
+              <img
+                src={aboutImage1}
+                alt="about-img"
+                className="rounded-lg "
+              />
             </div>
           </div>
+        </section>
+     
         </div>
           </div>
           
