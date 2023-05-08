@@ -27,7 +27,7 @@ const AboutHome = () => {
               to={"/about"}
               className="self-start ml-5 mt-4 px-3 py-2 rounded-md  border-2 text-black border-yellow-400 hover:bg-yellow-400 "
             >
-              <button>Read More...</button>
+              <button>Read More</button>
             </Link>
           </div>
           <div>
