@@ -2,8 +2,7 @@ import React from "react";
 import ReactSlick from "./ReactSlick";
 
 import "./Home.css";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+
 
 
 // import About from "../About/About";
@@ -19,7 +18,7 @@ const Home = () => {
       <AboutHome />
       <Circle />
       <HowitWorks />
-      <AboutSlick />
+      {/* <AboutSlick /> */}
       <Footer />
      
     </>

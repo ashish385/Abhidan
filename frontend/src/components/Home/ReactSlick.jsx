@@ -36,6 +36,7 @@ const ReactSlick = () => {
 
   return (
     <Slider {...settings}>
+    
       <div className="slider-item">
         <img src={pic1} alt="Image 1"  style={{height:"600px",width:"100%"}}/>
         <div className="sliderContent ">
