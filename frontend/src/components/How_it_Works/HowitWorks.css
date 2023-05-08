@@ -1,11 +1,7 @@
 /** @format */
 
 .how-it-works {
-<<<<<<< HEAD
   background-color: #DDFFBC;
-=======
-  background-color: #ffffff;
->>>>>>> 624c4b28e0dedd7398406026a3f7ca2247ca0874
   min-height: 99vh;
   max-height: 100%;
   display: flex;
@@ -30,57 +26,6 @@
   align-items: center;
   color: black;
   
-}
-/* .subcontainer-title_heading .subcontainer-section-headingWrapper {
-  font-size: 30px;
-  font-weight: 700;
-  border-bottom: 5px solid orange;
-} */
-
-/* .subcontainer-how-it-works_tabsWrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  
-  box-sizing: border-box; */
-/* }
-.subcontainer-how-it-works_tab0 {
-  color: #4e944f;
-  border-bottom: 3px solid rgb(2, 83, 2);
-}
-.subcontainer-how-it-works_tab1 {
-  text-transform: none;
-  letter-spacing: 0.5px;
-  font-size: 1rem;
-  font-weight: 700;
-  padding: 4px 1px;
-  margin: 0 16px;
-  cursor: pointer;
-  box-sizing: border-box;
-} */
-
-
-
-.subcontainer-buttons {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
-  
-  font-weight: 600;
-  font-size: 14px;
-  font-family: Barlow, sans-serif;
-}
-
-.subcontainer-buttons .switch {
-  border-radius: 10px;
-  border: 2px solid orange;
-  padding: 8px;
-}
-.subcontainer-buttons .switch-1 {
-  border-radius: 10px;
-  border: 2px solid orange;
-  padding: 8px;
 }
 
 .subcontainer-donor {

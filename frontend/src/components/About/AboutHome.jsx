@@ -29,14 +29,13 @@ const AboutHome = () => {
             >
               <button>Read More...</button>
             </Link>
-          </div>
+          </div></div>
           <div>
             <img src={aboutImage1} alt="Our Purpose" className="rounded-lg " />
           </div>
         </section>
      
-        </div>
-      </section>
+        
     </>
   );
 }
