@@ -1,8 +1,8 @@
 /* image slider css at home page  */
 .slider-item {
   position: relative;
-  background-color: "#DDFFBC";
-  
+ 
+  background-color:;
 }
 
 
@@ -14,12 +14,17 @@
   text-align: center;
   color: white;
   width: 100%;
-  padding: 0 20px;
+  padding: 20px;
   z-index: 1;
+  background-color: rgba(0, 0, 0, 0.132);
+  width:auto;
+
+  
 }
 
 .sliderContent h3 {
-  font-size: 24px;
+  font-size: 30px;
+  font-weight: 600;
   margin-bottom: 10px;
 }
 
@@ -27,6 +32,7 @@
   .sliderContent h3 {
     font-size: 18px;
   }
+  
 }
 /* end  */
 /* circle----------- css */

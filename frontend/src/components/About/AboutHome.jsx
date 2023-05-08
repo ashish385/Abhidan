@@ -1,13 +1,13 @@
 import React from 'react'
-import aboutImage1 from './images/aboutHome.jpg'
+import aboutImage1 from './images/abouthome1.jpg'
 import { Link } from "react-router-dom";
 
 
 const AboutHome = () => {
   return (
     <>
-      <section className="w-full px-3 py-3  bg-[#f8f9fa]">
-        <div className="flex flex-col-reverse md:flex-row justify-between ">
+      <section className="w-full px-3 py-3  bg-white">
+        <div className="flex flex-col md:flex-row justify-between ">
           <div className="text-center flex-1 pt-5 flex flex-col items-center ">
             <h2 className="text-2xl font-semibold font-inter text-black ">
               About Us
@@ -26,7 +26,7 @@ const AboutHome = () => {
             </Link>
           </div>
           <div className="flex-1">
-            <img src={aboutImage1} alt="Our Purpose" className="rounded-lg " />
+            <img src={aboutImage1} alt="Our Purpose" className=" " />
           </div>
         </div>
       </section>

@@ -6,7 +6,7 @@ const Circle = () => {
 
   return (
     <>
-      <div className="container bg-[#f8f9fa] pt-4">
+      <div className="container bg-white pt-4">
         <div className="rowCircle">
           <h2 className="social-head">
             small donations make bigger impact on <br />

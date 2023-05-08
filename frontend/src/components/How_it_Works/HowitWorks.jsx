@@ -20,7 +20,7 @@ const HowitWorks = () => {
 	
 
 	return (
-		<div className='how-it-works'>
+		<div className='how-it-works bg-white'>
 			<div className='subcontainer'>
 				<div className=' subcontainer-title_heading mb-3'>
 					<div className='subcontainer-section-headingWrapper'>
