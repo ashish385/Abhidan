@@ -72,13 +72,15 @@ const AboutSlick = ( ) => {
   };
   return (
     <>
-      <div className="section-2" >
+      <div className="bg-[#f8f9fa] flex flex-col mt-5 space-y-4 py-3  justify-center md:grid-cols-2 gap-x-4">
         <div className="flex flex-col justify-center items-center">
-          <h1 className="slideHeading">testimonials </h1>
-          <div className="w-[300px] h-1 rounded-lg  bg-red-500"></div>
+          <h1 className="text-2xl font-semibold font-inter text-black tracking-[0.15rem] ">
+            Testimonials
+          </h1>
+          <div className="w-[100px] h-1 rounded-lg  bg-red-500"></div>
         </div>
 
-        <div className="SlideBackground">
+        <div className="SlideBackground px-2">
           <Slider {...settings} className="sliderAbout">
             {AboutSlickData.map((data, index) => {
               return (
@@ -107,7 +109,6 @@ const AboutSlick = ( ) => {
           </Slider>
         </div>
       </div>
-      
     </>
   );
 };

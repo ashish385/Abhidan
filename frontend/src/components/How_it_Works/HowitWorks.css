@@ -1,7 +1,11 @@
 /** @format */
 
 .how-it-works {
+<<<<<<< HEAD
+  background-color: #DDFFBC;
+=======
   background-color: #ffffff;
+>>>>>>> 624c4b28e0dedd7398406026a3f7ca2247ca0874
   min-height: 99vh;
   max-height: 100%;
   display: flex;
