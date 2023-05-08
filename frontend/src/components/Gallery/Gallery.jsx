@@ -8,22 +8,20 @@ import Footer from '../Footer/Footer';
 const Gallery = () => {
   return (
     <>
-      <div className="container">
-        <div className="GalleryHeading">
-          <h1 className="title">Image Gallery</h1>
-        </div>
-        <div className="imageContainer">
-          {Images.map((img, index) => {
-            return (
-              <div key={index} >
-                <img src={img.img} alt="" />
-              </div>
-            )
-          })}
-        </div>
+      <div className='px-3 py-2'> 
+
+ 
+          <div className="flex flex-col gap-4">
+          {
+            Images.map((img, index) => (
+              <>
+              <img src={img.img} alt="" /></>
+            ))
+           }
+          </div>
       </div>
+
       <Footer />
-      
     </>
   );
 }

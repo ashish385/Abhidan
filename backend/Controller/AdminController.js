@@ -2,7 +2,7 @@ const path = require("path");
 const ejs = require("ejs");
 
 const ngoModel = require("../Model/ngoModel");
-
+const userModel = require("../Model/userModel")
 
 
 // render login page
@@ -79,11 +79,23 @@ const NgoAll = async (req, res) => {
   }
 };
 
+const Donor = async (req, res) => {
+  try {
+    const donorData = await userModel.find({ is_active: 1 });
+    if (donorData) {
+      res.render("Pages/Donor", {data:donorData})
+    }
+  } catch (error) {
+    console.log(error);
+  }
+}
+
 module.exports = {
   Home,
   login,
   verifiyLogin,
   dashboard,
   Ngo,
-  NgoAll
+  NgoAll,
+  Donor
 };

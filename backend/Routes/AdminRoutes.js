@@ -21,6 +21,7 @@ abhidanRoutes.get("/",AdminController.login)
 abhidanRoutes.post("/login",AdminController.verifiyLogin)
 abhidanRoutes.get("/dashboard",AdminController.dashboard)
 abhidanRoutes.get("/ngo",AdminController.Ngo)
-abhidanRoutes.get("/all-ngo",AdminController.NgoAll)
+abhidanRoutes.get("/all-ngo", AdminController.NgoAll)
+abhidanRoutes.get("/donor", AdminController.Donor);
 
 module.exports =abhidanRoutes;

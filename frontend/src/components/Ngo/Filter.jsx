@@ -27,7 +27,7 @@ const filterData = [
 const Filter = () => {
   return (
     <div>
-      <h1 className='text-center text-2xl'>Categories</h1>
+      
       <div className="flex flex-wrap max-w-max space-x-4 gap-y-4 mx-auto py-4 justify-centre">
         {filterData.map((data) => (
           <button>{data.title}</button>
