@@ -7,9 +7,6 @@
     <title>NGO</title>
 
     
-    <!-- App favicon -->
-    <link rel="shortcut icon" href="assets/images/favicon.ico" />
-    
     <!--Swiper slider css-->
     <link href="assets/libs/swiper/swiper-bundle.min.css" rel="stylesheet" type="text/css" />
     
@@ -129,6 +126,18 @@
                                                             <td class="phone"><%= data.contact %></td>
                                                             <td class="date"><%= data.established_date %></td>
                                                             <td class="status"><span class="badge badge-soft-success text-uppercase">Active</span>
+                                                            </td>
+                                                            <td>
+                                                                <div class="d-flex gap-2">
+                                                                    <div class="edit">
+                                                                        <button class="btn btn-sm btn-success edit-item-btn" data-bs-toggle="modal"
+                                                                            data-bs-target="#showModal">Edit</button>
+                                                                    </div>
+                                                                    <div class="remove">
+                                                                        <button class="btn btn-sm btn-danger remove-item-btn" data-bs-toggle="modal"
+                                                                            data-bs-target="#deleteRecordModal">Remove</button>
+                                                                    </div>
+                                                                </div>
                                                             </td>
 
                                                         </tr>
