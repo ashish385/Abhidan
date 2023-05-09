@@ -91,17 +91,23 @@ const Donor = async (req, res) => {
   }
 }
 
-const ngoRemover = async (req,res) =>{
- try{
-  const {id} =req.query
-  const deleteData = await ngoModel.findByIdAndDelete({_id:id});
-  console.log(deleteData);  
- }
- catch(error){
-  res.status(error)
- }
-  
-}
+
+const approve_ngo = async (req, res) => {
+  console.log(req.query.id);
+
+  try {
+    const approveId = req.query.id;
+    console.log(approveId);
+    await ngoModel.findByIdAndUpdate(
+      { _id: approveId },
+      { $set: { current_status: "2" } }
+    );
+    res.setHeader("Content-Type", "text/html");
+    res.redirect("/NgoAll");
+  } catch (error) {
+    console.log(error.message);
+  }
+};
 
 module.exports = {
   Home,
@@ -110,5 +116,6 @@ module.exports = {
   dashboard,
   Ngo,
   NgoAll,
-  Donor
+  Donor,
+  approve_ngo
 };
