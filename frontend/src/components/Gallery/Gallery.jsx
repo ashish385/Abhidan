@@ -11,7 +11,7 @@ const Gallery = () => {
       <div className='px-3 py-2'> 
 
  
-          <div className="flex flex-col gap-4">
+          <div className="flex flex-row gap-4">
           {
             Images.map((img, index) => (
               <>

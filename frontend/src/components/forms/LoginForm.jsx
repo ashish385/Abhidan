@@ -70,9 +70,9 @@ const LoginForm = ({ setIsLoggedIn }) => {
   }
   return (
     <div>
-      <form onSubmit={handlerSubmit} className="flex flex-col gap-y-3 mt-2">
+      <form onSubmit={handlerSubmit} className="flex flex-col gap-y-3 mt-1 px-3 py-2">
         <label htmlFor="email" className="w-full">
-          <p className="text-[0.875rem] text-[#292929] mb-1 leading-[1.375rem]">
+          <p className="text-lg text-[#292929] mb-1 leading-[1.375rem]">
             Email Address:<sup className="text-pink-200">*</sup>
           </p>
 
@@ -84,14 +84,14 @@ const LoginForm = ({ setIsLoggedIn }) => {
             placeholder="Enter email address"
             value={formData?.email || " "}
             onChange={handleChange}
-            className="bg-richblack-800 rounded-[0.5rem] text-richblack-5 w-full p-[12px]"
+            className="bg-[#F1F6F9] rounded-[0.5rem] text-[#394867] w-full p-[12px]"
           />
           {errors && (
             <p className="text-red-500 ml-5 text-sm ">{errors.email}</p>
           )}
         </label>
         <label htmlFor="" className="w-full relative  ">
-          <p className="text-[0.875rem] text-[#292929] mb-1 leading-[1.375rem]">
+          <p className="text-lg text-[#292929] mb-1 leading-[1.375rem]">
             Password:<sup className="text-pink-200">*</sup>
           </p>
 
@@ -105,7 +105,7 @@ const LoginForm = ({ setIsLoggedIn }) => {
             placeholder="Enter password "
             value={formData?.password || ""}
             onChange={handleChange}
-            className="bg-richblack-800  rounded-[0.5rem] text-richblack-5 w-full p-[12px] "
+            className="bg-[#F1F6F9]  rounded-[0.5rem] text-[#394867] w-full p-[12px] "
           />
           {errors && (
             <p className="text-red-500 ml-5 text-sm">{errors.password}</p>
@@ -131,7 +131,7 @@ const LoginForm = ({ setIsLoggedIn }) => {
         </button>
       </form>
       <button onClick={() => setForgotModel(true)} className="float-right">
-        <p className=" mt-1 text-blue-100 text-md float-right hover:underline">
+        <p className=" mt-1 text-blue-100 text-md float-right mr-5 hover:underline">
           Forgot Password?
         </p>
       </button>

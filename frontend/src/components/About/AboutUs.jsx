@@ -100,11 +100,17 @@ const AboutUs = () => {
                 Our Purpose
               </h2>
               <div className="w-[100px] h-1 rounded-md bg-yellow-400 mt-1 mb-3 "></div>
-              <p className="w-full  text-xl subpixel-antialiased px-4 py-2 text-start sm:mt-5">
-                We believe that everyone deserves access to basic human needs
-                like food, water, shelter, and healthcare. Our purpose is to
-                connect generous donors with reputable charities and non-profit
-                organizations that are working to make the world a better place.
+              <p className="w-full  text-xl subpixel-antialiased px-4 py-2 text-justify sm:mt-5 leading-relaxed">
+                Our purpose is to bring all the NGOs on single platform to
+                enhance communication between the NGO and the doner. there are
+                many people living in scarcity of resources food, clothes,
+                books, electronics etc. so, it is an approach with socialistic
+                ideals to help who are needy by those who have resources in
+                excess. In our households we have multiple items and gadgets
+                which is of no use for us neither has good resale value like old
+                used smartphone, or Telivision because you have shifted to LED
+                or Smart TV. But these could be useful for others who are
+                rebuilding thier home after any environmental disaster.
               </p>
             </div>
             <div>
@@ -132,13 +138,21 @@ const AboutUs = () => {
                 Our Journey
               </h2>
               <div className="w-[100px] h-1 rounded-md bg-yellow-400 mt-1 mb-3 "></div>
-              <p className="w-full  text-xl subpixel-antialiased px-4 py-2 text-start sm:mt-5">
-                Founded in 2015, our mission has been to make it easy for people
-                to make a difference. We started with a simple idea: connect
-                donors with charities in a more transparent way. Since then,
-                we've grown to work with dozens of non-profit organizations and
-                have helped raise millions of dollars for causes around the
-                world.
+              <p className="w-full text-justify  text-xl subpixel-antialiased px-4 py-2  sm:mt-5 leading-relaxed ">
+                The idea for ABHIDAN is born. You or someone in your team
+                realizes the need for a platform that can connect people who
+                want to donate to NGOs and organizations that need help. You
+                conduct extensive research on the needs of various NGOs, the
+                donation process, and the legal requirements for starting a
+                donation platform. You develop a plan for ABHIDAN, including the
+                mission, vision, and values of the organization. You also decide
+                on the type of NGO partnerships you want to establish and the
+                features you want to include in your website.
+                <br />
+                Overall, the journey of ABHIDAN is one of constant learning,
+                growth, and impact. It is a project that has the potential to
+                make a real difference in the lives of people in need, and I
+                wish you all the best in your efforts to achieve your mission.
               </p>
             </div>
           </div>
@@ -166,18 +180,10 @@ const AboutUs = () => {
               </div>
             ))}
           </div>
-
-          <div className="flex flex-col md:flex-row justify-evenly py-5 items-center space-y-4 md:space-y-0 md:space-x-2">
-            {ngos.map((ngo) => (
-              <div key={ngo.id}>
-                <img src={ngo.logo} alt={ngo.name} />
-              </div>
-            ))}
-          </div>
         </section>
 
         {/* What Makes Us Unique */}
-        <section className="bg-white mt-2">
+        <section className="bg-white pt-4">
           <div className="w-full py-2 flex flex-col items-center">
             <h2 className="text-center text-2xl font-semibold font-inter text-black ">
               What Makes Us Unique
@@ -185,12 +191,29 @@ const AboutUs = () => {
             <div className="w-[100px] h-[4px] rounded-md bg-yellow-400 mt-1 mb-3 "></div>
           </div>
           <div className="flex flex-col-reverse md:flex-row justify-between items-center">
-            <p className=" w-full md:w-[40%] text-xl subpixel-antialiased px-4 py-2 text-start sm:mt-5 ">
-              Unlike other donation portals, we pride ourselves on transparency
-              and accountability. Every charity we work with is thoroughly
-              vetted to ensure that your donations go to the causes you care
-              about. We also offer a wide range of payment options and make it
-              easy to track your donations and see the impact you're making.
+            <p className=" w-full md:w-[40%] text-xl subpixel-antialiased px-4 py-2 text-justify sm:mt-5 ">
+              Our purpose is to bring all the NGOs on single platform to enhance
+              communication between the NGO and the doner. there are many people
+              living in scarcity of resources food, clothes, books, electronics
+              etc. so, it is an approach with socialistic ideals to help who are
+              needy by those who have resources in excess. In our households we
+              have multiple items and gadgets which is of no use for us neither
+              has good resale value like old used smartphone, or Telivision
+              because you have shifted to LED or Smart TV. But these could be
+              useful for others who are rebuilding thier home after any
+              environmental disaster. <br />
+              <div className="text-gray-800 my-2 ">Our main purpose is to-</div>
+              <ul className="text-justify">
+                <li> Reduce E-waste by reusing electronic items</li>
+                <li>Providing resources to those who suffer from deficit</li>
+                <li>from those who have in excess </li>
+                <li> Bringing all NGOs on one platform </li>
+                <li>
+                  Establish direct communication channel between donor and
+                </li>
+                <li>Spread awareness among users by its influential blogs</li>
+                <li>Providing gaurenteed supply to the NGOs</li>
+              </ul>
             </p>
             <img src={img4} alt="" className="w-full md:w-[60%] float-right" />
           </div>
