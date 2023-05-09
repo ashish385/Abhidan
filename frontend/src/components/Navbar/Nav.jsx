@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
-import { GiHamburgerMenu } from "react-icons/gi"
-import {IoCloseSharp} from"react-icons/io5"
+import { GiHamburgerMenu } from "react-icons/gi";
+import { IoCloseSharp } from "react-icons/io5";
 import { toast } from "react-hot-toast";
-import logo from "./nav_logo.png"
+import logo from "./nav_logo.png";
 
 const UserDropDown = ({ isLoggedIn, setIsLoggedIn }) => {
   let [dropOpen, setDropOpen] = useState(false);
@@ -91,7 +91,6 @@ const UserDropDown = ({ isLoggedIn, setIsLoggedIn }) => {
 };
 
 const Nav = ({ isLoggedIn, setIsLoggedIn }) => {
-  
   const NavItems = [
     { id: 1, title: "HOME", link: "/" },
     { id: 2, title: "ABOUT", link: "/about" },
@@ -102,14 +101,13 @@ const Nav = ({ isLoggedIn, setIsLoggedIn }) => {
   let [open, setOpen] = useState(false);
 
   return (
-    <div className=" font-[Poppins]   h-[70px] z-10 sticky top-0 shadow-2xl ">
+    <div className=" font-[Poppins] bg-white   h-[70px] z-10 sticky top-0 shadow-2xl ">
       <div className="shadow-md w-full sticky top-0 left-0">
         <div className="md:flex h-[70px] shrink-md items-center justify-between py-4 md:px-10 px-7">
           <div className="font-bold text-2xl cursor-pointer flex items-center font-[Poppins]  text-gray-800">
             <span className="fixed mt-1">
-            <img src={logo}  className="w-36" alt="abhidan"/>
+              <img src={logo} className="w-36" alt="abhidan" />
             </span>
-          
           </div>
 
           <div
