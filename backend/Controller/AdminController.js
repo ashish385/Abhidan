@@ -60,6 +60,7 @@ const dashboard = async (req, res) => {
 const Ngo = async (req, res) => {
   try {
     const ngoData = await ngoModel.find({ is_active: 1 });
+    console.log(ngoData);
     if (ngoData) {
       res.render("Pages/Ngo", { data: ngoData });
     }
@@ -88,6 +89,18 @@ const Donor = async (req, res) => {
   } catch (error) {
     console.log(error);
   }
+}
+
+const ngoRemover = async (req,res) =>{
+ try{
+  const {id} =req.query
+  const deleteData = await ngoModel.findByIdAndDelete({_id:id});
+  console.log(deleteData);  
+ }
+ catch(error){
+  res.status(error)
+ }
+  
 }
 
 module.exports = {
