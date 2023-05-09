@@ -59,7 +59,7 @@ const dashboard = async (req, res) => {
 
 const Ngo = async (req, res) => {
   try {
-    const ngoData = await ngoModel.find({ current_status: 1 });
+    const ngoData = await ngoModel.find({ is_active: 1 });
     if (ngoData) {
       res.render("Pages/Ngo", { data: ngoData });
     }
@@ -71,7 +71,6 @@ const Ngo = async (req, res) => {
 const NgoAll = async (req, res) => {
   try {
     const ngoData = await ngoModel.find({ is_active: 1 });
-    console.log(ngoData)
     if (ngoData) {
       res.render("Pages/NgoAll", { data: ngoData });
     }
