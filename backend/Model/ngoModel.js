@@ -27,8 +27,8 @@ const ngoSchema = new mongoose.Schema({
     require: true,
   },
   current_status: {
-    type: String,
-    require: true,
+    type: Number,
+    default: 1,
   },
   user_type: {
     type: String,
@@ -54,6 +54,7 @@ const ngoSchema = new mongoose.Schema({
     type: String,
     require: true,
   },
+
   is_active: {
     type: Number,
     default: 1,

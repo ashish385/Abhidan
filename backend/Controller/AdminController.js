@@ -59,7 +59,7 @@ const dashboard = async (req, res) => {
 
 const Ngo = async (req, res) => {
   try {
-    const ngoData = await ngoModel.find({ is_active: 1 });
+    const ngoData = await ngoModel.find({ current_status: 1 });
     if (ngoData) {
       res.render("Pages/Ngo", { data: ngoData });
     }
@@ -71,6 +71,7 @@ const Ngo = async (req, res) => {
 const NgoAll = async (req, res) => {
   try {
     const ngoData = await ngoModel.find({ is_active: 1 });
+    console.log(ngoData)
     if (ngoData) {
       res.render("Pages/NgoAll", { data: ngoData });
     }
@@ -90,6 +91,24 @@ const Donor = async (req, res) => {
   }
 }
 
+
+const approve_ngo = async (req, res) => {
+  console.log(req.query.id);
+
+  try {
+    const approveId = req.query.id;
+    console.log(approveId);
+    await ngoModel.findByIdAndUpdate(
+      { _id: approveId },
+      { $set: { current_status: "2" } }
+    );
+    res.setHeader("Content-Type", "text/html");
+    res.redirect("/NgoAll");
+  } catch (error) {
+    console.log(error.message);
+  }
+};
+
 module.exports = {
   Home,
   login,
@@ -97,5 +116,6 @@ module.exports = {
   dashboard,
   Ngo,
   NgoAll,
-  Donor
+  Donor,
+  approve_ngo
 };
