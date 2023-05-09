@@ -2,11 +2,12 @@ import axios from "axios";
 import React, { useState } from "react";
 import { toast } from "react-hot-toast";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
-import { Link, Navigate, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const NgoRegistation = (props) => {
   let setIsLoggedIn = props.setIsLoggedIn;
   let accountType = props.accountType;
+  const navigate = useNavigate();
 
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
@@ -48,7 +49,7 @@ const NgoRegistation = (props) => {
         console.log(res.data);
         setTimeout(() => {
           toast.success("NGO registation successfully!");
-          Navigate("/login");
+          navigate("/login");
         }, 1000);
         setFormData(" ");
       })
