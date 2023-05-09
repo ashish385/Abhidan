@@ -1,16 +1,16 @@
 import React from 'react'
-import Templets from "../templet/Templets"
+import LoginTemplet from "../templet/LoginTemplet"
 // import image from "../assets/login.png"
 
 const Login = (props) => {
   let setIsLoggedIn = props.setIsLoggedIn;
   let setIsNgoLoggedIn = props.setIsNgoLoggedIn;
   return (
-    <div>
-      <Templets
-        title="Welcome back!"
-        desc1="Build skills for taday,tomorrow,and beyond."
-        desc2="Education to future-proof your Career."
+    <div >
+      <LoginTemplet
+        title="Welcome Back!"
+        desc1="Let's keep Donating."
+        // desc2="Education to future-proof your Career."
         // image={image}
         formType="login"
         setIsLoggedIn={setIsLoggedIn}

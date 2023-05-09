@@ -1,0 +1,194 @@
+{
+   "data":{
+      "Tragedy":[
+         {
+            "id":"WD101",
+            "title":"2023 Turkey-Syria Earthquake",
+            "description":"On Feb. 6, a magnitude 7.8 earthquake occurred in southern Turkey near the northern border of Syria. This quake was followed approximately nine hours later by a magnitude 7.5 earthquake located around 59 miles (95 kilometers) to the southwest.",
+            "image":{
+               "url":"https://disasterphilanthropy.org/wp-content/uploads/2023/02/Turkey-earthquake-@tcsavunma-7.jpeg",
+               "alt":"Earthquake"
+            }
+         },
+         {
+            "id":"DS201",
+            "title":"Here is what happened in Kedarnath flood disaster, 2013",
+            "description":"According to figures provided by the Government of Uttarakhand, more than 5,700 people were 'presumed dead.' This total included 934 local residents. The death toll was later placed at 6,054. Most of the dead were pilgrims.",
+            "image":{
+               "url":"https://images.indianexpress.com/2013/06/b_id_394380_flood-damage.jpg",
+               "alt":"Kedarnath"
+            }
+         },
+         {
+            "id":"ST301",
+            "title":"Three NGOs You Can Contact To Offer Your Support",
+            "description":"This course covers the basics of software testing, including test planning, test case design, test execution, and defect management. Students will learn how to use popular testing frameworks and tools to ensure the quality and reliability of software applications.",
+            "image":{
+               "url":"https://pbs.twimg.com/media/FCJcXaGVUAEIpIG?format=jpg&name=900x900",
+               "alt":"Three NGOs You Can Contact To Offer Your Support"
+            }
+         },
+         {
+            "id":"MD401",
+            "title":"NGOs step up to help Uttarakhand victims",
+            "description":"To provide relief to thousands of people affected by the disaster in Uttarakhand, several city-based NGOs and individuals are coming forward to help those who are still stuck there.City-based NGO Shiv Parvati Sewa Dal is sending relief in the form of food and water.",
+            "image":{
+               "url":"https://images.news18.com/ibnlive/uploads/2013/07/now-relief-materials-and-funds-for-uttarakhand-flood-victims-dwindling_220713092037.jpg?impolicy=website&width=510&height=356",
+               "alt":"Uttarakhand victims"
+            }
+         },
+         {
+            "id":"DO501",
+            "title":"Outbreak Trends of Coronavirus Disease-2019 in India",
+            "description":"he objective of this paper is to prepare the government and citizens of India to take or implement the control measures proactively to reduce the impact of coronavirus disease 2019 (COVID-19).",
+            "image":{
+               "url":"https://assets.weforum.org/article/image/Gt3_maI3Pg1p3LCdz686W_z41IEvOy6elJNQmu_oRLc.jpg",
+               "alt":"Covid 2020"
+            }
+         }
+      ],
+      "Medical":[
+         {
+            "id":"MK101",
+            "title":"Introduction to Marketing",
+            "description":"This course provides an overview of marketing principles and practices, including market research, segmentation, targeting, and positioning. Students will learn how to create effective marketing plans and campaigns, using both traditional and digital marketing techniques.",
+            "image":{
+               "url":"https://codehelp-apis.vercel.app/get-top-courses/Business/Introduction%20To%20Marketing.png",
+               "alt":"Introduction to Marketing"
+            }
+         },
+         {
+            "id":"LD201",
+            "title":"Leadership Development",
+            "description":"This course covers the fundamental concepts and skills required for effective leadership, including communication, motivation, delegation, and team building. Students will learn how to lead teams and organizations, and how to handle common leadership challenges.",
+            "image":{
+               "url":"https://codehelp-apis.vercel.app/get-top-courses/Business/Leadership%20Development.png",
+               "alt":"Leadership Development"
+            }
+         },
+         {
+            "id":"FN301",
+            "title":"Finance for Non-Financial Managers",
+            "description":"This course provides an introduction to finance concepts and tools for non-financial managers. Students will learn how to read and interpret financial statements, analyze financial data, and make informed financial decisions.",
+            "image":{
+               "url":"https://codehelp-apis.vercel.app/get-top-courses/Business/Finance%20for%20Non-Financial%20Managers.png",
+               "alt":"Finance for Non-Financial Managers"
+            }
+         },
+         {
+            "id":"OM401",
+            "title":"Operations Management Fundamentals",
+            "description":"This course covers the basics of operations management, including process design, capacity planning, inventory management, and quality control. Students will learn how to optimize operations to improve efficiency, productivity, and customer satisfaction.",
+            "image":{
+               "url":"https://codehelp-apis.vercel.app/get-top-courses/Business/Operations%20Management%20Fundamentals.png",
+               "alt":"Operations Management Fundamentals"
+            }
+         },
+         {
+            "id":"PM501",
+            "title":"Project Management Essentials",
+            "description":"This course provides an overview of project management principles and techniques, including project planning, scheduling, budgeting, risk management, and stakeholder communication. Students will learn how to manage projects effectively, using both traditional and agile project management approaches.",
+            "image":{
+               "url":"https://codehelp-apis.vercel.app/get-top-courses/Business/Project%20Management%20Essentials.png",
+               "alt":"Project Management Essentials"
+            }
+         }
+      ],
+      "Education":[
+         {
+            "id":"GD101",
+            "title":"Graphic Design Fundamentals",
+            "description":"This course covers the basic principles of graphic design, including typography, color theory, layout design, and image manipulation. Students will learn how to use industry-standard design software to create effective visual designs for print and digital media.",
+            "image":{
+               "url":"https://codehelp-apis.vercel.app/get-top-courses/Design/Graphic%20Design%20Fundamentals.png",
+               "alt":"Graphic Design Fundamentals"
+            }
+         },
+         {
+            "id":"UX201",
+            "title":"User Experience Design",
+            "description":"This course covers the fundamentals of user experience (UX) design, including user research, interaction design, information architecture, and usability testing. Students will learn how to design digital products and services that meet user needs and business goals.",
+            "image":{
+               "url":"https://codehelp-apis.vercel.app/get-top-courses/Design/User%20Experience%20Design.png",
+               "alt":"User Experience Design"
+            }
+         },
+         {
+            "id":"ID301",
+            "title":"Industrial Design Essentials",
+            "description":"This course covers the fundamental concepts and techniques used in industrial design, including sketching, prototyping, modeling, and design for manufacturing. Students will learn how to create innovative and functional products that meet user needs and market demands.",
+            "image":{
+               "url":"https://codehelp-apis.vercel.app/get-top-courses/Design/Industrial%20Design%20Essentials.png",
+               "alt":"Industrial Design Essentials"
+            }
+         },
+         {
+            "id":"FD401",
+            "title":"Fashion Design Principles",
+            "description":"This course covers the principles and practices of fashion design, including fashion illustration, textile design, pattern making, and garment construction. Students will learn how to design and produce original and stylish clothing for different markets and occasions.",
+            "image":{
+               "url":"https://codehelp-apis.vercel.app/get-top-courses/Design/Fashion%20Design%20Principles.png",
+               "alt":"Fashion Design Principles"
+            }
+         }
+      ],
+      "Animals":[
+         {
+            "id":"An101",
+            "title":"YOU MADE IT HAPPEN: AMBULANCES & MEDICINES SAVED THE LIVES OF COUNTLESS STRAYS",
+            "description":"Donations have the power to transform lives, and it’s people like you who are the lifeline of NGOs. Which is why we have some great news for you! Here are a few heartwarming updates on some of the campaigns that you’ve supported unconditionally.",
+            "image":{
+               "url":"https://donatekart.com/blog/wp-content/uploads/2023/04/Screenshot-2023-01-10-at-2.17.40-PM-800x400.png",
+               "alt":"Animal"
+            }
+         },
+         {
+            "id":"An986",
+            "title":"MAKE THIS HOLI SPECIAL FOR OUR FURRY FRIENDS BY KEEPING THEM SAFE",
+            "description":"Holi marks the arrival of spring in India and is celebrated with great merriment and joy. Indian cities and countryside are filled with the blooming Flame of the forest or dhak flowers. Happiness and love set the tone of the festival. Yet this festival can pose a danger to stray animals if they come into contact with the colors or are hit by water balloons or pelted with other objects.",
+            "image":{
+               "url":"https://www.shutterstock.com/image-photo/holi-dog-260nw-613474919.jpg",
+               "alt":"Animal"
+            }
+         },
+         {
+            "id":"LT301",
+            "title":"SELF-SUSTAINABILITY IS THE WAY FORWARD FOR INDIA’S GAUSHALAS TO GIVE INNOCENT COWS A BETTER LIFE",
+            "description":"“It is very common for cattle in India to be abandoned once they stop producing milk. These poor animals end up roaming the streets and either they meet with terrible accidents on the highways or eat huge amounts of plastic and suffer from terrible illnesses,” – Kapil Anand, Co-Founder, Gau Nandi Sewa",
+            "image":{
+               "url":"https://thumbs.dreamstime.com/b/special-cow-thailand-cattle-caused-crash-interbreeding-74997440.jpg",
+               "alt":"Animal"
+            }
+         }
+      ],
+      "Disability":[
+         {
+            "id":"MT101",
+            "title":"Cooking Basics",
+            "description":"This course provides an introduction to cooking techniques, ingredients, and flavors. Students will learn how to plan and prepare meals, using simple recipes and kitchen tools. The course covers a range of cuisines and dietary preferences.",
+            "image":{
+               "url":"https://codehelp-apis.vercel.app/get-top-courses/Lifestyle/Cooking%20Basics.png",
+               "alt":"Cooking Basics"
+            }
+         },
+         {
+            "id":"LF201",
+            "title":"Fitness for Life",
+            "description":"This course covers the fundamentals of fitness, including exercise principles, workout planning, and nutrition. Students will learn how to build strength, endurance, and flexibility, and how to create a healthy and sustainable lifestyle.",
+            "image":{
+               "url":"https://codehelp-apis.vercel.app/get-top-courses/Lifestyle/Fitness%20For%20Life.png",
+               "alt":"Fitness for Life"
+            }
+         },
+         {
+            "id":"LT301",
+            "title":"Travel Photography",
+            "description":"This course covers the fundamentals of travel photography, including composition, lighting, and storytelling. Students will learn how to use a range of camera equipment and editing software to capture and share their travel experiences.",
+            "image":{
+               "url":"https://codehelp-apis.vercel.app/get-top-courses/Lifestyle/Travel%20Photography.png",
+               "alt":"Travel Photography"
+            }
+         }
+      ]
+   }
+}

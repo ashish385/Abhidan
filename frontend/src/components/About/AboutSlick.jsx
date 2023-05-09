@@ -3,8 +3,7 @@ import Slider from "react-slick";
 import Logo from "../../assets/AboutImages/about_2.png";
 import image2 from "../../assets/AboutImages/about.jpg";
 import './About.css'
-import AboutSlickData from '../../DummyData/aboutDummy.json'
-import Footer from "../Footer/Footer";
+import {testimonial} from '../../DummyData/aboutDummy.js';
 
 
 const images = [Logo, image2, Logo, image2, Logo, image2];
@@ -82,7 +81,7 @@ const AboutSlick = ( ) => {
 
         <div className="SlideBackground px-2">
           <Slider {...settings} className="sliderAbout">
-            {AboutSlickData.map((data, index) => {
+            {testimonial.map((data, index) => {
               return (
                 <div className="slideSection" key={index}>
                   <div className="card main-card">

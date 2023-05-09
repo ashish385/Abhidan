@@ -74,79 +74,70 @@ const SignupForm = () => {
 
   return (
     <div>
-      <div className="mb-5 pb-5">
+      <div className="px-3 py-2  ">
         <form onSubmit={handleSubmit} className="flex flex-col gap-y-3 mt-2 ">
           {/* firstName and lastName */}
           <div className="flex flex-col  md:flex-row gap-x-4">
             <label htmlFor="username" className="w-full">
-              <p className="text-[0.875rem] text-[#292929] mb-1 leading-[1.375rem]">
+              <p className="text-lg text-[#292929] mb-1 leading-[1.375rem]">
                 User Name:<sup className="text-pink-200">*</sup>
               </p>
               <input
-                
                 type="text"
                 name="username"
                 id="username"
                 placeholder="Enter First name"
                 value={formData?.username}
                 onChange={handleChange}
-                className="bg-richblack-800 rounded-[0.5rem] flex shrink text-richblack-5 w-full p-[12px]"
+                className="bg-[#F1F6F9] rounded-[0.5rem] flex shrink text-[#394867] w-full p-[12px]"
               />
-              
             </label>
             <label htmlFor="phonenumber" className="w-full">
-              <p className="text-[0.875rem] text-[#292929] mb-1 leading-[1.375rem]">
+              <p className="text-lg text-[#292929] mb-1 leading-[1.375rem]">
                 Phone Number:<sup className="text-pink-200">*</sup>
               </p>
               <input
-                
-                minLength={3}
-                maxLength={10}
-                type="number"
+                type="text"
                 name="phonenumber"
                 id="phonenumber"
                 placeholder="Enter Last name"
                 value={formData?.phonenumber}
                 onChange={handleChange}
-                className="bg-richblack-800 rounded-[0.5rem] text-richblack-5 w-full p-[12px]"
+                className="bg-[#F1F6F9] rounded-[0.5rem] text-[#394867] w-full p-[12px]"
               />
-              
             </label>
           </div>
           {/* email */}
           <label htmlFor="email" className="w-full">
-            <p className="text-[0.875rem] text-[#292929] w-full  leading-[1.375rem]">
+            <p className="text-lg text-[#292929] w-full  leading-[1.375rem]">
               Email Address:<sup className="text-pink-200">*</sup>
             </p>
             <input
-              
               type="email"
               name="email"
               id="email"
               placeholder="Enter Email Addresss"
               value={formData?.email}
               onChange={handleChange}
-              className="bg-richblack-800 rounded-[0.5rem] text-richblack-5 w-full p-[12px]"
+              className="bg-[#F1F6F9] rounded-[0.5rem] text-[#394867] w-full p-[12px]"
             />
-            
           </label>
           {/* Create Password and Confirm Password */}
           <div className="flex flex-col md:flex-row gap-x-4">
             <label htmlFor="password" className="w-full relative">
-              <p className="text-[0.875rem] text-[#292929] mb-1 leading-[1.375rem]">
+              <p className="text-lg text-[#292929] mb-1 leading-[1.375rem]">
                 Create Password:<sup className="text-pink-200">*</sup>
               </p>
               <input
-                
                 type={showPassword ? "text" : "password"}
                 name="password"
                 id="password"
                 placeholder="Enter Password"
                 value={formData?.password}
                 onChange={handleChange}
-                className="bg-richblack-800 rounded-[0.5rem] text-richblack-5 w-full p-[12px]"
+                className="bg-[#F1F6F9] rounded-[0.5rem] text-[#394867] w-full p-[12px]"
               />
-              
+
               <span
                 onClick={() => setShowPassword((prev) => !prev)}
                 className="absolute right-2 top-[38px] cursor-pointer  "
@@ -159,20 +150,19 @@ const SignupForm = () => {
               </span>
             </label>
             <label htmlFor="salt_password" className="w-full relative">
-              <p className="text-[0.875rem] text-[#292929] mb-1 leading-[1.375rem]">
+              <p className="text-lg text-[#292929] mb-1 leading-[1.375rem]">
                 Confirm Password:<sup className="text-pink-200">*</sup>
               </p>
               <input
-                
                 type={showConfirmPassword ? "text" : "password"}
                 name="salt_password"
                 id="salt_password"
                 placeholder="Confirm Password"
                 value={formData?.salt_password}
                 onChange={handleChange}
-                className="bg-richblack-800 rounded-[0.5rem] text-richblack-5 w-full p-[12px]"
+                className="bg-[#F1F6F9] rounded-[0.5rem] text-[#394867] w-full p-[12px]"
               />
-              
+
               <span
                 onClick={() => setShowConfirmPassword((prev) => !prev)}
                 className="absolute right-2 top-[38px] cursor-pointer  "
@@ -187,7 +177,7 @@ const SignupForm = () => {
           </div>
           <button
             type="submit"
-            className=" bg-yellow-50 rounded-[8px] font-medium text-richblack-900 mt-2 py-3"
+            className=" bg-yellow-50 hover:bg-yellow-500 rounded-[8px] font-medium text-richblack-900 py-3"
           >
             Sign Up
           </button>

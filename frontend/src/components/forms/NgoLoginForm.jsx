@@ -59,9 +59,12 @@ const NgoLoginForm = ({ setIsNgoLoggedIn }) => {
   }
   return (
     <>
-      <form onSubmit={handlerSubmit} className="flex flex-col gap-y-3 mt-2">
+      <form
+        onSubmit={handlerSubmit}
+        className="flex flex-col gap-y-3 mt-2 px-3 py-2"
+      >
         <label htmlFor="register_id" className="w-full">
-          <p className="text-[0.875rem] text-[#292929] mb-1 leading-[1.375rem]">
+          <p className="text-lg text-[#292929] mb-1 leading-[1.375rem]">
             Register ID:<sup className="text-pink-200">*</sup>
           </p>
           <input
@@ -69,17 +72,17 @@ const NgoLoginForm = ({ setIsNgoLoggedIn }) => {
             type="text"
             name="register_id"
             id="register_id"
-            placeholder="Enter register id:"
+            placeholder="Enter register Id"
             value={formData.register_id}
             onChange={handleChange}
-            className="bg-richblack-800 rounded-[0.5rem] text-richblack-5 w-full p-[12px]"
+            className="bg-[#F1F6F9] rounded-[0.5rem] text-[#394867] w-full p-[12px]"
           />
           {errors && (
             <p className="text-red-500 ml-5 text-sm ">{errors.register_id}</p>
           )}
         </label>
         <label htmlFor="password" className="w-full relative  ">
-          <p className="text-[0.875rem] text-[#292929] mb-1 leading-[1.375rem]">
+          <p className="text-lg text-[#292929] mb-1 leading-[1.375rem]">
             Password:<sup className="text-pink-200">*</sup>
           </p>
 
@@ -93,7 +96,7 @@ const NgoLoginForm = ({ setIsNgoLoggedIn }) => {
             placeholder="Enter password "
             value={formData?.password}
             onChange={handleChange}
-            className="bg-richblack-800  rounded-[0.5rem] text-richblack-5 w-full p-[12px] "
+            className="bg-[#F1F6F9] rounded-[0.5rem]  text-[#394867] w-full p-[12px] "
           />
           <span
             onClick={() => setShowPassword((prev) => !prev)}
@@ -120,7 +123,7 @@ const NgoLoginForm = ({ setIsNgoLoggedIn }) => {
       <button className="float-right">
         <p
           onClick={() => setForgotModel(true)}
-          className=" mt-1 text-blue-100 text-md float-right hover:underline"
+          className=" mt-1 text-blue-100 mr-4 text-md float-right hover:underline"
         >
           Forgot Password?
         </p>
@@ -132,10 +135,7 @@ const NgoLoginForm = ({ setIsNgoLoggedIn }) => {
       </div>
       <div className="text-gray-500 mt-3 text-center">
         New Ngo?{" "}
-        <Link
-          to="/signup"
-          className=" text-blue-100 text-md  hover:underline"
-        >
+        <Link to="/signup" className=" text-blue-500 text-md  hover:underline">
           Create Account..
         </Link>
       </div>
