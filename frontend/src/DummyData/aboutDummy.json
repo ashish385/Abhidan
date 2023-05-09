@@ -3,7 +3,7 @@
     {
         "id": 1,
         "name": "Alex",
-        "img": "https://www.shutterstock.com/image-vector/creative-illustration-lord-hanuman-his-260nw-2134822445.jpg",
+        "img": "./images/reviewAuth6.png",
         "desc": "Description 1"
     },
     {

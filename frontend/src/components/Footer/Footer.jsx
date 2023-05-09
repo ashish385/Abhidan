@@ -1,6 +1,6 @@
 import React from 'react'
 import {Link} from "react-router-dom"
-
+import footer from "./nav_logo.png"
 
 const Footer = () => {
   return (
@@ -9,58 +9,61 @@ const Footer = () => {
         <div className="p-10 bg-gray-800 text-gray-200 rounded-md shadow-2xl border-t-2 border-gray-950">
           <div className="max-w-7xl mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2 ">
-              <div className="mb-5">
-                <h1 className="text-2xl pb-4">Abhidan</h1>
-                <p className="text-gray-500">BBDU Faizabad road, Lucknow </p>
-                <p className="text-gray-500">
+              <div className="flex flex-col  ">
+
+               <div className='w-full flex ' >
+               <img className='w-[160px]' src={footer} alt="footer_logo"/>
+               </div>
+               <p className="text-orange-400">BBDU Faizabad road, Lucknow </p>
+                <p className="text-orange-400">
                   <strong>Phone:</strong>+91 8888 8888 88
                 </p>
-                <p className="text-gray-500">
+                <p className="text-orange-400">
                   <strong>Email:</strong>abhidan@gmail.com
                 </p>
               </div>
 
               <div className="mb-5">
-                <h3 className="pb-3 leading-5 tracking-[0.1rem]">
+                <h3 className="pb-3 leading-5 tracking-[0.1rem] font-semibold">
                   Useful Links
                 </h3>
                 <ul className="text-gray-500 pl-2">
-                  <li className="pb-2 hover:text-yellow-600">Home</li>
-                  <li className="pb-2 hover:text-yellow-600">About us</li>
-                  <li className="pb-2 hover:text-yellow-600">Ngo's</li>
-                  <li className="pb-2 hover:text-yellow-600">Blog</li>
-                  <li className="pb-2 hover:text-yellow-600">Gallery</li>
-                  <li className="pb-2 hover:text-yellow-600">
+                  <li className="pb-2 text-orange-400">Home</li>
+                  <li className="pb-2 text-orange-400 hover:text-yellow-600">About us</li>
+                  <li className="pb-2 text-orange-400 hover:text-yellow-600">Ngo's</li>
+                  <li className="pb-2 text-orange-400 hover:text-yellow-600">Blog</li>
+                  <li className="pb-2 text-orange-400 hover:text-yellow-600">Gallery</li>
+                  <li className="pb-2 text-orange-400 hover:text-yellow-600">
                     Term of Services
                   </li>
-                  <li className="pb-2 hover:text-yellow-600">Privacy Policy</li>
+                  <li className="pb-2 text-orange-400 hover:text-yellow-600">Privacy Policy</li>
                 </ul>
               </div>
               <div className="mb-5">
-                <h3 className="pb-3 leading-5 tracking-[0.1rem]">
+                <h3 className="pb-3 leading-5 tracking-[0.1rem] font-semibold">
                   Our Services
                 </h3>
                 <ul className="text-gray-500 pl-2">
-                  <li className="pb-2 hover:text-yellow-600">Food Donation</li>
-                  <li className="pb-2 hover:text-yellow-600">
+                  <li className="pb-2 text-orange-400 hover:text-yellow-600">Food Donation</li>
+                  <li className="pb-2 text-orange-400 hover:text-yellow-600">
                     Ngo Description
                   </li>
-                  <li className="pb-2 hover:text-yellow-600">
+                  <li className="pb-2 text-orange-400 hover:text-yellow-600">
                     Ngo Description
                   </li>
-                  <li className="pb-2 hover:text-yellow-600">
+                  <li className="pb-2 text-orange-400 hover:text-yellow-600">
                     Ngo Description
                   </li>
-                  <li className="pb-2 hover:text-yellow-600">
+                  <li className="pb-2 text-orange-400 hover:text-yellow-600">
                     Ngo Description
                   </li>
                 </ul>
               </div>
               <div className="mb-5  space-y-3">
-                <h4 className="pb-3 font-semibold leading-5 tracking-[0.1rem]  ">
+                <h4 className="pb-3 font-semibold leading-5 tracking-[0.1rem] ">
                   Join Us
                 </h4>
-                <p className="text-gray-500 pb-2">
+                <p className="text-orange-400 pb-2">
                   Join 25,000+ others and never miss donation and more..
                 </p>
                 <form>

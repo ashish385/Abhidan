@@ -3,6 +3,7 @@ import { Link, NavLink } from "react-router-dom";
 import { GiHamburgerMenu } from "react-icons/gi"
 import {IoCloseSharp} from"react-icons/io5"
 import { toast } from "react-hot-toast";
+import logo from "./nav_logo.png"
 
 const UserDropDown = ({ isLoggedIn, setIsLoggedIn }) => {
   let [dropOpen, setDropOpen] = useState(false);
@@ -101,14 +102,14 @@ const Nav = ({ isLoggedIn, setIsLoggedIn }) => {
   let [open, setOpen] = useState(false);
 
   return (
-    <div className=" font-[Poppins]  bg-gradient-to-t from-[#fbc2eb] to-[#a6c1ee] h-[70px] z-10 sticky top-0 shadow-2xl ">
+    <div className=" font-[Poppins]   h-[70px] z-10 sticky top-0 shadow-2xl ">
       <div className="shadow-md w-full sticky top-0 left-0">
-        <div className="md:flex h-[70px] shrink-md items-center justify-between bg-gradient-to-r from-sky-700 via-30% to-emerald-700 to-90% py-4 md:px-10 px-7">
+        <div className="md:flex h-[70px] shrink-md items-center justify-between py-4 md:px-10 px-7">
           <div className="font-bold text-2xl cursor-pointer flex items-center font-[Poppins]  text-gray-800">
-            <span className="text-3xl text-indigo-600 mr-1 pt-2">
-              <ion-icon name="logo-ionic"></ion-icon>
+            <span className="fixed mt-1">
+            <img src={logo}  className="w-36" alt="abhidan"/>
             </span>
-            Abhidan
+          
           </div>
 
           <div
@@ -134,7 +135,7 @@ const Nav = ({ isLoggedIn, setIsLoggedIn }) => {
             {NavItems.map((link, index) => (
               <li
                 key={link.id}
-                className="md:ml-8 text-lg md:my-0 my-3 nav-item w-full "
+                className="md:ml-8 text-base md:my-0 my-3 nav-item w-full "
               >
                 <NavLink
                   to={link.link}

@@ -17,14 +17,30 @@ const Circle = () => {
               <div className="Circle">
                 <div className="inner-circle">
                   <h2>
-                    <span className="circle-num">1000,</span>
-                    <span className="circle-txt" style={{ color: "#eb9309" }}>
-                      KG
+                  
+                    
+                    Greater <span style={{ color: "#eb9309" }}> Impact </span>
+                    
+                  </h2>
+                  <p>
+                   Make a positive impact on individuals' lives with each contribution, saving one person at a time.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className="col-lg-4">
+              <div className="Circle">
+                <div className="inner-circle">
+                  <h2 >
+                  Reguler 
+                      <span className="circle-txt" style={{ color: "#eb9309" }}>
+                   
+                    Updates
                     </span>
                   </h2>
                   <p>
-                    we help local nonprofit access the funding tools jbdkjds
-                    jdvdj
+                   
+Stay informed about the ongoing influence you've made by receiving consistent updates on the impact you've created.
                   </p>
                 </div>
               </div>
@@ -33,30 +49,13 @@ const Circle = () => {
               <div className="Circle">
                 <div className="inner-circle">
                   <h2>
-                    <span className="circle-num">1000,</span>
-                    <span className="circle-txt" style={{ color: "#eb9309" }}>
-                      KG
+                   
+                  Hassle-<span style={{ color: "#eb9309" }}>
+                    free contribution.
                     </span>
                   </h2>
                   <p>
-                    we help local nonprofit access the funding tools jbdkjds
-                    jdvdj
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div className="col-lg-4">
-              <div className="Circle">
-                <div className="inner-circle">
-                  <h2>
-                    <span className="circle-num">1000,</span>
-                    <span className="circle-txt" style={{ color: "#eb9309" }}>
-                      KG
-                    </span>
-                  </h2>
-                  <p>
-                    we help local nonprofit access the funding tools jbdkjds
-                    jdvdj
+                   We gladly receive contributions through various way
                   </p>
                 </div>
               </div>
@@ -66,14 +65,13 @@ const Circle = () => {
             <div className="Circle">
               <div className="inner-circle">
                 <h2>
-                  <span className="circle-num">1000,</span>
-                  <span className="circle-txt" style={{ color: "#eb9309" }}>
-                    KG
+                 
+                100%   <span className="circle-txt" style={{ color: "#eb9309" }}>
+                   verified Ngo's
                   </span>
                 </h2>
                 <p>
-                  we help local nonprofit access the funding tools jbdkjds jdvdj
-                  jvbdjk
+                Thorough and rigorous protocols for conducting due diligence with utmost precision.
                 </p>
               </div>
             </div>
@@ -81,14 +79,13 @@ const Circle = () => {
             <div className="Circle m-1">
               <div className="inner-circle">
                 <h2>
-                  <span className="circle-num">1000,</span>
-                  <span className="circle-txt" style={{ color: "#eb9309" }}>
-                    KG
+                  
+                Reliable<span style={{ color: "#eb9309" }}>
+                    and Fortified.
                   </span>
                 </h2>
                 <p>
-                  we help local nonprofit access the funding tools jbdkjds jdvdj
-                  jvbdjk
+          Ngo's and donor's data is completely secure and encrypted.
                 </p>
               </div>
             </div>
