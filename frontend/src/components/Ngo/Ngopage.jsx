@@ -1,4 +1,4 @@
-import React,{useState} from "react";
+import React,{useEffect, useState} from "react";
 
 
 import NgoData from "../../DummyData/NGODummyData.json";
@@ -13,6 +13,22 @@ import axios from "axios";
 const Ngopage = () => {
   
   const [showModal, setShowModal] = useState(false);
+  const [ngoData, setNgoData] = useState([]);
+
+  async function getAllNgoData() {
+   axios.get("http://localhost:1300/api/all-ngo")
+     .then((res) => {
+        setNgoData(res.data.data)
+      })
+    
+  }
+  console.log(ngoData);
+
+  useEffect(() => {
+    getAllNgoData();
+  }, []);
+
+
 
  async function ngoData (){
   axios.get("http://localhost:1300/api/all-ngo")
