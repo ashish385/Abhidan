@@ -1,9 +1,10 @@
-import React,{useState} from "react";
+import React,{useEffect, useState} from "react";
 
 import ReactSlick from "../Home/ReactSlick";
 import NgoData from "../../DummyData/NGODummyData.json";
 import Modal from "../forms/DonateForm";
 import Footer from "../Footer/Footer";
+import axios from "axios";
 
 
 
@@ -12,6 +13,22 @@ import Footer from "../Footer/Footer";
 const Ngopage = () => {
   
   const [showModal, setShowModal] = useState(false);
+  const [ngoData, setNgoData] = useState([]);
+
+  async function getAllNgoData() {
+   axios.get("http://localhost:1300/api/all-ngo")
+     .then((res) => {
+        setNgoData(res.data.data)
+      })
+    
+  }
+  console.log(ngoData);
+
+  useEffect(() => {
+    getAllNgoData();
+  }, []);
+
+
 
  
 
