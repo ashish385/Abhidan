@@ -5,7 +5,7 @@ const ngoSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  image: {
+  images: {
     type: String,
     require: true,
   },

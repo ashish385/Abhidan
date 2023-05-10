@@ -28,10 +28,15 @@ const NgoRegistation = (props) => {
     state: "",
   });
 
+  const [image, setImage] = useState(null);
+  const handleImageChange = (event) => {
+    setImage(event.target.files[0]);
+  };
+
   function handleChange(event) {
     console.log(formData);
     const { name, value } = event.target;
-    setFormData({ ...formData, [name]: value });
+    setFormData({ ...formData, [name]: value, ["images"]: image });
   }
   // console.log(formData);
 
@@ -54,15 +59,16 @@ const NgoRegistation = (props) => {
         setFormData(" ");
       })
       .catch((error) => {
-        if (error.response.status === 400) {
-          toast.error("Please fill all field");
-        }
-        if (error.response.status === 422) {
-          toast.error("Ngo is already present");
-        }
-        if (error.response.status === 500) {
-          toast.error("Something Wrong!");
-        }
+        console.log(error)
+        // if (error.response.status === 400) {
+        //   toast.error("Please fill all field");
+        // }
+        // if (error.response.status === 422) {
+        //   toast.error("Ngo is already present");
+        // }
+        // if (error.response.status === 500) {
+        //   toast.error("Something Wrong!");
+        // }
       });
 
     console.log(formData);
@@ -212,10 +218,10 @@ const NgoRegistation = (props) => {
           <input
             class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
             id="file_input"
+            className="form-control"
             type="file"
-            name="image"
-            value={formData.image}
-            onChange={handleChange}
+            accept="image/*"
+            onChange={handleImageChange}
           />
         </div>
         {/* state and establish date */}
