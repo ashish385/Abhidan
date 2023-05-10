@@ -1,7 +1,8 @@
 const express = require("express");
 const Router = express();
 const bcrypt = require("bcryptjs");
-const jwt = require('jsonwebtoken')
+const jwt = require('jsonwebtoken');
+const NGOModal = require("../Model/ngoModel")
 
 const userModel = require("../Model/userModel")
 
@@ -134,5 +135,16 @@ const RegisterUser = async (req, res) => {
     }
 }
 
-module.exports = {RegisterUser,user_donar_login, userData}
+const allNgo = async (req, res) => {
+    try {
+        const ngoData = await NGOModal.find({ current_status: "2" });
+        if (ngoData) {
+            res.status(200).send({ data: ngoData });
+        }
+    } catch (error) {
+         res.status(500).json(error);
+    }
+}
+
+module.exports = {RegisterUser,user_donar_login, userData, allNgo}
 

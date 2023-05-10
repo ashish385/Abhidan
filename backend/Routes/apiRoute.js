@@ -17,6 +17,9 @@ apiRoute.post("/donor-login", apiController.user_donar_login)
 apiRoute.post("/user-data", apiController.userData);
 
 apiRoute.post("/register-ngo", ngoController.RegisterNgo);
-apiRoute.post("/ngo-login",ngoController.ngo_login);
+apiRoute.post("/ngo-login", ngoController.ngo_login);
+
+// fetch all ngo data
+apiRoute.get("/all-ngo", apiController.allNgo);
 
 module.exports = apiRoute;
