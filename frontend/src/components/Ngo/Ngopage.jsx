@@ -1,6 +1,6 @@
 import React,{useEffect, useState} from "react";
 
-import ReactSlick from "../Home/ReactSlick";
+
 import NgoData from "../../DummyData/NGODummyData.json";
 import Modal from "../forms/DonateForm";
 import Footer from "../Footer/Footer";
@@ -61,10 +61,14 @@ const Ngopage = () => {
   return (
     <>
       <div style={{ backgroundColor: "#F0F8FF" }}>
-        <ReactSlick />
+     <div className="grid grid-cols-2 justify-items-center ">
+ <div className="border-solid">s</div>
+ <div>jh</div>
+     </div>
+      
 
 
-        <div className="flex flex-col relative ">
+        {/* <div className="flex flex-col relative ">
           {NgoData.map((data) => {
             return (
               <div
@@ -112,69 +116,14 @@ const Ngopage = () => {
               </div>
             );
           })}
-        </div>
+        </div> */}
       </div>
       <Footer />
 
-      {/* <div data-aos="fade-right" data-aos-offset="300" data-aos-duration="3000">
-        <div className="container mt-5" style={ngoback}>
-          <div className="row ">
-            <div className="col-md-4" style={{ marginTop: "15px " }}>
-              <img
-                src={
-                  "https://kodesolution.com/html/2017/fundpro-html/demo/images/gallery/gallery-lg1.jpg"
-                }
-                style={ngoimg}
-              />
-            </div>
-            <div className="col-md-8">
-              <h3 className="ngo-name mt-4" style={ngoName}>
-                Ngo Name
-              </h3>
-              <ul className="ngo-det" style={{ color: "#666666" }}>
-                <li>Location</li>
-                <li>contact</li>
-              </ul>
-              <p style={ngoP}>
-                Charitable giving is the act of giving money, goods or time to
-                the unfortunate, either directly or by means of a charitable
-                trust or other worthy cause. Charitable giving as a religious
-                act or duty is referred to as almsgiving or alms. The
-                impoverished, particularly those widowed or orphaned,the ailing
-                or injured, are generally regarded as the proper recipients of
-                charity.
-              </p>
-              <a href="#">
-                <button type="submit" className="btn btn-danger ">
-                  Donate
-                </button>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div> */}
+     
     </>
   );
 };
 
 export default Ngopage;
 
-// import React from 'react'
-// import "./Ngopage.css"
-// const Ngopage = () =>{
-
-//   return(
-//     <>
-
-//     <div class="profile">
-//       <img src="https://via.placeholder.com/300x200" alt="NGO Logo"/>
-//       <h1>Example NGO</h1>
-//       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo.</p>
-//       <p>Website: <a href="https://www.example.com">https://www.example.com</a></p>
-//       <p>Address: 123 Main St, Anytown USA</p>
-//       <p>Phone: (123) 456-7890</p>
-//       <p>Email: info@example.com</p>
-//       </div></>
-//   )
-// }
-// export default Ngopage;
