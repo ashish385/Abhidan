@@ -112,6 +112,12 @@ const approve_ngo = async (req, res) => {
 
 const ngo_remove = async (req,res)=>{
   try{
+
+
+    const deleteData = await userModel.find({ is_active: 1 });
+    if (deleteData) {
+      res.render("Pages/Delete", {data:deleteData})
+    }
     const deleteId = req.query.id;
     console.log(deleteId)
     await ngoModel.findByIdAndDelete(
@@ -121,7 +127,7 @@ const ngo_remove = async (req,res)=>{
       }
     ) ;
     res.setHeader("Content-Type","text/html");
-    
+   
   }
   catch(error){
     console.log(error.message)

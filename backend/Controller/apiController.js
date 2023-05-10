@@ -3,7 +3,10 @@ const Router = express();
 const bcrypt = require("bcryptjs");
 const jwt = require('jsonwebtoken')
 
-const userModel = require("../Model/userModel")
+const userModel = require("../Model/userModel");
+const donationModel = require("../Model/donationModel");
+const ngomodel = require("../Model/ngoModel")
+
 
 const JWT_SECRET =
     "hvdvay6ert72839289()aiyg8t87qt72393293883uhefiuh78ttq3ifi78272jbkj?[]]pou89ywe";
@@ -134,5 +137,43 @@ const RegisterUser = async (req, res) => {
     }
 }
 
-module.exports = {RegisterUser,user_donar_login, userData}
+// donation form for donor code 
+
+const Donation = async(req,res)=>{
+    const {donor_name,email,category,phone,address} = req.body;
+
+    try{
+        if(!donor_name || !email || !category || !phone || !address){
+            return res.status(400).json({
+                status: 400,
+                message: "Please fill all fields",
+              });
+        }
+
+        const donation = new donationModel({
+            donor_name,email,category,phone,address
+        });
+        await donation.save();
+        res.status(201).json({
+            status:201,
+            message:"Submit successfully"
+        })
+    }
+    catch(error){
+        res.status(500).json(error)
+    }
+}
+
+
+const ngoget = async(res,req)=>{
+    try{
+        const ngoData = await ngomodel.find({current_status:"2"});
+        res.status(200).send({data:ngoData})
+    }
+    catch(error){
+        res.status(500).json(error)
+    }
+}
+
+module.exports = {RegisterUser,user_donar_login, userData,Donation}
 
