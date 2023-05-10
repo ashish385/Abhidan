@@ -1,6 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<head>
+    <meta charset="utf-8" />
+    <title>Abhidan</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
+    <meta content="Themesbrand" name="author" />
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="assets/images/nav_logo.png" />
+
+    <!--Swiper slider css-->
+    <link href="assets/libs/swiper/swiper-bundle.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- jsvectormap css -->
+    <link href="assets/libs/jsvectormap/css/jsvectormap.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- Layout config Js -->
+    <script src="assets/js/layout.js"></script>
+    <!-- Bootstrap Css -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <!-- Icons Css -->
+    <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+    <!-- App Css-->
+    <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
+    <!-- custom Css-->
+    <link href="assets/css/custom.min.css" rel="stylesheet" type="text/css" />
+</head>
+
 <body>
     <%- include('../include/home_master.ejs')%>
 
@@ -79,43 +106,55 @@
                                                 </thead>
                                                
                                                 <tbody class="list form-check-all">
-                                                   
-                                                    <tr>
-                                                        <th scope="row">
-                                                            <div class="form-check">
-                                                                <input class="form-check-input" type="checkbox" name="chk_child" value="option1">
-                                                            </div>
-                                                        </th>
-                                                        <td class="id" style="display:none;"><a href="javascript:void(0);" class="fw-medium link-primary">
-                                                                some
-                                                            </a>
-                                                        </td>
-                                                        <td class="customer_name">
-                                                           Ashish
-                                                        </td>
-                                                        
-                                                        
-                                                        <td class="email">marycousar@velzon.com</td>
-                                                        <td class="phone">580-464-4694</td>
-                                                        <td class="date">06 Apr, 2021</td>
-                                                        <td class="status"><span
-                                                                class="badge badge-soft-success text-uppercase">Active</span>
-                                                        </td>
-                                                        <td>
-                                                            <div class="d-flex gap-2">
-                                                                <div class="edit">
-                                                                    <button class="btn btn-sm btn-success edit-item-btn"
-                                                                        data-bs-toggle="modal"
-                                                                        data-bs-target="#showModal">Edit</button>
+                                                
+                                                    <% data.forEach(function(data){ %>
+                                                        <tr>
+                                                            <th scope="row">
+                                                                <div class="form-check">
+                                                                    <input class="form-check-input" type="checkbox" name="chk_child" value="option1">
                                                                 </div>
-                                                                <div class="remove">
-                                                                    <button class="btn btn-sm btn-danger remove-item-btn"
-                                                                        data-bs-toggle="modal"
-                                                                        data-bs-target="#deleteRecordModal">Remove</button>
-                                                                </div>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
+                                                            </th>
+                                                            <td class="id" style="display:none;"><a href="javascript:void(0);" class="fw-medium link-primary">
+                                                                    some
+                                                                </a>
+                                                            </td>
+                                                            <td class="customer_name">
+                                                                <%= data.ngo_name %>
+                                                            </td>
+                                                            <td class="email">
+                                                                <%= data.email %>
+                                                            </td>
+                                                            <td class="phone">
+                                                                <%= data.contact %>
+                                                            </td>
+                                                            <td class="date">
+                                                                <%= data.established_date %>
+                                                            </td>
+                                                            <% if (data.current_status===2) { %>
+                                                                <td class="status"><span class="badge badge-soft-success text-uppercase">Active</span>
+                                                                    <% } else if (data.current_status===0) { %>
+                                                                <td class="status"><span class="badge badge-soft-warning text-uppercase">Deactive</span>
+                                                                    <% } %>
+                                                
+                                                
+                                                                </td>
+                                                                <td>
+                                                                    <div class="d-flex gap-2">
+                                                                        <!-- <div class="edit">
+                                                                            <button class="btn btn-sm btn-success edit-item-btn">
+                                                                                <a href="/approve-ngo?id=<%=data._id%>"> Approve</a></button>
+                                                                        </div> -->
+                                                                        <div class="remove">
+                                                                            <button class="btn btn-sm btn-danger remove-item-btn">
+                                                                                <a href="/cancel-ngo?id=<%=data._id%>">cancel</a></button>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                
+                                                        </tr>
+                                                        <% }); %>
+                                                
+                                                
                                                 </tbody>
                                             </table>
                                             <!-- else pr ye dikhega -->

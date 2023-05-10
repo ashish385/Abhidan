@@ -19,6 +19,7 @@ apiRoute.post("/donation", apiController.Donation);
 
 apiRoute.post("/register-ngo", ngoController.RegisterNgo);
 apiRoute.post("/ngo-login",ngoController.ngo_login);
+apiRoute.get("/all-ngo",apiController.all_ngo);
 
 
 module.exports = apiRoute;

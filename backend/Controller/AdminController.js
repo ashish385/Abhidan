@@ -60,7 +60,7 @@ const dashboard = async (req, res) => {
 
 const Ngo = async (req, res) => {
   try {
-    const ngoData = await ngoModel.find({ is_active: 1 });
+    const ngoData = await ngoModel.find({ current_status: 1 });
     console.log(ngoData);
     if (ngoData) {
       res.render("Pages/Ngo", { data: ngoData });
@@ -72,7 +72,7 @@ const Ngo = async (req, res) => {
 
 const NgoAll = async (req, res) => {
   try {
-    const ngoData = await ngoModel.find({ is_active: 1 });
+    const ngoData = await ngoModel.find({ current_status: 2 });
     if (ngoData) {
       res.render("Pages/NgoAll", { data: ngoData });
     }
@@ -81,18 +81,9 @@ const NgoAll = async (req, res) => {
   }
 };
 
-const Donor = async (req, res) => {
-  try {
-    const donorData = await userModel.find({ is_active: 1 });
-    if (donorData) {
-      res.render("Pages/Donor", {data:donorData})
-    }
-  } catch (error) {
-    console.log(error);
-  }
-}
 
 
+// Approve ngo by id
 const approve_ngo = async (req, res) => {
   console.log(req.query.id);
 
@@ -104,12 +95,13 @@ const approve_ngo = async (req, res) => {
       { $set: { current_status: "2" } }
     );
     res.setHeader("Content-Type", "text/html");
-    res.redirect("/NgoAll");
+    res.redirect("/all-ngo");
   } catch (error) {
     console.log(error.message);
   }
 };
 
+<<<<<<< HEAD
 const ngo_remove = async (req,res)=>{
   try{
 
@@ -118,19 +110,102 @@ const ngo_remove = async (req,res)=>{
     if (deleteData) {
       res.render("Pages/Delete", {data:deleteData})
     }
+=======
+// set current_Status=0
+const DeletedNgo = async (req,res)=>{
+  try {
+>>>>>>> 86ea84d7c008decfe0a2f44935ece1fe52927e70
     const deleteId = req.query.id;
-    console.log(deleteId)
-    await ngoModel.findByIdAndDelete(
-      {_id: deleteId},
+    await ngoModel.findByIdAndUpdate(
+      { _id: deleteId },
       {
-        $set:{current_status:'0'}
+        $set: { current_status: "0" }
       }
+<<<<<<< HEAD
     ) ;
     res.setHeader("Content-Type","text/html");
    
+=======
+    );
+    res.setHeader("Content-Type", "text/html");
+    res.redirect("/remove-ngo")
+>>>>>>> 86ea84d7c008decfe0a2f44935ece1fe52927e70
   }
   catch(error){
     console.log(error.message)
+  }
+}
+
+// CancelNgo ke liye
+const RemovedNgo = async (req, res) => {
+  try {
+    const ngoData = await ngoModel.find({ current_status: 0 });
+    if (ngoData) {
+      res.render("Pages/CancelNgo", { data: ngoData });
+    }
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+// get donor
+const Donor = async (req, res) => {
+  try {
+    const donorData = await userModel.find({ current_status: 1 });
+    if (donorData) {
+      res.render("Pages/Donor", {data:donorData})
+    }
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+// approve donor
+const approveDonor = async (req, res) => {
+  console.log(req.query.id);
+
+  try {
+    const approveId = req.query.id;
+    console.log(approveId);
+    await userModel.findByIdAndUpdate(
+      { _id: approveId },
+      { $set: { current_status: "1" } }
+    );
+    res.setHeader("Content-Type", "text/html");
+    res.redirect("/donor");
+  } catch (error) {
+    console.log(error.message);
+  }
+};
+
+// set current_Status=0
+const deleteDonor = async (req,res)=>{
+  try {
+    const deleteId = req.query.id;
+    console.log(deleteId);
+    await userModel.findByIdAndUpdate(
+      { _id: deleteId },
+      {
+        $set: { current_status: "0" }
+      }
+    );
+    res.setHeader("Content-Type", "text/html");
+    res.redirect("/remove-donor")
+  }
+  catch(error){
+    console.log(error.message)
+  }
+}
+
+// rwemove donor
+const removeDonor = async (req, res) => {
+  try {
+    const ngoData = await userModel.find({ current_status: 0 });
+    if (ngoData) {
+      res.render("Pages/DeletedDonor", { data: ngoData });
+    }
+  } catch (error) {
+    console.log(error);
   }
 }
 
@@ -143,5 +218,22 @@ module.exports = {
   NgoAll,
   Donor,
   approve_ngo,
-  ngo_remove
+  DeletedNgo,
+  RemovedNgo,
+  approveDonor,
+  deleteDonor,
+  removeDonor
 };
+//
+
+
+// const deleteId = req.query.id;
+//     console.log(deleteId)
+//     await ngoModel.findByIdAndUpdate(
+//       {_id: deleteId},
+//       {
+//         $set:{current_status:'0'}
+//       }
+//     ) ;
+//     res.setHeader("Content-Type","text/html");
+//      res.redirect("Pages/CancelNgo");

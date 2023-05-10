@@ -31,6 +31,10 @@ const userSchema = new mongoose.Schema({
   is_active: {
     type: Number,
     default: 1
+  },
+  current_status: {
+    type: Number,
+    default:1
   }
 });
 

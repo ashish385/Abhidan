@@ -83,15 +83,6 @@
                "url":"https://www.hindustantimes.com/ht-img/img/2023/04/12/550x309/Anyone-can-inform-about-any-Covid-positive-patient_1681310161776.jpg",
                "alt":"Medical"
             }
-         },
-         {
-            "id":"PM501",
-            "title":"Project Management Essentials",
-            "description":"This course provides an overview of project management principles and techniques, including project planning, scheduling, budgeting, risk management, and stakeholder communication. Students will learn how to manage projects effectively, using both traditional and agile project management approaches.",
-            "image":{
-               "url":"https://codehelp-apis.vercel.app/get-top-courses/Business/Project%20Management%20Essentials.png",
-               "alt":"Project Management Essentials"
-            }
          }
       ],
       "Education":[
