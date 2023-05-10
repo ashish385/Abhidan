@@ -23,11 +23,17 @@ abhidanRoutes.get("/dashboard", AdminController.dashboard);
 abhidanRoutes.get("/ngo", AdminController.Ngo);
 abhidanRoutes.get("/all-ngo", AdminController.NgoAll);
 abhidanRoutes.get("/donor", AdminController.Donor);
-abhidanRoutes.get("/donor", AdminController.Donor);
+
 
 // Ngo Update || Get || Post || Remove
 abhidanRoutes.get("/approve-ngo", AdminController.approve_ngo);
-abhidanRoutes.get("/remove-ngo", AdminController.ngo_remove);
+abhidanRoutes.get("/cancel-ngo", AdminController.DeletedNgo);
+abhidanRoutes.get("/remove-ngo", AdminController.RemovedNgo);
+
+// Donor Approve and remove
+abhidanRoutes.get("/approve-donor", AdminController.approveDonor);
+abhidanRoutes.get("/cancel-donor", AdminController.deleteDonor);
+abhidanRoutes.get("/remove-donor", AdminController.removeDonor);
 
 // approve_ngo
 

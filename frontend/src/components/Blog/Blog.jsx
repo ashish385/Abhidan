@@ -39,14 +39,14 @@ const Blog = () => {
 
   return (
     <>
-      <div>
+      <div className='w-full bg-white'>
         <Filter
           filterData={filterData}
           category={category}
           setCategory={setCategory}
         />
       </div>
-      <div className="w-11/12 max-w-[1300px] mx-auto  min-h-[50vh]">
+      <div className="  mx-auto  min-h-[50vh]">
         {loading ? (
           <Spinner />
         ) : (

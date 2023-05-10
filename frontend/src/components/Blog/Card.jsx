@@ -40,7 +40,9 @@ const Card = (props) => {
       </div>
       <div className="p-4">
         <p className="text-black font-semibold text-lg leading-6">
-          {course.title}
+          {course.title.length > 40 ?
+            course.title.substr(0, 100) + "...." :
+          course.title}
         </p>
         <p className="mt-2 text-black">
           {course.description.length > 100
