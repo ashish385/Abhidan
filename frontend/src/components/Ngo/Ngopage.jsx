@@ -4,6 +4,7 @@ import React,{useState} from "react";
 import NgoData from "../../DummyData/NGODummyData.json";
 import Modal from "../forms/DonateForm";
 import Footer from "../Footer/Footer";
+import axios from "axios";
 
 
 
@@ -13,6 +14,10 @@ const Ngopage = () => {
   
   const [showModal, setShowModal] = useState(false);
 
+ async function ngoData (){
+  axios.get("http://localhost:1300/api/all-ngo")
+  console.log(ngoData)
+ }
  
 
 
@@ -44,14 +49,11 @@ const Ngopage = () => {
   return (
     <>
       <div style={{ backgroundColor: "#F0F8FF" }}>
-     <div className="grid grid-cols-2 justify-items-center ">
- <div className="border-solid">s</div>
- <div>jh</div>
-     </div>
+    
       
 
 
-        {/* <div className="flex flex-col relative ">
+        <div className="flex flex-col relative ">
           {NgoData.map((data) => {
             return (
               <div
@@ -99,7 +101,7 @@ const Ngopage = () => {
               </div>
             );
           })}
-        </div> */}
+        </div>
       </div>
       <Footer />
 
