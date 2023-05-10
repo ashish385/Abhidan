@@ -101,18 +101,35 @@ const approve_ngo = async (req, res) => {
   }
 };
 
+<<<<<<< HEAD
+const ngo_remove = async (req,res)=>{
+  try{
+
+
+    const deleteData = await userModel.find({ is_active: 1 });
+    if (deleteData) {
+      res.render("Pages/Delete", {data:deleteData})
+    }
+=======
 // set current_Status=0
 const DeletedNgo = async (req,res)=>{
   try {
+>>>>>>> 86ea84d7c008decfe0a2f44935ece1fe52927e70
     const deleteId = req.query.id;
     await ngoModel.findByIdAndUpdate(
       { _id: deleteId },
       {
         $set: { current_status: "0" }
       }
+<<<<<<< HEAD
+    ) ;
+    res.setHeader("Content-Type","text/html");
+   
+=======
     );
     res.setHeader("Content-Type", "text/html");
     res.redirect("/remove-ngo")
+>>>>>>> 86ea84d7c008decfe0a2f44935ece1fe52927e70
   }
   catch(error){
     console.log(error.message)
