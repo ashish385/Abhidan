@@ -2,7 +2,8 @@ const path = require("path");
 const ejs = require("ejs");
 
 const ngoModel = require("../Model/ngoModel");
-const userModel = require("../Model/userModel")
+const userModel = require("../Model/userModel");
+const { log } = require("console");
 
 
 // render login page
@@ -109,6 +110,24 @@ const approve_ngo = async (req, res) => {
   }
 };
 
+const ngo_remove = async (req,res)=>{
+  try{
+    const deleteId = req.query.id;
+    console.log(deleteId)
+    await ngoModel.findByIdAndDelete(
+      {_id: deleteId},
+      {
+        $set:{current_status:'0'}
+      }
+    ) ;
+    res.setHeader("Content-Type","text/html");
+    
+  }
+  catch(error){
+    console.log(error.message)
+  }
+}
+
 module.exports = {
   Home,
   login,
@@ -117,5 +136,6 @@ module.exports = {
   Ngo,
   NgoAll,
   Donor,
-  approve_ngo
+  approve_ngo,
+  ngo_remove
 };

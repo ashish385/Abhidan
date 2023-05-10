@@ -27,6 +27,7 @@ abhidanRoutes.get("/donor", AdminController.Donor);
 
 // Ngo Update || Get || Post || Remove
 abhidanRoutes.get("/approve-ngo", AdminController.approve_ngo);
+abhidanRoutes.get("/remove-ngo", AdminController.ngo_remove);
 
 // approve_ngo
 
