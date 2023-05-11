@@ -16,7 +16,10 @@ const Ngopage = () => {
       return setgetNgoData(res.data.data);
     });
   }, []);
-  console.log(getNgoData);
+
+
+ 
+
 
   const ngoback = {
     background: `url('https://kodesolution.com/html/2017/fundpro-html/demo/images/pattern/p26.png')`,
@@ -46,8 +49,12 @@ const Ngopage = () => {
   return (
     <>
       <div style={{ backgroundColor: "#F0F8FF" }}>
+    
+      
+
+
         <div className="flex flex-col relative ">
-          {getNgoData.map((data) => {
+          {NgoData.map((data) => {
             return (
               <div
                 // data-aos="fade-right"
