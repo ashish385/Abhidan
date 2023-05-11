@@ -27,4 +27,6 @@ export const filterData = [
 
 export const apiUrl = "https://codehelp-apis.vercel.app/api/get-top-courses";
 
+export const videoLink = "https://youtu.be/hGKM7jO4qK8"
+
 

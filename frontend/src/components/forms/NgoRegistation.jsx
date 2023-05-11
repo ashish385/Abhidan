@@ -19,7 +19,6 @@ const NgoRegistation = (props) => {
     email: "",
     password: "",
     confirm_password: "",
-    current_status: "ngo",
     user_type: "ngo",
     contact: "",
     address: "",
@@ -36,7 +35,7 @@ const NgoRegistation = (props) => {
   function handleChange(event) {
     console.log(formData);
     const { name, value } = event.target;
-    setFormData({ ...formData, [name]: value, ["images"]: image });
+    setFormData({ ...formData, [name]: value, ["image"]: image });
   }
   // console.log(formData);
 

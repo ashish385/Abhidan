@@ -21,12 +21,17 @@ const Templets = ({ title, desc1, desc2, image, formType, setIsLoggedIn, setIsNg
               {title}
             </h1>
             <p className="text-[1.125rem] leading-[1.625rem] mt-4">
-              <span className="text-gray-600 font-semibold ityalic">{desc1}</span>
+              <span className="text-gray-600 font-semibold ityalic">
+                {desc1}
+              </span>
               <br />
               <span className="text-blue-100 ityalic">{desc2}</span>
             </p>
           </div>
-          <LogInSelection />
+          <LogInSelection
+            setIsLoggedIn={setIsLoggedIn}
+            setIsNgoLoggedIn={setIsNgoLoggedIn}
+          />
         </div>
         <div className="md:w-[80%] lg:min-w-[550px] mx-auto py-2 lg:h-full max-h-screen ">
           <div className=" hidden md:block  md:w-[100%] rounded-md  ">

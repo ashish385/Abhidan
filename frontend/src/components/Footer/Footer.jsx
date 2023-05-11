@@ -8,8 +8,10 @@ const Footer = () => {
       <footer>
         <div className="p-10 bg-gray-800 text-gray-200 rounded-md shadow-2xl border-t-2 border-gray-950">
           <div className="max-w-7xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2 ">
-              <div className="flex flex-col  ">
+            <div className="flex flex-col md:flex-row">
+
+              {/* col-1 */}
+              <div className="flex flex-col basis-1/4  ">
 
                <div className='w-full flex ' >
                <img className='w-[160px]' src={footer} alt="footer_logo"/>
@@ -23,7 +25,8 @@ const Footer = () => {
                 </p>
               </div>
 
-              <div className="mb-5">
+              {/* col-2 */}
+              <div className="mb-5 basis-1/4">
                 <h3 className="pb-3 leading-5 tracking-[0.1rem] font-semibold">
                   Useful Links
                 </h3>
@@ -39,7 +42,9 @@ const Footer = () => {
                   <li className="pb-2 text-orange-400 hover:text-yellow-600">Privacy Policy</li>
                 </ul>
               </div>
-              <div className="mb-5">
+
+              {/* col-3 */}
+              <div className="mb-5 basis-1/4">
                 <h3 className="pb-3 leading-5 tracking-[0.1rem] font-semibold">
                   Our Services
                 </h3>
@@ -59,6 +64,8 @@ const Footer = () => {
                   </li>
                 </ul>
               </div>
+
+              {/* col-4 */}
               <div className="mb-5  space-y-3">
                 <h4 className="pb-3 font-semibold leading-5 tracking-[0.1rem] ">
                   Join Us
@@ -67,7 +74,7 @@ const Footer = () => {
                   Join 25,000+ others and never miss donation and more..
                 </p>
                 <form>
-                  <label className="flex flex-row  rounded-lg bg-gray-800 focus:border-yellow-500">
+                  <label className="flex flex-row w-full box-border  rounded-lg bg-gray-800 focus:border-yellow-500">
                     <input
                       type="email"
                       placeholder="info@example.com"
