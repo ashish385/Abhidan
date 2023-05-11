@@ -3,7 +3,7 @@ const Router = express();
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const ngoModel = require("../Model/ngoModel");
-
+const donationModel=require("../Model/donationModel");
 const userModel = require("../Model/userModel");
 
 const JWT_SECRET =
@@ -144,4 +144,25 @@ const all_ngo = async (req, res) => {
   }
 };
 
-module.exports = { RegisterUser, user_donar_login, userData, all_ngo };
+// donation form controller for donor...
+const Donation = async(req,res)=>{
+  const {donor_name,email,category,phone,address} = req.body;
+
+  try{
+      
+
+      const donation = new donationModel({
+          donor_name,email,category,phone,address
+      });
+      await donation.save();
+      res.status(201).json({
+         
+          message:"Submit successfully"
+      })
+  }
+  catch(error){
+      res.status(500).json(error)
+  }
+}
+
+module.exports = { RegisterUser, user_donar_login, userData, all_ngo,Donation };

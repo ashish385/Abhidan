@@ -7,6 +7,7 @@ import pic1 from "./images/hslide.jpg"
 import pic2 from "./images/hslide2.jpg"
 import pic3 from "./images/hslide3.jpg"
 
+
 const ReactSlick = () => {
 
   
@@ -72,7 +73,7 @@ const ReactSlick = () => {
               <h3>Helping Each Other Can Make Better World</h3>
               <p>bsdjkfhs dfheoiwe skchoihfe nvsdho </p>
               <button className=" mt-2 px-3 py-1 rounded-md border-2 border-yellow-400 text-lg hover:bg-yellow-400">
-                Donate
+            Donate
               </button>
             </div>
           </div>
