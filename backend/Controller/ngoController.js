@@ -49,11 +49,11 @@ const ngo_login = async (req, res) => {
 
 // this is ngo registration ngocontroller for handle the data which comes from user ngo
 const RegisterNgo = async(req,res)=>{
-    const { ngo_name, image, register_id, contact, address, established_date, description, password, confirm_password, email, state, current_status, user_type } = req.body
+    const { ngo_name, image, register_id, contact, address, established_date, description, password, confirm_password, email, state, user_type } = req.body
     console.log(req.body);
 
     try {
-        if (!ngo_name || !register_id || !email || !password || !confirm_password || !contact || !address || !image || !established_date || !description || !state || !user_type) {
+        if (!ngo_name || !register_id || !email || !password || !confirm_password || !contact || !address ||  !established_date || !description || !state || !user_type) {
             console.log("empty data");
             return res.status(400).json({
                 status: 400,
@@ -70,7 +70,7 @@ const RegisterNgo = async(req,res)=>{
             })
         }
         const ngo = new ngoModel({
-            ngo_name,image,register_id,contact,address,established_date,description,password,confirm_password,email,state,current_status,user_type
+            ngo_name,register_id,contact,address,established_date,description,password,confirm_password,email,state,user_type
         })
         await ngo.save();
         res.status(201).json({

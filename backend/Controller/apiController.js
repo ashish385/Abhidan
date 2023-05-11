@@ -136,7 +136,7 @@ const RegisterUser = async (req, res) => {
 
 const all_ngo = async (req, res) => {
   try {
-    const allngoData = await ngoModel.find({ current_status: "2" });
+    const allngoData = await ngoModel.find({ current_status: 2 });
 
     res.status(200).send({ success: true, data: allngoData });
   } catch (error) {

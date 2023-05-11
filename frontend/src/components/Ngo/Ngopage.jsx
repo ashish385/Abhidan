@@ -1,37 +1,22 @@
-import React,{useEffect, useState} from "react";
-
+import React, { useEffect, useState } from "react";
 
 import NgoData from "../../DummyData/NGODummyData.json";
 import Modal from "../forms/DonateForm";
 import Footer from "../Footer/Footer";
 import axios from "axios";
 
-
-
-
-
 const Ngopage = () => {
-  
   const [showModal, setShowModal] = useState(false);
   const [ngoData, setNgoData] = useState([]);
 
-  async function getAllNgoData() {
-   axios.get("http://localhost:1300/api/all-ngo")
-     .then((res) => {
-        setNgoData(res.data.data)
-      })
-    
-  }
-  console.log(ngoData);
-
+  const [getNgoData, setgetNgoData] = useState([]);
   useEffect(() => {
-    getAllNgoData();
+    
+    axios.get(`http://localhost:1300/api/all-ngo`).then((res) => {
+      return setgetNgoData(res.data.data);
+    });
   }, []);
-
-
-
- 
-
+  console.log(getNgoData);
 
   const ngoback = {
     background: `url('https://kodesolution.com/html/2017/fundpro-html/demo/images/pattern/p26.png')`,
@@ -61,15 +46,8 @@ const Ngopage = () => {
   return (
     <>
       <div style={{ backgroundColor: "#F0F8FF" }}>
-     <div className="grid grid-cols-2 justify-items-center ">
- <div className="border-solid">s</div>
- <div>jh</div>
-     </div>
-      
-
-
-        {/* <div className="flex flex-col relative ">
-          {NgoData.map((data) => {
+        <div className="flex flex-col relative ">
+          {getNgoData.map((data) => {
             return (
               <div
                 // data-aos="fade-right"
@@ -92,10 +70,10 @@ const Ngopage = () => {
                     </div>
                     <div className="col-md-8">
                       <h3 className="ngo-name mt-4" style={ngoName}>
-                        {data.NGO}
+                        {data.ngo_name}
                       </h3>
                       <ul className="ngo-det" style={{ color: "#666666" }}>
-                        <li>{data.location}</li>
+                        <li>{data.address}</li>
                         <li>{data.contact}</li>
                       </ul>
                       <p style={ngoP}>{data.description}</p>
@@ -116,14 +94,11 @@ const Ngopage = () => {
               </div>
             );
           })}
-        </div> */}
+        </div>
       </div>
       <Footer />
-
-     
     </>
   );
 };
 
 export default Ngopage;
-
