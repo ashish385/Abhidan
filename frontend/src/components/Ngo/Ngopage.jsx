@@ -40,8 +40,8 @@ const Ngopage = () => {
     <>
       
 
-
-<div className="row bg-white overflow-x-hidden">
+<div className="ngoPage" style={{overflowX:"hidden"}}>
+<div className="row bg-white" >
   <div className=" col-md-6  mt-2  border-2">
     < div className="ngo_content text-center mt-10 ">
     <h1 className="text-2xl font-bold mb-2">Empowering Communities Through <br/>Ngo Integration On Abhidan</h1>
@@ -108,7 +108,7 @@ const Ngopage = () => {
 
     </div>
     </div>
-    
+    </div>
 
 
 
