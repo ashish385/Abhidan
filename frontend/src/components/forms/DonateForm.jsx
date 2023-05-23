@@ -1,9 +1,7 @@
 import React, { useState } from "react";
-import Login from "../../pages/Login";
-import { AiOutlineClose } from "react-icons/ai";
 import axios from "axios";
 import { toast } from "react-hot-toast";
-import { Navigate, useNavigate } from "react-router-dom";
+import {  useNavigate } from "react-router-dom";
 
 function Modal() {
   const navigate = useNavigate();

@@ -1,9 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import "./Gallery.css";
 import Images from "../../DummyData/GalleryImages.json";
-import Footer from "../Footer/Footer";
-import { videoLink } from "../../DummyData/Blog";
 import {AiOutlineClose} from "react-icons/ai"
 
 const Gallery = () => {

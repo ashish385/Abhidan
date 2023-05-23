@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import CountUp from 'react-countup';
-import Footer from "../../Footer/Footer";
 import axios from 'axios';
 import ForgotPassword from '../../forms/ForgotPassword';
 

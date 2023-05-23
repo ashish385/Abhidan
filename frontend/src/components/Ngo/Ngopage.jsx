@@ -6,6 +6,7 @@ import Modal from "../forms/DonateForm";
 import Footer from "../Footer/Footer";
 import axios from "axios";
 import ngo_hero from "./ngo_hero.png"
+import app_config from "../../config";
 
 
 
