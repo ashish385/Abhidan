@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import "./App.css";
+
 import About from "./pages/About";
 import Blog from "./components/Blog/Blog";
 import Gallery from "./components/Gallery/Gallery";
@@ -10,9 +10,10 @@ import Ngopage from "./components/Ngo/Ngopage";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Nav from "./components/Navbar/Nav";
-import DonorProfile from "./components/profiles/donor_Profile/DonorProfile";
-import Donor_auth from "./Auth/donor_auth";
-import DonationForm from "./components/forms/DonateForm"
+import DonorProfile from "./components/profiles/DonorProfile";
+
+import Sidebar from "./components/profiles/Ngoprofiles/Sidebar/Sidebar";
+
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(true);
@@ -33,10 +34,13 @@ function App() {
                 setIsNgoLoggedIn={setIsNgoLoggedIn}
               />
             }
-          />
+          /> 
           {isLoggedIn && (
             <Route path="/donor/myProfile" element={<DonorProfile />} />
           )}
+           
+            <Route path="/ngo/myProfile" element={<Sidebar/>}/>
+        
           <Route path="/signup" element={<Signup />} />
           <Route path="/ngo" element={<Ngopage />} />
           <Route path="/gallery" element={<Gallery />} />
@@ -44,9 +48,9 @@ function App() {
           <Route
             path="/blog"
             element={
-              <Donor_auth>
+              
                 <Blog />
-              </Donor_auth>
+              
             }
           />
           <Route path="/howitworks" element={<HowitWorks />} />
