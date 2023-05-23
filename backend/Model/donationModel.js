@@ -22,6 +22,14 @@ const donationSchema = new mongoose.Schema({
   address:{
     type:String,
     required:true
+  },
+  uid: {
+    type: String,
+    required:true
+  },
+  status: {
+    type: Number,
+    default:1
   }
 });
 
