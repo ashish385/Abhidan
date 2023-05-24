@@ -91,7 +91,7 @@ const AboutUs = () => {
 
 	return (
     <>
-      <div className="  overflow-x-hidden px-3 mb-4 ">
+      <div className="  overflow-x-hidden px-3  bg-white ">
         {/* Our Purpose */}
         <section className="w-full">
           <div className="bg-[#f8f9fa] grid grid-cols-1 mt-5 space-y-4 py-3  justify-center md:grid-cols-2 gap-x-4">
