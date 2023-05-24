@@ -35,9 +35,11 @@ const NgoLoginForm = ({ setIsNgoLoggedIn }) => {
       .post(url + "/ngo-login", formData)
       .then((res) => {
         console.log(res.data);
-        localStorage.setItem("token", res.data);
-        // setIsNgoLoggedIn(true);
+        window.localStorage.setItem("ngo_token", JSON.stringify(res.data.data));
+        setIsNgoLoggedIn(true);
+       
         setTimeout(() => {
+          
           toast.success("NGO Logged In Successfully!");
           navigate("/");
         }, 1000);
