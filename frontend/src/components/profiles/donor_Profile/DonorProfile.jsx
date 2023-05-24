@@ -4,6 +4,9 @@ import { BiLeftArrow } from "react-icons/bi";
 import DonorDashboard from "./DonorDashboard";
 import Footer from "../../Footer/Footer";
 import CountUp from "react-countup";
+import {CgProfile} from "react-icons/cg"
+import { MdPendingActions } from "react-icons/md";
+import { FcApprove } from "react-icons/fc";
 
 
 const DonorProfile = () => {
@@ -58,7 +61,11 @@ const DonorProfile = () => {
                   setTag("profile");
                 }}
               >
-                <span className={` origin-left duration-200`}>My Profile</span>
+                <span
+                  className={` origin-left duration-200 flex justify-center items-center gap-x-2`}
+                >
+                  <CgProfile size={18} /> My Profile
+                </span>
               </li>
               <li
                 className={`flex  rounded-md p-2 cursor-pointer hover:bg-gray-300 text-black text-md items-center gap-x-4 `}
@@ -66,7 +73,10 @@ const DonorProfile = () => {
                   setTag("pendingDonation");
                 }}
               >
-                <span className={` origin-left duration-200`}>
+                <span
+                  className={` origin-left duration-200 flex justify-center items-center gap-x-2`}
+                >
+                  <MdPendingActions />
                   Pending Donation
                 </span>
               </li>
@@ -76,7 +86,10 @@ const DonorProfile = () => {
                   setTag("approveDonation");
                 }}
               >
-                <span className={`origin-left duration-200`}>
+                <span
+                  className={`origin-left duration-200 flex justify-center items-center gap-x-2`}
+                >
+                  <FcApprove />
                   Approve Donation
                 </span>
               </li>
