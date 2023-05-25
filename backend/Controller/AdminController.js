@@ -1,10 +1,9 @@
-  const path = require("path");
+const path = require("path");
 const ejs = require("ejs");
 
 const ngoModel = require("../Model/ngoModel");
 const userModel = require("../Model/userModel");
 const { log } = require("console");
-
 
 // render login page
 const login = async (req, res) => {
@@ -81,8 +80,6 @@ const NgoAll = async (req, res) => {
   }
 };
 
-
-
 // Approve ngo by id
 const approve_ngo = async (req, res) => {
   console.log(req.query.id);
@@ -102,22 +99,21 @@ const approve_ngo = async (req, res) => {
 };
 
 // set current_Status=0
-const DeletedNgo = async (req,res)=>{
+const DeletedNgo = async (req, res) => {
   try {
     const deleteId = req.query.id;
     await ngoModel.findByIdAndUpdate(
       { _id: deleteId },
       {
-        $set: { current_status: "0" }
+        $set: { current_status: "0" },
       }
     );
     res.setHeader("Content-Type", "text/html");
-    res.redirect("/remove-ngo")
+    res.redirect("/remove-ngo");
+  } catch (error) {
+    console.log(error.message);
   }
-  catch(error){
-    console.log(error.message)
-  }
-}
+};
 
 // CancelNgo ke liye
 const RemovedNgo = async (req, res) => {
@@ -129,19 +125,19 @@ const RemovedNgo = async (req, res) => {
   } catch (error) {
     console.log(error);
   }
-}
+};
 
 // get donor
 const Donor = async (req, res) => {
   try {
     const donorData = await userModel.find({ current_status: 1 });
     if (donorData) {
-      res.render("Pages/Donor", {data:donorData})
+      res.render("Pages/Donor", { data: donorData });
     }
   } catch (error) {
     console.log(error);
   }
-}
+};
 
 // approve donor
 const approveDonor = async (req, res) => {
@@ -162,23 +158,22 @@ const approveDonor = async (req, res) => {
 };
 
 // set current_Status=0
-const deleteDonor = async (req,res)=>{
+const deleteDonor = async (req, res) => {
   try {
     const deleteId = req.query.id;
     console.log(deleteId);
     await userModel.findByIdAndUpdate(
       { _id: deleteId },
       {
-        $set: { current_status: "0" }
+        $set: { current_status: "0" },
       }
     );
     res.setHeader("Content-Type", "text/html");
-    res.redirect("/remove-donor")
+    res.redirect("/remove-donor");
+  } catch (error) {
+    console.log(error.message);
   }
-  catch(error){
-    console.log(error.message)
-  }
-}
+};
 
 // rwemove donor
 const removeDonor = async (req, res) => {
@@ -190,7 +185,7 @@ const removeDonor = async (req, res) => {
   } catch (error) {
     console.log(error);
   }
-}
+};
 
 module.exports = {
   Home,
@@ -205,10 +200,9 @@ module.exports = {
   RemovedNgo,
   approveDonor,
   deleteDonor,
-  removeDonor
+  removeDonor,
 };
 //
-
 
 // const deleteId = req.query.id;
 //     console.log(deleteId)

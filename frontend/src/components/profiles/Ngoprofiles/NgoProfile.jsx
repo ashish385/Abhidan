@@ -1,18 +1,20 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import toast from "react-hot-toast"
+import {Link, NavLink} from "react-router-dom"
 import CountUp from "react-countup";
 import {
   BsFillExclamationOctagonFill,
   BsFillCheckSquareFill,
 } from "react-icons/bs";
-import "./Sidebar/Sidebar.css";
+import "./Sidebar.css";
 import dp from "../Ngoprofiles/dashboard-profile.png";
+import app_config from "../../../config";
+
 const NgoProfile = () => {
   const [ngoData, setNgoData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-
+  const url = app_config.back_url;
   const fetchData = async () => {
     try {
       // Get the ngotoken from localstorage , store in token variable and get the ngo registerid from token and store in id variable
@@ -20,11 +22,8 @@ const NgoProfile = () => {
       const id = { register_id: token.register_id };
 
       // Make the API request with the token
-      const response = await axios.post(
-        "http://localhost:1300/api/ngo-data",
-        id
-      );
-    
+      const response = await axios.post(url + "/ngo-data", id);
+
       // console.log("data",response.data.data)
       setNgoData(response.data.data);
       setLoading(false);
@@ -70,11 +69,11 @@ const NgoProfile = () => {
 
   return (
     <>
-      <div className="ngoProfile m-5 ">
+      <div className="ngoProfile m-5  ">
         <div className="row ">
           {donorData.map((item, index) => (
             <div className="col-md-4 " key={index}>
-              <div className="Card bg-white ">
+              <NavLink  className="Card bg-[#F8F8F8] ">
                 <div className="count-icon text-4xl text-yellow-400 ">
                   {item.icon}
                 </div>
@@ -82,33 +81,36 @@ const NgoProfile = () => {
                   <p className="text-xl text-black">{item.name}</p>
                   <h2 className="text-xl font-semibold">{item.value}</h2>
                 </div>
-              </div>
+              </NavLink>
             </div>
           ))}
         </div>
-        <div className="ngoInfo mt-4 bg-white">
-          <h2 className="text-lg font-semibold">
+        <div className="row mt-5 bg-[#F8F8F8] " >
+        
+          <h2 className="text-xl font-semibold ">
             Account <span className="text-yellow-400">Information</span>
+            <Link className="float-right " hre="/edit">Edit</Link>
           </h2>
 
           <hr />
-          <div className="row">
-            <div className="col-md-4 flex justify-center ">
+          
+            <div className="col-md-6   " >
               {ngoData &&
                 ngoData.map((ngo, index) => (
-                  <ul className="text-lg mt-2" key={index}>
+                  <ul className="ngoinfo text-lg text-black m-4 " key={index}>
                     <li>{ngo.ngo_name}</li>
-                    <li>{ngo.register_id}</li>
-                    <li>{ngo.email}</li>
-                    <li>{ngo.contact}</li>
-                    <li>{ngo.address}</li>
+                    <li className="mt-2">{ngo.register_id}</li>
+                    <li className="mt-2">{ngo.email}</li>
+                    <li className="mt-2" >{ngo.contact}</li>
+                   
+                    <li className="mt-2">  {ngo.address}</li>
                   </ul>
                 ))}
             </div>
-            <div className="col-md-8 flex justify-center">
-              <img src={dp} alt="dashboard-img" className="h-60 w-60" />
+            <div className="col-md-6 flex justify-center" >
+              <img src={dp} alt="dashboard-img" className="h-52" />
             </div>
-          </div>
+          
         </div>
       </div>
     </>

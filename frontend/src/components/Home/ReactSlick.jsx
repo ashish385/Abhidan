@@ -71,7 +71,7 @@ const ReactSlick = () => {
             />
             <div className="sliderContent">
               <h3>Helping Each Other Can Make Better World</h3>
-              <p>bsdjkfhs dfheoiwe skchoihfe nvsdho </p>
+              <p>“Happiness doesn’t result from what we get, but from what we give". </p>
               <button className=" mt-2 px-3 py-1 rounded-md border-2 border-yellow-400 text-lg hover:bg-yellow-400">
             Donate
               </button>
@@ -85,7 +85,7 @@ const ReactSlick = () => {
             />
             <div className="sliderContent">
               <h3>They Are Wait For Your Help</h3>
-              <p>bsdjkfhs dfheoiwe skchoihfe nvsdho </p>
+              <p>“Happiness doesn’t result from what we get, but from what we give". </p>
               <button className=" mt-2 px-3 py-1 text-lg rounded-md border-2 border-yellow-400   hover:bg-yellow-400">
                 Donate
               </button>

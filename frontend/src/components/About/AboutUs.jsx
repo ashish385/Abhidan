@@ -275,7 +275,7 @@ const AboutUs = () => {
                 Request a Campaign
               </button>
             </Link>
-            <Link to={"#"}>
+            <Link to={"mailto:ayush9936ru@gmail.com"}>
               <button className="w-full border rounded px-3 py-2 text-white bg-green-500 hover:bg-green-700 shadow-2xl shadow-green-500 capitalize">
                 Donate Now
               </button>

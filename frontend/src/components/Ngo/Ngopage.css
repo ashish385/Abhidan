@@ -1,12 +1,8 @@
-.search-box{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
 
 .ngo-card {
-  display: flex;
-  
+display: flex;
+justify-content: center;
+  align-items: center;
   max-width: 600px;
   padding: 20px;
   border: 1px solid #ccc;
@@ -18,6 +14,8 @@
   width: 200px;
   height: 200px;
   margin-right: 20px;
+  border:1px solid orange;
+  border-radius: 12px 8px;
 }
 
 .ngo-image img {
