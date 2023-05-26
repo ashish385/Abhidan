@@ -33,10 +33,10 @@ const NgoLoginForm = ({ setIsNgoLoggedIn }) => {
 
     axios
       .post(url + "/ngo-login", formData)
-      .then((res) => {
-        console.log(res.data);
-        localStorage.setItem("token", res.data);
-        // setIsNgoLoggedIn(true);
+      .then((data) => {
+        console.log(data);
+        localStorage.setItem("token", JSON.stringify(data));
+        setIsNgoLoggedIn(true);
         setTimeout(() => {
           toast.success("NGO Logged In Successfully!");
           navigate("/");

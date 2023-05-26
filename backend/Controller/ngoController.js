@@ -6,8 +6,10 @@ const ngoModel =require("../Model/ngoModel")
 
 // this is ngo login controller for check that user is exist or not
 const ngo_login = async (req, res) => {
+     console.log(req.body);
     try {
         const { register_id, password } = req.body;
+       
         if (!register_id || !password) 
         {
              console.log("data not matched");
@@ -17,14 +19,15 @@ const ngo_login = async (req, res) => {
             })
            }
         const isNgo = await ngoModel.findOne({ register_id: register_id });
+        console.log(isNgo);
 
         if (isNgo) {
             const isPassword = await ngoModel.findOne({ password: password });
             console.log(isPassword);
             if (isPassword) {
-                res.status(201).json({
-                    status: 201,
-                    message: "Login Successfully!"
+                res.status(201).send({
+                    message: "Login Successfully!",
+                    data:isNgo,
                 })
             } else {
                  res.status(401).json({

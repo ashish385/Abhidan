@@ -12,35 +12,20 @@ import { FcApprove } from "react-icons/fc";
 const DonorProfile = () => {
   const [open, setOpen] = useState(false);
   const [tag, setTag] = useState("profile");
-  const userData = JSON.parse(localStorage.getItem("token"));
-  const userId = {email : userData.data.email}
- 
-
-  async function callDonorData() {
-    axios
-      .post("http://localhost:1300/api/user-data", userId)
-      .then((data) => {
-        console.log(data);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }
-
+   const userData = JSON.parse(localStorage.getItem("token"));
+  
+  
   useEffect(() => {
-    console.log(userData.data._id);
-    console.log(userId);
-    callDonorData();
-  },[])
-
+    
+  },userData)
 
   return (
     <>
-      <div className="flex flex-col">
-        <div className="flex relative h-[130vh] bg-white pb-2 mb-2 overflow-y-scroll overflow-x-hidden">
+      <div className="flex relative flex-col">
+        <div className="flex  h-[100vh] bg-white pb-2 mb-2  overflow-x-hidden">
           {/* Large Screen */}
           <div
-            className={`hidden md:block md:w-72 h-[130vh]   md:relative static  px-2 bg-white shadow-[-10px_-10px_30px_4px_rgba(0,0,0,0.1),_10px_10px_30px_4px_rgba(45,78,255,0.15)]  pt-8 `}
+            className={`hidden md:block md:w-72 md:h-[145vh]   md:relative fixed  px-2 bg-white shadow-[-10px_-10px_30px_4px_rgba(0,0,0,0.1),_10px_10px_30px_4px_rgba(45,78,255,0.15)]  pt-8 `}
           >
             <div className="flex flex-col gap-x-4 items-center">
               <h1
@@ -94,11 +79,10 @@ const DonorProfile = () => {
                 </span>
               </li>
             </ul>
-            {/* <div>Logout</div> */}
           </div>
           {/* mobile view */}
           <div
-            className={` md:hidden fixed ${
+            className={` md:hidden fixed top-0 bottom-0 ${
               open ? "w-[55%] md:w-[45%]" : "w-5 "
             } absolute md:relative  h-screen px-2 bg-white  pt-8  duration-300`}
           >
@@ -117,14 +101,14 @@ const DonorProfile = () => {
                   !open && "scale-0"
                 }`}
               >
-                Donor Name
+                {userData.data.username}
               </h1>
               <h3
                 className={`text-black origin-left font-sm text-md duration-200 ${
                   !open && "scale-0"
                 }`}
               >
-                Email
+                {userData.data.email}
               </h3>
             </div>
             <ul className="pt-6 pl-5" onClick={() => setOpen(!open)}>
@@ -165,15 +149,15 @@ const DonorProfile = () => {
                 </span>
               </li>
             </ul>
-            {/* <div>Logout</div> */}
           </div>
           <div className="h-screen flex-1  px-4 bg-white">
             {tag === "profile" && <DonorDashboard />}
             {tag === "pendingDonation" && (
               <div className=" bg-white h-screen shadow-[-10px_-10px_30px_4px_rgba(0,0,0,0.1),_10px_10px_30px_4px_rgba(45,78,255,0.15)] rounded-lg px-1 md:px-4 py-3">
-                {/* Name section */}
                 <div className="flex flex-col w-fit items-center  px-5 py-2  ">
-                  <h1 className="text-2xl font-bold">Donor Name</h1>
+                  <h1 className="text-2xl font-bold">
+                    {userData.data.username}
+                  </h1>
                   <div className="w-[100px] h-1 rounded-md bg-yellow-500 mt-2"></div>
                 </div>
 
@@ -203,9 +187,10 @@ const DonorProfile = () => {
             )}
             {tag === "approveDonation" && (
               <div className=" bg-white h-screen shadow-[-10px_-10px_30px_4px_rgba(0,0,0,0.1),_10px_10px_30px_4px_rgba(45,78,255,0.15)] rounded-lg px-1 md:px-4 py-3">
-                {/* Name section */}
                 <div className="flex flex-col w-fit items-center  px-5 py-2  ">
-                  <h1 className="text-2xl font-bold">Donor Name</h1>
+                  <h1 className="text-2xl font-bold">
+                    {userData.data.username}
+                  </h1>
                   <div className="w-[100px] h-1 rounded-md bg-yellow-500 mt-2"></div>
                 </div>
 
