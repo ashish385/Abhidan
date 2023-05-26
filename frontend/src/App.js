@@ -13,7 +13,7 @@ import Nav from "./components/Navbar/Nav";
 import DonorProfile from "./components/profiles/donor_Profile/DonorProfile";
 import DonationForm from "./components/forms/DonateForm";
 
-import Sidebar from "./components/profiles/Ngoprofiles/Sidebar/Sidebar";
+import Sidebar from "./components/profiles/Ngoprofiles/Sidebar";
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);

@@ -38,6 +38,7 @@ const NgoLoginForm = ({ setIsNgoLoggedIn }) => {
         localStorage.setItem("token", JSON.stringify(data));
         setIsNgoLoggedIn(true);
         setTimeout(() => {
+          
           toast.success("NGO Logged In Successfully!");
           navigate("/");
         }, 1000);

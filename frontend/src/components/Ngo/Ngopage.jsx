@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 
 import "./Ngopage.css";
-import NgoData from "../../DummyData/NGODummyData.json";
 import Modal from "../forms/DonateForm";
 import Footer from "../Footer/Footer";
 import axios from "axios";
@@ -10,16 +9,17 @@ import app_config from "../../config";
 import { useNavigate } from "react-router-dom";
 
 const Ngopage = () => {
-  const url = app_config.api_url;
+  const url = app_config.back_url;
   const navigate = useNavigate();
   // console.log(url);
 
   const [showModal, setShowModal] = useState(false);
-  const [ngoData, setNgoData] = useState([]);
+ 
 
   const token = JSON.parse(localStorage.getItem("token"));
 
   const [getNgoData, setgetNgoData] = useState([]);
+  
   const getNgosData = () => {
     axios
       // .get(url + `/all-ngo`)
@@ -130,13 +130,13 @@ const Ngopage = () => {
             />
           </div>
           {/* ngos */}
-          <div className="flex flex-col py-2 w-full  md:w-1/2  gap-y-3  overflow-x-hidden">
+          <div className="flex flex-col py-3 w-full  md:w-1/2  gap-y-3  overflow-x-hidden">
             {getNgoData.map((ngosData, index) => (
               <div
                 key={ngosData._id}
-                className="flex flex-col items-center justify-around md:flex-row border-2 rounded-lg   "
+                className="flex flex-col py-2 items-center justify-around md:flex-row border-2 rounded-lg   "
               >
-                <div className="ngo-image">
+                <div className="ngo-image py-2">
                   <img src={ngo_hero} alt="NGO Logo" />
                 </div>
                 <div className="flex flex-col py-3 px-3 justify-center items-center ">
