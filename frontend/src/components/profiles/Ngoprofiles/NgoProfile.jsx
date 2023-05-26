@@ -19,6 +19,7 @@ const NgoProfile = () => {
     try {
       // Get the ngotoken from localstorage , store in token variable and get the ngo registerid from token and store in id variable
       const token = JSON.parse(localStorage.getItem("ngo_token"));
+      console.log(token);
       const id = { register_id: token.register_id };
 
       // Make the API request with the token
