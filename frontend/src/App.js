@@ -18,6 +18,8 @@ import Sidebar from "./components/profiles/Ngoprofiles/Sidebar";
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isNgoLoggedIn, setIsNgoLoggedIn] = useState(false);
+  const donorToken = JSON.parse(localStorage.getItem('token'));
+  const ngoToken = JSON.parse(localStorage.getItem('ngo_token'));
   return (
     <div>
       <BrowserRouter>
@@ -40,11 +42,11 @@ function App() {
               />
             }
           />
-          {isLoggedIn && (
+          {donorToken && (
             <Route path="/donor/myProfile" element={<DonorProfile />} />
           )}
 
-          {isNgoLoggedIn && (
+          {ngoToken && (
             <Route path="/ngo/myProfile" element={<Sidebar />} />
           )}
 

@@ -36,7 +36,7 @@ const LoginForm = ({ setIsLoggedIn }) => {
       // .post("http://localhost:1300/api/donor-login",formData)
       .then((data) => {
         console.log("UserData", data);
-        window.localStorage.setItem("donor_token", JSON.stringify(data.data));
+        window.localStorage.setItem("token", JSON.stringify(data.data));
 
         setIsLoggedIn(true);
         toast.success("Logged In Successfully!");

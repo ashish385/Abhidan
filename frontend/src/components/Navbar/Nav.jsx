@@ -9,6 +9,7 @@ const UserDropDown = ({isLoggedIn, setIsLoggedIn,isNgoLoggedIn, setIsNgoLoggedIn
   const navigate = useNavigate();
   let [dropOpen, setDropOpen] = useState(false);
   const data = JSON.parse(localStorage.getItem('token'))
+  const ngoData = JSON.parse(localStorage.getItem('ngo_token'))
   console.log(data);
 
   return (
@@ -39,7 +40,7 @@ const UserDropDown = ({isLoggedIn, setIsLoggedIn,isNgoLoggedIn, setIsNgoLoggedIn
               : "hidden"
           }`}
         >
-          {isLoggedIn && (
+          {data && (
             <>
               <Link to={"/donor/myProfile"}>
                 <span className="block px-4 py-2 text-gray-800 hover:bg-indigo-500 hover:text-white">
@@ -48,7 +49,7 @@ const UserDropDown = ({isLoggedIn, setIsLoggedIn,isNgoLoggedIn, setIsNgoLoggedIn
               </Link>
             </>
           )}
-          {isNgoLoggedIn && (
+          {ngoData && (
             <>
               <Link to={"/ngo/myProfile"}>
                 <span className="block px-4 py-2 text-gray-800 hover:bg-indigo-500 hover:text-white">
@@ -87,7 +88,7 @@ const UserDropDown = ({isLoggedIn, setIsLoggedIn,isNgoLoggedIn, setIsNgoLoggedIn
           </span>
         </div>
         <div className="mt-4 ">
-          {isLoggedIn && (
+          { data  && (
             <>
               <Link to={"/donor/myProfile"}>
                 <span className="block text-gray-500 text-lg hover:text-gray-700">
@@ -96,7 +97,7 @@ const UserDropDown = ({isLoggedIn, setIsLoggedIn,isNgoLoggedIn, setIsNgoLoggedIn
               </Link>
             </>
           )}
-          {isNgoLoggedIn && (
+          { ngoData  && (
             <>
               <Link to={"/ngo/myProfile"}>
                 <span className="block text-gray-500 text-lg hover:text-gray-700">
@@ -142,6 +143,7 @@ const Nav = ({
   ];
   let [open, setOpen] = useState(false);
   const data = JSON.parse(localStorage.getItem("token"));
+  const ngoData = JSON.parse(localStorage.getItem("ngo_token"));
 
   return (
     <div className=" font-[Poppins] bg-white   h-[70px] z-10 sticky top-0 shadow-2xl ">
@@ -195,7 +197,8 @@ const Nav = ({
               className="flex flex-col ml-3   md:flex-row"
             >
               {/* agar dono me se koi login na ho to ye dikhao */}
-              {!data && (
+              
+              {(!data && !ngoData) && (
                 <NavLink to="/login">
                   <button
                     className="bg-indigo-600 text-white font-[Poppins] py-2 px-6 rounded md:ml-8 hover:bg-indigo-400 
@@ -206,7 +209,7 @@ const Nav = ({
                 </NavLink>
               )}
               {/* agar dono me se koi login hai to to ye dikaho */}
-              {data && (
+              {(data || ngoData ) && (
                 <>
                   {/* login krne ke baad */}
                   <div className="mx-2 ">
@@ -219,6 +222,7 @@ const Nav = ({
                   </div>
                 </>
               )}
+             
             </div>
           </ul>
         </div>

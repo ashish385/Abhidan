@@ -18,12 +18,14 @@ const NgoProfile = () => {
   const fetchData = async () => {
     try {
       // Get the ngotoken from localstorage , store in token variable and get the ngo registerid from token and store in id variable
-      const token = JSON.parse(localStorage.getItem("ngo_token"));
-      console.log(token);
-      const id = { register_id: token.register_id };
+      const ngoToken = JSON.parse(localStorage.getItem("ngo_token"));
+      console.log("token", ngoToken);
+      const id = { register_id: ngoToken.data.data.register_id };
+      console.log(ngoToken.data.data);
 
-      // Make the API request with the token
-      const response = await axios.post(url + "/ngo-data", id);
+      // Make the API request with the ngoToken
+      const response = await axios.post("http://localhost:1300/api/ngo-data",id);
+      
 
       // console.log("data",response.data.data)
       setNgoData(response.data.data);
@@ -38,7 +40,7 @@ const NgoProfile = () => {
     fetchData();
   }, []);
 
-  console.log(ngoData);
+  // console.log(ngoData);
 
   if (loading) {
     return <div className="flex justify-center">Loading... </div>;

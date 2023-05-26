@@ -4,10 +4,11 @@ const ngoModel = require("../Model/ngoModel");
 
 // for ngo data
 const ngoData = async (req, res) => {
-  const {register_id}=req.body;
+  const { register_id } = req.body;
+  console.log(register_id);
   try {
     const ngoData = await ngoModel.find({register_id:register_id});
-    return res.status(201).send({ data: ngoData });
+     res.status(201).send({ data: ngoData });
   } catch (error) {
     res.send(error);
   }
