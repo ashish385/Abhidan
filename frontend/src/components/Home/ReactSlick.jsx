@@ -6,9 +6,21 @@ import 'slick-carousel/slick/slick-theme.css';
 import pic1 from "./images/hslide.jpg"
 import pic2 from "./images/hslide2.jpg"
 import pic3 from "./images/hslide3.jpg"
+import { useNavigate } from "react-router-dom";
 
 
 const ReactSlick = () => {
+  const navigate = useNavigate();
+
+  const donorData = JSON.parse(localStorage.getItem("token"));
+
+  function getDonationForm() {
+    if (donorData) {
+      navigate("/ngo");
+    } else {
+      navigate("/login");
+    }
+  }
 
   
   const settings = {
@@ -56,7 +68,9 @@ const ReactSlick = () => {
                 <p className="text-sm md:text-md text-gray-100  content-center px-[5rem]  text-center">
                   Join your hand with to provide one time delicious meal
                 </p>
-                <button className="px-4 py-2 mt-4 outline outline-yellow-400 hover:scale-105 rounded-md hover:bg-yellow-400 text-white ">
+                <button className="px-4 py-2 mt-4 outline outline-yellow-400 hover:scale-105 rounded-md hover:bg-yellow-400 text-white "
+                  onClick={() =>getDonationForm()}
+                >
                   Donate
                 </button>
               </div>

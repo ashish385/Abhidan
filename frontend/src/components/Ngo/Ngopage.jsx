@@ -22,8 +22,8 @@ const Ngopage = () => {
   
   const getNgosData = () => {
     axios
-      // .get(url + `/all-ngo`)
-      .get("http://localhost:1300/api/all-ngo")
+      .get(url + `/all-ngo`)
+      // .get("http://localhost:1300/api/all-ngo")
       .then((res) => {
         console.log(res);
          setgetNgoData(res.data.data);
@@ -55,7 +55,7 @@ const Ngopage = () => {
               Empowering Communities Through <br />
               Ngo Integration On Abhidan
             </h1>
-            <p className="text-lg  text-center">
+            <p className="text-lg px-4 pt-2 text-justify">
               NGO integration is an essential aspect of social development
               initiatives. It allows for effective utilization of resources,
               enhances transparency and accountability, and promotes better
@@ -67,66 +67,35 @@ const Ngopage = () => {
         <div className="col-md-6">
           <div className="columns-3xs px-2 mt-2">
             <img
-              src={ngo_hero}
-              className="w-full  aspect-video object-fill rounded-lg border-solid border-2 h-48 "
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-V1sc0keRVXLLjX7jjsbAIHMKcEmEm0OuzA&usqp=CAU"
+              className="w-full  aspect-video object-fit rounded-lg border-solid border-2 h-48 "
               alt="ngo"
             />
             <img
-              src={ngo_hero}
-              className="w-full object-contain rounded-lg border-solid border-2 aspect-square mt-2"
+              src="https://img.freepik.com/free-vector/world-humanitarian-day-concept-illustration_114360-6458.jpg?w=900&t=st=1685087690~exp=1685088290~hmac=eb8c84e0f1c224801e01b246a007c3f10070867bfc99785d3348426f68b7af10"
+              className="w-full object-fit rounded-lg border-solid border-2 aspect-square mt-2"
               alt="ngo"
             />
             <img
-              src={ngo_hero}
-              className="w-full  object-contain rounded-lg border-solid border-2 aspect-square  "
+              src="https://img.freepik.com/free-vector/set-people-collect-trash-ecology-nature-protection-volunteering-social-charity-concept-volunteers-characters-clean-up-garbage-put-recycling-bins-sacks-line-art-vector-illustration_107791-10236.jpg?size=626&ext=jpg&ga=GA1.2.638092357.1637509177&semt=sph"
+              className="w-full   object-fit rounded-lg border-solid border-2 aspect-square  "
               alt="ngo"
             />
             <img
-              src={ngo_hero}
+              src="https://img.freepik.com/free-photo/together-we-can-help-concept_23-2148733264.jpg?size=626&ext=jpg&ga=GA1.2.638092357.1637509177&semt=sph"
               className="w-full  aspect-video object-fill rounded-lg border-solid border-2 h-48 mt-2"
               alt="ngo"
             />
           </div>
         </div>
-        {/* <div className="flex flex-col relative ">
-          {NgoData.map((data) => {
-            return (
-              <div
-                // data-aos="fade-right"
-                // data-aos-offset="300"
-                // data-aos-duration="2000"
-                key={data.id}
-              >
-                <div className="container mt-5" style={ngoback}>
-                  <div className="row  ">
-                    <div
-                      className="col-md-4"
-                      style={{ marginTop: "15px ", marginBottom: "15px" }}
-                    >
-                      <img
-                        src={
-                          "https://kodesolution.com/html/2017/fundpro-html/demo/images/gallery/gallery-lg1.jpg"
-                        }
-                        style={ngoimg}
-                      />
-                    </div>
-                    <div className="col-md-8">
-                      <h3 className="ngo-name mt-4" style={ngoName}>
-                        {data.ngo_name}
-                      </h3>
-                      <ul className="ngo-det" style={{ color: "#666666" }}>
-                        <li>{data.address}</li>
-                        <li>{data.contact}</li>
-                      </ul>
-                      <p style={ngoP}>{data.description}</p> */}
 
-        <div className=" flex flex-col mx-2 justify-center items-center  ">
+        <div className=" flex flex-col mx-2 justify-center items-center overflow-x-hidden  ">
           {/* searchbar */}
           <div className="py-3 w-full md:w-1/2 px-2 flex justify-center ">
             <input
               type="search"
               placeholder="type here..."
-              className="rounded-2xl  w-full md:w-1/2 h-[3rem] pl-5 border-2 outline-none shadow-lg "
+              className="rounded-2xl  w-full md:w-1/2 h-[3rem] pl-5 pr-3 border-2 outline-none shadow-lg "
             />
           </div>
           {/* ngos */}

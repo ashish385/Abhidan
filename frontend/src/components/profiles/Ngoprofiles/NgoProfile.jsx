@@ -24,7 +24,8 @@ const NgoProfile = () => {
       console.log(ngoToken.data.data);
 
       // Make the API request with the ngoToken
-      const response = await axios.post("http://localhost:1300/api/ngo-data",id);
+      const response = await axios
+        .post(url+"/ngo-data", id);
       
 
       // console.log("data",response.data.data)

@@ -10,6 +10,7 @@ const images = [Logo, image2, Logo, image2, Logo, image2];
 
 
 function SampleNextArrow(props) {
+  
   const { className, style, onClick } = props;
   return (
     <div
