@@ -10,6 +10,7 @@ import slider4 from './images/slider4.svg';
 import slider5 from './images/slider5.svg';
 import slider6 from './images/slider6.svg';
 import slider8 from './images/slider8.svg';
+import slider10 from './images/slider10.jpg';
 
 const HowitWorks = () => {
 	const [activeTab, setActiveTab] = useState(1);
@@ -52,7 +53,7 @@ const HowitWorks = () => {
 										LOGIN AND SIGNUP
 									</h1>
 									<p className=' px-2 text-center text-md font-semibold text-gray-600'>
-										Browse different campaigns and select a cause.
+										"Browse different campaigns and select a cause".
 									</p>
 								</div>
 								
@@ -69,7 +70,7 @@ const HowitWorks = () => {
 										SELECT PRODUCTS AND NGO'S
 									</h1>
 									<p className=' px-2 text-center text-md font-semibold text-gray-600'>
-										Select products And NGO'S you wish to donate.
+										"Select products And NGO'S you wish to donate".
 									</p>
 								</div>
 								
@@ -87,7 +88,7 @@ const HowitWorks = () => {
 									</h1>
 
 									<p className=' px-2 text-center text-md font-semibold text-gray-600'>
-										Fill the donation form and wait for response from the NGO's.
+										"Fill the donation form and wait for response from the NGO's".
 									</p>
 								</div>
 								
@@ -104,7 +105,7 @@ const HowitWorks = () => {
 										DONATION EXECUTED
 									</h1>
 									<p className=' px-2 text-center text-md font-semibold text-gray-600'>
-									After verifying the donation , give your donation.
+									"After verifying the donation , give your donation".
 									</p>
 								</div>
 								
@@ -126,7 +127,7 @@ const HowitWorks = () => {
 									FILL THE FORM
 								</h1>
 								<p className=' px-2 text-center text-md font-semibold text-gray-600'>
-									Fill Request A Campaign form and send us your requirement
+									"Fill Request form TO GET CONNCTED WITH US". 
 								</p>
 							</div>
 							
@@ -136,14 +137,14 @@ const HowitWorks = () => {
 							<div className='subcontainer-card'>
 								<img
 									className='w-[11rem] h-[11rem]'
-									src={slider6}
-									alt='slider6'
+									src={slider10}
+									alt='slider10'
 								/>
 								<h1 className=' text-xl text-center'>
-									GET IN TOUCH
+									WAIT FOR VERIFICATION 
 								</h1>
 								<p className=' px-2 text-center text-md font-semibold text-gray-600'>
-									Our campaign manager will reach out based on the enquiry
+									"Our campaign manager will reach out based on the enquiry".
 								</p>
 							</div>
 							</div>
@@ -156,11 +157,10 @@ const HowitWorks = () => {
 									alt='slider7'
 								/>
 								<h1 className=' text-xl text-center'>
-									CAMPAIGN IS LIVE
+									GET LISTED
 								</h1>
 								<p className=' px-2 text-center text-md font-semibold text-gray-600'>
-									Campaign goes live on Donatekart with content, images and
-									product.
+									"After verification from our side get listed in our NGO's list" .
 								</p>
 							</div>
 							
@@ -174,11 +174,10 @@ const HowitWorks = () => {
 									alt='slider8'
 								/>
 								<h1 className=' text-xl text-center'>
-									CAMPAIGN UPDATES
+									Wait for the request 
 								</h1>
 								<p className=' px-2 text-center text-md font-semibold text-gray-600'>
-									activeTab are to be updated using photos videos of the
-									distribution drive of products to the needy
+									"Wait for a donor to get requested for donation".
 								</p>
 							</div>
 							

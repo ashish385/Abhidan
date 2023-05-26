@@ -88,6 +88,7 @@ const Ngopage = () => {
             />
           </div>
         </div>
+       
 
         <div className=" flex flex-col mx-2 justify-center items-center overflow-x-hidden  ">
           {/* searchbar */}
