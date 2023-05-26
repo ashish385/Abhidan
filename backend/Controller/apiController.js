@@ -35,7 +35,9 @@ const userData = async (req, res) => {
   }
 };
 
-//user login
+
+
+//Donor login
 
 const user_donar_login = async (req, res) => {
   try {
@@ -50,6 +52,7 @@ const user_donar_login = async (req, res) => {
     }
 
     const donarData = await userModel.findOne({ email: email });
+    console.log(donarData);
 
     if (!donarData) {
       return res.status(404).send({
@@ -76,6 +79,9 @@ const user_donar_login = async (req, res) => {
     });
   }
 };
+
+
+// donor Registation
 
 const RegisterUser = async (req, res) => {
   const { username, phonenumber, email, password, salt_password, user_type } =
@@ -125,9 +131,12 @@ const RegisterUser = async (req, res) => {
   }
 };
 
+
+// get all ngo data
 const all_ngo = async (req, res) => {
   try {
     const allngoData = await ngoModel.find({ current_status: 2 });
+    console.log(allngoData);
 
     res.status(200).send({ success: true, data: allngoData });
   } catch (error) {
