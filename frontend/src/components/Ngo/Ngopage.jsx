@@ -31,10 +31,10 @@ const Ngopage = () => {
 
 
 <div className="row bg-white overflow-x-hidden">
-  <div className=" col-md-6  mt-2  border-2">
-    < div className="ngo_content text-center mt-10 ">
+  <div className=" col-md-6  mt-2  border-2 ">
+    < div className="ngo_content  mt-10 px-2 ">
     <h1 className="text-2xl font-bold mb-2">Empowering Communities Through <br/>Ngo Integration On Abhidan</h1>
-      <p className="text-lg  text-center">NGO integration is an essential aspect of social development initiatives. It allows for effective utilization of resources, enhances transparency and accountability, and promotes better coordination. By partnering with NGOs, social development projects can achieve a wider reach and create a sustainable impact.</p>
+      <p className="text-lg">NGO integration is an essential aspect of social development initiatives. It allows for effective utilization of resources, enhances transparency and accountability, and promotes better coordination. By partnering with NGOs, social development projects can achieve a wider reach and create a sustainable impact.</p>
     </div>
    
   </div>
@@ -48,11 +48,11 @@ const Ngopage = () => {
   </div>
      
          
-  <div className="row-next mt-2">
+  <div className="row-next mt-2 ">
     
   
     
-   <div className=" ngo_show mt-2">
+   <div className=" ngo_show mt-2 ">
             {getNgoData.map((data) => {
               return (
                 <div className="ngo-card mt-2 " key={data.id}>
