@@ -20,6 +20,8 @@ function App() {
   const [isNgoLoggedIn, setIsNgoLoggedIn] = useState(false);
   const donorToken = JSON.parse(localStorage.getItem('token'));
   const ngoToken = JSON.parse(localStorage.getItem('ngo_token'));
+
+  console.log(donorToken)
   return (
     <div>
       <BrowserRouter>
