@@ -12,8 +12,10 @@ import Signup from "./pages/Signup";
 import Nav from "./components/Navbar/Nav";
 import DonorProfile from "./components/profiles/donor_Profile/DonorProfile";
 import DonationForm from "./components/forms/DonateForm";
+import Chat from "./components/Chat/Chat"
 
 import Sidebar from "./components/profiles/Ngoprofiles/Sidebar";
+
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -26,6 +28,7 @@ function App() {
     <div>
       <BrowserRouter>
         {/* <Navbar /> */}
+      
         <Nav
           isLoggedIn={isLoggedIn}
           setIsLoggedIn={setIsLoggedIn}
@@ -58,6 +61,7 @@ function App() {
           <Route path="/donate-form" element={<DonationForm />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/howitworks" element={<HowitWorks />} />
+          <Route path="/chat" element={<Chat />} />
         </Routes>
       </BrowserRouter>
     </div>
