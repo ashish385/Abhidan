@@ -13,7 +13,7 @@ const httpServer = createServer(app);
 
 // create a socket.io instance and allow cors
 const io = new Server(httpServer, {
-  cors: { origin: ["http://localhost:3000"] },
+  cors: { origin: ["http://localhost:3000","https://abhidan-sewa.onrender.com"] },
 });
 
 
