@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import {Link, NavLink} from "react-router-dom"
+import { Link, NavLink } from "react-router-dom";
 import CountUp from "react-countup";
 import {
   BsFillExclamationOctagonFill,
@@ -9,12 +9,15 @@ import {
 import "./Sidebar.css";
 import dp from "../Ngoprofiles/dashboard-profile.png";
 import app_config from "../../../config";
+import {Dna} from "react-loader-spinner";
+
 
 const NgoProfile = () => {
   const [ngoData, setNgoData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const url = app_config.back_url;
+
   const fetchData = async () => {
     try {
       // Get the ngotoken from localstorage , store in token variable and get the ngo registerid from token and store in id variable
@@ -24,9 +27,7 @@ const NgoProfile = () => {
       console.log(ngoToken.data.data);
 
       // Make the API request with the ngoToken
-      const response = await axios
-        .post(url+"/ngo-data", id);
-      
+      const response = await axios.post(url + "/api/ngo-data", id);
 
       // console.log("data",response.data.data)
       setNgoData(response.data.data);
@@ -44,7 +45,18 @@ const NgoProfile = () => {
   // console.log(ngoData);
 
   if (loading) {
-    return <div className="flex justify-center">Loading... </div>;
+    return (
+      <div className="flex justify-center">
+       <Dna
+  visible={true}
+  height="80"
+  width="80"
+  ariaLabel="dna-loading"
+  wrapperStyle={{}}
+  wrapperClass="dna-wrapper"
+/>
+      </div>
+    );
   }
 
   if (error) {
@@ -56,18 +68,18 @@ const NgoProfile = () => {
   const donorData = [
     {
       icon: <BsFillExclamationOctagonFill />,
-      name: "Pending Request",
-      value: 20,
+      name: "Total Request",
+      value: 80,
     },
     {
       icon: <BsFillCheckSquareFill />,
       name: "Approved Request",
-      value: 20,
+      value: 50,
     },
     {
       icon: <BsFillExclamationOctagonFill />,
       name: "Pending Request",
-      value: 20,
+      value: 30,
     },
   ];
 
@@ -77,44 +89,49 @@ const NgoProfile = () => {
         <div className="row ">
           {donorData.map((item, index) => (
             <div className="col-md-4 " key={index}>
-              <NavLink  className="Card bg-[#F8F8F8] ">
+              <NavLink className="Card bg-[#F8F8F8] ">
                 <div className="count-icon text-4xl text-yellow-400 ">
                   {item.icon}
                 </div>
                 <div>
                   <p className="text-xl text-black">{item.name}</p>
-                  <h2 className="text-xl font-semibold">{item.value}</h2>
+
+                  <CountUp
+                    end={item.value}
+                    separator=","
+                    className="text-xl font-semibold"
+                  />
                 </div>
               </NavLink>
             </div>
           ))}
         </div>
-        <div className="row mt-5 bg-[#F8F8F8] " >
-        
+        <div className="row mt-5 bg-[#F8F8F8] ">
           <h2 className="text-xl font-semibold ">
             Account <span className="text-yellow-400">Information</span>
-            <Link className="float-right " hre="/edit">Edit</Link>
+            <Link className="float-right " to={"/edit"}>
+              Edit
+            </Link>
           </h2>
 
           <hr />
-          
-            <div className="col-md-6   " >
-              {ngoData &&
-                ngoData.map((ngo, index) => (
-                  <ul className="ngoinfo text-lg text-black m-4 " key={index}>
-                    <li>{ngo.ngo_name}</li>
-                    <li className="mt-2">{ngo.register_id}</li>
-                    <li className="mt-2">{ngo.email}</li>
-                    <li className="mt-2" >{ngo.contact}</li>
-                   
-                    <li className="mt-2">  {ngo.address}</li>
-                  </ul>
-                ))}
-            </div>
-            <div className="col-md-6 flex justify-center" >
-              <img src={dp} alt="dashboard-img" className="h-52" />
-            </div>
-          
+
+          <div className="col-md-6   ">
+            {ngoData &&
+              ngoData.map((ngo, index) => (
+                <ul className="ngoinfo text-lg text-black m-4 " key={index}>
+                  <li>{ngo.ngo_name}</li>
+                  <li className="mt-2">{ngo.register_id}</li>
+                  <li className="mt-2">{ngo.email}</li>
+                  <li className="mt-2">{ngo.contact}</li>
+
+                  <li className="mt-2"> {ngo.address}</li>
+                </ul>
+              ))}
+          </div>
+          <div className="col-md-6 flex justify-center">
+            <img src={dp} alt="dashboard-img" className="h-52" />
+          </div>
         </div>
       </div>
     </>
