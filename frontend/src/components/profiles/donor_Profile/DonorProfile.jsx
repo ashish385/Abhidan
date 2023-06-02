@@ -22,10 +22,10 @@ const DonorProfile = () => {
   return (
     <>
       <div className="flex relative flex-col">
-        <div className="flex  h-[100vh] bg-white pb-2 mb-2  overflow-x-hidden">
+        <div className="flex   bg-white pb-2 mb-2 ">
           {/* Large Screen */}
           <div
-            className={`hidden md:block md:w-72 md:h-[145vh]   md:relative fixed  px-2 bg-white shadow-[-10px_-10px_30px_4px_rgba(0,0,0,0.1),_10px_10px_30px_4px_rgba(45,78,255,0.15)]  pt-8 `}
+            className={`hidden md:block md:w-72 h-screen   md:relative fixed  px-2 bg-white shadow-[-10px_-10px_30px_4px_rgba(0,0,0,0.1),_10px_10px_30px_4px_rgba(45,78,255,0.15)]  pt-8 `}
           >
             <div className="flex flex-col gap-x-4 items-center">
               <h1
@@ -150,7 +150,7 @@ const DonorProfile = () => {
               </li>
             </ul>
           </div>
-          <div className="h-screen flex-1  px-4 bg-white">
+          <div className="h-screen overflow-auto setScrollbar flex-1  px-4 bg-white">
             {tag === "profile" && <DonorDashboard />}
             {tag === "pendingDonation" && (
               <div className=" bg-white h-screen shadow-[-10px_-10px_30px_4px_rgba(0,0,0,0.1),_10px_10px_30px_4px_rgba(45,78,255,0.15)] rounded-lg px-1 md:px-4 py-3">

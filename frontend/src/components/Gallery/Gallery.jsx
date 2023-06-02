@@ -1,17 +1,15 @@
 import React, { useState } from "react";
 import Images from "../../DummyData/GalleryImages.json";
-import {AiOutlineClose} from "react-icons/ai"
+import { AiOutlineClose } from "react-icons/ai";
 
 const Gallery = () => {
-
   const [imgmodel, setImgmodel] = useState(false);
-  const [tempimgSrc, setTempimgSrc] = useState('');
-  
+  const [tempimgSrc, setTempimgSrc] = useState("");
 
-  const getImg=(imgSrc) => {
+  const getImg = (imgSrc) => {
     setTempimgSrc(imgSrc);
     setImgmodel(true);
-  }
+  };
   return (
     <>
       {/* <div className="container-fluid"></div> */}
@@ -20,20 +18,26 @@ const Gallery = () => {
         {imgmodel && (
           <>
             <div
+              // tabindex="-1"
               className={`${
                 imgmodel
-                  ? "fixed flex justify-center py-5 z-10 bg-black w-full h-full overflow-hidden bg-opacity-50 "
+                  ? "fixed inset-0 h-full w-full z-10 bg-black opacity-50 cursor-default"
                   : "hidden"
               }`}
-              onClick={() => setImgmodel(false)}
-            >
-              <div className="absolute top-8 w-full max-w-xs sm:max-w-lg md:max-w-2xl  ">
-                <img
-                  src={tempimgSrc}
-                  alt=""
-                  className="rounded-xl shadow-[rgba(0,_0,_0,_0.4)_0px_30px_90px] w-full h-screen max-h-[70vh]   sm:max-w-md md:max-w-2xl "
+            ></div>
+            <div className="  z-20 w-full h-full  fixed top-[15%] md:top-16 lg:top-16 object-fit flex justify-center items-center  ">
+              <div className="   w-full h-[400px] lg:h-[450px] flex justify-center  px-4    overflow-y-hidden max-w-4xl rounded-lg ">
+                <div className="">
+                  <img
+                    src={tempimgSrc}
+                    alt=""
+                    className=" mt-0  w-full sm:w-[600px]  md:w-[650px] lg:w-[900px] xl:w-[1200px] h-[280px] md:h-[350px] lg:h-[430px]  rounded-md"
+                  />
+                </div>
+                <AiOutlineClose
+                  className="absolute top-1 right-2   md:right-10 text-gray-100 font-bold text-xl md:text-3xl cursor-pointer"
+                  onClick={() => setImgmodel(false)}
                 />
-                <AiOutlineClose className="absolute top-1 right-1 text-gray-600 font-bold text-3xl" />
               </div>
             </div>
           </>
@@ -67,7 +71,3 @@ const Gallery = () => {
 };
 
 export default Gallery;
-
-
-
-

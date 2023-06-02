@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 import Filter from './Filter';
 import { filterData } from "../../DummyData/Blog";
 import {toast} from "react-hot-toast"
-import Spinner from './Spinner';
+import Spinner from '../../templet/Spinner';
 import Cards from './Cards';
 import  apiUrl  from './data.json';
 

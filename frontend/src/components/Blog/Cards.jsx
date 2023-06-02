@@ -52,30 +52,33 @@ const Cards = (props) => {
       {fullBlogModel && (
         <>
           <div
-            // tabindex="-1"
             className={`${
               fullBlogModel
                 ? "fixed inset-0 h-full w-full z-10 bg-black opacity-50 cursor-default"
                 : "hidden"
             }`}
           ></div>
-          <div className="  z-20 w-full h-full  fixed top-0 flex justify-center items-center  ">
-            <div className=" setScrollbar bg-white w-full h-[400px] lg:h-[500px] overflow-y-auto  md:w-1/2 max-w-3xl px-4 py-3 flex flex-col gap-4 rounded-lg ">
-              <div className="">
+          <div className="  z-20 w-full   fixed top-0 bottom-0 left-0 right-0 bg-opacity-25 px-[5rem] flex justify-center items-center  bg-red-950   ">
+            <div className=" setScrollbar w-full max-w-3xl overflow-y-auto absolute   bg-white mx-4 md:mx-5 rounded-md flex flex-col justify-center    ">
+              <div className="relative px-3 py-1 h-[400px] setScrollbar ">
                 <img
                   src={blogData.image.url}
                   alt=""
-                  className=" w-full h-[200px] md:h-[300px] rounded-md"
+                  className=" w-full h-[200px] md:h-[250px]   rounded-md"
                 />
+                <div className="absolute top-0 right-0 px-1 py-1 bg-opacity-50 hover:bg-opacity-75 rounded-full border bg-black">
+                  <AiOutlineClose
+                    className="  text-gray-100 font-bold text-3xl cursor-pointer"
+                    onClick={() => setFullBlogModel(false)}
+                  />
+                </div>
+                <h1 className="text-lg text-black mt-2 px-2 font-semibold">
+                  {blogData.title}{" "}
+                </h1>
+                <p className="text-gray-600 mt-2 px-2">
+                  {blogData.description}{" "}
+                </p>
               </div>
-              <AiOutlineClose
-                className="absolute top-2 right-2 md:top-5 md:right-10 text-gray-100 font-bold text-3xl cursor-pointer"
-                onClick={() => setFullBlogModel(false)}
-              />
-              <h1 className="text-lg text-black font-semibold">
-                {blogData.title}{" "}
-              </h1>
-              <p className="text-gray-600">{blogData.description} </p>
             </div>
           </div>
         </>

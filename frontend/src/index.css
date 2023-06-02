@@ -36,8 +36,8 @@ code {
 
 /* css for spinner */
 .custom-loader {
-  width: 80px;
-  height: 80px;
+  width: 100px;
+  height: 100px;
   display: grid;
   border: 4px solid #0000;
   border-radius: 50%;
